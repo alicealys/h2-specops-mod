@@ -11,9 +11,15 @@ local acts = {
         name = "@MENU_SO_ACT_ALPHA",
         missions = {
             {
+                nodifficulty = true,
                 name = "The Pit",
                 mapname = "trainer",
-                locked = true
+                description = "Clear all of the enemy targets as fast as possible. Shooting civilians will prevent you from getting 3 stars.",
+                blip = {
+                    x = 98,
+                    y = 52,
+                },
+                locked = false
             },
             {
                 name = "Sniper Fi",
@@ -81,7 +87,12 @@ local acts = {
             },
             {
                 name = "Breach & Clear",
+                description = "Smash through enemy defenses in the Gulag and escape.",
                 mapname = "gulag",
+                blip = {
+                    x = 131,
+                    y = 41,
+                },
             },
             {
                 name = "Time Trial",
@@ -220,6 +231,11 @@ function levelselect(act)
             local name = act.missions[i].name
             game:addlocalizedstring(name, name)
             local button = menu:AddButton(name, function()
+                if (act.missions[i].nodifficulty) then
+                    Engine.Exec("map " .. act.missions[i].mapname)
+                    return
+                end
+
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
                         Engine.Exec("map " .. act.missions[i].mapname)
@@ -232,7 +248,34 @@ function levelselect(act)
                 disableSound = CoD.SFX.DenySelect
             })
 
-            button:registerEventHandler("button_over", function()
+            button:registerEventHandler("button_over", function(element, event)
+                if (not menu.infoBox) then
+                    LUI.LevelSelect.AddLocationInfoWindow(menu, {
+                        skipAnim = true
+                    })
+                end
+
+                menu.infoBox.title:setText(act.missions[i].name)
+                if (act.missions[i].description) then
+                    menu.infoBox.description:setText(act.missions[i].description)
+                else
+                    menu.infoBox.description:setText("")
+                end
+
+                menu:processEvent({
+                    name = "update_levelInfo",
+                    blipPosX = act.missions[i].blip and act.missions[i].blip.x or 60,
+                    blipPosY = act.missions[i].blip and act.missions[i].blip.y or 60,
+                    map_name = "invasion",
+                    location_image = "h2_minimap_worldmap_mission_select",
+                    level_number = 1,
+                    title_text = act.missions[i].name,
+                    location_text = "f46_local8",
+                    intel_text = "",
+                    level_controller = nil,
+                    narative_level = 1,
+                })
+
                 PersistentBackground.ChangeBackground(nil, "mission_select_bg_" .. act.missions[i].mapname)
                 black:animateInSequence( {
                     {

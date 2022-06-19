@@ -1,4 +1,8 @@
-function missionover(success)
+game:detour("_ID42407", "_ID23778", function()
+    missionover(false)
+end)
+
+function missionover(success, timeoverride)
     game:ontimeout(function()
         game:setblur(6, 1)
     end, 100)
@@ -29,19 +33,21 @@ function missionover(success)
     end
 
     text.horzalign = "center"
-    text.vertalign = "center"
     text.alignx = "center"
-    text.aligny = "center"
     text.fontscale = 1.2
     text.y = 220
     text:setpulsefx(60, 2500, 500)
 
-    local time = game:gettime()
-    if (starttime) then
-        local total = time - starttime
-        game:setdvar("so_mission_time", total)
+    if (timeoverride) then
+        game:setdvar("so_mission_time", timeoverride)
     else
-        game:setdvar("so_mission_time", 0)
+        local time = game:gettime()
+        if (starttime) then
+            local total = time - starttime
+            game:setdvar("so_mission_time", total)
+        else
+            game:setdvar("so_mission_time", 0)
+        end
     end
 
     local ai = game:getaiarray()
