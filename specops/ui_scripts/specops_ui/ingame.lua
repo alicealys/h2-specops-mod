@@ -4,9 +4,6 @@ end
 
 local current = "0"
 
-game:addlocalizedstring("SPECIAL_OPS_GULAG", "Breach & Clear")
-game:addlocalizedstring("SPECIAL_OPS_TRAINER", "The Pit")
-
 function missionend()
     local container = LUI.UIElement.new({
         topAnchor = true,

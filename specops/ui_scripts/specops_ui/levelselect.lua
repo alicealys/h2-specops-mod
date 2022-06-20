@@ -1,173 +1,60 @@
-game:addlocalizedstring("MENU_SO_ACT_ALPHA", "ALPHA")
-game:addlocalizedstring("MENU_SO_ACT_BRAVO", "BRAVO")
-game:addlocalizedstring("MENU_SO_ACT_CHARLIE", "CHARLIE")
-game:addlocalizedstring("MENU_SO_ACT_DELTA", "DELTA")
-game:addlocalizedstring("MENU_SO_ACT_ECHO", "ECHO")
+require("acts")
+require("~~/~~/common/stats")
 
-local acts = {
-    {
-        id = "act1",
-        index = 1,
-        name = "@MENU_SO_ACT_ALPHA",
-        missions = {
-            {
-                nodifficulty = true,
-                name = "The Pit",
-                mapname = "trainer",
-                description = "Clear all of the enemy targets as fast as possible. Shooting civilians will prevent you from getting 3 stars.",
-                blip = {
-                    x = 98,
-                    y = 52,
-                },
-                locked = false
-            },
-            {
-                name = "Sniper Fi",
-                mapname = "contingency",
-                locked = true
-            },
-            {
-                name = "O Cristo Redentor",
-                mapname = "favela",
-                locked = true
-            },
-            {
-                name = "Evasion",
-                mapname = "contingency",
-                locked = true
-            },
-            {
-                name = "Suspension",
-                mapname = "ending",
-                locked = true
-            }
-        }
-    },
-    {
-        id = "act2",
-        index = 2,
-        name = "@MENU_SO_ACT_BRAVO",
-        missions = {
-            {
-                name = "Overwatch",
-                mapname = "ending",
-                locked = true
-            },
-            {
-                name = "Body Count",
-                mapname = "invasion",
-                locked = true
-            },
-            {
-                name = "Bomb Squad",
-                mapname = "favela_escape",
-                locked = true
-            },
-            {
-                name = "Race",
-                mapname = "cliffhanger",
-                locked = true
-            },
-            {
-                name = "Big Brother",
-                mapname = "invasion",
-                locked = true
-            },
-        }
-    },
-    {
-        id = "act3",
-        index = 3,
-        name = "@MENU_SO_ACT_CHARLIE",
-        missions = {
-            {
-                name = "Hidden",
-                mapname = "ending",
-                locked = true
-            },
-            {
-                name = "Breach & Clear",
-                description = "Smash through enemy defenses in the Gulag and escape.",
-                mapname = "gulag",
-                blip = {
-                    x = 131,
-                    y = 41,
-                },
-            },
-            {
-                name = "Time Trial",
-                mapname = "cliffhanger",
-                locked = true
-            },
-            {
-                name = "Homeland Security",
-                mapname = "invasion",
-                locked = true
-            },
-            {
-                name = "Snatch & Grab",
-                mapname = "boneyard",
-                locked = true
-            },
-        }
-    },
-    {
-        id = "act4",
-        index = 4,
-        name = "@MENU_SO_ACT_DELTA",
-        missions = {
-            {
-                name = "Wardriving",
-                mapname = "arcadia",
-                locked = true
-            },
-            {
-                name = "Wreckage",
-                mapname = "ending",
-                locked = true
-            },
-            {
-                name = "Acceptable Losses",
-                mapname = "cliffhanger",
-                locked = true
-            },
-            {
-                name = "Terminal",
-                mapname = "airport",
-                locked = true
-            },
-            {
-                name = "Estate Takedown",
-                mapname = "estate",
-                locked = true
-            },
-        }
-    },
-    {
-        id = "act5",
-        index = 5,
-        name = "@MENU_SO_ACT_ECHO",
-        missions = {
-            {
-                name = "Wetwork",
-                mapname = "oilrig",
-                locked = true
-            },
-            {
-                name = "High Explosive",
-                mapname = "favela",
-                locked = true
-            },
-            {
-                name = "Armor Piercing",
-                mapname = "oilrig",
-                locked = true
-            },
-        }
+local function formattime(msec)
+    return string.format("%d:%02d.%d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+end
+
+local function addstars(infobox)
+    local num = 0
+    local createstar = function()
+        local star = LUI.UIImage.new({
+            topAnchor = true,
+            leftAnchor = true,
+            top = -10,
+            height = 22,
+            width = 22,
+            left = 22 * num + 5 * num,
+            material = RegisterMaterial("star"),
+            alpha = 1
+        })
+
+        star:registerAnimationState("unlocked", {
+            color = Colors.h2.yellow,
+        })
+
+        star:registerAnimationState("locked", {
+            color = Colors.h2.grey,
+        })
+
+        num = num + 1
+
+        return star
+    end
+
+    infobox.stars = {
+        createstar(),
+        createstar(),
+        createstar(),
     }
-}
 
-function levelselect(act)
+    function infobox:setstars(count)
+        for i = 1, #infobox.stars do
+
+            if (i < count) then
+                infobox.stars[i]:animateToState("unlocked")
+            else
+                infobox.stars[i]:animateToState("locked")
+            end
+        end
+    end
+
+    for i = 1, #infobox.stars do
+        infobox.bottomLeftElements:addElement(infobox.stars[i])
+    end
+end
+
+local function levelselect(act)
     return function(root)
         local width = GenericMenuDims.menu_right_standard + 150 - GenericMenuDims.menu_left
         
@@ -202,7 +89,7 @@ function levelselect(act)
 
         menu:addElement(black)
 
-        menu:addElement( LUI.H1MenuTab.new( {
+        menu:addElement(LUI.H1MenuTab.new({
             title = function (index)
                 return Engine.Localize(acts[index].name)
             end,
@@ -228,39 +115,47 @@ function levelselect(act)
         }))
 
         for i = 1, #act.missions do
-            local name = act.missions[i].name
-            game:addlocalizedstring(name, name)
+            local name = "@SPECIAL_OPS_" .. Engine.ToUpperCase(act.missions[i].somapname)
+            local islocked = not (io.fileexists(game:getloadedmod() .. "/scripts/specops/maps/" .. act.missions[i].somapname .. ".lua"))
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
+                    Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
                     Engine.Exec("map " .. act.missions[i].mapname)
                     return
                 end
 
+                Engine.SetDvarInt("recommended_gameskill", -1)
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
+                        Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
                         Engine.Exec("map " .. act.missions[i].mapname)
                     end,
-                    specialops = true
+                    specialops = true,
+                    tryAgainAvailable = false
                 })
-            end, act.missions[i].locked, true, false, {
+            end, islocked, true, false, {
                 style = GenericButtonSettings.Styles.FlatButton,
                 textStyle = CoD.TextStyle.ForceUpperCase,
                 disableSound = CoD.SFX.DenySelect
             })
 
-            button:registerEventHandler("button_over", function(element, event)
+            local gainfocus = button.m_eventHandlers["gain_focus"]
+            button:registerEventHandler("gain_focus", function(element, event)
+                gainfocus(element, event)
                 if (not menu.infoBox) then
                     LUI.LevelSelect.AddLocationInfoWindow(menu, {
                         skipAnim = true
                     })
+                    addstars(menu.infoBox)
                 end
 
-                menu.infoBox.title:setText(act.missions[i].name)
-                if (act.missions[i].description) then
-                    menu.infoBox.description:setText(act.missions[i].description)
-                else
-                    menu.infoBox.description:setText("")
-                end
+                menu.infoBox.title:setText(Engine.Localize(name))
+                local description = "@SPECIAL_OPS_" .. Engine.ToUpperCase(act.missions[i].somapname) .. "_DESC"
+                menu.infoBox.description:setText(Engine.Localize(description))
+
+                local stats = sostats.getmapstats(act.missions[i].somapname)
+                local time = stats.besttime and Engine.Localize("@MENU_SO_BEST_TIME", formattime(stats.besttime)) or Engine.Localize("@LUA_MENU_NOT_COMPLETED")
+                menu.infoBox:setstars((stats.stars or 0) + 1)
 
                 menu:processEvent({
                     name = "update_levelInfo",
@@ -269,12 +164,14 @@ function levelselect(act)
                     map_name = "invasion",
                     location_image = "h2_minimap_worldmap_mission_select",
                     level_number = 1,
-                    title_text = act.missions[i].name,
-                    location_text = "f46_local8",
-                    intel_text = "",
+                    title_text = Engine.Localize(name),
+                    location_text = "",
+                    intel_text = time,
                     level_controller = nil,
                     narative_level = 1,
                 })
+
+                menu.infoBox.bottomLeftElements.difficultyText:setText("")
 
                 PersistentBackground.ChangeBackground(nil, "mission_select_bg_" .. act.missions[i].mapname)
                 black:animateInSequence( {

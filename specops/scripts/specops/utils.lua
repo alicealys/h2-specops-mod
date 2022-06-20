@@ -38,17 +38,33 @@ function missionover(success, timeoverride)
     text.y = 220
     text:setpulsefx(60, 2500, 500)
 
+    local finaltime = 0
     if (timeoverride) then
+        finaltime = timeoverride
         game:setdvar("so_mission_time", timeoverride)
     else
         local time = game:gettime()
         if (starttime) then
             local total = time - starttime
+            finaltime = total
             game:setdvar("so_mission_time", total)
         else
             game:setdvar("so_mission_time", 0)
         end
     end
+
+    local mapname = game:getdvar("so_mapname")
+    local stats = sostats.getmapstats(mapname)
+    if (stats.besttime == nil or type(stats.besttime) ~= "number" or stats.besttime > finaltime) then
+        stats.besttime = finaltime
+    end
+
+    local stars = type(map.calculatestars) == "function" and map.calculatestars(finaltime) or game:getdvarint("g_gameskill")
+    if (stats.stars == nil or type(stats.stars) ~= "number" or stats.stars < stars) then
+        stats.stars = stars
+    end
+
+    sostats.setmapstats(mapname, stats)
 
     local ai = game:getaiarray()
     for i = 1, #ai do
