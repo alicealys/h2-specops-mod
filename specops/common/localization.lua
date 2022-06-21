@@ -145,7 +145,6 @@ game:addlocalizedstring("MENU_SP_OPPOSITION_FORCE", "Est. Opposition:")
 
 game:addlocalizedstring("MENU_SP_LEVEL_TYPE", "Classification: ")
 game:addlocalizedstring("MENU_SP_LEVEL_AVG_TIME", "Est. Completion Time: ")
-game:addlocalizedstring("MENU_SP_LEVEL_YOUR_BEST_TIME", "Your Best Time: ")
 game:addlocalizedstring("MENU_SP_TYPE_TIMED_DRIVING", "Timed Driving")
 
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_0", "None")
