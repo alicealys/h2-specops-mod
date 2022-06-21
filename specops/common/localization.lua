@@ -7,6 +7,8 @@ game:addlocalizedstring("MENU_SO_ACT_ECHO", "ECHO")
 
 game:addlocalizedstring("MENU_SO_BEST_TIME", "Best Time: &&1")
 
+game:addlocalizedstring("SPECIAL_OPS_UI_PLAY_AGAIN", "PLAY AGAIN ^0- ^3ESC^7")
+game:addlocalizedstring("SPECIAL_OPS_UI_RETURN_TO_SPECIALOPS", "RETURN TO SPECIAL OPS")
 game:addlocalizedstring("SPECIAL_OPS_DUMMY", "dummy")
 game:addlocalizedstring("SPECIAL_OPS_DUMMY_DESC", "dummy")
 game:addlocalizedstring("SPECIAL_OPS_TIME_NULL", "-:--.-")

@@ -4,139 +4,102 @@ end
 
 local current = "0"
 
-function missionend()
-    local container = LUI.UIElement.new({
-        topAnchor = true,
-        leftAnchor = true,
-        width = 1280,
-        height = 720,
-        top = 1000
-    })
-
-    container:registerAnimationState("show", {
-        topAnchor = true,
-        leftAnchor = true,
-        width = 1280,
-        height = 720,
-    })
-
-    container:animateToState("show", 200)
-
-    local value = tonumber(Engine.GetDvarString("ui_so_mission_over"))
-    Engine.SetDvarString("ui_so_mission_over", "0")
+function eogsummary()
+    local value = tonumber(Engine.GetDvarString("ui_so_mission_status"))
+    Engine.SetDvarString("ui_so_mission_status", "0")
     local success = value == 1
 
-    local popup = LUI.UIElement.new({
-        leftAnchor = true,
-        topAnchor = true,
-        width = 1280,
-        top = 150,
-        height = 720 - 150 * 2
+    local popupwidth = 500
+    local title = success and "@SPECIAL_OPS_UI_MISSION_SUCCESS" or "SPECIAL_OPS_UI_MISSION_FAILED"
+	local popup = LUI.MenuBuilder.BuildRegisteredType("generic_yesno_popup", {
+		popup_title = Engine.Localize(title),
+		message_text = "",
+        popup_width = popupwidth,
+        padding_top = 10,
+        cancel_means_no = false,
+        popup_title_alignment = LUI.Alignment.Center,
+		yes_action = function()
+            Engine.Exec("lui_restart; fast_restart")
+		end,
+		no_action = function()
+            Engine.Exec("disconnect")
+		end
+	})
+
+    local deadquote = ""
+    local content = popup:getFirstDescendentById("generic_selectionList_content_id")
+    local body = LUI.UIElement.new({
+        width = popupwidth - 22,
+        height = deadquote ~= "" and 130 or 50
     })
 
-    local background = LUI.UIImage.new({
+    local deadquotetext = LUI.UIText.new({
         leftAnchor = true,
         topAnchor = true,
-        width = 1280,
-        height = 720 - 150 * 2,
-        material = RegisterMaterial("white"),
-        color = {
-            r = 0,
-            g = 0,
-            b = 0,
-        },
-        alpha = 0.6
-    })
-
-    local textstate = {
-        leftAnchor = true,
-        topAnchor = true,
-        width = 1280,
-        height = 35,
-        font = RegisterFont("fonts/bank.ttf", 35),
+        rightAnchor = true,
+        height = CoD.TextSettings.TitleFontSmaller.Height,
+        font = CoD.TextSettings.TitleFontSmaller.Font,
         alignment = LUI.Alignment.Center
-    }
+    })
 
-    if (success) then
-        textstate.color = {
-            r = 0.8, 
-            g = 0.8, 
-            b = 1
-        }
-    else
-        textstate.color = {
-            r = 1, 
-            g = 0.4, 
-            b = 0.4
-        }
+    if (deadquote ~= "") then
+        deadquotetext:setText(Engine.Localize(deadquote))
+        body:addElement(deadquotetext)
     end
 
-    local text = LUI.UIText.new(textstate)
+    local num = 0
+    local addstat = function(name, value)
+        local height = 30
+        local offset = (height + 5) * num + (deadquote ~= "" and 80 or 0)
 
-    if (success) then
-        text:setText("Mission Success!")
-    else
-        text:setText("Mission Failed!")
-    end
-
-    local numstats = 0
-    local function addstat(name, value)
-        local width = 500
-        local padleft = 10
-        local padright = 6
-        local height = 24
-
-        local offset = 120 + numstats * (height + 36)
-        numstats = numstats + 1
-
-        local background = LUI.UIImage.new({
+        local container = LUI.UIElement.new({
             leftAnchor = true,
+            rightAnchor = true,
             topAnchor = true,
-            left = 1280 / 2 - width / 2 - padleft,
-            width = width + padleft * 2,
-            height = height + padright,
-            top = offset - padright / 2,
-            material = RegisterMaterial("white"),
-            color = {
-                r = 0,
-                g = 0,
-                b = 0,
-            },
-            alpha = 0.6
-        }) 
-
-        local labeltext = LUI.UIText.new({
-            leftAnchor = true,
-            topAnchor = true,
-            left = 1280 / 2 - width / 2,
-            width = width,
             height = height,
             top = offset,
-            font = RegisterFont("fonts/bank.ttf", 35),
         })
 
-        labeltext:setText(name)
-
-        local valuetext = LUI.UIText.new({
+        local left = LUI.UIText.new({
             leftAnchor = true,
             topAnchor = true,
-            left = 1280 / 2 - width / 2,
-            width = width,
-            height = height,
-            top = offset,
-            font = RegisterFont("fonts/bank.ttf", 35),
+            height = CoD.TextSettings.TitleFontSmaller.Height,
+            font = CoD.TextSettings.TitleFontSmaller.Font,
+            width = 100,
+            left = 5,
+            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 2,
+            alignment = LUI.Alignment.Left
+        })
+
+        left:setText(Engine.ToUpperCase(name))
+
+        local right = LUI.UIText.new({
+            rightAnchor = true,
+            topAnchor = true,
+            height = CoD.TextSettings.TitleFontSmaller.Height,
+            font = CoD.TextSettings.TitleFontSmaller.Font,
+            width = 100,
+            right = -5,
+            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 2,
             alignment = LUI.Alignment.Right
         })
 
-        valuetext:setText(value)
+        right:setText(value)
 
-        popup:addElement(background)
-        popup:addElement(labeltext)
-        popup:addElement(valuetext)
+        local border = LUI.MenuBuilder.BuildRegisteredType("generic_border", {
+            thickness = 0.1,
+            border_red = Colors.generic_menu_frame_color.r - 0.2,
+            border_green = Colors.generic_menu_frame_color.g - 0.2,
+            border_blue = Colors.generic_menu_frame_color.b - 0.2
+        })
+
+        container:addElement(border)
+        container:addElement(left)
+        container:addElement(right)
+        body:addElement(container)
+
+        num = num + 1
     end
-
-    popup:addElement(background)
-    popup:addElement(text)
 
     local difficulties = {
         Engine.Localize("GAME_DIFFICULTY_EASY"),
@@ -156,36 +119,30 @@ function missionend()
     end
 
     local msec = tonumber(Engine.GetDvarString("so_mission_time"))
-    local formattedtime = string.format("%d:%02d.%d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+    local formattedtime = string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
     
     addstat("Time", formattedtime)
     addstat("Kills", Engine.GetDvarString("aa_player_kills"))
     addstat("Difficulty", getdifficulty())
 
-    local bind = LUI.UIBindButton.new()
-    bind:registerEventHandler("button_secondary", function(element, event)
-        bind:close()
-        LUI.FlowManager.RequestLeaveMenu(nil, "so_mission_over")
-        LUI.roots.UIRoot0:addElement(LUI.UITimer.new(500, "update_restart"))
-        LUI.roots.UIRoot0:registerEventHandler("update_restart", function()
-            Engine.Exec("lui_restart; fast_restart")
-        end)
+    content:insertElement(body, 1)
+
+    popup:registerEventHandler("menu_close", function()
+        Engine.Exec("lui_restart; fast_restart")
     end)
 
-    container:addElement(popup)
-    container:addElement(bind)
+    local yesbutton = popup:getFirstDescendentById("yes_button_id")
+    local yestext = yesbutton:getFirstDescendentById("text_label")
+    yestext:setText(Engine.Localize("SPECIAL_OPS_UI_PLAY_AGAIN"))
 
-    return container
+    local nobutton = yesbutton:getNextSibling()
+    local notext = nobutton:getFirstDescendentById("text_label")
+    notext:setText(Engine.Localize("SPECIAL_OPS_UI_RETURN_TO_SPECIALOPS"))
+
+    return popup
 end
 
-Engine.SetDvarFromString("ui_so_mission_over", "0")
-LUI.roots.UIRoot0:addElement(LUI.UITimer.new(10, "update_watch_dvar"))
-LUI.roots.UIRoot0:registerEventHandler("update_watch_dvar", function(element, event)
-    local value = Engine.GetDvarString("ui_so_mission_over")
-    if (value ~= "0") then
-        LUI.FlowManager.RequestAddMenu(nil, "so_mission_over")
-    end
-end)
+LUI.MenuBuilder.registerType("so_eog_summary", eogsummary)
 
 local getdvarbool = Engine.GetDvarBool
 Engine.GetDvarBool = function(...)
@@ -196,5 +153,3 @@ Engine.GetDvarBool = function(...)
 
     return getdvarbool(...)
 end
-
-LUI.MenuBuilder.registerType("so_mission_over", missionend)

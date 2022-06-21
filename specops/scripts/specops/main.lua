@@ -6,6 +6,12 @@ end
 
 mapfile:close()
 
+game:setdvar("ui_so_besttime", 0)
+game:setdvar("ui_so_new_star", 0)
+
+game:setdvar("scr_autoRespawn", 0)
+game:setdvar("ui_deadquote", "")
+
 local mapname = game:getdvar("so_mapname")
 map = require("maps/" .. mapname)
 

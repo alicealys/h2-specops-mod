@@ -2,6 +2,16 @@ game:detour("_ID42407", "_ID23778", function()
     missionover(false)
 end)
 
+player:onnotify("death", function()
+    missionover(false)
+end)
+
+game:scriptcall("_ID42237", "_ID14402", "disable_autosaves") -- _utility::flag_set
+level:onnotify("can_save", function()
+    game:scriptcall("_ID42237", "_ID14402", "disable_autosaves") -- _utility::flag_set
+    game:scriptcall("_ID42237", "_ID14388", "can_save") -- _utility::flag_clear
+end)
+
 function missionover(success, timeoverride)
     game:ontimeout(function()
         game:setblur(6, 1)
@@ -29,7 +39,6 @@ function missionover(success, timeoverride)
         text.color = vector:new(1, 0.4, 0.4)
         text.glowcolor = vector:new(0.7, 0.2, 0.2)
         text:settext("Mission Failed!")
-        player:playlocalsound("h1_arcademode_mission_fail")
     end
 
     text.horzalign = "center"
@@ -53,15 +62,20 @@ function missionover(success, timeoverride)
         end
     end
 
+    game:setdvar("ui_so_besttime", 0)
+    game:setdvar("ui_so_new_star", 0)
+
     local mapname = game:getdvar("so_mapname")
     local stats = sostats.getmapstats(mapname)
     if (stats.besttime == nil or type(stats.besttime) ~= "number" or stats.besttime > finaltime) then
         stats.besttime = finaltime
+        game:setdvar("ui_so_besttime", 1)
     end
 
     local stars = type(map.calculatestars) == "function" and map.calculatestars(finaltime) or game:getdvarint("g_gameskill")
     if (stats.stars == nil or type(stats.stars) ~= "number" or stats.stars < stars) then
         stats.stars = stars
+        game:setdvar("ui_so_new_star", 1)
     end
 
     sostats.setmapstats(mapname, stats)
@@ -78,7 +92,8 @@ function missionover(success, timeoverride)
 
     game:ontimeout(function()
         player:freezecontrols(true)
-        game:setdvar("ui_so_mission_over", success and 1 or 2)
+        game:executecommand("lui_open so_eog_summary")
+        game:setdvar("ui_so_mission_status", success and 1 or 2)
 
         game:setsaveddvar("hud_showstance", 0)
         game:setsaveddvar("actionSlotsHide", 1)

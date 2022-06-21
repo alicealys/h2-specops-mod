@@ -2,7 +2,7 @@ require("acts")
 require("~~/~~/common/stats")
 
 local function formattime(msec)
-    return string.format("%d:%02d.%d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+    return string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
 end
 
 local function addstars(infobox)
