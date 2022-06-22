@@ -7,6 +7,8 @@ game:addlocalizedstring("MENU_SO_ACT_ECHO", "ECHO")
 
 game:addlocalizedstring("MENU_SO_BEST_TIME", "Best Time: &&1")
 
+game:addlocalizedstring("MENU_SO_DID_NOT_FINISH", "Did not finish")
+
 game:addlocalizedstring("SPECIAL_OPS_UI_PLAY_AGAIN", "PLAY AGAIN ^0- ^3ESC^7")
 game:addlocalizedstring("SPECIAL_OPS_UI_RETURN_TO_SPECIALOPS", "RETURN TO SPECIAL OPS")
 game:addlocalizedstring("SPECIAL_OPS_DUMMY", "dummy")
@@ -153,9 +155,6 @@ game:addlocalizedstring("MENU_SP_DIFF_RANKING_2", "Light")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_3", "Medium")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_4", "Heavy")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_5", "Massive")
-
 -- In Game
 game:addlocalizedstring("SO_MISSION_SUCCESS", "Mission Success!")
 game:addlocalizedstring("SO_MISSION_FAILED", "Mission Failed!")
-
-

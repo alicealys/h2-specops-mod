@@ -4,6 +4,13 @@ end
 
 local current = "0"
 
+LUI.sp_hud.PauseMenu.canChangeDifficulty = function() return false end
+LUI.sp_hud.PauseMenu.canLowerDifficulty = function() return false end
+LUI.sp_hud.ObjectivesFrame.AddIntelAndDifficulty = function() end
+LUI.sp_hud.ObjectivesFrame.canShowMinimap = function() 
+    return tonumber(Engine.GetDvarString("ui_so_show_minimap")) == 1
+end
+
 function eogsummary()
     local value = tonumber(Engine.GetDvarString("ui_so_mission_status"))
     Engine.SetDvarString("ui_so_mission_status", "0")
@@ -27,10 +34,12 @@ function eogsummary()
 	})
 
     local deadquote = ""
+    local showdifficulty = tonumber(Engine.GetDvarString("ui_so_show_difficulty")) == 1
+    local lessheight = showdifficulty and 0 or -35
     local content = popup:getFirstDescendentById("generic_selectionList_content_id")
     local body = LUI.UIElement.new({
         width = popupwidth - 22,
-        height = deadquote ~= "" and 130 or 50
+        height = ((deadquote ~= "" and 130 or 50)) + lessheight
     })
 
     local deadquotetext = LUI.UIText.new({
@@ -65,9 +74,9 @@ function eogsummary()
             topAnchor = true,
             height = CoD.TextSettings.TitleFontSmaller.Height,
             font = CoD.TextSettings.TitleFontSmaller.Font,
-            width = 100,
+            width = (popupwidth - 22) / 2,
             left = 5,
-            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 2,
+            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 3,
             alignment = LUI.Alignment.Left
         })
 
@@ -78,9 +87,9 @@ function eogsummary()
             topAnchor = true,
             height = CoD.TextSettings.TitleFontSmaller.Height,
             font = CoD.TextSettings.TitleFontSmaller.Font,
-            width = 100,
+            width = (popupwidth - 22) / 2,
             right = -5,
-            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 2,
+            top = (height - CoD.TextSettings.TitleFontSmaller.Height) / 2 + 3,
             alignment = LUI.Alignment.Right
         })
 
@@ -119,11 +128,19 @@ function eogsummary()
     end
 
     local msec = tonumber(Engine.GetDvarString("so_mission_time"))
-    local formattedtime = string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+    local formattedtime = ""
+    if (msec < 0) then
+        formattedtime = Engine.Localize("@MENU_SO_DID_NOT_FINISH")
+    else
+        formattedtime = string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+    end
     
     addstat("Time", formattedtime)
     addstat("Kills", Engine.GetDvarString("aa_player_kills"))
-    addstat("Difficulty", getdifficulty())
+
+    if (showdifficulty) then
+        addstat("Difficulty", getdifficulty())
+    end
 
     content:insertElement(body, 1)
 
@@ -148,6 +165,10 @@ local getdvarbool = Engine.GetDvarBool
 Engine.GetDvarBool = function(...)
     local args = {...}
     if (args[1] == "specialops") then
+        return true
+    end
+
+    if (args[1] == "limited_mode") then
         return true
     end
 

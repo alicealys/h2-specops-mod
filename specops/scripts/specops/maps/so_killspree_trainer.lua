@@ -22,6 +22,8 @@ end
 game:addlocalizedstring("SPECIAL_OPS_TRAINER", "The Pit")
 
 map.premain = function()
+    game:setdvar("ui_so_show_difficulty", 0)
+
     game:detour("maps/trainer", "_ID52784", function()
         game:scriptcall("maps/trainer", "_ID50489")
         game:scriptcall("maps/ssdd_lighting", "_ID43713", "course")

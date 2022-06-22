@@ -1,0 +1,271 @@
+local map = {}
+
+map.localizedname = "Race"
+game:addlocalizedstring("SPECIAL_OPS_CLIFFHANGER", "Race")
+
+function entity:getplayervehicle()
+    local linked = player:getlinkedparent()
+    if (linked and linked.classname and linked.classname:match("vehicle")) then
+        return linked
+    end
+
+    return nil
+end
+
+map.calculatestars = function(time)
+    if (time <= 70000) then
+        return 3
+    elseif (time > 70000 and time <= 90000) then
+        return 2
+    elseif (time <= 120000) then
+        return 1
+    end
+
+    return 0
+end
+
+function entity:startraceboost()
+    game:ontimeout(function()
+        local boostwindow = 0.2
+        local vehicle = entity:getplayervehicle()
+        if (not vehicle) then
+            return
+        end
+
+	    if (vehicle.veh_throttle > 0) then
+		    return
+        end
+
+        local giveboost = function()
+            vehicle:givevehicleboost(50)
+	
+            text = game:newhudelem()
+            text.hidewheninmenu = true
+            text.alignx = "center"
+            text.horzalign = "center"
+            text.fontscale = 2
+            text.font = "objective"
+            text.y = 180
+            text.alpha = 0
+            text:fadeovertime(0.1)
+            text.alpha = 1
+            text:setwhite()
+            text:settext("Quick Start!")
+    
+            game:ontimeout(function()
+                text:fadeovertime(0.5)
+                text.alpha = 0
+                game:ontimeout(function()
+                    text:destroy()
+                end, 500)
+            end, 2000)
+        end
+	
+        local listener = nil
+        listener = game:oninterval(function()
+            if (vehicle.veh_throttle ~= 0) then
+                listener:clear()
+                giveboost()
+                return
+            end
+
+            boostwindow = boostwindow - 0.05
+            if (boostwindow <= 0) then
+                listener:clear()
+                return
+            end
+        end, 50)
+    end, 200)
+end
+
+function entity:givevehicleboost(boostspeed)
+	speed = math.floor(self:vehicle_getspeed())
+	if (speed >= boostspeed) then
+		return
+    end
+	
+    local end_ = function()
+        if (game:isdefined(self) == 1) then
+            self:vehphys_setspeed(boostspeed)
+        end
+    end
+
+    local listener = nil
+    local callback = function()
+        if (game:isdefined(self) == 0) then
+            listener:clear()
+            end_()
+            return
+        end
+        
+        speed = speed + 5
+        if (speed > boostspeed) then
+            listener:clear()
+            end_()
+            return
+        end
+
+        self:vehphys_setspeed(speed)
+    end
+
+    callback()
+    listener = game:oninterval(callback, 0)
+end
+
+map.premain = function()
+    game:setdvar("ui_so_show_difficulty", 0)
+    game:setdvar("ui_so_show_minimap", 0)
+
+    game:precacheshader("star")
+
+    -- remove radio chatter
+    game:detour("_ID42407", "_ID28864", function() end)
+
+    local finishtrig = game:spawn("trigger_radius", vector:new(0, 0, 0), 0, 1000, 300)
+    finishtrig.origin = vector:new(-58686, 33327, -25950)
+    finishtrig:onnotifyonce("trigger", function(ent)
+        if (ent == player) then
+            missionover(true)
+        end
+    end)
+
+    -- change objective
+    game:detour("maps/cliffhanger_code", "_ID43733", function()
+        game:objective_add(4, "current", "Race to the finish line.", finishtrig.origin)
+        game:objective_setpointertextoverride(4, "Finish Line")
+    end)
+
+    -- remove end triggers
+    game:getentbyref(69, 0):delete()
+    local triggers = game:getentarray("player_top_speed_limit_trigger", "targetname")
+    for i = 1, #triggers do
+        triggers[i]:delete()
+    end
+
+    local black = game:newhudelem()
+    black:setshader("black", 1000, 1000)
+    black.x = -120
+    black.y = 0
+
+    local starttimer = game:newhudelem()
+    starttimer.horzalign = "center"
+    starttimer.alignx = "center"
+    starttimer.y = 210
+    starttimer.font = "objective"
+    starttimer.fontscale = 2
+    starttimer.hidewhendead = true
+    starttimer.hidewheninmenu = true
+
+    player:freezecontrols(true)
+
+    local startrace = function()
+        game:scriptcall("_ID42407", "_ID28864", "readyup")
+
+        starttimer:settext("Get Ready")
+        starttimer:setwhite()
+        player:freezecontrols(true)
+
+        addchallengetimer()
+        addchallengestars()
+
+        game:ontimeout(function()
+            local timer = nil
+            local beeps = 0
+
+            timer = game:oninterval(function()
+                starttimer:setvalue(3 - beeps)
+                if (beeps <= 1) then
+                    starttimer:setred()
+                else
+                    starttimer:setyellow()
+                end
+    
+                if (beeps == 3) then
+                    starttimer:setgreen()
+                    starttimer:settext("GO!")
+    
+                    game:ontimeout(function()
+                        starttimer:fadeovertime(0.5)
+                        starttimer.alpha = 0
+                        game:ontimeout(function()
+                            starttimer:destroy()
+                        end, 500)
+                    end, 1000)
+                    
+                    player:playsound("so_starttimer_go")
+                    game:musicplay("mus_cliffhanger_snowmobile")
+    
+                    player:freezecontrols(false)
+                    player:startraceboost()
+                    starttime = game:gettime()
+                    timer:clear()
+
+                    starchallengestars({70, 90, 120})
+                    startchallengetimer()
+                    return
+                end
+    
+                player:playsound("so_starttimer_beep")
+                beeps = beeps + 1
+            end, 1000)
+        end, 1000)
+    end
+
+    game:detour("maps/cliffhanger_aud", "main", function() end)
+
+    game:ontimeout(function()
+        -- trigger some trigger that makes a part of the map render
+        level._ID48727:vehicle_teleport(game:getentbyref(1972, 0).origin)
+        game:ontimeout(function()
+            level._ID48727:vehicle_teleport(vector:new(-11695.4, -35303, 144.158), vector:new(10.0392, 191.863, -3.02656))
+            game:ontimeout(function()
+                black:fadeovertime(1)
+                black.alpha = 0
+                startrace()
+            end, 1000)
+        end, 0)
+    end, 0)
+
+    local spawners = game:vehicle_getspawnerarray()
+    for i = 1, #spawners do
+        if (spawners[i].targetname:match("fly")) then
+            spawners[i]:delete()
+        end
+    end
+
+    local spawners = game:getspawnerteamarray("allies")
+    for i = 1, #spawners do
+        spawners[i]:delete()
+    end
+
+    local ai = game:getaispeciesarray("allies")
+    for i = 1, #ai do
+        ai[i]:delete()
+    end
+
+    local toremove = {
+        "script_vehicle_hind_chernobyl",
+        "script_vehicle_ch46e_opened_door_interior_a",
+        "actor_ally_hero_soap_arctic",
+        "script_vehicle_snowmobile_friendly",
+    }
+
+    game:oninterval(function()
+        for i = 1, #toremove do
+            local ent = game:getent(toremove[i], "classname")
+            if (ent) then
+                ent:delete()
+            end
+        end
+    end, 0)
+end
+
+map.main = function()
+    game:setdvar("start", "snowmobile")
+    mainhook.invoke(level)
+    game:ontimeout(function()
+        game:musicstop()
+    end, 0)
+end
+
+return map

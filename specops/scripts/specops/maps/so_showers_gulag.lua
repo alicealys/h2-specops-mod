@@ -3,7 +3,55 @@ local map = {}
 map.localizedname = "Breach & Clear"
 game:addlocalizedstring("SPECIAL_OPS_GULAG", "Breach & Clear")
 
+function addlockers()
+    local brushmodel = game:getentbyref(327, 0)
+
+    local addcollision = function(origin)
+        local collision = game:spawn("script_model", origin)
+        collision:clonebrushmodeltoscriptmodel(brushmodel)
+        collision:hide()
+    end
+
+    addcollision((vector:new(-721.342, -712.72, 575) + vector:new(-734.39, -728.037, 575)) / 2)
+    addcollision(vector:new(-721.342, -712.72, 575))
+    addcollision((vector:new(-664.202, -753.03, 575) + vector:new(-675.522, -769.197, 575)) / 2)
+    addcollision(vector:new(-664.202, -753.03, 575))
+    addcollision(vector:new(-734.39, -728.037, 575))
+    addcollision(vector:new(-675.522, -769.197, 575))
+
+    local lockers = {
+		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-682.632, -751.013, 536)},
+		{model = "com_locker_open", angles = vector:new(8, 145, 0), origin = vector:new(-662.973, -764.779, 538)},
+		{model = "com_locker_double", angles = vector:new(0, 145, 8), origin = vector:new(-702.292, -737.247, 536)},
+		{model = "com_locker_open", angles = vector:new(0, 145, 0), origin = vector:new(-721.952, -723.481, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-731.781, -716.598, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-643.313, -778.545, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 309, 0), origin = vector:new(-751.441, -702.833, 536)},
+		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-731.781, -716.598, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-721.952, -723.481, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-702.292, -737.247, 536)},
+		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-682.632, -751.013, 536)},
+		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-672.802, -757.896, 536)},
+		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-662.973, -764.779, 536)},
+    }
+
+    for i = 1, #lockers do
+        local model = game:spawn("script_model", lockers[i].origin)
+        model.angles = lockers[i].angles
+        model:setmodel(lockers[i].model)
+        model:makehard()
+    end
+end
+
+
+level:onnotify("addlockers", function()
+    addlockers()
+end)
+
 map.premain = function()
+    game:setdvar("r_fog", 0)
+    addlockers()
+
     local weapons = {
         {
             origin = vector:new(-1744.6, -1901.6, 596.5),
@@ -69,13 +117,6 @@ map.premain = function()
         end
     end
 
-    local successtrig = game:spawn("trigger_radius", vector:new(0, 0, 0), 0, 400, 25)
-    successtrig.origin = vector:new(-22, 265, 300)
-
-    successtrig:onnotifyonce("trigger", function()
-        missionover(true)
-    end)
-
     local failtrig = game:spawn("trigger_radius", vector:new(0, 0, 0), 0, 200, 100)
     failtrig.origin = vector:new(-2598, -2393, 672)
 
@@ -89,10 +130,21 @@ map.premain = function()
         game:objective_add(4, "current", "Escape as quickly as possible.", org)
     end)
 
+    local timelimit = nil
+    if (game:getdvarint("g_gameskill") >= 3) then
+        timelimit = 180
+    end
+
+    addchallengetimer(timelimit)
     level:onnotify("breaching", function()
         game:ontimeout(function()
+            startchallengetimer()
             starttime = game:gettime()
-        end, 3150)
+        end, 2000)
+    end)
+
+    level:onnotify("player_exited_bathroom", function()
+        missionover(true)
     end)
 end
 

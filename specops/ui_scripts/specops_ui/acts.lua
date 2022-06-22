@@ -98,6 +98,7 @@ acts = {
                 }
             },
             {
+                nodifficulty = true,
                 somapname = "so_snowrace1_cliffhanger",
                 mapname = "cliffhanger",
                 info = {
