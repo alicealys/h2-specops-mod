@@ -80,9 +80,9 @@ function createhuditem(line, xoffset, message, always_draw)
 	return hudelem
 end
 
-function formattime(msec)
-
-end
+local istimetrial = false
+local timerlabel = "Time: "
+local timerlabelempty = "Time: -:--.-"
 
 function addchallengetimer(timelimit)
     if (challengetimer) then
@@ -90,18 +90,19 @@ function addchallengetimer(timelimit)
     end
 
     if (timelimit) then
-        challengetimer = createhuditem(1, -178, "Time: ")
+        challengetimer = createhuditem(1, -178, timerlabel)
         challengetimer.timelimit = timelimit
         challengetimer:settenthstimerstatic(timelimit)
     else
-        challengetimer = createhuditem(1, -178, "Time: -:--.-")
+        challengetimer = createhuditem(1, -178, timerlabelempty)
     end
 
     challengetimer.alignx = "left"
 end
 
 local challengetimerlistener = nil
-function startchallengetimer(timelimit, nudgetime, hurrytime)
+challengetimeleft = 0
+function startchallengetimer(nudgetime, hurrytime)
     nudgetime = nudgetime or 30
     hurrytime = hurrytime or 10
 
@@ -113,32 +114,39 @@ function startchallengetimer(timelimit, nudgetime, hurrytime)
         challengetimerlistener:clear()
     end
 
-    challengetimer.label = "Time: "
+    challengetimeleft = 0
+    challengetimer.label = timerlabel
+    challengetimer:setwhite()
 
     if (challengetimer.timelimit) then
+        player:playsound("arcademode_zerodeaths")
         challengetimer:settenthstimer(challengetimer.timelimit)
-        local timeleft = challengetimer.timelimit
-        challengetimerlistener = game:oninterval(function()
+        challengetimeleft = challengetimer.timelimit
+        local changecolor = function()
             if (ismissionover) then
                 challengetimerlistener:clear()
                 return
             end
 
-            timeleft = timeleft - 1
-            if (timeleft <= 0) then
+            if (challengetimeleft <= 0) then
                 missionover(false)
                 challengetimerlistener:clear()
                 return
             end
 
-            if (timeleft <= nudgetime and timeleft > hurrytime) then
+            challengetimeleft = challengetimeleft - 1
+
+            if (challengetimeleft <= nudgetime and challengetimeleft > hurrytime) then
                 challengetimer:setyellow()
             end
 
-            if (timeleft <= hurrytime) then
+            if (challengetimeleft <= hurrytime) then
                 challengetimer:setred()
             end
-        end, 1000)
+        end
+
+        changecolor()
+        challengetimerlistener = game:oninterval(changecolor, 1000)
     else
         challengetimer:settenthstimerup(0)
     end
@@ -202,7 +210,7 @@ function starchallengestars(times)
             step = step + 1
 
             if (step > #times) then
-                missionover(false, -1)
+                missionover(false)
                 starttimer:clear()
             end
         end
@@ -215,12 +223,20 @@ function setchallengetimes(star1, star2, star3)
     challengetimes = {star1, star2, star3}
 end
 
+function settimetrial(value)
+    istimetrial = value
+end
+
+function settimerlabel(label)
+    timerlabel = label
+end
+
 game:detour("_ID42407", "_ID23778", function()
     missionover(false)
 end)
 
 player:onnotify("death", function()
-    missionover(false, challengestars and -1 or nil)
+    missionover(false)
 end)
 
 game:scriptcall("_ID42237", "_ID14402", "disable_autosaves") -- _utility::flag_set
@@ -232,12 +248,14 @@ end)
 ismissionover = false
 function missionover(success, timeoverride)
     if (challengetimer) then
+        challengetimer.alpha = 0
         challengetimer:destroy()
         challengetimer = nil
     end
 
     if (challengestars) then
         for i = 1, #challengestars do
+            challengestars[i].alpha = 0
             challengestars[i]:destroy()
         end
         challengestars = nil
@@ -257,47 +275,55 @@ function missionover(success, timeoverride)
     player:disableusability()
     player:enableinvulnerability()
 
-    local text = game:newhudelem()
-    text.font = "bank"
-    text.glowalpha = 0.3
+    game:ontimeout(function()
+        local text = game:newhudelem()
+        text.font = "bank"
+        text.glowalpha = 0.3
 
-    if (success) then
-        text.color = vector:new(0.8, 0.8, 1)
-        text.glowcolor = vector:new(0.301961, 0.301961, 0.6)
-        text:settext("Mission Success!")
-        player:playlocalsound("h1_arcademode_mission_success")
-    else
-        text.hidwhendead = false
-        text.color = vector:new(1, 0.4, 0.4)
-        text.glowcolor = vector:new(0.7, 0.2, 0.2)
-        text:settext("Mission Failed!")
-    end
+        if (success) then
+            text.color = vector:new(0.8, 0.8, 1)
+            text.glowcolor = vector:new(0.301961, 0.301961, 0.6)
+            text:settext("Mission Success!")
+            player:playlocalsound("h1_arcademode_mission_success")
+        else
+            text.hidwhendead = false
+            text.color = vector:new(1, 0.4, 0.4)
+            text.glowcolor = vector:new(0.7, 0.2, 0.2)
+            text:settext("Mission Failed!")
+        end
 
-    text.horzalign = "center"
-    text.alignx = "center"
-    text.fontscale = 1.2
-    text.y = 220
-    text:setpulsefx(60, 2500, 500)
+        text.horzalign = "center"
+        text.alignx = "center"
+        text.fontscale = 1.2
+        text.y = 220
+        text:setpulsefx(60, 2500, 500)
+    end, 0)
 
     local finaltime = 0
-    if (timeoverride) then
-        finaltime = timeoverride
-        game:setdvar("so_mission_time", timeoverride)
+    if (not success and istimetrial) then
+        finaltime = -1
+        game:setdvar("so_mission_time", -1)
     else
-        local time = game:gettime()
-        if (starttime) then
-            local total = time - starttime
-            finaltime = total
-            game:setdvar("so_mission_time", total)
+        if (timeoverride) then
+            finaltime = timeoverride
+            game:setdvar("so_mission_time", timeoverride)
         else
-            game:setdvar("so_mission_time", 0)
+            local time = game:gettime()
+            if (starttime) then
+                local total = time - starttime
+                finaltime = total
+                game:setdvar("so_mission_time", total)
+            else
+                game:setdvar("so_mission_time", 0)
+            end
         end
     end
+
 
     game:setdvar("ui_so_besttime", 0)
     game:setdvar("ui_so_new_star", 0)
 
-    if (finaltime >= 0) then
+    if (success and finaltime >= 0) then
         local mapname = game:getdvar("so_mapname")
         local stats = sostats.getmapstats(mapname)
         if (stats.besttime == nil or type(stats.besttime) ~= "number" or stats.besttime > finaltime) then

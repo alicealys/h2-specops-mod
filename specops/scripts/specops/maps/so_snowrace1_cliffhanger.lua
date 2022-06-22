@@ -3,7 +3,7 @@ local map = {}
 map.localizedname = "Race"
 game:addlocalizedstring("SPECIAL_OPS_CLIFFHANGER", "Race")
 
-function entity:getplayervehicle()
+function getplayervehicle()
     local linked = player:getlinkedparent()
     if (linked and linked.classname and linked.classname:match("vehicle")) then
         return linked
@@ -27,7 +27,7 @@ end
 function entity:startraceboost()
     game:ontimeout(function()
         local boostwindow = 0.2
-        local vehicle = entity:getplayervehicle()
+        local vehicle = getplayervehicle()
         if (not vehicle) then
             return
         end
@@ -112,7 +112,19 @@ function entity:givevehicleboost(boostspeed)
     listener = game:oninterval(callback, 0)
 end
 
+map.addtimer = function()
+    addchallengetimer()
+    addchallengestars()
+end
+
+map.starttimer = function()
+    starchallengestars({70, 90, 120})
+    startchallengetimer()
+end
+
 map.premain = function()
+    settimetrial(true)
+
     game:setdvar("ui_so_show_difficulty", 0)
     game:setdvar("ui_so_show_minimap", 0)
 
@@ -142,6 +154,10 @@ map.premain = function()
         triggers[i]:delete()
     end
 
+    -- tree explosion triggers
+    game:getentbyref(1942, 0):delete()
+    game:getentbyref(2397, 0):delete()
+
     local black = game:newhudelem()
     black:setshader("black", 1000, 1000)
     black.x = -120
@@ -158,15 +174,17 @@ map.premain = function()
 
     player:freezecontrols(true)
 
+    map.addtimer()
+
     local startrace = function()
-        game:scriptcall("_ID42407", "_ID28864", "readyup")
+        local vehicle = getplayervehicle()
+        if (vehicle) then
+            vehicle.veh_topspeed = 100
+        end
 
         starttimer:settext("Get Ready")
         starttimer:setwhite()
         player:freezecontrols(true)
-
-        addchallengetimer()
-        addchallengestars()
 
         game:ontimeout(function()
             local timer = nil
@@ -200,8 +218,7 @@ map.premain = function()
                     starttime = game:gettime()
                     timer:clear()
 
-                    starchallengestars({70, 90, 120})
-                    startchallengetimer()
+                    map.starttimer()
                     return
                 end
     
@@ -217,7 +234,7 @@ map.premain = function()
         -- trigger some trigger that makes a part of the map render
         level._ID48727:vehicle_teleport(game:getentbyref(1972, 0).origin)
         game:ontimeout(function()
-            level._ID48727:vehicle_teleport(vector:new(-11695.4, -35303, 144.158), vector:new(10.0392, 191.863, -3.02656))
+            level._ID48727:vehicle_teleport(vector:new(-11804, -35416.3, 117.931), vector:new(9.00746, 185.371, -4.1671))
             game:ontimeout(function()
                 black:fadeovertime(1)
                 black.alpha = 0
@@ -241,6 +258,11 @@ map.premain = function()
     local ai = game:getaispeciesarray("allies")
     for i = 1, #ai do
         ai[i]:delete()
+    end
+
+    local destructibles = game:getentarray("destructible_toy", "targetname")
+    for i = 1, #destructibles do
+        destructibles[i]:delete()
     end
 
     local toremove = {
