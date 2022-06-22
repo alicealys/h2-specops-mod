@@ -1,4 +1,4 @@
-require("acts")
+require("menus/data/acts")
 require("~~/~~/common/stats")
 
 local function formattime(msec)

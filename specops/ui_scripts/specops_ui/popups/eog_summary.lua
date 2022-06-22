@@ -1,15 +1,4 @@
-if (Engine.InFrontend()) then
-    return
-end
-
 local current = "0"
-
-LUI.sp_hud.PauseMenu.canChangeDifficulty = function() return false end
-LUI.sp_hud.PauseMenu.canLowerDifficulty = function() return false end
-LUI.sp_hud.ObjectivesFrame.AddIntelAndDifficulty = function() end
-LUI.sp_hud.ObjectivesFrame.canShowMinimap = function() 
-    return tonumber(Engine.GetDvarString("ui_so_show_minimap")) == 1
-end
 
 function eogsummary()
     local value = tonumber(Engine.GetDvarString("ui_so_mission_status"))
@@ -160,17 +149,3 @@ function eogsummary()
 end
 
 LUI.MenuBuilder.registerType("so_eog_summary", eogsummary)
-
-local getdvarbool = Engine.GetDvarBool
-Engine.GetDvarBool = function(...)
-    local args = {...}
-    if (args[1] == "specialops") then
-        return true
-    end
-
-    if (args[1] == "limited_mode") then
-        return true
-    end
-
-    return getdvarbool(...)
-end
