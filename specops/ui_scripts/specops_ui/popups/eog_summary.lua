@@ -1,5 +1,9 @@
 local current = "0"
 
+function formattime(msec)
+    return string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+end
+
 function eogsummary()
     local value = tonumber(Engine.GetDvarString("ui_so_mission_status"))
     Engine.SetDvarString("ui_so_mission_status", "0")
@@ -23,12 +27,11 @@ function eogsummary()
 	})
 
     local deadquote = ""
-    local showdifficulty = tonumber(Engine.GetDvarString("ui_so_show_difficulty")) == 1
-    local lessheight = showdifficulty and 0 or -35
+
     local content = popup:getFirstDescendentById("generic_selectionList_content_id")
     local body = LUI.UIElement.new({
         width = popupwidth - 22,
-        height = ((deadquote ~= "" and 130 or 50)) + lessheight
+        height = deadquote ~= "" and 130 or 50
     })
 
     local deadquotetext = LUI.UIText.new({
@@ -121,20 +124,72 @@ function eogsummary()
     if (msec < 0) then
         formattedtime = Engine.Localize("@MENU_SO_DID_NOT_FINISH")
     else
-        formattedtime = string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
+        formattedtime = formattime(msec)
     end
     
-    addstat("Time", formattedtime)
-    addstat("Kills", Engine.GetDvarString("aa_player_kills"))
+    local extradata = game:sharedget("eog_extra_data")
+    if (extradata ~= "") then
+        extradata = json.decode(extradata)
+    end
+
+    if (type(extradata) ~= "table") then
+        extradata = {}
+    end
+
+    content:getFirstDescendentById("spacer"):close()
+
+    local showdifficulty = tonumber(Engine.GetDvarString("ui_so_show_difficulty")) == 1
+    local extraheight = 0
+
+    extraheight = extraheight - 30
+    if (not extradata.timeoverride) then
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_TIME"), formattedtime)
+        extraheight = extraheight + 30
+    else
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_TIME"), extradata.timeoverride)
+        extraheight = extraheight + 30
+    end
+
+    if (type(extradata.stats) == "table") then
+        for i = 1, #extradata.stats do
+            addstat(Engine.Localize(extradata.stats[i].name), extradata.stats[i].value)
+            extraheight = extraheight + 35
+        end
+    end
+
+    if (not extradata.hidekills) then
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_KILLS"), Engine.GetDvarString("aa_player_kills"))
+        extraheight = extraheight + 35
+    end
 
     if (showdifficulty) then
-        addstat("Difficulty", getdifficulty())
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_DIFFICULTY"), getdifficulty())
+        extraheight = extraheight + 35
     end
+
+    body:registerAnimationState("default", {
+        width = popupwidth - 22,
+        height = (deadquote ~= "" and 80 or 0) + extraheight + 5
+    })
+    body:animateToState("default")
 
     content:insertElement(body, 1)
 
     popup:registerEventHandler("menu_close", function()
         Engine.Exec("lui_restart; fast_restart")
+    end)
+
+    local timer = LUI.UITimer.new(400, "show_new_stars")
+    popup:addElement(timer)
+    popup:registerEventHandler("show_new_stars", function()
+        local newstars = tonumber(Engine.GetDvarString("ui_so_new_stars"))
+        local newbest = tonumber(Engine.GetDvarString("ui_so_new_besttime")) == 1
+        if (newstars > 0) then
+            LUI.FlowManager.RequestAddMenu(nil, "so_new_stars")
+        elseif (newbest) then
+            LUI.FlowManager.RequestAddMenu(nil, "so_new_record")
+        end
+        timer:close()
     end)
 
     local yesbutton = popup:getFirstDescendentById("yes_button_id")

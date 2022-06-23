@@ -118,7 +118,7 @@ map.addtimer = function()
 end
 
 map.starttimer = function()
-    starchallengestars({70, 90, 120})
+    startchallengestars({70, 90, 120})
     startchallengetimer()
 end
 
@@ -231,16 +231,12 @@ map.premain = function()
     game:detour("maps/cliffhanger_aud", "main", function() end)
 
     game:ontimeout(function()
-        -- trigger some trigger that makes a part of the map render
-        level._ID48727:vehicle_teleport(game:getentbyref(1972, 0).origin)
+        level._ID48727:vehicle_teleport(vector:new(-11804, -35416.3, 117.931), vector:new(9.00746, 185.371, -4.1671))
         game:ontimeout(function()
-            level._ID48727:vehicle_teleport(vector:new(-11804, -35416.3, 117.931), vector:new(9.00746, 185.371, -4.1671))
-            game:ontimeout(function()
-                black:fadeovertime(1)
-                black.alpha = 0
-                startrace()
-            end, 1000)
-        end, 0)
+            black:fadeovertime(1)
+            black.alpha = 0
+            startrace()
+        end, 500)
     end, 0)
 
     local spawners = game:vehicle_getspawnerarray()
@@ -286,6 +282,8 @@ map.main = function()
     game:setdvar("start", "snowmobile")
     mainhook.invoke(level)
     game:ontimeout(function()
+        -- trigger that makes a part of the map render
+        game:getentbynum(1973):notify("trigger")
         game:musicstop()
     end, 0)
 end

@@ -55,6 +55,7 @@ function entity:setwhite()
     self.glowalpha = 0.1
 end
 
+local huditems = {}
 function createhuditem(line, xoffset, message, always_draw)
 	line = line + 2
 
@@ -76,6 +77,8 @@ function createhuditem(line, xoffset, message, always_draw)
 	if (message) then
 		hudelem.label = message
     end
+
+    table.insert(huditems, hudelem)
 
 	return hudelem
 end
@@ -152,6 +155,12 @@ function startchallengetimer(nudgetime, hurrytime)
     end
 end
 
+local challengestarsoffset = {x = 0, y = 0}
+
+function setchallengestaroffset(x, y)
+    challengestarsoffset = {x = x, y = y}
+end
+
 function addchallengestars()
     if (challengestars) then
         for i = 1, #challengestars do
@@ -162,7 +171,7 @@ function addchallengestars()
     challengestars = {}
 
     local function createstar()
-        local star = createhuditem(3, -116 + 22 * #challengestars)
+        local star = createhuditem(3 + challengestarsoffset.y, challengestarsoffset.x + -116 + 22 * #challengestars)
         star.color = colors.yellow.color
         star:setshader("star", 22, 20)
         return star
@@ -173,8 +182,13 @@ function addchallengestars()
     table.insert(challengestars, createstar())
 end
 
+function removechallengestar(index)
+    challengestars[#challengestars - index + 1].removed = true
+    challengestars[#challengestars - index + 1].alpha = 0
+end
+
 local startimer = nil
-function starchallengestars(times)
+function startchallengestars(times)
     if (not challengestars) then
         addchallengestars()
     end
@@ -197,13 +211,20 @@ function starchallengestars(times)
             return
         end
 
+        if (times[step] < 0) then
+            starttimer:clear()
+            return
+        end
+
         local diff = times[step] - secs
         if (diff <= 10 and diff > 1 and step <= #times) then
             local show = diff % 2 ~= 0
-            if (show) then
-                challengestars[step].alpha = 1
-            else
-                challengestars[step].alpha = 0.5
+            if (not challengestars[step].removed) then
+                if (show) then
+                    challengestars[step].alpha = 1
+                else
+                    challengestars[step].alpha = 0.5
+                end
             end
         elseif (diff <= 1 and step <= #times) then
             challengestars[step].alpha = 0
@@ -231,9 +252,91 @@ function settimerlabel(label)
     timerlabel = label
 end
 
+local failonmissionover = true
+function setfailonmissionover(value)
+    failonmissionover = value
+end
+
 game:detour("_ID42407", "_ID23778", function()
-    missionover(false)
+    if (failonmissionover) then
+        missionover(false)
+    end
 end)
+
+local doingsplash = false
+local splashqueue = {}
+local splashnum = 0
+local function splashinternal(text, color)
+    if (doingsplash) then
+        return
+    end
+
+    doingsplash = true
+
+    if (not splashtext) then
+        splashtext = game:newhudelem()
+        splashtext.horzalign = "center"
+        splashtext.alignx = "center"
+        splashtext.y = 180
+        splashtext.font = "bank"
+        splashtext.fontscale = 2
+        splashtext.hidewhendead = true
+        splashtext.hidewheninmenu = true
+    end
+
+    splashtext:fadeovertime(0)
+    splashtext:settext(text)
+    splashtext.alpha = 1
+
+    if (not color or color == "yellow") then
+        splashtext:setyellow()
+    elseif (color == "red") then
+        splashtext:setred()
+    elseif (color == "green") then
+        splashtext:setgreen()
+    elseif (color == "white") then
+        splashtext:setwhite()
+    end
+
+    game:ontimeout(function()
+        splashtext:fadeovertime(1)
+        splashtext.alpha = 0
+        game:ontimeout(function()
+            doingsplash = false
+        end, 1000)
+    end, 100)
+end
+
+local splashinterval = nil
+function addsplash(text, color)
+    table.insert(splashqueue, {
+        text = text,
+        color = color
+    })
+
+    if (splashinterval) then
+        return
+    end
+
+    splashinterval = game:oninterval(function()
+        if (doingsplash or #splashqueue == 0) then
+            return
+        end
+
+        local splash = splashqueue[1]
+        table.remove(splashqueue, 1)
+
+        splashinternal(splash.text, splash.color)
+    end, 0)
+end
+
+function splash(text)
+    addsplash(text, "yellow")
+end
+
+function redsplash(text)
+    addsplash(text, "red")
+end
 
 player:onnotify("death", function()
     missionover(false)
@@ -247,18 +350,23 @@ end)
 
 ismissionover = false
 function missionover(success, timeoverride)
+    if (map.preover) then
+        map.preover()
+    end
+
     if (challengetimer) then
         challengetimer.alpha = 0
         challengetimer:destroy()
         challengetimer = nil
     end
 
-    if (challengestars) then
-        for i = 1, #challengestars do
-            challengestars[i].alpha = 0
-            challengestars[i]:destroy()
-        end
-        challengestars = nil
+    for i = 1, #huditems do
+        huditems[i]:destroy()
+    end
+
+    huditems = {}
+    if (splashinterval) then
+        splashinterval:clear()
     end
 
     ismissionover = true
@@ -320,21 +428,26 @@ function missionover(success, timeoverride)
     end
 
 
-    game:setdvar("ui_so_besttime", 0)
-    game:setdvar("ui_so_new_star", 0)
+    game:setdvar("ui_so_new_besttime", 0)
+    game:setdvar("ui_so_new_stars", 0)
 
     if (success and finaltime >= 0) then
         local mapname = game:getdvar("so_mapname")
         local stats = sostats.getmapstats(mapname)
-        if (stats.besttime == nil or type(stats.besttime) ~= "number" or stats.besttime > finaltime) then
+        local nobest = stats.besttime == nil or type(stats.besttime) ~= "number"
+        if (nobest or stats.besttime > finaltime) then
+            if (not nobest) then
+                game:setdvar("ui_so_new_besttime", 1)
+            end
             stats.besttime = finaltime
-            game:setdvar("ui_so_besttime", 1)
         end
     
         local stars = type(map.calculatestars) == "function" and map.calculatestars(finaltime) or game:getdvarint("g_gameskill")
-        if (stats.stars == nil or type(stats.stars) ~= "number" or stats.stars < stars) then
+        local nostars = stats.stars == nil or type(stats.stars) ~= "number"
+        if (nostars or stats.stars < stars) then
+            game:setdvar("ui_so_prev_stars", nostars and 0 or stats.stars)
+            game:setdvar("ui_so_new_stars", stars)
             stats.stars = stars
-            game:setdvar("ui_so_new_star", 1)
         end
 
         sostats.setmapstats(mapname, stats)

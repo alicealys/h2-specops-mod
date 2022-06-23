@@ -16,6 +16,8 @@ game:setdvar("r_fog", 1)
 game:setdvar("scr_autoRespawn", 0)
 game:setdvar("ui_deadquote", "")
 
+game:sharedset("eog_extra_data", "")
+
 local mapname = game:getdvar("so_mapname")
 map = require("maps/" .. mapname)
 

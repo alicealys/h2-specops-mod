@@ -135,6 +135,7 @@ map.premain = function()
 
         model.angles = angles
         model:setmodel("h2_ch_square_flag_fast")
+        flags[i].model = model
 
         if ((i - 1) % 2 == 0) then
             local a = flags[i].origin
@@ -142,6 +143,7 @@ map.premain = function()
             local slope = (a.y - b.y) / (a.x - b.x)
             
             local interval = nil
+            local index = i
             interval = game:oninterval(function()
                 if (ismissionover) then
                     interval:clear()
@@ -164,7 +166,7 @@ map.premain = function()
                 -- length = distance between flag a & b
                 local length = math.sqrt(((b.x - a.x) ^ 2 + (b.y - a.y) ^ 2))
                 local distancet = distancea + distanceb
-                local isbetween = distancet - 10 <= length
+                local isbetween = distancet - 20 <= length
 
                 if (zdiff < 200 and distance < 50 and isbetween) then
                     interval:clear()
@@ -178,7 +180,10 @@ map.premain = function()
 
                     addchallengetimer(challengetimeleft + flagtime)
                     startchallengetimer(6, 3)
-                    player:playsound("snowrace_flag_capture")
+                    player:playlocalsound("snowrace_flag_capture")
+
+                    flags[index].model:delete()
+                    flags[index + 1].model:delete()
                 end
             end, 0)
         end

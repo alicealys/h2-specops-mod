@@ -155,6 +155,7 @@ game:addlocalizedstring("MENU_SP_DIFF_RANKING_2", "Light")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_3", "Medium")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_4", "Heavy")
 game:addlocalizedstring("MENU_SP_DIFF_RANKING_5", "Massive")
+
 -- In Game
 game:addlocalizedstring("SO_MISSION_SUCCESS", "Mission Success!")
 game:addlocalizedstring("SO_MISSION_FAILED", "Mission Failed!")
