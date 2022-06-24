@@ -276,6 +276,20 @@ map.premain = function()
             end
         end
     end, 0)
+
+    if (game:getdvar("so_mapname") == "so_snowrace1_cliffhanger") then
+        player.ignorerandombulletdamage = true
+
+        game:scriptcall("maps/cliffhanger_code", "_ID12882")
+        game:scriptcall("_ID42237", "_ID14402", "reached_top")
+    
+        game:ontimeout(function()
+            game:scriptcall("_ID50343", "_ID46156")
+            game:oninterval(function()
+                game:scriptcall("_ID50343", "_ID46156")
+            end, 500)
+        end, 4000)
+    end
 end
 
 map.main = function()
