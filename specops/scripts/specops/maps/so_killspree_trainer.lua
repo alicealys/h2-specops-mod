@@ -181,7 +181,6 @@ function startcourse()
             "train_ar4_bringit",
             "train_ar5_comeon"
         }
-        print(index, dialogues[index])
         game:scriptcall("_ID42237", "_ID27077", dialogues[index], vector:new(-4136, 1921, -65))
     end, 3000)
 end
@@ -327,7 +326,7 @@ function inittriggers()
     end
 
     local endtrigger = game:getentbyref(680, 0)
-    endtrigger.origin = vector:new(-3669, 2901, -120)
+    endtrigger.origin = vector:new(-3655, 2901, -120)
     local listener = nil
     listener = endtrigger:onnotify("trigger", function()
         if (not jumpeddown or totalhitenemies < 24) then
