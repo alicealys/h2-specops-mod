@@ -119,6 +119,7 @@ local function levelselect(act)
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
                     Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
+                    Engine.SetDvarFromString("addon_mapname", act.missions[i].somapname)
                     Engine.Exec("map " .. act.missions[i].mapname)
                     return
                 end
@@ -127,6 +128,7 @@ local function levelselect(act)
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
                         Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
+                        Engine.SetDvarFromString("addon_mapname", act.missions[i].somapname)
                         Engine.Exec("map " .. act.missions[i].mapname)
                     end,
                     specialops = true,

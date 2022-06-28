@@ -121,8 +121,9 @@ function startchallengetimer(nudgetime, hurrytime)
     challengetimer.label = timerlabel
     challengetimer:setwhite()
 
+    player:playsoundasmaster("arcademode_zerodeaths")
+
     if (challengetimer.timelimit) then
-        player:playsound("arcademode_zerodeaths")
         challengetimer:settenthstimer(challengetimer.timelimit)
         challengetimeleft = challengetimer.timelimit
         local changecolor = function()
@@ -338,6 +339,58 @@ function redsplash(text)
     addsplash(text, "red")
 end
 
+function pingescapewarning()
+    if (not escapewarningsplash) then
+        escapewarningsplash = game:newhudelem()
+        escapewarningsplash.alignx = "center"
+        escapewarningsplash.horzalign = "center"
+        escapewarningsplash.y = 220
+        escapewarningsplash.font = "bank"
+        escapewarningsplash.fontscale = 1.5
+        escapewarningsplash.faded = 1
+        escapewarningsplash:settext("Turn back and continue the mission!")
+        escapewarningsplash:setwhite()
+    end
+
+    if (escapewarningsplash.faded == 0) then
+        return
+    end
+
+    escapewarningsplash.faded = 0
+    escapewarningsplash.alpha = 1
+    escapewarningsplash:fadeovertime(1)
+    escapewarningsplash.alpha = 0.5
+    game:ontimeout(function()
+        if (escapewarningsplash) then
+            escapewarningsplash.faded = 1
+        end
+    end, 1000)
+end
+
+function enableescapewarning()
+	local escapewarningtriggers = game:getentarray( "player_trying_to_escape", "script_noteworthy" )
+    local escapeinterval = game:oninterval(function()
+        for i = 1, #escapewarningtriggers do
+            local trigger = escapewarningtriggers[i]
+
+            if (player:istouching(trigger) == 1) then
+                pingescapewarning()
+            elseif (escapewarningsplash ~= nil) then
+                escapewarningsplash.alpha = 0
+                escapewarningsplash:fadeovertime(0.25)
+            end
+        end
+    end, 0)
+
+    level:onnotifyonce("special_op_terminated", function()
+        if (escapewarningsplash) then
+            escapewarningsplash:destroy()
+            escapewarningsplash = nil
+            escapeinterval:clear()
+        end
+    end)
+end
+
 player:onnotify("death", function()
     missionover(false)
 end)
@@ -349,7 +402,10 @@ level:onnotify("can_save", function()
 end)
 
 ismissionover = false
+local playerkills = 0
 function missionover(success, timeoverride)
+    level:notify("special_op_terminated")
+
     if (map.preover) then
         map.preover()
     end
@@ -430,6 +486,7 @@ function missionover(success, timeoverride)
 
     game:setdvar("ui_so_new_besttime", 0)
     game:setdvar("ui_so_new_stars", 0)
+    game:setdvar("aa_player_kills", playerkills)
 
     if (success and finaltime >= 0) then
         local mapname = game:getdvar("so_mapname")
@@ -474,3 +531,24 @@ function missionover(success, timeoverride)
         game:setsaveddvar("ammoCounterHide", 1)
     end, 3000)
 end
+
+function flaginit(flag)
+    game:scriptcall("_ID42237", "_ID14400", flag)
+end
+
+function flag(flag)
+    return game:scriptcall("_ID42237", "_ID14385", flag) == 1
+end
+
+game:ontimeout(function()
+    local spawners = game:getspawnerteamarray("axis")
+    for i = 1, #spawners do
+        spawners[i]:onnotify("spawned", function(ai)
+            ai:onnotifyonce("death", function(attacker)
+                if (attacker == player) then
+                    playerkills = playerkills + 1
+                end
+            end)
+        end)
+    end
+end, 0)
