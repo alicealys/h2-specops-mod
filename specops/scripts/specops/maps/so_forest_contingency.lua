@@ -6,20 +6,16 @@ game:addlocalizedstring("SPECIAL_OPS_CONTINGENCY", "Evasion")
 map.premain = function()
     -- dont delete stuff
     game:detour("_ID43797", "init", function() end)
-    local start = game:getent("info_player_start_so", "classname")
-    player:setorigin(start.origin)
-    player:setplayerangles(start.angles)
 
     game:ontimeout(function()
         -- set fog
         player:scriptcall("_ID42407", "_ID40561", "contingency_forest", 0)
     end, 0)
 
-    level:onnotifyonce("player_has_escaped", function()
-        missionover(false)
-    end)
-
+    setplayerpos()
+    enablefailonescape()
     enableescapewarning()
+    
     local escaped = game:getent("escaped_trigger", "script_noteworthy")
     escaped:onnotifyonce("trigger", function()
         missionover(true)

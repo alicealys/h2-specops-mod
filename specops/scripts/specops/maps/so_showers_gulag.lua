@@ -3,7 +3,7 @@ local map = {}
 map.localizedname = "Breach & Clear"
 game:addlocalizedstring("SPECIAL_OPS_GULAG", "Breach & Clear")
 
-function addlockers()
+function addlockercollision()
     local brushmodel = game:getentbyref(327, 0)
 
     local addcollision = function(origin)
@@ -18,85 +18,30 @@ function addlockers()
     addcollision(vector:new(-664.202, -753.03, 575))
     addcollision(vector:new(-734.39, -728.037, 575))
     addcollision(vector:new(-675.522, -769.197, 575))
+end
 
-    local lockers = {
-		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-682.632, -751.013, 536)},
-		{model = "com_locker_open", angles = vector:new(8, 145, 0), origin = vector:new(-662.973, -764.779, 538)},
-		{model = "com_locker_double", angles = vector:new(0, 145, 8), origin = vector:new(-702.292, -737.247, 536)},
-		{model = "com_locker_open", angles = vector:new(0, 145, 0), origin = vector:new(-721.952, -723.481, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-731.781, -716.598, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 145, 0), origin = vector:new(-643.313, -778.545, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 309, 0), origin = vector:new(-751.441, -702.833, 536)},
-		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-731.781, -716.598, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-721.952, -723.481, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-702.292, -737.247, 536)},
-		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-682.632, -751.013, 536)},
-		{model = "com_locker_open", angles = vector:new(0, 325, 0), origin = vector:new(-672.802, -757.896, 536)},
-		{model = "com_locker_double", angles = vector:new(0, 325, 0), origin = vector:new(-662.973, -764.779, 536)},
-    }
+function challengeonly()
+    local ents = game:getentarray("challenge_only", "targetname")
+    for i = 1, #ents do
+        if (ents[i].classname == "script_model") then
+            ents[i]:setcandamage(true)
+        end
 
-    for i = 1, #lockers do
-        local model = game:spawn("script_model", lockers[i].origin)
-        model.angles = lockers[i].angles
-        model:setmodel(lockers[i].model)
-        model:makehard()
+        if (ents[i].classname == "script_brushmodel") then
+            ents[i]:connectpaths()
+        end
     end
 end
 
-
-level:onnotify("addlockers", function()
-    addlockers()
-end)
-
 map.premain = function()
     game:setdvar("r_fog", 0)
-    addlockers()
+    addlockercollision()
+    challengeonly()
 
-    local weapons = {
-        {
-            origin = vector:new(-1744.6, -1901.6, 596.5),
-            angles = vector:new(320.895, 241.463, 0.910643),
-            model = "weapon_ak47"
-        },
-        {
-            origin = vector:new(-1695.9, -1765.4, 598),
-            angles = vector:new(286.895, 35.7082, -179.18),
-            model = "weapon_ak47"
-        },
-        {
-            origin = vector:new(-1760.8, -1891.8, 593.8),
-            angles = vector:new(313.4, 239.5, -80),
-            model = "weapon_aa12"
-        },
-        {
-            origin = vector:new(-1741.3, -1868.3, 579.125),
-            angles = vector:new(0, 299.6, 90),
-            model = "weapon_kriss"
-        },
-        {
-            origin = vector:new(-1718.8, -1885.6, 577.125),
-            angles = vector:new(0, 284.5, 90),
-            model = "weapon_glock"
-        },
-        {
-            origin = vector:new(-1685.1, -1770.2, 598.3),
-            angles = vector:new(289.2, 72.5, -180),
-            model = "weapon_aa12"
-        },
-        {
-            origin = vector:new(-1761.4, -1763.9, 577.125),
-            angles = vector:new(0, 356.931, 90),
-            model = "weapon_m14_scoped_arctic"
-        },
-        {
-            origin = vector:new(-1727.3, -1774.5, 577.125),
-            angles = vector:new(0, 90, 90),
-            model = "weapon_striker"
-        },
-    }
+    local weapons = game:getentarray("so_weapons", "targetname")
 
     for i = 1, #weapons do
-        local weapon = game:spawn(weapons[i].model, weapons[i].origin)
+        local weapon = weapons[i]
         if (weapon) then
             local weaponnames = game:strtok(weapon.classname, "_")
             local weaponname = weaponnames[2]
@@ -107,22 +52,12 @@ map.premain = function()
             if (game:weaponaltweaponname(weaponname) ~= "none") then
                 weapon:itemweaponsetammo(999, 999, 999, 1)
             end
-    
-            weapon:itemweaponsetammo(999, 999)
-
-            game:oninterval(function()
-                weapon.origin = weapons[i].origin
-                weapon.angles = weapons[i].angles
-            end, 0)
         end
     end
 
-    local failtrig = game:spawn("trigger_radius", vector:new(0, 0, 0), 0, 200, 100)
-    failtrig.origin = vector:new(-2598, -2393, 672)
-
-    failtrig:onnotifyonce("trigger", function()
-        missionover(false)
-    end)
+    setplayerpos()
+    enablefailonescape()
+    enableescapewarning()
 
     -- change objective
     game:detour("maps/gulag", "_ID43460", function()

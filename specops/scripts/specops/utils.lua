@@ -89,7 +89,7 @@ local timerlabelempty = "Time: -:--.-"
 
 function addchallengetimer(timelimit)
     if (challengetimer) then
-        challengetimer:destroy()
+        challengetimer:destroy_()
     end
 
     if (timelimit) then
@@ -165,7 +165,7 @@ end
 function addchallengestars()
     if (challengestars) then
         for i = 1, #challengestars do
-            challengestars[i]:destroy()
+            challengestars[i]:destroy_()
         end
     end
 
@@ -308,6 +308,20 @@ local function splashinternal(text, color)
     end, 100)
 end
 
+function entity:destroy_()
+    if (not self.destroyed) then
+        local value = pcall(function()
+            self:destroy()
+        end)
+ 
+        if (not value) then
+            print("Failed to destroy hudelem")
+        end
+
+        self.destroyed = true
+    end
+end
+
 local splashinterval = nil
 function addsplash(text, color)
     table.insert(splashqueue, {
@@ -384,11 +398,25 @@ function enableescapewarning()
 
     level:onnotifyonce("special_op_terminated", function()
         if (escapewarningsplash) then
-            escapewarningsplash:destroy()
+            escapewarningsplash:destroy_()
             escapewarningsplash = nil
             escapeinterval:clear()
         end
     end)
+end
+
+function enablefailonescape()
+    level:onnotifyonce("player_has_escaped", function()
+        missionover(false)
+    end)
+end
+
+function setplayerpos()
+    local start = game:getent("info_player_start_so", "classname")
+    if (start) then
+        player:setorigin(start.origin)
+        player:setplayerangles(start.angles)
+    end
 end
 
 player:onnotify("death", function()
@@ -412,12 +440,12 @@ function missionover(success, timeoverride)
 
     if (challengetimer) then
         challengetimer.alpha = 0
-        challengetimer:destroy()
+        challengetimer:destroy_()
         challengetimer = nil
     end
 
     for i = 1, #huditems do
-        huditems[i]:destroy()
+        huditems[i]:destroy_()
     end
 
     huditems = {}
