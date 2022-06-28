@@ -314,7 +314,7 @@ function inittriggers()
     local triggers = game:getentarray("course_triggers_01", "script_noteworthy")
     local currentarea = 1
 
-    level:onnotifyonce("player_course_jumped_down", function()
+    level:onnotifyonce("so_player_course_jumped_down", function()
         jumpeddown = true
         if (not areas[6].cleared) then
             missionover(false)
@@ -325,16 +325,12 @@ function inittriggers()
         initarea(areas[i])
     end
 
-    local endtrigger = game:getentbyref(680, 0)
-    endtrigger.origin = vector:new(-3655, 2901, -120)
-    local listener = nil
-    listener = endtrigger:onnotify("trigger", function()
+    level:onnotifyonce("so_player_course_end", function()
         if (not jumpeddown or totalhitenemies < 24) then
             return
         end
 
         level:notify("kill_timer")
-        listener:clear()
 
         missionover(totalhitenemies >= 24)
     end)
@@ -458,6 +454,9 @@ map.premain = function()
         local start = game:getent("course_start_pit", "targetname")
         player:setorigin(vector:new(-3491, 2563, -190))
         player:setplayerangles(start.angles)
+
+        enableescapewarning()
+        enablefailonescape()
 
         player:giveweapon("m4_grunt")
         player:givemaxammo("m4_grunt")

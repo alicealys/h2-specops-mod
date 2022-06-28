@@ -21,7 +21,7 @@ function addlockercollision()
 end
 
 function challengeonly()
-    local ents = game:getentarray("challenge_only", "targetname")
+    local ents = game:getentarray("challenge_only_", "targetname")
     for i = 1, #ents do
         if (ents[i].classname == "script_model") then
             ents[i]:setcandamage(true)
