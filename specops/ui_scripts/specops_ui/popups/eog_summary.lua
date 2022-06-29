@@ -150,6 +150,11 @@ function eogsummary()
         extraheight = extraheight + 30
     end
 
+    if (showdifficulty) then
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_DIFFICULTY"), getdifficulty())
+        extraheight = extraheight + 35
+    end
+
     if (type(extradata.stats) == "table") then
         for i = 1, #extradata.stats do
             addstat(Engine.Localize(extradata.stats[i].name), extradata.stats[i].value)
@@ -159,11 +164,6 @@ function eogsummary()
 
     if (not extradata.hidekills) then
         addstat(Engine.Localize("@SPECIAL_OPS_UI_KILLS"), Engine.GetDvarString("aa_player_kills"))
-        extraheight = extraheight + 35
-    end
-
-    if (showdifficulty) then
-        addstat(Engine.Localize("@SPECIAL_OPS_UI_DIFFICULTY"), getdifficulty())
         extraheight = extraheight + 35
     end
 

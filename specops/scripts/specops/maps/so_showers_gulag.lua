@@ -39,7 +39,6 @@ map.premain = function()
     challengeonly()
 
     local weapons = game:getentarray("so_weapons", "targetname")
-
     for i = 1, #weapons do
         local weapon = weapons[i]
         if (weapon) then
@@ -52,6 +51,8 @@ map.premain = function()
             if (game:weaponaltweaponname(weaponname) ~= "none") then
                 weapon:itemweaponsetammo(999, 999, 999, 1)
             end
+
+            weapon:itemweaponsetammo(999, 999)
         end
     end
 

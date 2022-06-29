@@ -24,8 +24,10 @@ map.premain = function()
     game:musicplay("mus_contingency_stealth")
     game:detour("maps/contingency_beautiful_corner", "_ID45560", function() end)
     game:scriptcall("_ID42272", "_ID33575", "compass_map_contingency")
-    -- delete some random brushmodel
-    game:getentbyref(2083, 0):delete()
+
+    local endbrush = game:getentbyref(2083, 0)
+    endbrush.origin = vector:new(-19547.058594, -5072.545898, 758.208191)
+    endbrush.angles = vector:new(0, 65, 0)
 
     local triggerhurts = game:getentarray("trigger_hurt", "classname")
     for i = 1, #triggerhurts do

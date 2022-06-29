@@ -156,6 +156,18 @@ function startchallengetimer(nudgetime, hurrytime)
     end
 end
 
+function enablechallengetimer(notifystart, notifyend)
+    addchallengetimer()
+    level:onnotifyonce(notifystart, function()
+        starttime = game:gettime()
+        startchallengetimer()
+    end)
+
+    level:onnotifyonce(notifyend, function()
+        missionover(true)
+    end)
+end
+
 local challengestarsoffset = {x = 0, y = 0}
 
 function setchallengestaroffset(x, y)
@@ -261,6 +273,12 @@ end
 game:detour("_ID42407", "_ID23778", function()
     if (failonmissionover) then
         missionover(false)
+    else
+        game:setsaveddvar("hud_missionFailed", 0)
+        game:setsaveddvar("hud_showstance", 1)
+        game:setsaveddvar("actionSlotsHide", 0)
+        game:setsaveddvar("ui_hideCompassTicker", 0)
+        game:setsaveddvar("ammoCounterHide", 0)
     end
 end)
 
@@ -432,7 +450,9 @@ end)
 ismissionover = false
 local playerkills = 0
 function missionover(success, timeoverride)
-    level:notify("special_op_terminated")
+    game:ontimeout(function()
+        level:notify("special_op_terminated")
+    end, 0)
 
     if (map.preover) then
         map.preover()
@@ -511,7 +531,6 @@ function missionover(success, timeoverride)
         end
     end
 
-
     game:setdvar("ui_so_new_besttime", 0)
     game:setdvar("ui_so_new_stars", 0)
     game:setdvar("aa_player_kills", playerkills)
@@ -538,17 +557,24 @@ function missionover(success, timeoverride)
         sostats.setmapstats(mapname, stats)
     end
 
-    local ai = game:getaiarray()
-    for i = 1, #ai do
-        ai[i]:delete()
-    end
-
-    local spawners = game:getspawnerarray()
-    for i = 1, #spawners do
-        spawners[i]:delete()
-    end
+    player.ignoreme = true
 
     game:ontimeout(function()
+        local dogs = game:getentarray("actor_enemy_dog", "classname")
+        for i = 1, #dogs do
+            dogs[i]:delete()
+        end
+    
+        local ai = game:getaiarray()
+        for i = 1, #ai do
+            ai[i]:delete()
+        end
+    
+        local spawners = game:getspawnerarray()
+        for i = 1, #spawners do
+            spawners[i]:delete()
+        end    
+
         player:freezecontrols(true)
         game:executecommand("lui_open so_eog_summary")
         game:setdvar("ui_so_mission_status", success and 1 or 2)
@@ -568,15 +594,69 @@ function flag(flag)
     return game:scriptcall("_ID42237", "_ID14385", flag) == 1
 end
 
+function flagset(flag)
+    game:scriptcall("_ID42237", "_ID14402", flag)
+end
+
+function flagclear(flag)
+    game:scriptcall("_ID42237", "_ID14388", flag)
+end
+
+local spawnfuncs = {axis = {}, allies = {}, neutral = {}, team3 = {}}
+function addspawnfunc(team, callback)
+    table.insert(spawnfuncs[team], callback)
+end
+
+function arrayspawnfunc(array_, func)
+    for i = 1, #array_ do
+        array_[i]:onnotify("spawned", func)
+    end
+end
+
+function arrayspawnfuncnoteworthy(name, func)
+    local arr = game:getentarray(name, "script_noteworthy")
+    arrayspawnfunc(arr, func)
+end
+
 game:ontimeout(function()
-    local spawners = game:getspawnerteamarray("axis")
+    local spawners = game:getspawnerarray()
     for i = 1, #spawners do
         spawners[i]:onnotify("spawned", function(ai)
+            local funcs = spawnfuncs[ai.team]
+            if (type(funcs) == "table") then
+                for o = 1, #funcs do
+                    funcs[o](ai)
+                end
+            end
+
             ai:onnotifyonce("death", function(attacker)
                 if (attacker == player) then
-                    playerkills = playerkills + 1
+                    if (ai.team == "axis") then
+                        playerkills = playerkills + 1
+                        game:ontimeout(function()
+                            player:notify("enemy_killed")
+                        end, 0)
+                    end
+
+                    if (ai.team == "neutral") then
+                        game:ontimeout(function()
+                            player:notify("civilian_killed")
+                        end, 0)
+                    end
                 end
             end)
         end)
     end
 end, 0)
+
+function musicloop(music)
+    game:scriptcall("maps/_utility", "_ID24577", music)
+end
+
+function entity:spawnai()
+    if (self._ID31214) then
+        return self:stalingradspawn()
+    else
+        return self:dospawn()
+    end
+end
