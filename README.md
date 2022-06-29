@@ -21,7 +21,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 |-------------|-----|-----|
 | The Pit  | ✔️ | ✔️ |
 | Sniper Fi | ❌ | ✔️ |
-| O Cristo Redendor | ❌ | ✔️ |
+| O Cristo Redendor | ✔️ | ✔️ |
 | Evasion | ✔️ | ✔️ |
 | Suspension | ❌ | ❌ |
 
