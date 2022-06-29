@@ -442,6 +442,14 @@ function killspree()
             return
         end
 
+        if (pointscounter <= 5) then
+            enemiestext:setgreen()
+            enemieshitvalue:setgreen()
+        else
+            enemiestext:setwhite()
+            enemieshitvalue:setwhite()
+        end
+
         enemieshitvalue:setvalue(pointscounter)
 
         game:ontimeout(function()
@@ -458,9 +466,12 @@ function killspree()
         local remaining = civiliankillfail - civviedeaths
         if (remaining <= 1) then
             civvieshitvalue:setred()
+            civilianstext:setred()
         elseif (remaining == 2) then
+            civilianstext:setyellow()
             civvieshitvalue:setyellow()
         elseif (remaining > 2) then
+            civilianstext:setwhite()
             civvieshitvalue:setwhite()
         end
 
