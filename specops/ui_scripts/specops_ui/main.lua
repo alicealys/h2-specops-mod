@@ -67,6 +67,10 @@ function ingame()
 
         return getdvarbool(...)
     end
+
+    isNoRussian = function()
+        return false
+    end
 end
 
 if (Engine.InFrontend()) then
