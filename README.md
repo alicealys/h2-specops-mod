@@ -49,7 +49,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 | Wardriving  | ❌ | ✔️ |
 | Wreckage | ❌ | ❌ |
 | Acceptable losses | ❌ | ✔️ |
-| Terminal | ❌ | ✔️ |
+| Terminal | ✔️ | ✔️ |
 | Estate Takedown | ❌ | ❌ |
 
 ## Echo
