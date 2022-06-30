@@ -660,3 +660,59 @@ function entity:spawnai()
         return self:dospawn()
     end
 end
+
+function cointoss()
+    return game:scriptcall("common_scripts/utility", "_ID8201") == 1
+end
+
+function getstruct(value, field)
+    return game:scriptcall("common_scripts/utility", "_ID16638", value, field)
+end
+
+function getstructarray(value, field)
+    return game:scriptcall("common_scripts/utility", "_ID16640", value, field)
+end
+
+function isspawner(ent)
+    if (ent.code_classname == nil) then
+        return false
+    end
+		
+    return game:issubstr(ent.code_classname, "actor_") == 1
+end
+
+function isvehicle(ent)
+    if (ent.code_classname == nil) then
+        return false
+    end
+
+    return game:issubstr(ent.code_classname, "script_vehicle") == 1
+end
+
+function isspawntrigger(ent)
+	if (ent.classname == "trigger_multiple_spawn") then
+        return true
+    end
+
+	if (ent.classname == "trigger_multiple_spawn_reinforcement") then
+        return true
+    end
+
+    if (ent.classname == "trigger_multiple_friendly_respawn") then
+        return true
+    end
+
+    if (ent.targetname == "flood_spawner") then
+        return true
+    end
+
+    if (ent.targetname == "friendly_respawn_trigger") then
+        return true
+    end
+
+    if (ent.spawnflags & 32 ~= 0) then
+        return true
+    end
+
+	return false
+end

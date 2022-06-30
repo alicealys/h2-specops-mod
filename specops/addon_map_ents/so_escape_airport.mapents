@@ -1,0 +1,1270 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 180 0"
+"export" "52"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "11"
+"origin" "3620 3832 64"
+"script_noteworthy" "enemy_waiting_area_intro"
+"target" "me1_auto21"
+"targetname" "me1_auto25"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3049.7 3799.9 92"
+"targetname" "me1_auto21"
+"classname" "script_struct"
+"angles" "0 245 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_player_start_so"
+"angles" "0 99 0"
+"origin" "3220 3070 64"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3333.7 3959.9 92"
+"targetname" "me1_auto23"
+"classname" "script_struct"
+"angles" "0 240 0"
+}
+{
+"model" "?0"
+"script_specialops" "1"
+"origin" "3134 3328 176"
+"classname" "trigger_multiple"
+"targetname" "enemy_waiting_area_intro_movein_trig"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 275 0"
+"export" "55"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "11"
+"origin" "1960 4320 64"
+"script_noteworthy" "enemy_waiting_area_above"
+"target" "me1_auto29"
+"targetname" "me1_auto38"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "1993.7 3555.9 92"
+"targetname" "me1_auto29"
+"classname" "script_struct"
+"angles" "0 9.99998 0"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 275 0"
+"export" "56"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "11"
+"origin" "1960 4416 64"
+"script_noteworthy" "enemy_waiting_area_above"
+"target" "me1_auto31"
+"targetname" "me1_auto38"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto25"
+"export" "54"
+"script_noteworthy" "enemy_waiting_area_intro"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "11"
+"origin" "3656 3868 64"
+"target" "me1_auto28"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3185.7 3951.9 92"
+"targetname" "me1_auto28"
+"classname" "script_struct"
+"angles" "0 255 0"
+}
+{
+"model" "?1"
+"script_specialops" "1"
+"origin" "6740 1264 224"
+"script_noteworthy" "escaped_trigger"
+"classname" "trigger_multiple"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "2185.7 3939.9 92"
+"targetname" "me1_auto31"
+"classname" "script_struct"
+"angles" "0 340 0"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 275 0"
+"export" "57"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "11"
+"origin" "1968 4488 64"
+"script_noteworthy" "enemy_waiting_area_above"
+"target" "me1_auto33"
+"targetname" "me1_auto38"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "1969.7 4003.9 92"
+"targetname" "me1_auto33"
+"classname" "script_struct"
+"angles" "0 280 0"
+}
+{
+"model" "?2"
+"script_specialops" "1"
+"origin" "4332 2588 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "enemy_dining_area_prone_kill"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto58"
+"export" "66"
+"script_noteworthy" "enemy_dining_area_prone"
+"classname" "actor_enemy_FSB_SHOTGUN"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 188 0"
+"spawnflags" "3"
+"origin" "3136.2 4939.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto58"
+"export" "67"
+"script_noteworthy" "enemy_dining_area_prone"
+"classname" "actor_enemy_FSB_SHOTGUN"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 203 0"
+"spawnflags" "3"
+"origin" "3372.2 4683.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto58"
+"export" "68"
+"script_noteworthy" "enemy_dining_area_prone"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "3832.2 4447.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto58"
+"export" "69"
+"script_noteworthy" "enemy_dining_area_prone"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "3896.2 4047.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto58"
+"export" "70"
+"script_noteworthy" "enemy_dining_area_prone"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 270 0"
+"spawnflags" "3"
+"origin" "3504.2 4807.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "smoke_escalators_first"
+"origin" "2032 4448 336"
+"radius" "32"
+"modelscale" "1.146667"
+}
+{
+"model" "?3"
+"script_specialops" "1"
+"origin" "2405 3663 168"
+"classname" "trigger_multiple_spawn"
+"target" "me1_auto38"
+}
+{
+"model" "?4"
+"script_specialops" "1"
+"origin" "2391 3661 168"
+"classname" "trigger_multiple"
+"targetname" "enemy_waiting_area_above_movein_trig"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_tmp"
+"model" "h2_weapon_tmp"
+"angles" "0 328.6 -90"
+"origin" "3155 3213 67"
+"script_ammo_max" "1"
+"spawnflags" "4"
+}
+{
+"script_specialops" "1"
+"origin" "3202.8 3243 67"
+"angles" "0 75 90"
+"model" "h2_weapon_rpg7"
+"classname" "weapon_rpg_straight"
+"spawnflags" "0"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_coltanaconda"
+"model" "h2_weapon_coltanaconda"
+"angles" "0 190 90"
+"origin" "3160 3203 67"
+"script_ammo_max" "1"
+"spawnflags" "4"
+}
+{
+"model" "?5"
+"script_specialops" "1"
+"origin" "3132 3328 128"
+"classname" "trigger_multiple_spawn"
+"target" "me1_auto25"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_usp"
+"model" "weapon_usp"
+"angles" "0 188 -90"
+"origin" "3114 3220 67"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_usp"
+"model" "weapon_usp"
+"angles" "0 70 -90"
+"origin" "3108 3240 67"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3436.1 4698.1 336"
+"targetname" "me1_auto110"
+"classname" "script_struct"
+"angles" "0 180 0"
+"target" "me1_auto111"
+"script_noteworthy" "shoot_out_glass_start"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto38"
+"export" "60"
+"script_noteworthy" "enemy_waiting_area_above"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 270 0"
+"spawnflags" "11"
+"origin" "2124 4652 320"
+"target" "me1_auto43"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "2121.7 4455.9 336"
+"targetname" "me1_auto43"
+"classname" "script_struct"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto38"
+"export" "61"
+"script_noteworthy" "enemy_waiting_area_above"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "11"
+"origin" "3288.2 4335.7 320"
+"target" "me1_auto45"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "2980.1 4318.1 336"
+"targetname" "me1_auto45"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto38"
+"export" "62"
+"script_noteworthy" "enemy_waiting_area_above"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "11"
+"origin" "3620.2 3915.7 320"
+"target" "me1_auto47"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "2968.1 3910.1 336"
+"targetname" "me1_auto47"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"target" "me1_auto49"
+"origin" "3368.2 3507.7 320"
+"spawnflags" "11"
+"angles" "0 180 0"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_AR"
+"script_noteworthy" "enemy_waiting_area_above"
+"export" "63"
+"targetname" "me1_auto38"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "2972.1 3510.1 336"
+"targetname" "me1_auto49"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"model" "?6"
+"script_specialops" "1"
+"origin" "4318 2606 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "enemy_waiting_area_above_kill"
+}
+{
+"model" "?7"
+"script_specialops" "1"
+"origin" "2121 4272 264"
+"classname" "trigger_multiple_spawn"
+"target" "me1_auto58"
+}
+{
+"model" "?8"
+"script_specialops" "1"
+"origin" "2856 5132 408"
+"classname" "trigger_multiple"
+"targetname" "enemy_dining_area_riot_movein_trig"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3724.1 4010.1 656"
+"targetname" "me1_auto111"
+"classname" "script_struct"
+"angles" "0 180 0"
+"script_noteworthy" "shoot_out_glass_end"
+}
+{
+"script_specialops" "1"
+"spawnflags" "0"
+"origin" "3179.3 3256 66.9"
+"angles" "0 65 90"
+"model" "h2_weapon_rpg7"
+"classname" "weapon_rpg_straight"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_m4_grenadier_airport"
+"model" "h2_weapon_m4_grenadier_airport"
+"angles" "0 60 90"
+"origin" "3120 3279 66"
+"script_ammo_max" "1"
+"spawnflags" "0"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "smoke_escalators_ending"
+"origin" "5480 1440 80"
+"radius" "32"
+"modelscale" "1.146667"
+}
+{
+"script_specialops" "1"
+"script_ammo_max" "1"
+"spawnflags" "0"
+"classname" "weapon_tavor_mars"
+"model" "h2_weapon_tavor_mars"
+"angles" "0 210 90"
+"origin" "3143 3258 66"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 100 0"
+"export" "71"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "11"
+"origin" "3540 4388 320"
+"script_noteworthy" "enemy_dining_area_riot"
+"targetname" "me1_auto58"
+"target" "me1_auto61"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3444.1 4474.1 336"
+"targetname" "me1_auto61"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 250 0"
+"export" "72"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3916 4724 320"
+"script_noteworthy" "enemy_dining_area_riot"
+"targetname" "me1_auto58"
+"target" "me1_auto62"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3544.1 4526.1 336"
+"targetname" "me1_auto62"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"model" "?9"
+"script_specialops" "1"
+"origin" "3134 3326 128"
+"classname" "trigger_multiple"
+"script_noteworthy" "start_terminal"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 90 0"
+"export" "73"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3748 4528 320"
+"script_noteworthy" "enemy_dining_area_riot"
+"targetname" "me1_auto58"
+"target" "me1_auto64"
+}
+{
+"model" "?10"
+"script_specialops" "1"
+"origin" "2121 4304 280"
+"classname" "trigger_multiple_spawn"
+"target" "me1_auto77"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3452.1 4586.1 336"
+"targetname" "me1_auto64"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"model" "?11"
+"script_specialops" "1"
+"origin" "4300 2620 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "enemy_waiting_area_intro_kill"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_striker"
+"model" "weapon_striker"
+"origin" "3632 3320 322"
+"angles" "0 247.7 90"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"target" "me1_auto23"
+"classname" "actor_enemy_FSB_SHOTGUN"
+"model" "body_opforce_fsb_assault_a"
+"export" "51"
+"angles" "0 180 0"
+"origin" "3656 3832 64"
+"spawnflags" "11"
+"script_noteworthy" "enemy_waiting_area_intro"
+"targetname" "me1_auto25"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 270 0"
+"export" "74"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3932 3580 320"
+"script_noteworthy" "enemy_store_area_start"
+"targetname" "me1_auto77"
+"target" "me1_auto65"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 65 0"
+"export" "75"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3884 3336 320"
+"script_noteworthy" "enemy_store_area_start"
+"targetname" "me1_auto77"
+"target" "me1_auto67"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 60 0"
+"export" "76"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3856 3304 320"
+"script_noteworthy" "enemy_store_area_start"
+"targetname" "me1_auto77"
+"target" "me1_auto69"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 205 0"
+"export" "77"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3788 3236 320"
+"script_noteworthy" "enemy_store_area_start"
+"targetname" "me1_auto77"
+"target" "me1_auto71"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 205 0"
+"export" "78"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "3824 3268 320"
+"script_noteworthy" "enemy_store_area_start"
+"targetname" "me1_auto77"
+"target" "me1_auto73"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3816.1 3542.1 336"
+"targetname" "me1_auto65"
+"classname" "script_struct"
+"angles" "0 175 0"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3860.1 3466.1 336"
+"targetname" "me1_auto69"
+"classname" "script_struct"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3404.1 3946.1 656"
+"targetname" "me1_auto111"
+"classname" "script_struct"
+"angles" "0 180 0"
+"script_noteworthy" "shoot_out_glass_end"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3788.1 3426.1 336"
+"targetname" "me1_auto67"
+"classname" "script_struct"
+"angles" "0 150 0"
+}
+{
+"model" "?12"
+"script_specialops" "1"
+"origin" "2604 4768 408"
+"classname" "trigger_multiple"
+"targetname" "shoot_out_glass"
+"target" "enemy_dining_area_riot_movein_trig"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3652.1 3206.1 336"
+"targetname" "me1_auto71"
+"classname" "script_struct"
+"angles" "0 150 0"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "3348.1 3170.1 336"
+"targetname" "me1_auto73"
+"classname" "script_struct"
+"angles" "0 150 0"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"script_noteworthy" "obj_finish"
+"origin" "6176 1824 112"
+}
+{
+"model" "?13"
+"script_specialops" "1"
+"origin" "3520 3806 408"
+"classname" "trigger_multiple"
+"targetname" "enemy_store_area_start_movein_trig"
+}
+{
+"model" "?14"
+"script_specialops" "1"
+"origin" "5008 3280 408"
+"script_flag" "enemy_store_area_start_kill"
+"classname" "trigger_multiple_flag_set"
+}
+{
+"model" "?15"
+"script_specialops" "1"
+"origin" "3488 4408 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "stop_board_flipping"
+}
+{
+"script_specialops" "1"
+"script_noteworthy" "obj_escalator_top"
+"angles" "0 270 0"
+"classname" "script_struct"
+"targetname" "me1_auto78"
+"origin" "2129.7 4543.9 360"
+"radius" "32"
+}
+{
+"script_specialops" "1"
+"script_noteworthy" "obj_shopping"
+"angles" "0 270 0"
+"classname" "script_struct"
+"targetname" "me1_auto79"
+"origin" "3601.7 3495.9 360"
+"radius" "32"
+}
+{
+"script_specialops" "1"
+"script_noteworthy" "obj_escalators_end"
+"angles" "0 270 0"
+"classname" "script_struct"
+"targetname" "me1_auto80"
+"origin" "4769.7 2231.9 360"
+"radius" "32"
+}
+{
+"model" "?16"
+"script_specialops" "1"
+"origin" "2120 4232 280"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "obj_shopping"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "smoke_escalators_first"
+"origin" "2216 4016 80"
+"radius" "32"
+"modelscale" "1.146667"
+}
+{
+"script_specialops" "1"
+"classname" "info_player_start_soPlayer2"
+"origin" "3166 2994 64"
+"angles" "0 100 0"
+}
+{
+"model" "?17"
+"script_specialops" "1"
+"origin" "3488 4168 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "obj_escalators_end"
+}
+{
+"model" "?18"
+"script_specialops" "1"
+"origin" "4709 2501 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "obj_finish"
+}
+{
+"script_specialops" "1"
+"model" "h2_weapon_m240"
+"classname" "weapon_m240"
+"angles" "347.8 248 0"
+"origin" "3719 3300 328"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_m14_scoped"
+"model" "h2_weapon_m14ebr_scoped"
+"angles" "0 256 90"
+"origin" "3684 3306 323"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_striker"
+"model" "weapon_striker"
+"origin" "3666 3332 322"
+"angles" "0 48 90"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto77"
+"export" "79"
+"script_noteworthy" "enemy_store_area_prone"
+"classname" "actor_enemy_FSB_SHOTGUN"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 188 0"
+"spawnflags" "3"
+"origin" "3176.2 3371.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto77"
+"export" "80"
+"script_noteworthy" "enemy_store_area_prone"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 90 0"
+"spawnflags" "3"
+"origin" "3008.2 3255.7 320"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto77"
+"export" "81"
+"script_noteworthy" "enemy_store_area_prone"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "3488.2 3151.7 320"
+"script_forcespawn" "1"
+}
+{
+"model" "?19"
+"script_specialops" "1"
+"origin" "4780 2300 408"
+"classname" "trigger_multiple"
+"targetname" "enemy_security_area_final_movein_trig"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "smoke_escalators_ending"
+"origin" "5784 1896 80"
+"radius" "32"
+"modelscale" "1.146667"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "82"
+"script_noteworthy" "enemy_security_area_top"
+"classname" "actor_enemy_FSB_SHOTGUN"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 128 0"
+"spawnflags" "3"
+"origin" "5056.2 1923.7 64"
+"script_forcespawn" "1"
+"target" "me1_auto82"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "83"
+"script_noteworthy" "enemy_security_area_top"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 90 0"
+"spawnflags" "3"
+"origin" "5392.2 2071.7 64"
+"script_forcespawn" "1"
+"target" "me1_auto84"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "84"
+"script_noteworthy" "enemy_security_area_top"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 90 0"
+"spawnflags" "3"
+"origin" "5360.2 2023.7 64"
+"script_forcespawn" "1"
+"target" "me1_auto83"
+}
+{
+"model" "?20"
+"script_specialops" "1"
+"origin" "4774 2314 424"
+"classname" "trigger_multiple_spawn"
+"target" "me1_auto81"
+}
+{
+"model" "?21"
+"script_specialops" "1"
+"origin" "4992 3280 408"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "enemy_security_area_final_kill"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "4788.1 2210.1 336"
+"targetname" "me1_auto82"
+"classname" "script_struct"
+"angles" "0 150 0"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"classname" "script_struct"
+"targetname" "me1_auto83"
+"origin" "5329.7 2519.9 360"
+"radius" "32"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"classname" "script_struct"
+"targetname" "me1_auto84"
+"origin" "5385.7 2463.9 360"
+"radius" "32"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 145 0"
+"export" "85"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "5708 1652 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto85"
+}
+{
+"script_specialops" "1"
+"target" "me1_auto87"
+"targetname" "me1_auto81"
+"script_noteworthy" "enemy_security_area_final"
+"origin" "5572 1460 64"
+"spawnflags" "3"
+"classname" "actor_enemy_FSB_riotshield"
+"model" "body_opforce_fsb_assault_a"
+"export" "86"
+"angles" "0 145 0"
+"script_forcegoal" "1"
+"script_moveoverride" "1"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 145 0"
+"export" "87"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "5980 1740 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto89"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 145 0"
+"export" "88"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "5964 1892 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto91"
+}
+{
+"script_specialops" "1"
+"target" "me1_auto93"
+"targetname" "me1_auto81"
+"script_noteworthy" "enemy_security_area_final"
+"origin" "5436 1348 64"
+"spawnflags" "3"
+"classname" "actor_enemy_FSB_riotshield"
+"model" "body_opforce_fsb_assault_a"
+"export" "89"
+"angles" "0 145 0"
+"script_forcegoal" "1"
+"script_moveoverride" "1"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 85 0"
+"export" "92"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "4932 1400 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto99"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 145 0"
+"export" "91"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "5972 2004 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto97"
+}
+{
+"script_specialops" "1"
+"script_forcespawn" "1"
+"script_moveoverride" "1"
+"script_forcegoal" "1"
+"angles" "0 85 0"
+"export" "93"
+"model" "body_opforce_fsb_assault_a"
+"classname" "actor_enemy_FSB_riotshield"
+"spawnflags" "3"
+"origin" "5020 1332 64"
+"script_noteworthy" "enemy_security_area_final"
+"targetname" "me1_auto81"
+"target" "me1_auto101"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "4988.1 1650.1 92"
+"targetname" "me1_auto99"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5052.1 1698.1 92"
+"targetname" "me1_auto101"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5116.1 1746.1 92"
+"targetname" "me1_auto93"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5188.1 1786.1 92"
+"targetname" "me1_auto87"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5284.1 1850.1 92"
+"targetname" "me1_auto85"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5356.1 1898.1 92"
+"targetname" "me1_auto89"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5428.1 1938.1 92"
+"targetname" "me1_auto91"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5500.1 1970.1 92"
+"targetname" "me1_auto97"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "94"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6488.2 671.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto102"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "95"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6136.2 2111.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto104"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5284.1 1458.1 92"
+"targetname" "me1_auto102"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5124.1 1394.1 92"
+"targetname" "me1_auto104"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5060.1 1442.1 92"
+"targetname" "me1_auto107"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "96"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6304.2 2039.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto107"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5196.1 1394.1 92"
+"targetname" "me1_auto109"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "97"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6296.2 2103.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto109"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "101"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6496.2 727.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto116"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "98"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6216.2 2111.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto112"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5804.1 2026.1 92"
+"targetname" "me1_auto112"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "99"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6496.2 543.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto114"
+}
+{
+"script_specialops" "1"
+"radius" "32"
+"origin" "5508.1 1266.1 92"
+"targetname" "me1_auto114"
+"classname" "script_struct"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto81"
+"export" "100"
+"script_noteworthy" "enemy_security_area_bottom"
+"classname" "actor_enemy_FSB_AR"
+"model" "body_opforce_fsb_assault_a"
+"angles" "0 180 0"
+"spawnflags" "3"
+"origin" "6496.2 599.7 104"
+"script_forcespawn" "1"
+"target" "me1_auto115"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "me1_auto115"
+"origin" "4932.1 1402.1 92"
+"radius" "32"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "me1_auto116"
+"origin" "5244.1 1330.1 92"
+"radius" "32"
+}

@@ -15,6 +15,7 @@ game:setdvar("r_fog", 1)
 
 game:setdvar("scr_autoRespawn", 0)
 game:setdvar("ui_deadquote", "")
+game:setdvar("beautiful_corner", 0)
 
 game:sharedset("eog_extra_data", "")
 

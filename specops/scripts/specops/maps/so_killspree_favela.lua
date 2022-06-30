@@ -1,7 +1,7 @@
 local map = {}
 
-map.localizedname = "O Cristo Redendor"
-game:addlocalizedstring("SPECIAL_OPS_FAVELA", "O Cristo Redendor")
+map.localizedname = "O Cristo Redentor"
+game:addlocalizedstring("SPECIAL_OPS_FAVELA", "O Cristo Redentor")
 
 map.premain = function()
     -- introscreen
@@ -402,8 +402,6 @@ function killspree()
     favelainit()
 
     setplayerpos()
-
-    print(player:getcurrentweapon())
 
     player:takeweapon("m1014")
     player:takeweapon("masada_grenadier_acog")

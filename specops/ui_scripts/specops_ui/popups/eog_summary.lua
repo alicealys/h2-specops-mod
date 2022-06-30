@@ -150,6 +150,11 @@ function eogsummary()
         extraheight = extraheight + 30
     end
 
+    if (not extradata.hidekills) then
+        addstat(Engine.Localize("@SPECIAL_OPS_UI_KILLS"), Engine.GetDvarString("aa_player_kills"))
+        extraheight = extraheight + 35
+    end
+
     if (showdifficulty) then
         addstat(Engine.Localize("@SPECIAL_OPS_UI_DIFFICULTY"), getdifficulty())
         extraheight = extraheight + 35
@@ -160,11 +165,6 @@ function eogsummary()
             addstat(Engine.Localize(extradata.stats[i].name), extradata.stats[i].value)
             extraheight = extraheight + 35
         end
-    end
-
-    if (not extradata.hidekills) then
-        addstat(Engine.Localize("@SPECIAL_OPS_UI_KILLS"), Engine.GetDvarString("aa_player_kills"))
-        extraheight = extraheight + 35
     end
 
     body:registerAnimationState("default", {
