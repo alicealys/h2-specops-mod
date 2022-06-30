@@ -122,6 +122,24 @@ map.starttimer = function()
     startchallengetimer()
 end
 
+function objective()
+    local finishline = game:getent("finish_line_origin", "targetname")
+    game:objective_add(1, "current", "Race to the finish line.", finishline.origin)
+    game:objective_setpointertextoverride(1, "Finish Line")
+
+    local movers = game:getentarray("move_objective", "targetname")
+    for i = 1, #movers do
+        local originent = game:getent(movers[i].target, "targetname")
+        movers[i]:onnotifyonce("trigger", function()
+            finishline:moveto(originent.origin, 10, 1.0, 1.0)
+        end)
+    end
+
+    game:oninterval(function()
+        game:objective_position(1, finishline.origin)
+    end, 0)
+end
+
 map.premain = function()
     settimetrial(true)
 
@@ -133,19 +151,17 @@ map.premain = function()
     -- remove radio chatter
     game:detour("_ID42407", "_ID28864", function() end)
 
-    local finishtrig = game:spawn("trigger_radius", vector:new(0, 0, 0), 0, 1000, 300)
-    finishtrig.origin = vector:new(-58686, 33327, -25950)
-    finishtrig:onnotifyonce("trigger", function(ent)
-        if (ent == player) then
+    local finishtrig = game:getent("finishline", "targetname")
+    local done = false
+    finishtrig:onnotify("trigger", function(ent)
+        if (not done and ent == player) then
             missionover(true)
+            done = true
         end
     end)
 
     -- change objective
-    game:detour("maps/cliffhanger_code", "_ID43733", function()
-        game:objective_add(4, "current", "Race to the finish line.", finishtrig.origin)
-        game:objective_setpointertextoverride(4, "Finish Line")
-    end)
+    game:detour("maps/cliffhanger_code", "_ID43733", objective)
 
     -- remove end triggers
     game:getentbyref(69, 0):delete()
