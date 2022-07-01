@@ -33,6 +33,14 @@ black.y = 0
 black:fadeovertime(1)
 black.alpha = 0
 
+-- set_custom_gameskill_func
+level._ID9544 = function()
+    game:scriptcall("_ID42298", "_ID34935")
+end
+game:ontimeout(function()
+    game:scriptcall("_ID42298", "_ID32787", true)
+end, 0)
+
 map.premain()
 mainhook = game:detour(string.format("maps/%s", game:getdvar("mapname")), "main", function()
     map.main()
