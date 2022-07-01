@@ -314,7 +314,7 @@ function inittriggers()
     local triggers = game:getentarray("course_triggers_01", "script_noteworthy")
     local currentarea = 1
 
-    level:onnotifyonce("so_player_course_jumped_down", function()
+    level:onnotifyonce("player_course_jumped_down", function()
         jumpeddown = true
         if (not areas[6].cleared) then
             missionover(false)
