@@ -17,13 +17,19 @@ game:setdvar("scr_autoRespawn", 0)
 game:setdvar("ui_deadquote", "")
 game:setdvar("beautiful_corner", 0)
 
+game:setdvar("specialops", 0)
+game:setdvar("arcademode", 0)
+game:setdvar("limited_mode", 0)
+
 game:sharedset("eog_extra_data", "")
 
+local levelmapname = game:getdvar("mapname")
 local mapname = game:getdvar("so_mapname")
 map = require("maps/" .. mapname)
 
 if (map.localizedname) then
     game:setdiscorddetails(map.localizedname)
+    game:addlocalizedstring("SPECIAL_OPS_" .. string.upper(levelmapname), map.localizedname)
 end
 
 local black = game:newhudelem()

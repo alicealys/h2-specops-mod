@@ -716,3 +716,15 @@ function isspawntrigger(ent)
 
 	return false
 end
+
+function radiodialogue(sound)
+    game:scriptcall("_ID42407", "_ID28864", sound)
+end
+
+function aideletewhenoutofsight(arr, dist)
+    game:scriptcall("maps/_utility", "_ID2265", arr, dist)
+end
+
+function battlechatteron(team)
+    game:scriptcall("_ID42407", "_ID4918", team)
+end
