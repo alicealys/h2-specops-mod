@@ -55,6 +55,6 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 ## Echo
 | Map  | Playable | Planned |
 |-------------|-----|-----|
-| Wetwork  | ❌ | ✔️ |
+| Wetwork  | ✔️ | ✔️ |
 | High Explosive | ❌ | ❌ |
 | Armor Piercing | ❌ | ❌ |
