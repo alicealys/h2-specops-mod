@@ -132,8 +132,8 @@ function firstbreachcleared()
     alarm()
 
     game:ontimeout(function()
-        game:setdvar("specialops", 1)
-
+        game:overridedvarint("specialops", 1)
+        
         game:scriptcall("maps/oilrig", "_ID45005", nil, true) -- open gate
         game:scriptcall("maps/oilrig", "_ID47645", "dummy_spawner_ballsout_intro")
         game:scriptcall("maps/oilrig", "_ID47645", "dummy_spawner_ballsout")
@@ -144,6 +144,7 @@ function firstbreachcleared()
             game:ontimeout(helientersandattacks, 10000)
 
             level:onnotifyonce("player_at_stairs_to_top_deck", function()
+                game:overridedvarint("specialops", 1)
                 game:scriptcall("maps/oilrig", "_ID53812")
 
                 level:onnotifyonce("smoke_firefight", function()
@@ -160,8 +161,8 @@ function firstbreachcleared()
                     radiodialogue("oilrig_sbc_hostconfirmed")
 
                     level:onnotifyonce("top_deck_room_breached", function()
+                        game:overridedvarint("specialops", 0)
                         game:musicstop()
-                        game:executecommand("specialops 0")
 
                         level:onnotifyonce("barracks_cleared", function()
                             game:musicstop()
@@ -258,7 +259,7 @@ map.main = function()
     for i = 1, #removetriggers do
         removetriggers[i]:delete()
     end
-
+    
     game:scriptcall("maps/_utility", "_ID1951", "start_map", startmap)
     mainhook.invoke(level)
     game:scriptcall("maps/_utility", "_ID10126", startmap)
