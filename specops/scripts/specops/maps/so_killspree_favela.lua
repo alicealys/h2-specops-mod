@@ -95,10 +95,8 @@ function favelainit()
     game:objective_add(1, "current", objective)
 
     addspawnfunc("axis", function(ai)
-        game:ontimeout(function()
-            level:notify("enemy_number_changed")
-            level:notify("enemy_population_info_available")
-        end, 0)
+        level:notify("enemy_number_changed")
+        level:notify("enemy_population_info_available")
     end)
 
 	arrayspawnfuncnoteworthy("ignore_and_delete_on_goal", function(ai)
@@ -132,28 +130,6 @@ function favelainit()
         ai:scriptcall("maps/favela_code", "_ID51386")
     end)
 end
-
-function shuffle(array)
-    local out = {}
-
-    for i = 1, #array do
-        local offset = i - 1
-        local value = array[i]
-        local randomindex = offset * math.random()
-        local flooredindex = randomindex - randomindex % 1
-
-        if (flooredindex == offset) then
-            out[#out + 1] = value
-        else
-            out[#out + 1] = out[flooredindex + 1]
-            out[flooredindex + 1] = value
-        end
-    end
-
-    return out
-end
-
-math.randomseed(os.time())
 
 function spawnwavebytrigger(triggers)
     for i = 1, #triggers do
@@ -334,9 +310,7 @@ function doggyattack()
     level:onnotifyonce("enemy_population_info_available", function()
         level:onnotify("enemy_downed", function()
             if (shouldreleasedog()) then
-                game:ontimeout(function()
-                    level:notify("who_let_the_dogs_out")
-                end, 0)
+                level:notify("who_let_the_dogs_out")
             end
         end)
     end)
@@ -450,11 +424,9 @@ function killspree()
 
         enemieshitvalue:setvalue(pointscounter)
 
-        game:ontimeout(function()
-            level:notify("enemy_number_changed")
-            level:notify("enemy_downed")
-            level:notify("enemy_killed_by_player")
-        end, 0)
+        level:notify("enemy_number_changed")
+        level:notify("enemy_downed")
+        level:notify("enemy_killed_by_player")
     end)
 
     player:onnotify("civilian_killed", function()

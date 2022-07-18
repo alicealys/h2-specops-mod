@@ -269,32 +269,6 @@ function isscriptmodelcivilian(ent)
     return false
 end
 
-function deletenonspecialops(types)
-    local ents = game:getentarray()
-
-    local candelete = function(ent)
-        return ent.code_classname and ent.script_specialops ~= 1 and ent.targetname ~= "intelligence_item"
-    end
-
-    local trydelete = function(ent)
-        if (not candelete(ent)) then
-            return
-        end
-
-        for i = 1, #types do
-            if (types[i](ent)) then
-                ent:delete()
-                return
-            end
-        end
-    end
-
-    for i = 1, #ents do
-        local ent = ents[i]
-        trydelete(ent)
-    end
-end
-
 function airport()
     deletenonspecialops({
         isspawner,
@@ -313,16 +287,12 @@ function airport()
 
     local trigger = game:getent("start_terminal", "script_noteworthy")
     trigger:onnotify("trigger", function()
-        game:ontimeout(function()
-            level:notify("start_terminal")
-        end, 0)
+        level:notify("start_terminal")
     end)
 
     local escaped = game:getent("escaped_trigger", "script_noteworthy")
     escaped:onnotifyonce("trigger", function()
-        game:ontimeout(function()
-            level:notify("escaped_terminal")
-        end, 0)
+        level:notify("escaped_terminal")
     end)
 
     enablechallengetimer("start_terminal", "escaped_terminal")
@@ -488,6 +458,10 @@ function enemyupdatetarget(ent, newtarget)
 end
 
 function enemymovetostruct(ent, trig, seekgoalradius, stay, duration)
+    if (game:isalive(ent) == 0) then
+        return
+    end
+
     local stop = false
     ent:onnotifyonce("woken_up", function()
         stop = true
@@ -571,9 +545,7 @@ function enemymovetostructdetectdamage(ent, seekgoalradius, stay, duration, trig
 end
 
 function enemymovetostructwakeup(ent, seekgoalradius, stay, duration)
-    game:ontimeout(function()
-        ent:notify("woken_up")
-    end, 0)
+    ent:notify("woken_up")
 
 	ent.ignoreall = false
 	local node = game:getnode(ent.target, "targetname")
@@ -704,9 +676,7 @@ function enemypronetostanddetectdamage(ent, seekgoalradius, stay, duration, trig
 end
 
 function enemypronetostandwakeup(ent, seekgoalradius, stay, duration)
-    game:ontimeout(function()
-        ent:notify("woken_up")
-    end, 0)
+    ent:notify("woken_up")
 	
 	ent.ignoreall = false
     ent:scriptcall("maps/_utility", "_ID12480")

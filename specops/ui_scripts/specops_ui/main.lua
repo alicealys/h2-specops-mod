@@ -13,7 +13,7 @@ function frontend()
     Engine.Localize = function(...)
         local args = {...}
         if (args[1] == "@MENU_SP_FOR_THE_RECORD") then
-            return "SPECIAL OPS"
+            return ""
         end
     
         if (args[1] == "@MENU_SP_CAMPAIGN") then
@@ -28,6 +28,7 @@ function frontend()
         buttonlist:removeElement(buttonlist:getFirstChild())
         buttonlist:removeElement(buttonlist:getFirstChild())
         buttonlist:removeElement(buttonlist:getFirstChild())
+        buttonlist:removeElement(buttonlist:getFirstChild():getNextSibling())
     end)
     
     game:addlocalizedstring("LUA_SP_SPECIAL_OPS_DESC", "Play Special Ops.")

@@ -402,15 +402,17 @@ end
 function enableescapewarning()
 	local escapewarningtriggers = game:getentarray( "player_trying_to_escape", "script_noteworthy" )
     local escapeinterval = game:oninterval(function()
+        local istouching = false
         for i = 1, #escapewarningtriggers do
             local trigger = escapewarningtriggers[i]
+            istouching = istouching or (player:istouching(trigger) == 1)
+        end
 
-            if (player:istouching(trigger) == 1) then
-                pingescapewarning()
-            elseif (escapewarningsplash ~= nil) then
-                escapewarningsplash.alpha = 0
-                escapewarningsplash:fadeovertime(0.25)
-            end
+        if (istouching) then
+            pingescapewarning()
+        elseif (escapewarningsplash ~= nil) then
+            escapewarningsplash.alpha = 0
+            escapewarningsplash:fadeovertime(0.25)
         end
     end, 0)
 
@@ -427,6 +429,10 @@ function enablefailonescape()
     level:onnotifyonce("player_has_escaped", function()
         missionover(false)
     end)
+end
+
+function enableescapefailure()
+    enablefailonescape()
 end
 
 function setplayerpos()
@@ -450,9 +456,11 @@ end)
 ismissionover = false
 local playerkills = 0
 function missionover(success, timeoverride)
-    game:ontimeout(function()
-        level:notify("special_op_terminated")
-    end, 0)
+    if (ismissionover) then
+        return
+    end
+
+    level:notify("special_op_terminated")
 
     if (map.preover) then
         map.preover()
@@ -633,15 +641,11 @@ game:ontimeout(function()
                 if (attacker == player) then
                     if (ai.team == "axis") then
                         playerkills = playerkills + 1
-                        game:ontimeout(function()
-                            player:notify("enemy_killed")
-                        end, 0)
+                        player:notify("enemy_killed")
                     end
 
                     if (ai.team == "neutral") then
-                        game:ontimeout(function()
-                            player:notify("civilian_killed")
-                        end, 0)
+                        player:notify("civilian_killed")
                     end
                 end
             end)
@@ -728,3 +732,84 @@ end
 function battlechatteron(team)
     game:scriptcall("_ID42407", "_ID4918", team)
 end
+
+function addstart(name, func)
+    game:scriptcall("maps/_utility", "_ID1951", name, func)
+end
+
+function defaultstart(func)
+    game:scriptcall("maps/_utility", "_ID10126", func)
+end
+
+function arraydelete(arr)
+    for i = 1, #arr do
+        arr[i]:delete()
+    end
+end
+
+function deletenonspecialops(types)
+    local ents = game:getentarray()
+
+    local candelete = function(ent)
+        return ent.code_classname and ent.script_specialops ~= 1 and ent.targetname ~= "intelligence_item"
+    end
+
+    local trydelete = function(ent)
+        if (not candelete(ent)) then
+            return
+        end
+
+        for i = 1, #types do
+            if (types[i](ent)) then
+                ent:delete()
+                return
+            end
+        end
+    end
+
+    for i = 1, #ents do
+        local ent = ents[i]
+        trydelete(ent)
+    end
+end
+
+function foreach(arr, func)
+    for i = 1, #arr do
+        func(arr[i])
+    end
+end
+
+function array:foreach(func)
+    for i = 1, #self do
+        func(self[i], i)
+    end
+end
+
+function enableallportalgroups()
+    local portals = game:getentarray("portal_group", "classname")
+    portals:foreach(function(portal)
+        game:enablepg(portal.targetname, 1)
+    end)
+end
+
+function shuffle(array)
+    local out = {}
+
+    for i = 1, #array do
+        local offset = i - 1
+        local value = array[i]
+        local randomindex = offset * math.random()
+        local flooredindex = randomindex - randomindex % 1
+
+        if (flooredindex == offset) then
+            out[#out + 1] = value
+        else
+            out[#out + 1] = out[flooredindex + 1]
+            out[flooredindex + 1] = value
+        end
+    end
+
+    return out
+end
+
+math.randomseed(os.time())

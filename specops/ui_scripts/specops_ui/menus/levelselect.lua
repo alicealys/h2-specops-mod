@@ -4,6 +4,45 @@ local function formattime(msec)
     return string.format("%d:%02d.%02d", math.floor(msec / 1000 / 60), math.floor(msec / 1000) % 60, (msec % 1000) / 10)
 end
 
+local function cleanstr(str)
+    return str:sub(2, #str - 1)
+end
+
+local function startmap(somapname, mapname)
+    Engine.SetDvarFromString("so_mapname", somapname)
+    Engine.SetDvarFromString("addon_mapname", somapname)
+    Engine.SetDvarBool("cl_disableMapMovies", true)
+
+    local basepath = game:getloadedmod()
+    local loadscreenimage = "loadscreen_" .. somapname .. ".stbi_img"
+
+    if (io.fileexists(basepath .. "/materials/" .. loadscreenimage)) then
+        Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
+    else
+        Engine.SetDvarString("cl_loadscreenImage", "black")
+    end
+
+    local objmaps = {
+        ["so_ac130_co_hunted"] = true,
+        ["so_snowrace1_cliffhanger"] = true,
+        ["so_killspree_trainer"] = true,
+        ["so_killspree_favela"] = true,
+        ["so_rooftop_contingency"] = true,
+    }
+
+    Engine.SetDvarString("cl_loadscreenTitle", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname))))
+    Engine.SetDvarString("cl_loadscreenDesc", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_DESC")))
+    Engine.SetDvarString("cl_loadscreenObjIcon", "star")
+
+    if (objmaps[somapname] ~= nil) then
+        Engine.SetDvarString("cl_loadscreenObj", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_OBJ_DESC")))
+    else
+        Engine.SetDvarString("cl_loadscreenObj", "")
+    end
+
+    Engine.Exec("map " .. mapname)
+end
+
 local function addstars(infobox)
     local num = 0
     local createstar = function()
@@ -118,18 +157,14 @@ local function levelselect(act)
             local islocked = not (io.fileexists(game:getloadedmod() .. "/scripts/specops/maps/" .. act.missions[i].somapname .. ".lua"))
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
-                    Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
-                    Engine.SetDvarFromString("addon_mapname", act.missions[i].somapname)
-                    Engine.Exec("map " .. act.missions[i].mapname)
+                    startmap(act.missions[i].somapname, act.missions[i].mapname)
                     return
                 end
 
                 Engine.SetDvarInt("recommended_gameskill", -1)
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
-                        Engine.SetDvarFromString("so_mapname", act.missions[i].somapname)
-                        Engine.SetDvarFromString("addon_mapname", act.missions[i].somapname)
-                        Engine.Exec("map " .. act.missions[i].mapname)
+                        startmap(act.missions[i].somapname, act.missions[i].mapname)
                     end,
                     specialops = true,
                     tryAgainAvailable = false
