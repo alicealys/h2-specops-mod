@@ -12,6 +12,7 @@ local function startmap(somapname, mapname)
     Engine.SetDvarFromString("so_mapname", somapname)
     Engine.SetDvarFromString("addon_mapname", somapname)
     Engine.SetDvarBool("cl_disableMapMovies", true)
+    Engine.SetDvarBool("cl_enableCustomLoadscreen", true)
 
     local basepath = game:getloadedmod()
     local loadscreenimage = "loadscreen_" .. somapname .. ".stbi_img"
@@ -19,7 +20,7 @@ local function startmap(somapname, mapname)
     if (io.fileexists(basepath .. "/materials/" .. loadscreenimage)) then
         Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
     else
-        Engine.SetDvarString("cl_loadscreenImage", "black")
+        Engine.SetDvarString("cl_loadscreenImage", "")
     end
 
     local objmaps = {
