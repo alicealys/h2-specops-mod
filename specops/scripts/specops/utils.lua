@@ -84,8 +84,7 @@ function createhuditem(line, xoffset, message, always_draw)
 end
 
 local istimetrial = false
-local timerlabel = "Time: "
-local timerlabelempty = "Time: -:--.-"
+local timerlabel = "&SPECIAL_OPS_TIME"
 
 function addchallengetimer(timelimit)
     if (challengetimer) then
@@ -97,7 +96,8 @@ function addchallengetimer(timelimit)
         challengetimer.timelimit = timelimit
         challengetimer:settenthstimerstatic(timelimit)
     else
-        challengetimer = createhuditem(1, -178, timerlabelempty)
+        challengetimer = createhuditem(1, -178, timerlabel)
+        challengetimer:settext("&SPECIAL_OPS_TIME_NULL")
     end
 
     challengetimer.alignx = "left"
@@ -285,7 +285,7 @@ end)
 local doingsplash = false
 local splashqueue = {}
 local splashnum = 0
-local function splashinternal(text, color)
+local function splashinternal(text, color, value)
     if (doingsplash) then
         return
     end
@@ -304,7 +304,13 @@ local function splashinternal(text, color)
     end
 
     splashtext:fadeovertime(0)
-    splashtext:settext(text)
+    splashtext.label = text
+    if (type(value) == "string") then
+        splashtext:settext(value)
+    elseif (value ~= nil) then
+        splashtext:setvalue(value)
+    end
+
     splashtext.alpha = 1
 
     if (not color or color == "yellow") then
@@ -341,10 +347,11 @@ function entity:destroy_()
 end
 
 local splashinterval = nil
-function addsplash(text, color)
+function addsplash(text, color, value)
     table.insert(splashqueue, {
         text = text,
-        color = color
+        color = color,
+        value = value
     })
 
     if (splashinterval) then
@@ -359,16 +366,16 @@ function addsplash(text, color)
         local splash = splashqueue[1]
         table.remove(splashqueue, 1)
 
-        splashinternal(splash.text, splash.color)
+        splashinternal(splash.text, splash.color, splash.value)
     end, 0)
 end
 
-function splash(text)
-    addsplash(text, "yellow")
+function splash(text, value)
+    addsplash(text, "yellow", value)
 end
 
 function redsplash(text)
-    addsplash(text, "red")
+    addsplash(text, "red", value)
 end
 
 function pingescapewarning()
@@ -380,7 +387,7 @@ function pingescapewarning()
         escapewarningsplash.font = "bank"
         escapewarningsplash.fontscale = 1.5
         escapewarningsplash.faded = 1
-        escapewarningsplash:settext("Turn back and continue the mission!")
+        escapewarningsplash:settext("&SPECIAL_OPS_ESCAPE_WARNING")
         escapewarningsplash:setwhite()
     end
 
@@ -503,13 +510,13 @@ function missionover(success, timeoverride)
         if (success) then
             text.color = vector:new(0.8, 0.8, 1)
             text.glowcolor = vector:new(0.301961, 0.301961, 0.6)
-            text:settext("Mission Success!")
+            text:settext("&SPECIAL_OPS_CHALLENGE_SUCCESS")
             player:playlocalsound("h1_arcademode_mission_success")
         else
             text.hidwhendead = false
             text.color = vector:new(1, 0.4, 0.4)
             text.glowcolor = vector:new(0.7, 0.2, 0.2)
-            text:settext("Mission Failed!")
+            text:settext("&SPECIAL_OPS_CHALLENGE_FAILURE")
         end
 
         text.horzalign = "center"

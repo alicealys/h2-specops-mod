@@ -1,6 +1,5 @@
 local map = {}
 
-map.localizedname = "The Pit"
 map.calculatestars = function(time)
     if (time > 45000) then
         return 1
@@ -18,8 +17,6 @@ map.calculatestars = function(time)
         return 3
     end
 end
-
-game:addlocalizedstring("SPECIAL_OPS_TRAINER", "The Pit")
 
 local areas = {
     {
@@ -165,9 +162,9 @@ function startcourse()
 
     level:onnotify("civilian_killed", function()
         totalhitcivvies = totalhitcivvies + 1
-        redsplash("Civilian Hit!")
+        redsplash("&SO_KILLSPREE_TRAINER_CIVILIAN_HIT")
         removechallengestar(3)
-        civvieshitvalue:settext(totalhitcivvies .. "/5")
+        civvieshitvalue:setvalue(totalhitcivvies)
         if (totalhitcivvies >= 5) then
             missionover(false)
         end 
@@ -216,7 +213,7 @@ function initarea(area)
                 hittargets = hittargets + 1
                 area.hitenemies = hittargets
 
-                enemieshitvalue:settext(totalhitenemies .. "/24")
+                enemieshitvalue:setvalue(totalhitenemies)
                 if (totalhitenemies >= 24) then
                     enemiestext:setgreen()
                     enemieshitvalue:setgreen()
@@ -229,7 +226,7 @@ function initarea(area)
                     end
 
                     hidetargetwarning()
-                    splash("Area Cleared")
+                    splash("&SO_KILLSPREE_TRAINER_AREA_CLEARED")
                     player:playlocalsound("scn_timer_buzzer")
 
                     currentarea = area.index + 1
@@ -291,20 +288,33 @@ function initarea(area)
 end
 
 map.preover = function()
-    game:addlocalizedstring("SPECIAL_OPS_UI_TIME", "Finished Time")
-    game:addlocalizedstring("SO_TRAINER_TOTAL_HIT_ENEMIES", "Enemy Targets Hit")
-    game:addlocalizedstring("SO_TRAINER_TOTAL_HIT_CIVVIES", "Civilian Targets Hit")
+    local finished = totalhitenemies >= 24
+    local timeentry = {}
+    if (not finished) then
+        timeentry = {
+            name = "@SO_KILLSPREE_TRAINER_SCOREBOARD_FINISH_TIME",
+            value = "@SO_KILLSPREE_TRAINER_SCOREBOARD_NA",
+            isvaluelocalized = true,
+        }
+    end
+
     game:sharedset("eog_extra_data", json.encode({
         hidekills = true,
-        timeoverride = totalhitenemies < 24 and "N/A" or nil,
+        hidetime = not finished,
+        timelabel = "@SO_KILLSPREE_TRAINER_SCOREBOARD_FINISH_TIME",
         stats = {
+            timeentry,
             {
-                name = "@SO_TRAINER_TOTAL_HIT_ENEMIES",
-                value = tostring(totalhitenemies) .. "/24"
+                name = "@SO_KILLSPREE_TRAINER_SCOREBOARD_ENEMIES_HIT",
+                value = "@SO_KILLSPREE_TRAINER_ENEMIES_COUNT",
+                values = {totalhitenemies, 24},
+                isvaluelocalized = true,
             },
             {
-                name = "@SO_TRAINER_TOTAL_HIT_CIVVIES",
-                value = tostring(totalhitcivvies) .. "/5"
+                name = "@SO_KILLSPREE_TRAINER_SCOREBOARD_CIVS_HIT",
+                value = "@SO_KILLSPREE_TRAINER_CIVVIES_COUNT",
+                values = {totalhitcivvies, 5},
+                isvaluelocalized = true,
             }
         }
     }))
@@ -358,13 +368,13 @@ function showtargetwarning(jump)
     targetwarning.alpha = 1
 
     if (multiple and jump) then
-        targetwarning:settext("Missed Targets - Go Back Before Jumping")
+        targetwarning:settext("&SO_KILLSPREE_TRAINER_HINT_MISSED_TARGETS_JUMP")
     elseif (multiple) then
-        targetwarning:settext("Missed Targets - Go Back")
+        targetwarning:settext("&SO_KILLSPREE_TRAINER_HINT_MISSED_TARGETS")
     elseif (jump) then
-        targetwarning:settext("Missed a Target - Go Back Before Jumping")
+        targetwarning:settext("&SO_KILLSPREE_TRAINER_HINT_MISSED_TARGET_JUMP")
     else
-        targetwarning:settext("Missed a Target - Go Back")
+        targetwarning:settext("&SO_KILLSPREE_TRAINER_HINT_MISSED_TARGET")
     end
 end
 
@@ -376,7 +386,7 @@ function createmissingtargetwarning()
     targetwarning.fontscale = 1.5
     targetwarning.alpha = 0
     targetwarning.font = "objective"
-    targetwarning:settext("Missed a Target - Go Back")
+    targetwarning:settext("&SO_KILLSPREE_TRAINER_HINT_MISSED_TARGET")
 
     local show = false
     game:oninterval(function()
@@ -520,15 +530,15 @@ map.premain = function()
         end
     end)
 
-    enemiestext = createhuditem(3, -135, "Enemies: ")
-    civilianstext = createhuditem(4, -135, "Civilians: ")
+    enemiestext = createhuditem(3, -135, "&SO_KILLSPREE_TRAINER_ENEMIES")
+    civilianstext = createhuditem(4, -135, "&SO_KILLSPREE_TRAINER_CIVVIES")
 
-    enemieshitvalue = createhuditem(3, -135)
-    enemieshitvalue:settext("0/24")
+    enemieshitvalue = createhuditem(3, -135, "&SO_KILLSPREE_TRAINER_ENEMIES_COUNT")
+    enemieshitvalue:setvalue(0)
     enemieshitvalue.alignx = "left"
 
-    civvieshitvalue = createhuditem(4, -135)
-    civvieshitvalue:settext("0/5")
+    civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_TRAINER_CIVVIES_COUNT")
+    civvieshitvalue:setvalue(0)
     civvieshitvalue.alignx = "left"
 
     -- remove default target trigger handlers

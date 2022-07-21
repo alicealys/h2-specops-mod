@@ -1,4 +1,7 @@
-include("../../common/localization")
 include("../../common/stats")
 require("utils")
-require("main")
+local res, err = require("main")
+
+if (game:getdvar("so_debug") == "1") then
+    print(res, err)
+end

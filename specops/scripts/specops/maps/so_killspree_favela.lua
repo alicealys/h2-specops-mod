@@ -1,8 +1,5 @@
 local map = {}
 
-map.localizedname = "O Cristo Redentor"
-game:addlocalizedstring("SPECIAL_OPS_FAVELA", "O Cristo Redentor")
-
 map.premain = function()
     -- introscreen
     game:detour("_ID42318", "main", function() end)
@@ -17,7 +14,7 @@ map.premain = function()
 end
 
 function setupregular()
-    objective = "Kill 30 Enemies."
+    objective = "&SO_KILLSPREE_FAVELA_OBJ_REGULAR"
 	pointscounter = 30
 	
 	minenemypopulation = 14
@@ -31,7 +28,7 @@ function setupregular()
 end
 
 function setuphardened()
-    objective = "Kill 40 Enemies."
+    objective = "&SO_KILLSPREE_FAVELA_OBJ_HARDENED"
 	pointscounter = 40
 	
 	minenemypopulation = 14
@@ -54,7 +51,7 @@ end
 function setupveteran()
     deleteonveteran()
 
-    objective = "Kill 50 Enemies."
+    objective = "&SO_KILLSPREE_FAVELA_OBJ_VETERAN"
 	pointscounter = 50
 	
 	minenemypopulation = 12
@@ -393,15 +390,23 @@ function killspree()
 
     enablechallengetimer("start_so_killspree_favela", "challenge_success")
 
-    enemiestext = createhuditem(3, -135, "Hostiles: ")
-    civilianstext = createhuditem(4, -135, "Civilian Deaths: ")
+    enemiestext = createhuditem(3, -135, "&SPECIAL_OPS_HOSTILES")
+    civilianstext = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIVILIANS")
 
     enemieshitvalue = createhuditem(3, -135)
     enemieshitvalue.alignx = "left"
     enemieshitvalue:setvalue(pointscounter)
 
-    civvieshitvalue = createhuditem(4, -135)
-    civvieshitvalue:settext("0 (" .. civiliankillfail .. ")")
+    local gameskill = game:getdvarint("g_gameskill")
+    if (gameskill <= 1) then
+        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_REGULAR")
+    elseif (gameskill == 2) then
+        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_HARDENED")
+    else
+        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_VETERAN")
+    end
+
+    civvieshitvalue:setvalue(0)
     civvieshitvalue.alignx = "left"
 
     player:onnotify("enemy_killed", function(attacker)
@@ -431,7 +436,7 @@ function killspree()
 
     player:onnotify("civilian_killed", function()
         civviedeaths = civviedeaths + 1
-        civvieshitvalue:settext(civviedeaths .. " (" .. civiliankillfail .. ")")
+        civvieshitvalue:setvalue(civviedeaths)
 
         local remaining = civiliankillfail - civviedeaths
         if (remaining <= 1) then
@@ -513,9 +518,6 @@ map.main = function()
 end
 
 map.preover = function()
-    game:addlocalizedstring("SO_KILLSPREE_FAVELA_KILLS_CIVILIANS", "Civilians Killed")
-    game:addlocalizedstring("SO_KILLSPREE_FAVELA_KILLS_DOGS", "Dogs Killed")
-
     local data = {
         hidekills = true,
         stats = {

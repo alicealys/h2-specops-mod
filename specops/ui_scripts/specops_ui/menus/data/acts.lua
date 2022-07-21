@@ -2,7 +2,7 @@ acts = {
     {
         id = "act1",
         index = 1,
-        name = "@MENU_SO_ACT_ALPHA",
+        name = "@SPECIAL_OPS_SO_BUTTON_ALPHA_CAPS",
         missions = {
             {
                 nodifficulty = true,
@@ -65,7 +65,7 @@ acts = {
     {
         id = "act2",
         index = 2,
-        name = "@MENU_SO_ACT_BRAVO",
+        name = "@SPECIAL_OPS_SO_BUTTON_BETA_CAPS",
         missions = {
             {
                 somapname = "so_ac130_co_hunted",
@@ -123,7 +123,7 @@ acts = {
     {
         id = "act3",
         index = 3,
-        name = "@MENU_SO_ACT_CHARLIE",
+        name = "@SPECIAL_OPS_SO_BUTTON_CHARLIE_CAPS",
         missions = {
             {
                 somapname = "so_hidden_so_ghillies",
@@ -184,7 +184,7 @@ acts = {
     {
         id = "act4",
         index = 4,
-        name = "@MENU_SO_ACT_DELTA",
+        name = "@SPECIAL_OPS_SO_BUTTON_DELTA_CAPS",
         missions = {
             {
                 somapname = "so_download_arcadia",
@@ -241,7 +241,7 @@ acts = {
     {
         id = "act5",
         index = 5,
-        name = "@MENU_SO_ACT_ECHO",
+        name = "@SPECIAL_OPS_SO_BUTTON_ECHO_CAPS",
         missions = {
             {
                 somapname = "so_assault_oilrig",

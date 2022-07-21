@@ -1,7 +1,5 @@
 local map = {}
 
-map.localizedname = "Wetwork"
-
 map.premain = function()
 
 end
@@ -74,7 +72,7 @@ end
 function objmain()
     local objectivenumber = 1
     local objpositions = game:getentarray("obj_breach2", "targetname")
-    game:objective_add(objectivenumber, "current", "Kill all enemies without harming the hostages")
+    game:objective_add(objectivenumber, "current", "&SO_ASSAULT_OILRIG_OBJ_MAIN")
     game:scriptcall("_ID42367", "_ID3438", objpositions)
     
     local breachindices = game:scriptcall("_ID42367", "_ID15588", objpositions)

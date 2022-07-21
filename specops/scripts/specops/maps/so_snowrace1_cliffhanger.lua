@@ -1,8 +1,5 @@
 local map = {}
 
-map.localizedname = "Race"
-game:addlocalizedstring("SPECIAL_OPS_CLIFFHANGER", "Race")
-
 function getplayervehicle()
     local linked = player:getlinkedparent()
     if (linked and linked.classname and linked.classname:match("vehicle")) then
@@ -50,7 +47,7 @@ function entity:startraceboost()
             text:fadeovertime(0.1)
             text.alpha = 1
             text:setwhite()
-            text:settext("Quick Start!")
+            text:settext("&SO_SNOWRACE1_CLIFFHANGER_PERFECT_TIMING")
     
             game:ontimeout(function()
                 text:fadeovertime(0.5)
@@ -122,10 +119,12 @@ map.starttimer = function()
     startchallengetimer()
 end
 
+map.objective = "&SO_SNOWRACE1_CLIFFHANGER_FINISHLINE"
+
 function objective()
     local finishline = game:getent("finish_line_origin", "targetname")
-    game:objective_add(1, "current", "Race to the finish line.", finishline.origin)
-    game:objective_setpointertextoverride(1, "Finish Line")
+    game:objective_add(1, "current", map.objective, finishline.origin)
+    game:objective_setpointertextoverride(1, "&SO_SNOWRACE1_CLIFFHANGER_FINISHLINE")
 
     local movers = game:getentarray("move_objective", "targetname")
     for i = 1, #movers do
@@ -198,7 +197,7 @@ map.premain = function()
             vehicle.veh_topspeed = 100
         end
 
-        starttimer:settext("Get Ready")
+        starttimer:settext("&SO_SNOWRACE1_CLIFFHANGER_RACE_READY")
         starttimer:setwhite()
         player:freezecontrols(true)
 
@@ -207,7 +206,7 @@ map.premain = function()
             local beeps = 0
 
             timer = game:oninterval(function()
-                starttimer:setvalue(3 - beeps)
+                starttimer:settext("&SO_SNOWRACE1_CLIFFHANGER_RACE_" .. tostring(3 - beeps))
                 if (beeps <= 1) then
                     starttimer:setred()
                 else
@@ -216,7 +215,7 @@ map.premain = function()
     
                 if (beeps == 3) then
                     starttimer:setgreen()
-                    starttimer:settext("GO!")
+                    starttimer:settext("&SO_SNOWRACE1_CLIFFHANGER_RACE_GO")
     
                     game:ontimeout(function()
                         starttimer:fadeovertime(0.5)

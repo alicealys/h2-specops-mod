@@ -9,12 +9,24 @@ local timelimits = {
 
 local timelimit = timelimits[game:getdvarint("g_gameskill") + 1] or 15
 
-map.localizedname = "Time Trial"
-game:addlocalizedstring("SPECIAL_OPS_CLIFFHANGER", "Time Trial")
+map.objective = "&SO_SNOWRACE1_CLIFFHANGER_OBJ_FINISHLINE_GATES"
+
+local gateshit = 0
+map.preover = function()
+    game:sharedset("eog_extra_data", json.encode({
+        hidekills = true,
+        stats = {
+            {
+                name = "@SO_SNOWRACE1_CLIFFHANGER_GATES",
+				value = gateshit
+            }
+        }
+    }))
+end
 
 local premain = map.premain
 map.premain = function()
-    settimerlabel("Finish in: ")
+    settimerlabel("&SO_SNOWRACE1_CLIFFHANGER_SPECOP_TIMER")
     premain()
 
     game:precachemodel("h2_ch_square_flag_fast")
@@ -28,6 +40,16 @@ map.premain = function()
 	level:onnotifyonce("special_op_terminated", function()
 		stop = true
 	end)
+
+	-- causes lag
+	game:getentbynum(2033):delete()
+
+	local spawners = game:vehicle_getspawnerarray()
+	for i = 1, #spawners do
+		if (spawners[i].classname ~= "script_vehicle_snowmobile_player_alt" and spawners[i].classname ~= "script_vehicle_snowmobile_player") then
+			spawners[i]:delete()
+		end
+	end
 
 	local flagtriggers = game:getentarray("flag_trigger", "targetname")
 	for i = 1, #flagtriggers do
@@ -57,7 +79,8 @@ map.premain = function()
 			flagtriggers[i]:delete()
 			listener:clear()
 
-			splash("+" .. flagtime .. " Seconds")
+			gateshit = gateshit + 1
+			splash("&SO_SNOWRACE1_CLIFFHANGER_TIMESPLASH", flagtime)
 			addchallengetimer(challengetimeleft + flagtime)
 			startchallengetimer(6, 3)
 			player:playlocalsound("snowrace_flag_capture")

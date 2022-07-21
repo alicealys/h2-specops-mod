@@ -1,8 +1,5 @@
 local map = {}
 
-map.localizedname = "Breach & Clear"
-game:addlocalizedstring("SPECIAL_OPS_GULAG", "Breach & Clear")
-
 function addlockercollision()
     local brushmodel = game:getentbyref(327, 0)
 
@@ -63,7 +60,13 @@ map.premain = function()
     -- change objective
     game:detour("maps/gulag", "_ID43460", function()
         local org = game:scriptcall("maps/gulag_code", "_ID49776")
-        game:objective_add(4, "current", "Escape as quickly as possible.", org)
+        local gameskill = game:getdvarint("g_gameskill")
+
+        if (gameskill <= 2) then
+            game:objective_add(1, "current", "&SO_SHOWERS_GULAG_OBJ_REGULAR", org)
+        else
+            game:objective_add(1, "current", "&SO_SHOWERS_GULAG_OBJ_VETERAN", org)
+        end
     end)
 
     local timelimit = nil

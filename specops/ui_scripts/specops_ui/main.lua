@@ -69,6 +69,17 @@ function ingame()
         return getdvarbool(...)
     end
 
+    
+    local getdvarstring = Engine.GetDvarString
+    Engine.GetDvarString = function(...)
+        local args = {...}
+        if (args[1] == "mapname") then
+            return getdvarstring("so_mapname")
+        end
+
+        return getdvarstring(...)
+    end
+
     isNoRussian = function()
         return false
     end

@@ -1,8 +1,5 @@
 local map = {}
 
-map.localizedname = "Evasion"
-game:addlocalizedstring("SPECIAL_OPS_CONTINGENCY", "Evasion")
-
 map.premain = function()
     -- dont delete stuff
     game:detour("_ID43797", "init", function() end)
@@ -165,7 +162,7 @@ function soforestinit()
         level.newenemyaccuracy = 1.75
     end
 
-    game:objective_add(1, "current", "Evade the patrols and reach the safety of the village.", vector:new(-19720, -5152, 714))
+    game:objective_add(1, "current", "&SO_FOREST_CONTINGENCY_OBJ_REGULAR", vector:new(-19720, -5152, 714))
 end
 
 function soforest()

@@ -142,12 +142,19 @@ function eogsummary()
     local extraheight = 0
 
     extraheight = extraheight - 30
-    if (not extradata.timeoverride) then
-        addstat(Engine.Localize("@SPECIAL_OPS_UI_TIME"), formattedtime)
-        extraheight = extraheight + 30
-    else
-        addstat(Engine.Localize("@SPECIAL_OPS_UI_TIME"), extradata.timeoverride)
-        extraheight = extraheight + 30
+    if (not extradata.hidetime) then
+        local label = "@SPECIAL_OPS_UI_TIME"
+        if (extradata.timelabel) then
+            label = extradata.timelabel
+        end
+
+        if (not extradata.timeoverride) then
+            addstat(Engine.Localize(label), formattedtime)
+            extraheight = extraheight + 30
+        else
+            addstat(Engine.Localize(label), extradata.timeoverride)
+            extraheight = extraheight + 30
+        end
     end
 
     if (not extradata.hidekills) then
@@ -162,8 +169,22 @@ function eogsummary()
 
     if (type(extradata.stats) == "table") then
         for i = 1, #extradata.stats do
-            addstat(Engine.Localize(extradata.stats[i].name), extradata.stats[i].value)
-            extraheight = extraheight + 35
+            local stat = extradata.stats[i]
+            if (type(stat) == "table" and stat.name and stat.value) then
+                local value = stat.value
+                if (stat.istimestamp and type(value) == "number") then
+                    value = formattime(value)
+                end
+    
+                if (stat.isvaluelocalized) then
+                    local values = type(stat.values) == "table" and stat.values or {}
+                    addstat(Engine.Localize(stat.name), Engine.Localize(value, table.unpack(values)))
+                else
+                    addstat(Engine.Localize(stat.name), value)
+                end
+    
+                extraheight = extraheight + 35
+            end
         end
     end
 

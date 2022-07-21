@@ -27,10 +27,11 @@ local levelmapname = game:getdvar("mapname")
 local mapname = game:getdvar("so_mapname")
 map = require("maps/" .. mapname)
 
-if (map.localizedname) then
-    game:setdiscorddetails(map.localizedname)
-    game:addlocalizedstring("SPECIAL_OPS_" .. string.upper(levelmapname), map.localizedname)
+if (game:getdvar("so_debug") == "1") then
+    print(map)
 end
+
+game:setdiscorddetails("@SPECIAL_OPS_" .. string.upper(mapname))
 
 local black = game:newhudelem()
 black:setshader("black", 1000, 1000)

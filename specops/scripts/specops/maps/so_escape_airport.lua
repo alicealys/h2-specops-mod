@@ -1,8 +1,5 @@
 local map = {}
 
-map.localizedname = "Terminal"
-game:addlocalizedstring("SPECIAL_OPS_AIRPORT", "Terminal")
-
 map.premain = function()
     -- introscreen
     game:detour("_ID42318", "main", function() end)
@@ -239,7 +236,7 @@ function objectivebreadcrumb()
     local objorigin = getstruct("obj_escalator_top", "script_noteworthy").origin
 
     local setobj = function(origin)
-        game:objective_add(1, "current", "Survive a series of ambushes and escape the airport.", origin)
+        game:objective_add(1, "current", "&SO_ESCAPE_AIRPORT_OBJ_REGULAR", origin)
     end
 
     local updateobjectiveon = function(name, callback)

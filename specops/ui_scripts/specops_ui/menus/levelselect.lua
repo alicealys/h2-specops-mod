@@ -98,7 +98,7 @@ local function levelselect(act)
         local width = GenericMenuDims.menu_right_standard + 150 - GenericMenuDims.menu_left
         
         local menu = LUI.MenuTemplate.new(root, {
-            menu_title = Engine.Localize( "@MENU_MISSION_SELECT_CAPS" ),
+            menu_title = Engine.Localize("@MENU_MISSION_SELECT_CAPS"),
             uppercase_title = true,
             menu_top_indent = LUI.MenuTemplate.spMenuOffset + LUI.H1MenuTab.tabChangeHoldingElementHeight + H1MenuDims.spacing,
             menu_list_divider_top_offset = -(LUI.H1MenuTab.tabChangeHoldingElementHeight + H1MenuDims.spacing),
@@ -158,6 +158,7 @@ local function levelselect(act)
             local islocked = not (io.fileexists(game:getloadedmod() .. "/scripts/specops/maps/" .. act.missions[i].somapname .. ".lua"))
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
+                    Engine.SetDvarFromString("ui_so_last_act", act.index)
                     startmap(act.missions[i].somapname, act.missions[i].mapname)
                     return
                 end
@@ -165,6 +166,7 @@ local function levelselect(act)
                 Engine.SetDvarInt("recommended_gameskill", -1)
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
+                        Engine.SetDvarFromString("ui_so_last_act", act.index)
                         startmap(act.missions[i].somapname, act.missions[i].mapname)
                     end,
                     specialops = true,
@@ -235,3 +237,16 @@ for i = 1, #acts do
 end
 
 firstmenu = "so_levelselect_" .. acts[1].id
+
+local lastact = Engine.GetDvarString("ui_so_last_act")
+if (lastact ~= nil and lastact ~= "") then
+    local actnum = tonumber(lastact)
+    if (actnum == nil or actnum < 1 or actnum > 5) then
+        return
+    end
+
+    Engine.PlayMusic(CoD.Music.MainSPMusic, 1, 660)
+    Engine.SetDvarFromString("ui_so_last_act", "")
+    Engine.Exec("lui_open so_levelselect_act" .. actnum)
+end
+
