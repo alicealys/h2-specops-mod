@@ -119,7 +119,7 @@ map.starttimer = function()
     startchallengetimer()
 end
 
-map.objective = "&SO_SNOWRACE1_CLIFFHANGER_FINISHLINE"
+map.objective = "&SO_SNOWRACE1_CLIFFHANGER_OBJ_FINISHLINE"
 
 function objective()
     local finishline = game:getent("finish_line_origin", "targetname")

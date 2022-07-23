@@ -158,7 +158,7 @@ local function levelselect(act)
             local islocked = not (io.fileexists(game:getloadedmod() .. "/scripts/specops/maps/" .. act.missions[i].somapname .. ".lua"))
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
-                    Engine.SetDvarFromString("ui_so_last_act", act.index)
+                    Engine.SetDvarString("ui_loadMenuName", "so_levelselect_act" .. act.index)
                     startmap(act.missions[i].somapname, act.missions[i].mapname)
                     return
                 end
@@ -166,7 +166,7 @@ local function levelselect(act)
                 Engine.SetDvarInt("recommended_gameskill", -1)
                 LUI.FlowManager.RequestAddMenu(nil, "difficulty_selection_menu", true, menu.controller, false, {
                     acceptFunc = function()
-                        Engine.SetDvarFromString("ui_so_last_act", act.index)
+                        Engine.SetDvarString("ui_loadMenuName", "so_levelselect_act" .. act.index)
                         startmap(act.missions[i].somapname, act.missions[i].mapname)
                     end,
                     specialops = true,
@@ -238,15 +238,11 @@ end
 
 firstmenu = "so_levelselect_" .. acts[1].id
 
-local lastact = Engine.GetDvarString("ui_so_last_act")
-if (lastact ~= nil and lastact ~= "") then
-    local actnum = tonumber(lastact)
-    if (actnum == nil or actnum < 1 or actnum > 5) then
-        return
+-- random aw music, gets overridden by specops music 
+CoD.Music.MainSPMusic = "mus_after_action_menu_bet"
+local playmusic = Engine.PlayMusic
+Engine.PlayMusic = function(music, volume, fadetime)
+    if (music == CoD.Music.MainSPMusic) then
+        playmusic(music, 2.5, fadetime)
     end
-
-    Engine.PlayMusic(CoD.Music.MainSPMusic, 1, 660)
-    Engine.SetDvarFromString("ui_so_last_act", "")
-    Engine.Exec("lui_open so_levelselect_act" .. actnum)
 end
-
