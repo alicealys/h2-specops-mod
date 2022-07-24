@@ -46,7 +46,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 |-------------|-----|-----|
 | Overwatch  | ❌ | ❌ |
 | Body Count | ❌ | ✔️ |
-| Bomb Squad | ❌ | ✔️ |
+| Bomb Squad | ✔️ | ✔️ |
 | Race | ✔️ | ✔️ |
 | Big Brother | ❌ | ❌ |
 
