@@ -40,12 +40,12 @@ map.premain = function()
 end
 
 function stealthmusic()
-    game:musicplay("mus_contingency_stealth")
+    musicloop("mus_contingency_stealth")
 
     level:onnotifyonce("_stealth_spotted", function()
         game:musicstop(0.2)
         game:ontimeout(function()
-            game:musicplay("mus_contingency_stealth_busted")
+            musicloop("mus_contingency_stealth_busted")
         end, 500)
 
         local listener = nil

@@ -612,7 +612,7 @@ function missionover(success, timeoverride)
             dogs[i]:delete()
         end
     
-        local ai = game:getaiarray()
+        local ai = game:getaispeciesarray("all", "all")
         for i = 1, #ai do
             ai[i]:delete()
         end
@@ -852,3 +852,25 @@ function shuffle(array)
 end
 
 math.randomseed(os.time())
+
+function randomof(arr)
+    local index = game:randomintrange(arr, #arr + 1)
+    return arr[index]
+end
+
+function getlivingaiarray(name, type_)
+    local ai = game:getaispeciesarray("all", "all")
+    local arr = array:new()
+
+    ai:foreach(function(actor)
+        if (game:isalive(actor) == 0) then
+            return
+        end
+
+        if (actor[type_] == name) then
+            arr:push(actor)
+        end
+    end)
+
+    return arr
+end
