@@ -156,8 +156,8 @@ function startchallengetimer(nudgetime, hurrytime)
     end
 end
 
-function enablechallengetimer(notifystart, notifyend)
-    addchallengetimer()
+function enablechallengetimer(notifystart, notifyend, timelimit)
+    addchallengetimer(timelimit)
     level:onnotifyonce(notifystart, function()
         starttime = game:gettime()
         startchallengetimer()
@@ -633,6 +633,14 @@ function missionover(success, timeoverride)
     end, 3000)
 end
 
+function withinfov(startorigin, startangles, endorigin, fov)
+    local normal = game:vectornormalize(endorigin - startorigin)
+    local forward = game:anglestoforward(startangles)
+    local dot = game:vectordot(forward, normal)
+    
+    return dot >= fov
+end
+
 function flaginit(flag)
     game:scriptcall("_ID42237", "_ID14400", flag)
 end
@@ -641,8 +649,8 @@ function flag(flag)
     return game:scriptcall("_ID42237", "_ID14385", flag) == 1
 end
 
-function flagset(flag)
-    game:scriptcall("_ID42237", "_ID14402", flag)
+function flagset(...)
+    game:scriptcall("_ID42237", "_ID14402", ...)
 end
 
 function flagclear(flag)
@@ -662,6 +670,11 @@ end
 
 function arrayspawnfuncnoteworthy(name, func)
     local arr = game:getentarray(name, "script_noteworthy")
+    arrayspawnfunc(arr, func)
+end
+
+function arrayspawnfunctargetname(name, func)
+    local arr = game:getentarray(name, "targetname")
     arrayspawnfunc(arr, func)
 end
 
@@ -873,4 +886,41 @@ function getlivingaiarray(name, type_)
     end)
 
     return arr
+end
+
+function entity:entflaginit(flag)
+    self:scriptcall("maps/_utility", "_ID13024", flag)
+end
+
+function entity:entflagset(flag)
+    self:scriptcall("maps/_utility", "_ID13025", flag)
+end
+
+function entity:entflag(flag)
+    return self:scriptcall("maps/_utility", "_ID13019", flag) == 1
+end
+
+function createprogressbar(player, offset)
+	offset = offset or 90
+		
+    local bar = game:scriptcall("_ID42313", "_ID9203", player, 60, "white", "black", 100, 10)
+    bar:setpoint("CENTER", nil, 0, offset)
+
+    return bar
+end
+
+function entity:setpoint(...)
+    self:scriptcall("_ID42313", "_ID32753", ...)
+end
+
+function createfontstring(...)
+    return game:scriptcall("_ID42313", "_ID9220", ...)
+end
+
+function entity:destroyelem()
+    self:scriptcall("_ID42313", "_ID10476")
+end
+
+function entity:updatebar(...)
+    self:scriptcall("_ID42313", "_ID39674", ...)
 end

@@ -118,14 +118,6 @@ function deletetruckheadlights(truckpatrol)
 	game:stopfxontag(level._ID1426["car_taillight_uaz_l"], truckpatrol, "TAG_LIGHT_RIGHT_TAIL")
 end
 
-function withinfov(startorigin, startangles, endorigin, fov)
-    local normal = game:vectornormalize(endorigin - startorigin)
-    local forward = game:anglestoforward(startangles)
-    local dot = game:vectordot(forward, normal)
-    
-    return dot >= fov
-end
-
 function watchfortruck(truckpatrol)
     local interval = game:oninterval(function()
         if (game:distance(player.origin, truckpatrol.origin) <= 1200) then
@@ -295,7 +287,7 @@ function dialogue()
     stealthdialoguespotted()
     stealthdialoguefailure()
 
-    dialog_unsilenced_weapons()
+    dialogunsilencedweapons()
 
     game:ontimeout(function()
     	radiodialogue("cliff_pri_likeaghost")
@@ -391,11 +383,11 @@ function stealthdialoguefailure()
     end)
 end
 
-function dialog_unsilenced_weapons()
+function dialogunsilencedweapons()
     local listener = nil
     listener = player:onnotify("weapon_change", function()
         local weap = player:getcurrentprimaryweapon()
-        if (weap == nil or weap == "none" or game:issubstr(weap, "silence") == 1) then
+        if (weap == nil or weap == "none" or game:issubstr(weap, "silence") == 1 or game:issubstr(weap, "soap") == 1) then
             return
         end
 
@@ -614,8 +606,6 @@ map.main = function()
     game:scriptcall("_ID53530", "main")
     game:scriptcall("_ID49383", "main")
     --game:scriptcall("_ID49359", "_ID50425")
-
-    print(level._ID47112)
 
     game:scriptcall("maps/cliffhanger_anim", "_ID15518")
     game:scriptcall("maps/cliffhanger_anim", "_ID31296")
