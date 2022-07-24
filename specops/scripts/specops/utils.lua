@@ -460,6 +460,32 @@ level:onnotify("can_save", function()
     game:scriptcall("_ID42237", "_ID14388", "can_save") -- _utility::flag_clear
 end)
 
+function createoverlay(color)
+    local overlay = game:newhudelem()
+    overlay.x = 0
+    overlay.y = 0
+    overlay.alignx = "left"
+    overlay.aligny = "top"
+	overlay.horzalign = "fullscreen"
+	overlay.vertalign = "fullscreen"
+    overlay.alpha = 0
+    overlay.foreground = true
+    overlay.sort = 1
+    overlay:setshader("white", 640, 480)
+
+    overlay.color = color
+    overlay:fadeovertime(2)
+    overlay.alpha = 0.25
+end
+
+function createblueoverlay()
+    createoverlay(vector:new(0.7, 0.7, 1))
+end
+
+function createredoverlay()
+    createoverlay(vector:new(1, 0.4, 0.4))
+end
+
 ismissionover = false
 local playerkills = 0
 function missionover(success, timeoverride)
@@ -489,6 +515,12 @@ function missionover(success, timeoverride)
     end
 
     ismissionover = true
+
+    if (success) then
+        createblueoverlay()
+    else
+        createredoverlay()
+    end
 
     game:ontimeout(function()
         game:setblur(6, 1)

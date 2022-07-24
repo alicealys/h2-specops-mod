@@ -37,6 +37,8 @@
     "MENU_SP_DIFF_RANKING_3": "Medium",
     "MENU_SP_DIFF_RANKING_4": "Heavy",
     "MENU_SP_DIFF_RANKING_5": "Massive",
+    "MENU_SP_STARS_EARNED": "Stars Earned!",
+    "MENU_SP_NEW_BESTTIME": "New Best Time!",
 
     "SPECIAL_OPS_DUMMY": "dummy",
     "SPECIAL_OPS_DUMMY_DESC": "dummy",
