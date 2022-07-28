@@ -416,7 +416,6 @@ map.main = function()
     game:scriptcall("_ID53782", "main")
     game:scriptcall("_ID51773", "main")
     game:scriptcall("maps/favela_escape_anim", "main")
-    game:scriptcall("_ID42323", "main")
     game:scriptcall("maps/favela_escape_lighting", "main")
 
     game:scriptcall("maps/_load", "main")

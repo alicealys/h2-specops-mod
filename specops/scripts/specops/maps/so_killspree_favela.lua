@@ -134,29 +134,6 @@ function spawnwavebytrigger(triggers)
     end
 end
 
-function spawnfailed(spawn, callback)
-    if (not spawn) then
-        callback(true)
-        return
-    end
-
-    if (game:isalive(spawn) == 0) then
-        callback(true)
-        return
-    end
-
-    local f1 = function()
-        callback(game:isalive(spawn) == 0)
-    end
-
-    if (not spawn._ID14234) then
-        spawn:onnotifyonce("finished spawning", f1)
-        return
-    end
-
-    f1()
-end
-
 function enemyrefill(delay, seektrigger, ambushtrigger)
     local listeners = {}
 

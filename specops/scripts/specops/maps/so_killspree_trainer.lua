@@ -555,6 +555,10 @@ end
 map.main = function()
     game:setdvar("start", "course")
     mainhook.invoke(level)
+
+    game:ontimeout(function()
+        musicloop("mus_after_action_menu_cap")
+    end, 0)
 end
 
 return map

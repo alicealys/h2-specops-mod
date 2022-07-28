@@ -705,8 +705,8 @@ game:ontimeout(function()
     end
 end, 0)
 
-function musicloop(music)
-    game:scriptcall("maps/_utility", "_ID24577", music)
+function musicloop(...)
+    game:scriptcall("maps/_utility", "_ID24577", ...)
 end
 
 function entity:spawnai()
@@ -715,6 +715,68 @@ function entity:spawnai()
     else
         return self:dospawn()
     end
+end
+
+function entity:spawnai2(forcespawn, callback)
+    local spawn = function()
+        local spawnedguy = nil
+        local dontshareenemyinfo = (game:isdefined(self.script_stealth) == 1 and flag("_stealth_enabled") and not flag("_stealth_spotted"))
+
+        if (game:isdefined(self.script_forcespawn) == 1 or forcespawn) then
+            if (game:isdefined(self._ID31152) == 0) then
+                spawnedguy = self:stalingradspawn(dontshareenemyinfo)
+            else
+                spawnedguy = game:scriptcall("_ID42372", "_ID35268", self)
+            end
+        else
+            if (game:isdefined(self._ID31152) == 0) then
+                spawnedguy = self:dospawn(dontshareenemyinfo)
+            else
+                spawnedguy = game:scriptcall("_ID42372", "_ID35268", self)
+            end
+        end
+
+        if (game:isdefined(self._ID31152) == 0) then
+            spawnfailed(spawnedguy, function(result)
+                callback(spawnedguy, result)
+            end)
+        else
+            callback(spawnedguy)
+        end
+    end
+
+    if (self.script_delay_spawn ~= nil) then
+        game:ontimeout(spawn, ms(self.script_delay_spawn)):endon(self, "death")
+    else
+        spawn()
+    end
+end
+
+--function entity:spawnainative()
+--    self:scriptcall("_ID42407", "_ID35014")
+--end
+
+function spawnfailed(spawn, callback)
+    if (not spawn) then
+        callback(true)
+        return
+    end
+
+    if (game:isalive(spawn) == 0) then
+        callback(true)
+        return
+    end
+
+    local f1 = function()
+        callback(game:isalive(spawn) == 0)
+    end
+
+    if (not spawn._ID14234) then
+        spawn:onnotifyonce("finished spawning", f1)
+        return
+    end
+
+    f1()
 end
 
 function cointoss()
@@ -770,6 +832,76 @@ function isspawntrigger(ent)
         return true
     end
 
+	return false
+end
+
+function istrigger(ent)
+    if (ent.code_classname == nil) then
+        return false
+    end
+    
+    local classnames = {
+        "trigger_multiple",
+        "trigger_once",
+        "trigger_use",
+        "trigger_radius",
+        "trigger_lookat",
+        "trigger_disk",
+        "trigger_damage",
+    }
+
+    for i = 1, #classnames do
+        if (ent.classname == classnames[i]) then
+            return true
+        end
+    end
+	
+	return false
+end
+
+function isflagtrigger(ent)
+    if (ent.classname == nil) then
+        return false
+    end
+
+    local classnames = {
+        "trigger_multiple_flag_set",
+        "trigger_multiple_flag_set_touching",
+        "trigger_multiple_flag_clear",
+        "trigger_multiple_flag_looking",
+        "trigger_multiple_flag_lookat",
+    }
+
+    for i = 1, #classnames do
+        if (ent.classname == classnames[i]) then
+            return true
+        end
+    end
+	
+	return false
+end
+
+function iskillspawnertrigger(ent)
+    if (not istrigger(ent)) then
+        return false
+    end
+
+    if (ent.script_killspawner ~= nil) then
+        return true
+    end
+	
+	return false
+end
+
+function isgoalvolume(ent)
+    if (ent.classname == nil) then
+        return false
+    end
+
+    if (ent.classname == "info_volume" and ent.script_goalvolume ~= nil) then
+        return true
+    end
+	
 	return false
 end
 
@@ -837,10 +969,11 @@ function array:foreach(func)
     end
 end
 
-function enableallportalgroups()
+function enableallportalgroups(enable)
+    enable = enable ~= nil and enable or 1
     local portals = game:getentarray("portal_group", "classname")
     portals:foreach(function(portal)
-        game:enablepg(portal.targetname, 1)
+        game:enablepg(portal.targetname, enable)
     end)
 end
 
@@ -900,6 +1033,10 @@ function entity:entflag(flag)
     return self:scriptcall("maps/_utility", "_ID13019", flag) == 1
 end
 
+function entity:entflagclear(flag)
+    return self:scriptcall("maps/_utility", "_ID13021", flag) == 1
+end
+
 function createprogressbar(player, offset)
 	offset = offset or 90
 		
@@ -923,4 +1060,103 @@ end
 
 function entity:updatebar(...)
     self:scriptcall("_ID42313", "_ID39674", ...)
+end
+
+function getcountdownhud(...)
+    return game:scriptcall("_ID42313", "_ID50277", ...)
+end
+
+function objectivecomplete(obj)
+	game:objective_state(obj, "done")
+	level:notify("objective_complete" .. tostring(obj))
+end
+
+function entity:onnotifyonceany(func, ...)
+    local notifies = {...}
+    local listeners = {}
+
+    function listeners:clear()
+        for i = 1, #self do
+            self[i]:clear()
+        end
+    end
+
+    for i = 1, #notifies do
+        local notify = notifies[i]
+        if (type(notify) == "number") then
+            table.insert(listeners, game:ontimeout(function()
+                listeners:clear()
+                func()
+            end, notify))
+        elseif (type(notify) == "string") then
+            table.insert(listeners, self:onnotifyonce(notify, function()
+                listeners:clear()
+                func()
+            end))
+        end
+    end
+
+    return listeners
+end
+
+function waittilldeadordying(guys, num, timeout, callback)
+    local newarray = array:new()
+    for i = 1, #guys do
+        local member = guys[i]
+        if (game:isalive(member) == 1 and member.ignoreforfixednodesafecheck == 0) then
+            newarray:push(member)
+        end
+    end
+
+    local guys = newarray
+    local ent = game:spawnstruct()
+
+    if (timeout ~= nil) then
+        game:ontimeout(function()
+            ent:notify("thread_timed_out")
+        end, math.floor(timeout * 1000))
+    end
+
+    ent.count = #guys
+
+    if (num ~= nil and num < ent.count) then
+        ent.count = num
+    end
+
+    guys:foreach(function(guy)
+        guy:onnotifyonceany(function()
+            ent.count = ent.count - 1
+            ent:notify("waittill_dead_guy_dead_or_dying")
+        end, "death", "pain_death")
+    end)
+
+    local waittilldead = nil
+    waittilldead = function()
+        if (ent.count <= 0) then
+            callback()
+            return
+        end
+
+        ent:onnotifyonce("waittill_dead_guy_dead_or_dying", function()
+            waittilldead()
+        end):endon(ent, "thread_timed_out")
+    end
+
+    waittilldead()
+end
+
+function switch(value, cases)
+    local func = cases[value] or cases["__default"]
+
+    if (type(func) == "function") then
+        func()
+    end
+end
+
+function ms(secs)
+    return math.floor(secs * 1000)
+end
+
+function array:randomize()
+    return game:scriptcall("_ID42237", "_ID3320", self)
 end
