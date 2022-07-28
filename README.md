@@ -62,7 +62,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 ## Delta
 | Map  | Playable | Planned |
 |-------------|-----|-----|
-| Wardriving  | ❌ | ✔️ |
+| Wardriving  | ✔️ | ✔️ |
 | Wreckage | ❌ | ❌ |
 | Acceptable losses | ✔️ | ✔️ |
 | Terminal | ✔️ | ✔️ |
