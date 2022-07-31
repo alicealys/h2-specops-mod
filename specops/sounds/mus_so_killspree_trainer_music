@@ -1,0 +1,260 @@
+{
+    "aliasName": "mus_so_killspree_trainer_music",
+    "count": 1,
+    "head": [
+        {
+            "aliasName": "mus_so_killspree_trainer_music",
+            "secondaryAliasName": null,
+            "chainAliasName": null,
+            "subtitle": null,
+            "mixerGroup": null,
+            "soundfile": {
+                "type": 2,
+                "totalMsec": 498439,
+                "isLocalized": false,
+                "isStreamed": true,
+                "fileIndex": 61,
+                "packed": {
+                    "offset": 148666368,
+                    "length": 47198779
+                }
+            },
+            "flags": 2097562,
+            "sequence": 0,
+            "volMin": 1.0,
+            "volMax": 1.0,
+            "volModIndex": 5,
+            "pitchMin": 1.0,
+            "pitchMax": 1.0,
+            "distMin": 120.0,
+            "distMax": 600.0,
+            "velocityMin": 0.0,
+            "masterPriority": 80,
+            "masterPercentage": 0.0,
+            "slavePercentage": 1.0,
+            "probability": 1.0,
+            "startDelay": 0,
+            "sndContext": null,
+            "sndCurve": "$default",
+            "lpfCurve": "$default",
+            "hpfCurve": "$defaultHpf",
+            "reverbSendCurve": "$default",
+            "speakerMap": {
+                "name": "music",
+                "isDefault": false,
+                "channelMaps": [
+                    {
+                        "speakerCount": 2,
+                        "speakers": [
+                            {
+                                "speaker": 0,
+                                "numLevels": 1,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 1,
+                                "numLevels": 1,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            }
+                        ]
+                    },
+                    {
+                        "speakerCount": 6,
+                        "speakers": [
+                            {
+                                "speaker": 0,
+                                "numLevels": 1,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 1,
+                                "numLevels": 1,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 2,
+                                "numLevels": 1,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 3,
+                                "numLevels": 1,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 4,
+                                "numLevels": 1,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 5,
+                                "numLevels": 1,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            }
+                        ]
+                    },
+                    {
+                        "speakerCount": 2,
+                        "speakers": [
+                            {
+                                "speaker": 0,
+                                "numLevels": 2,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 1,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 1.0
+                            }
+                        ]
+                    },
+                    {
+                        "speakerCount": 6,
+                        "speakers": [
+                            {
+                                "speaker": 0,
+                                "numLevels": 2,
+                                "levels0": 1.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 1,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 1.0
+                            },
+                            {
+                                "speaker": 2,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 3,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 4,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            },
+                            {
+                                "speaker": 5,
+                                "numLevels": 2,
+                                "levels0": 0.0,
+                                "levels1": 0.0
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dopplerPreset": null,
+            "unknown": {
+                "pad": [
+                    [
+                        1,
+                        0,
+                        174,
+                        0,
+                        0,
+                        0,
+                        11,
+                        20
+                    ],
+                    [
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        128,
+                        63,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        128,
+                        63,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ]
+                ],
+                "u4": 0,
+                "u5": 0,
+                "u18": 100,
+                "u20": 4,
+                "u34": 0.4466835856437683
+            }
+        }
+    ],
+    "unknownArray": []
+}

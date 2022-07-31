@@ -24,7 +24,10 @@ game:setdvar("limited_mode", 0)
 game:sharedset("eog_extra_data", "")
 
 local levelmapname = game:getdvar("mapname")
-local mapname = game:getdvar("so_mapname")
+mapname = game:getdvar("so_mapname")
+
+require("specops")
+
 map = require("maps/" .. mapname)
 
 if (game:getdvar("so_debug") == "1") then
@@ -46,7 +49,13 @@ level._ID9544 = function()
 end
 game:ontimeout(function()
     game:scriptcall("_ID42298", "_ID32787", true)
+    player:setactionslot(1, "")
 end, 0)
+
+player:notifyonplayercommand("toggle_challenge_timer", "+actionslot 1")
+player:setweaponhudiconoverride("actionslot1", "h1_hud_dpad_blur")
+
+gameskill = game:getdvarint("g_gameskill")
 
 map.premain()
 mainhook = game:detour(string.format("maps/%s", game:getdvar("mapname")), "main", function()

@@ -5,6 +5,8 @@ function formattime(msec)
 end
 
 function eogsummary()
+    Engine.PlaySound("so_ingame_summary")
+
     local value = tonumber(Engine.GetDvarString("ui_so_mission_status"))
     Engine.SetDvarString("ui_so_mission_status", "0")
     local success = value == 1

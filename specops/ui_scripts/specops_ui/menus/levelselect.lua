@@ -237,12 +237,3 @@ for i = 1, #acts do
 end
 
 firstmenu = "so_levelselect_" .. acts[1].id
-
--- random aw music, gets overridden by specops music 
-CoD.Music.MainSPMusic = "mus_after_action_menu_bet"
-local playmusic = Engine.PlayMusic
-Engine.PlayMusic = function(music, volume, fadetime)
-    if (music == CoD.Music.MainSPMusic) then
-        playmusic(music, 2.5, fadetime)
-    end
-end

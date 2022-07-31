@@ -227,6 +227,7 @@ function startmap()
 
     level._ID18992 = false
 
+    intro()
     enablechallengetimer("breaching_on", "eternity")
     breachflags()
     objmain()

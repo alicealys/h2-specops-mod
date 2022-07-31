@@ -7,6 +7,7 @@ end
 function startmap()
     setplayerpos()
 
+    intro()
     enableescapewarning()
     enableescapefailure()
 

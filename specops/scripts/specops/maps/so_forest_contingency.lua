@@ -10,6 +10,7 @@ map.premain = function()
     end, 0)
 
     setplayerpos()
+    intro()
     enablefailonescape()
     enableescapewarning()
     

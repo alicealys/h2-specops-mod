@@ -362,25 +362,26 @@ function killspree()
     player:givemaxammo("ranger")
     player:givemaxammo("ak47_acog")
 
+    intro()
     enableescapewarning()
     enablefailonescape()
 
     enablechallengetimer("start_so_killspree_favela", "challenge_success")
 
-    enemiestext = createhuditem(3, -135, "&SPECIAL_OPS_HOSTILES")
-    civilianstext = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIVILIANS")
+    enemiestext = createhuditem(3, hudxpos(), "&SPECIAL_OPS_HOSTILES")
+    civilianstext = createhuditem(4, hudxpos(), "&SO_KILLSPREE_FAVELA_CIVILIANS")
 
-    enemieshitvalue = createhuditem(3, -135)
+    enemieshitvalue = createhuditem(3, hudxpos())
     enemieshitvalue.alignx = "left"
     enemieshitvalue:setvalue(pointscounter)
 
     local gameskill = game:getdvarint("g_gameskill")
     if (gameskill <= 1) then
-        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_REGULAR")
+        civvieshitvalue = createhuditem(4, hudxpos(), "&SO_KILLSPREE_FAVELA_CIV_COUNT_REGULAR")
     elseif (gameskill == 2) then
-        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_HARDENED")
+        civvieshitvalue = createhuditem(4, hudxpos(), "&SO_KILLSPREE_FAVELA_CIV_COUNT_HARDENED")
     else
-        civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_FAVELA_CIV_COUNT_VETERAN")
+        civvieshitvalue = createhuditem(4, hudxpos(), "&SO_KILLSPREE_FAVELA_CIV_COUNT_VETERAN")
     end
 
     civvieshitvalue:setvalue(0)

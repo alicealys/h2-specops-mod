@@ -56,7 +56,7 @@ function entity:setwhite()
 end
 
 local huditems = {}
-function createhuditem(line, xoffset, message, always_draw)
+function createhuditem(line, xoffset, message, alwaysdraw)
 	line = line + 2
 
 	local hudelem = game:newhudelem()
@@ -86,21 +86,42 @@ end
 local istimetrial = false
 local timerlabel = "&SPECIAL_OPS_TIME"
 
+function hudxpos()
+    return -135
+end
+
 function addchallengetimer(timelimit)
     if (challengetimer) then
         challengetimer:destroy_()
+        challengetimertime:destroy_()
     end
+
+    if (not addedtoggle) then
+        addedtoggle = true
+        local shown = true
+        
+        player:onnotify("toggle_challenge_timer", function()
+            shown = not shown
+
+            challengetimer:fadeovertime(0.5)
+            challengetimertime:fadeovertime(0.5)
+
+            challengetimertime.alpha = shown and 1 or 0
+            challengetimer.alpha = shown and 1 or 0
+        end)
+    end
+
+    challengetimer = createhuditem(1, hudxpos(), timerlabel)
 
     if (timelimit) then
-        challengetimer = createhuditem(1, -178, timerlabel)
-        challengetimer.timelimit = timelimit
-        challengetimer:settenthstimerstatic(timelimit)
+        challengetimertime = createhuditem(1, hudxpos())
+        challengetimertime.timelimit = timelimit
+        challengetimertime:settenthstimerstatic(timelimit)
     else
-        challengetimer = createhuditem(1, -178, timerlabel)
-        challengetimer:settext("&SPECIAL_OPS_TIME_NULL")
+        challengetimertime = createhuditem(1, hudxpos(), "&SPECIAL_OPS_TIME_NULL")
     end
 
-    challengetimer.alignx = "left"
+    challengetimertime.alignx = "left"
 end
 
 local challengetimerlistener = nil
@@ -121,11 +142,13 @@ function startchallengetimer(nudgetime, hurrytime)
     challengetimer.label = timerlabel
     challengetimer:setwhite()
 
-    player:playsoundasmaster("arcademode_zerodeaths")
+    player:playsound("arcademode_zerodeaths")
 
-    if (challengetimer.timelimit) then
-        challengetimer:settenthstimer(challengetimer.timelimit)
-        challengetimeleft = challengetimer.timelimit
+    challengetimertime.label = ""
+
+    if (challengetimertime.timelimit) then
+        challengetimertime:settenthstimer(challengetimertime.timelimit)
+        challengetimeleft = challengetimertime.timelimit
         local changecolor = function()
             if (ismissionover) then
                 challengetimerlistener:clear()
@@ -142,17 +165,19 @@ function startchallengetimer(nudgetime, hurrytime)
 
             if (challengetimeleft <= nudgetime and challengetimeleft > hurrytime) then
                 challengetimer:setyellow()
+                challengetimertime:setyellow()
             end
 
             if (challengetimeleft <= hurrytime) then
                 challengetimer:setred()
+                challengetimertime:setred()
             end
         end
 
         changecolor()
         challengetimerlistener = game:oninterval(changecolor, 1000)
     else
-        challengetimer:settenthstimerup(0)
+        challengetimertime:settenthstimerup(0)
     end
 end
 
@@ -166,6 +191,39 @@ function enablechallengetimer(notifystart, notifyend, timelimit)
     level:onnotifyonce(notifyend, function()
         missionover(true)
     end)
+end
+
+function enablecountdowntimer(timewait, setstarttime, message, timerdrawdelay)
+    message = message or "&SPECIAL_OPS_STARTING_IN"
+
+    local hudelem = createhuditem(0, hudxpos(), message)
+    hudelem:setpulsefx(50, timewait * 1000, 500)
+
+    local hudelemtimer = createhuditem(0, hudxpos())
+    showcountdowntimertime(hudelemtimer, timewait, timerdrawdelay)
+
+    game:ontimeout(function()
+        player:playsound("arcademode_zerodeaths")
+        starttime = game:gettime()
+
+        game:ontimeout(function()
+            hudelem:destroy()
+           --hudelemtimer:destroy()
+        end, 1000)
+    end, ms(timewait))
+end
+
+function showcountdowntimertime(hudelemtimer, timewait, delay)
+    hudelemtimer.alignx = "left"
+    hudelemtimer:settenthstimer(timewait)
+    hudelemtimer.alpha = 0
+
+    delay = delay or 0.625
+    game:ontimeout(function()
+        timewait = game:int((timewait - delay) * 1000)
+        hudelemtimer:setpulsefx(50, timewait, 500)
+        hudelemtimer.alpha = 1
+    end, ms(delay))
 end
 
 local challengestarsoffset = {x = 0, y = 0}
@@ -387,6 +445,7 @@ function pingescapewarning()
         escapewarningsplash.font = "bank"
         escapewarningsplash.fontscale = 1.5
         escapewarningsplash.faded = 1
+        escapewarningsplash.hidewheninmenu = true
         escapewarningsplash:settext("&SPECIAL_OPS_ESCAPE_WARNING")
         escapewarningsplash:setwhite()
     end
@@ -397,6 +456,7 @@ function pingescapewarning()
 
     escapewarningsplash.faded = 0
     escapewarningsplash.alpha = 1
+    escapewarningsplash.fontscale = 1.5
     escapewarningsplash:fadeovertime(1)
     escapewarningsplash.alpha = 0.5
     game:ontimeout(function()
@@ -488,7 +548,7 @@ end
 
 ismissionover = false
 local playerkills = 0
-function missionover(success, timeoverride)
+function missionover(success, timeoverride, outoftime)
     if (ismissionover) then
         return
     end
@@ -582,13 +642,25 @@ function missionover(success, timeoverride)
     game:setdvar("ui_so_new_stars", 0)
     game:setdvar("aa_player_kills", playerkills)
 
+    game:ontimeout(function()
+        if (success) then
+            musicplay("so_victory_" .. campaign, nil, 0, true)
+        else
+            musicplay("so_defeat_" .. campaign, nil, 0, true)
+        end
+    end, 1500)
+
+    local isbesttime = false
+    local firsttime = false
+
     if (success and finaltime >= 0) then
         local mapname = game:getdvar("so_mapname")
         local stats = sostats.getmapstats(mapname)
-        local nobest = stats.besttime == nil or type(stats.besttime) ~= "number"
-        if (nobest or stats.besttime > finaltime) then
-            if (not nobest) then
+        firsttime = stats.besttime == nil or type(stats.besttime) ~= "number"
+        if (firsttime or stats.besttime > finaltime) then
+            if (not firsttime) then
                 game:setdvar("ui_so_new_besttime", 1)
+                isbesttime = true
             end
             stats.besttime = finaltime
         end
@@ -602,6 +674,33 @@ function missionover(success, timeoverride)
         end
 
         sostats.setmapstats(mapname, stats)
+    end
+
+    if (success) then
+        if (isbesttime) then
+            dialogueplay("so_tf_1_success_best", 0.5, true)
+        else
+            local dosarcasm = false
+            if (gameskill >= 3) then
+                if (not firsttime) then
+                    dosarcasm = cointoss()
+                end
+            end
+    
+            if (dosarcasm) then
+                dialogueplay("so_tf_1_success_jerk", 0.5, true)
+            else
+                dialogueplay("so_tf_1_success_generic", 0.5, true)
+            end
+        end
+    else
+        if (not outoftime) then
+            if (gameskill <= 2 or cointoss()) then
+                dialogueplay("so_tf_1_fail_generic", 0.5, true)
+            else
+                dialogueplay("so_tf_1_fail_generic_jerk", 0.5, true)
+            end
+        end
     end
 
     player.ignoreme = true
@@ -658,8 +757,15 @@ function flagclear(flag)
 end
 
 local spawnfuncs = {axis = {}, allies = {}, neutral = {}, team3 = {}}
-function addspawnfunc(team, callback)
-    table.insert(spawnfuncs[team], callback)
+function addspawnfunc(team, callback, ...)
+    local extraargs = {...}
+    table.insert(spawnfuncs[team], function(ai)
+        callback(ai, table.unpack(extraargs))
+    end)
+end
+
+function addsinglespawnfunc(spawner, func)
+    spawner:onnotify("spawned", func)
 end
 
 function arrayspawnfunc(array_, func)
@@ -707,6 +813,10 @@ end, 0)
 
 function musicloop(...)
     game:scriptcall("maps/_utility", "_ID24577", ...)
+end
+
+function musicplay(...)
+    game:scriptcall("maps/_utility", "_ID24582", ...)
 end
 
 function entity:spawnai()
@@ -905,8 +1015,34 @@ function isgoalvolume(ent)
 	return false
 end
 
-function radiodialogue(sound)
+function dialogueplay(sound, waittime, forcestop)
+    local play = function()
+        if (forcestop) then
+            game:scriptcall("_ID42407", "_ID28876")
+        end
+
+        radiodialogue(sound)
+    end
+
+    if (waittime) then
+        game:ontimeout(play, ms(waittime))
+    else
+        play()
+    end
+end
+
+function intro(waittime, dodialogue)
+    waittime = waittime or 0.5
+    game:ontimeout(function()
+        dialogueplay("so_tf_1_plyr_prep", 0, true)
+    end, ms(waittime + 0.75))
+end
+
+function radiodialogue(sound, callback)
     game:scriptcall("_ID42407", "_ID28864", sound)
+    level._ID27600:onnotifyonce("sounddone", function()
+        callback()
+    end)
 end
 
 function aideletewhenoutofsight(arr, dist)
@@ -1149,7 +1285,7 @@ function switch(value, cases)
     local func = cases[value] or cases["__default"]
 
     if (type(func) == "function") then
-        func()
+        return func()
     end
 end
 
@@ -1159,4 +1295,33 @@ end
 
 function array:randomize()
     return game:scriptcall("_ID42237", "_ID3320", self)
+end
+
+function setcompassdist(dist)
+    local value = 3000
+    if (dist == "far") then
+        value = 6000
+    end
+
+    if (dist == "close") then
+        value = 1500
+    end
+
+    game:setsaveddvar("compassmaxrange", value)
+end
+
+function mapfunction(name, file, id)
+    _G[name] = function(...)
+        game:scriptcall(file, id, ...)
+    end
+end
+
+function mapmethod(name, file, id)
+    entity[name] = function(ent, ...)
+        ent:scriptcall(file, id, ...)
+    end
+end
+
+function defined(value)
+    return game:isdefined(value) == 1
 end

@@ -21,34 +21,87 @@ function newstars()
         height = height + 10,
     })
 
+    local extraheight = 100
+
     local num = 0
-    local addstar = function()
-        local star = LUI.UIImage.new({
-            topAnchor = true,
-            leftAnchor = num == 0,
-            rightAnchor = num == 2,
-            height = height,
-            width = height,
-            color = Colors.white,
-            alpha = 0.3,
-            material = RegisterMaterial("star")
-        })
+    local staticnum = 0
+    local addstar = function(static)
+        local leftoffset = 0
+        if (num == 0) then
+            leftoffset = - (extraheight) / 2
+        elseif (num == 1) then
+            leftoffset = - (height + extraheight) / 2
+        elseif (num == 2) then
+            leftoffset = - (height + extraheight / 2)
+        end
 
-        star:registerAnimationState("disabled", {
-            color = Colors.white,
-            alpha = 0.8
-        })
+        local star = nil
+        if (static) then
+            star = LUI.UIImage.new({
+                topAnchor = true,
+                leftAnchor = staticnum == 0,
+                rightAnchor = staticnum == 2,
+                height = height,
+                width = height,
+                color = {
+                    r = 0.1,
+                    g = 0.1,
+                    b = 0.1,
+                },
+                alpha = 1,
+                material = RegisterMaterial("star")
+            })
+        else
+            star = LUI.UIImage.new({
+                topAnchor = true,
+                leftAnchor = num == 0,
+                rightAnchor = num == 2,
+                top = - (extraheight) / 2,
+                left = leftoffset,
+                height = height + extraheight,
+                width = height + extraheight,
+                color = Colors.white,
+                alpha = 0,
+                material = RegisterMaterial("star")
+            })
 
-        star:registerAnimationState("enabled", {
-            color = Colors.h2.yellow,
-            alpha = 1
-        })
+            star:registerAnimationState("disabled", {
+                topAnchor = true,
+                leftAnchor = num == 0,
+                rightAnchor = num == 2,
+                height = height,
+                width = height,
+                color = Colors.light_grey,
+                alpha = 1,
+                material = RegisterMaterial("star")
+            })
+    
+            star:registerAnimationState("enabled", {
+                topAnchor = true,
+                leftAnchor = num == 0,
+                rightAnchor = num == 2,
+                height = height,
+                width = height,
+                color = Colors.h2.yellow,
+                alpha = 1,
+                material = RegisterMaterial("star")
+            })
+        end
 
-        num = num + 1
+        if (not static) then
+            num = num + 1
+        else
+            staticnum = staticnum + 1
+        end
+
         container:addElement(star)
 
         return star
     end
+
+    addstar(true)
+    addstar(true)
+    addstar(true)
 
     local stars = {
         addstar(),
@@ -70,11 +123,11 @@ function newstars()
         end
 
         if (starnum <= prevstars) then
-            Engine.PlaySound("ui_cac_reinforce_reveal_power_02")
-            stars[starnum]:animateToState("disabled", 200)
+            Engine.PlaySound("so_earn_star")
+            stars[starnum]:animateToState("disabled", 100)
         elseif (starnum <= newstars) then
-            Engine.PlaySound("ui_cac_reinforce_reveal_power_02")
-            stars[starnum]:animateToState("enabled", 200)
+            Engine.PlaySound("so_earn_star")
+            stars[starnum]:animateToState("enabled", 100)
         end
 
         starnum = starnum + 1

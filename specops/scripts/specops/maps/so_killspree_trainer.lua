@@ -227,7 +227,7 @@ function initarea(area)
 
                     hidetargetwarning()
                     splash("&SO_KILLSPREE_TRAINER_AREA_CLEARED")
-                    player:playlocalsound("scn_timer_buzzer")
+                    player:playsound("emt_airhorn_area_clear")
 
                     currentarea = area.index + 1
                     local nextarea = areas[currentarea]
@@ -530,14 +530,14 @@ map.premain = function()
         end
     end)
 
-    enemiestext = createhuditem(3, -135, "&SO_KILLSPREE_TRAINER_ENEMIES")
-    civilianstext = createhuditem(4, -135, "&SO_KILLSPREE_TRAINER_CIVVIES")
+    enemiestext = createhuditem(3, hudxpos(), "&SO_KILLSPREE_TRAINER_ENEMIES")
+    civilianstext = createhuditem(4, hudxpos(), "&SO_KILLSPREE_TRAINER_CIVVIES")
 
-    enemieshitvalue = createhuditem(3, -135, "&SO_KILLSPREE_TRAINER_ENEMIES_COUNT")
+    enemieshitvalue = createhuditem(3, hudxpos(), "&SO_KILLSPREE_TRAINER_ENEMIES_COUNT")
     enemieshitvalue:setvalue(0)
     enemieshitvalue.alignx = "left"
 
-    civvieshitvalue = createhuditem(4, -135, "&SO_KILLSPREE_TRAINER_CIVVIES_COUNT")
+    civvieshitvalue = createhuditem(4, hudxpos(), "&SO_KILLSPREE_TRAINER_CIVVIES_COUNT")
     civvieshitvalue:setvalue(0)
     civvieshitvalue.alignx = "left"
 
@@ -556,9 +556,9 @@ map.main = function()
     game:setdvar("start", "course")
     mainhook.invoke(level)
 
-    game:ontimeout(function()
-        musicloop("mus_after_action_menu_cap")
-    end, 0)
+    intro()
+
+    musicloop("mus_so_killspree_trainer_music")
 end
 
 return map

@@ -36,6 +36,7 @@ function defusesetup()
         ent:delete()
     end)
 
+    intro()
     enableescapewarning()
     enableescapefailure()
 

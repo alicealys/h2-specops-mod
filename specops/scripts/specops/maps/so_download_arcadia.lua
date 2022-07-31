@@ -458,10 +458,10 @@ function strykerlaserreminderdialogue(stryker)
     player:laserinput()
 
     level:onnotifyonce("intro_dialogue_done", function()
+        print("here")
         strykerlaserreminderdialogprethink(stryker)
 
-        radiodialogue("arcadia_str_standingby")
-        -- radiodialogue("so_dwnld_stk_explicitauth")
+        radiodialogue("so_dwnld_stk_explicitauth")
         laserhintprint()
         stryker:scriptcall("maps/arcadia_code", "_ID49697")
 
@@ -509,16 +509,13 @@ end
 
 function sodownloadarcadiaintrodialogue()
     game:ontimeout(function()
-        radiodialogue("arcadia_hqr_neworders")
-        radiodialogue("arcadia_hqr_getinteltocp")
-        --radiodialogue("so_dwnld_hqr_laptops")
-        --radiodialogue("so_dwnld_hqr_downloaddata")
+        radiodialogue("so_dwnld_hqr_laptops")
+        radiodialogue("so_dwnld_hqr_downloaddata")
 
-        -- remove delay once sounds are added
         game:ontimeout(function()
             flagset("intro_dialogue_done")
-            musicloop("mus_arcadia_panicroom", 328)
-        end, 10000)
+            musicloop("mus_so_download_arcadia_music", 328)
+        end, 9500)
     end, 1000)
 end
 

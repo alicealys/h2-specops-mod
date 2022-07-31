@@ -292,6 +292,7 @@ function airport()
         level:notify("escaped_terminal")
     end)
 
+    intro()
     enablechallengetimer("start_terminal", "escaped_terminal")
 
     objectivebreadcrumb()

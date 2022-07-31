@@ -314,6 +314,7 @@ map.main = function()
         -- trigger that makes a part of the map render
         game:getentbynum(1973):notify("trigger")
         game:musicstop()
+        intro()
     end, 0)
 end
 
