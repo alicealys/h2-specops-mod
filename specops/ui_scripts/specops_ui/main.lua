@@ -1,8 +1,6 @@
 function frontend()
     require("menus/levelselect")
 
-    CoD.Music.MainSPMusic = "mus_so_main_menu"
-
     LUI.LevelSelect.IsAllLevelCompleted = function()
         return false
     end
@@ -19,7 +17,7 @@ function frontend()
         end
     
         if (args[1] == "@MENU_SP_CAMPAIGN") then
-            return "@MENU_SP_SPECIAL_OPS_CAPS"
+            return Engine.Localize("@MENU_SP_SPECIAL_OPS_CAPS")
         end
     
         return localize(unpack(args))
