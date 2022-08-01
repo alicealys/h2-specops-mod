@@ -1,6 +1,8 @@
 function frontend()
     require("menus/levelselect")
 
+    CoD.Music.MainSPMusic = "mus_so_main_menu"
+
     LUI.LevelSelect.IsAllLevelCompleted = function()
         return false
     end
