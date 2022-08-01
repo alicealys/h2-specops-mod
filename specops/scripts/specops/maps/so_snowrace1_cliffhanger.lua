@@ -21,6 +21,16 @@ map.calculatestars = function(time)
     return 0
 end
 
+map.preover = function(success)
+    if (success) then
+        return
+    end
+
+    game:sharedset("eog_extra_data", json.encode({
+		timestringoverride = "@SO_SNOWRACE1_CLIFFHANGER_DNF",
+    }))
+end
+
 function entity:startraceboost()
     game:ontimeout(function()
         local boostwindow = 0.2

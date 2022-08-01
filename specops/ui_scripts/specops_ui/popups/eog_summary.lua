@@ -105,29 +105,23 @@ function eogsummary()
     end
 
     local difficulties = {
-        Engine.Localize("GAME_DIFFICULTY_EASY"),
-        Engine.Localize("GAME_DIFFICULTY_MEDIUM"),
-        Engine.Localize("GAME_DIFFICULTY_HARD"),
-        Engine.Localize("GAME_DIFFICULTY_FU")
+        Engine.Localize("MENU_RECRUIT"),
+        Engine.Localize("MENU_REGULAR"),
+        Engine.Localize("MENU_HARDENED"),
+        Engine.Localize("MENU_VETERAN")
     }
 
     local function getdifficulty()
         local index = Engine.GetDvarInt("g_gameskill") + 1
         if (not difficulties[index]) then
-            return Engine.Localize("GAME_DIFFICULTY_UNKNOWN")
+            return Engine.Localize("NULL_EMPTY")
         end
 
-        local difficulty = difficulties[index]
-        return difficulty:sub(13)
+        return difficulties[index]
     end
 
     local msec = tonumber(Engine.GetDvarString("so_mission_time"))
-    local formattedtime = ""
-    if (msec < 0) then
-        formattedtime = Engine.Localize("@MENU_SO_DID_NOT_FINISH")
-    else
-        formattedtime = formattime(msec)
-    end
+    local formattedtime = formattime(msec)
     
     local extradata = game:sharedget("eog_extra_data")
     if (extradata ~= "") then
@@ -150,11 +144,14 @@ function eogsummary()
             label = extradata.timelabel
         end
 
-        if (not extradata.timeoverride) then
+        if (not extradata.timeoverride and not extradata.timestringoverride) then
             addstat(Engine.Localize(label), formattedtime)
             extraheight = extraheight + 30
-        else
+        elseif (extradata.timeoverride and not extradata.timestringoverride) then
             addstat(Engine.Localize(label), extradata.timeoverride)
+            extraheight = extraheight + 30
+        elseif (extradata.timestringoverride) then
+            addstat(Engine.Localize(label), Engine.Localize(extradata.timestringoverride))
             extraheight = extraheight + 30
         end
     end

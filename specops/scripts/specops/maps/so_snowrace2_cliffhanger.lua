@@ -12,9 +12,10 @@ local timelimit = timelimits[game:getdvarint("g_gameskill") + 1] or 15
 map.objective = "&SO_SNOWRACE1_CLIFFHANGER_OBJ_FINISHLINE_GATES"
 
 local gateshit = 0
-map.preover = function()
+map.preover = function(success)
     game:sharedset("eog_extra_data", json.encode({
         hidekills = true,
+		timestringoverride = success and nil or "@SO_SNOWRACE1_CLIFFHANGER_DNF",
         stats = {
             {
                 name = "@SO_SNOWRACE1_CLIFFHANGER_GATES",

@@ -208,7 +208,7 @@ function enablecountdowntimer(timewait, setstarttime, message, timerdrawdelay)
 
         game:ontimeout(function()
             hudelem:destroy()
-           --hudelemtimer:destroy()
+            hudelemtimer:destroy()
         end, 1000)
     end, ms(timewait))
 end
@@ -556,7 +556,7 @@ function missionover(success, timeoverride, outoftime)
     level:notify("special_op_terminated")
 
     if (map.preover) then
-        map.preover()
+        map.preover(success)
     end
 
     if (challengetimer) then
@@ -603,7 +603,6 @@ function missionover(success, timeoverride, outoftime)
             text.color = vector:new(0.8, 0.8, 1)
             text.glowcolor = vector:new(0.301961, 0.301961, 0.6)
             text:settext("&SPECIAL_OPS_CHALLENGE_SUCCESS")
-            player:playlocalsound("h1_arcademode_mission_success")
         else
             text.hidwhendead = false
             text.color = vector:new(1, 0.4, 0.4)
@@ -619,22 +618,17 @@ function missionover(success, timeoverride, outoftime)
     end, 0)
 
     local finaltime = 0
-    if (not success and istimetrial) then
-        finaltime = -1
-        game:setdvar("so_mission_time", -1)
+    if (timeoverride) then
+        finaltime = timeoverride
+        game:setdvar("so_mission_time", timeoverride)
     else
-        if (timeoverride) then
-            finaltime = timeoverride
-            game:setdvar("so_mission_time", timeoverride)
+        local time = game:gettime()
+        if (starttime) then
+            local total = time - starttime
+            finaltime = total
+            game:setdvar("so_mission_time", total)
         else
-            local time = game:gettime()
-            if (starttime) then
-                local total = time - starttime
-                finaltime = total
-                game:setdvar("so_mission_time", total)
-            else
-                game:setdvar("so_mission_time", 0)
-            end
+            game:setdvar("so_mission_time", 0)
         end
     end
 
