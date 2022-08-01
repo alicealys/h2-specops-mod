@@ -87,7 +87,7 @@ map.premain = function()
 
 			gateshit = gateshit + 1
 			splash("&SO_SNOWRACE1_CLIFFHANGER_TIMESPLASH", flagtime)
-			addchallengetimer(challengetimeleft + flagtime)
+			addchallengetimer(challengetimeleft + flagtime, true)
 			startchallengetimer(6, 3)
 			player:playlocalsound("snowrace_flag_capture")
 		end)
@@ -97,7 +97,8 @@ end
 map.calculatestars = nil
 
 map.addtimer = function()
-    addchallengetimer(timelimit)
+	challengetimesilent = true
+    addchallengetimer(timelimit, true)
 end
 
 map.starttimer = function()

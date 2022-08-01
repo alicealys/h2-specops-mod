@@ -1,22 +1,22 @@
 {
-    "aliasName": "so_tf_1_fail_generic_jerk",
+    "aliasName": "so_tf_1_fail_bleedout",
     "count": 2,
     "head": [
         {
-            "aliasName": "so_tf_1_fail_generic_jerk_01",
+            "aliasName": "so_tf_1_fail_bleedout_01",
             "secondaryAliasName": null,
             "chainAliasName": null,
-            "subtitle": "SUBTITLE_SO_TF_1_FAIL_GENERIC110",
+            "subtitle": "SUBTITLE_SO_TF_1_FAIL_BLEEDOUT115",
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 2812,
+                "totalMsec": 2576,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
                 "raw": {
                     "dir": "battlechatter",
-                    "name": "so_tf_1_fail_generic_jerk_01"
+                    "name": "so_tf_1_fail_bleedout_01"
                 }
             },
             "flags": 2097562,
@@ -258,20 +258,20 @@
             }
         },
         {
-            "aliasName": "so_tf_1_fail_generic_jerk_02",
+            "aliasName": "so_tf_1_fail_bleedout_02",
             "secondaryAliasName": null,
             "chainAliasName": null,
-            "subtitle": "SUBTITLE_SO_TF_1_FAIL_GENERIC111",
+            "subtitle": "SUBTITLE_SO_TF_1_FAIL_BLEEDOUT116",
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 2027,
+                "totalMsec": 2456,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
                 "raw": {
                     "dir": "battlechatter",
-                    "name": "so_tf_1_fail_generic_jerk_02"
+                    "name": "so_tf_1_fail_bleedout_02"
                 }
             },
             "flags": 2097562,

@@ -10,7 +10,7 @@
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 1567,
+                "totalMsec": 1569,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
@@ -258,14 +258,14 @@
             }
         },
         {
-            "aliasName": "so_tf_1_success_jerk_02",
+            "aliasName": "so_tf_1_success_jerk_02_r",
             "secondaryAliasName": null,
             "chainAliasName": null,
             "subtitle": "SUBTITLE_SO_TF_1_SUCCESS_JERK155",
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 1550,
+                "totalMsec": 1556,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
@@ -513,14 +513,14 @@
             }
         },
         {
-            "aliasName": "so_tf_1_success_jerk_03",
+            "aliasName": "so_tf_1_success_jerk_03_r",
             "secondaryAliasName": null,
             "chainAliasName": null,
             "subtitle": "SUBTITLE_SO_TF_1_SUCCESS_JERK156",
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 1500,
+                "totalMsec": 1504,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,

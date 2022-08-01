@@ -10,7 +10,7 @@
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 2017,
+                "totalMsec": 2018,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
@@ -265,7 +265,7 @@
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 2517,
+                "totalMsec": 2521,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,

@@ -90,13 +90,13 @@ function hudxpos()
     return -135
 end
 
-function addchallengetimer(timelimit)
+function addchallengetimer(timelimit, alwaysshow)
     if (challengetimer) then
         challengetimer:destroy_()
         challengetimertime:destroy_()
     end
 
-    if (not addedtoggle) then
+    if (not alwaysshow and not addedtoggle) then
         addedtoggle = true
         local shown = true
         
@@ -149,32 +149,47 @@ function startchallengetimer(nudgetime, hurrytime)
     if (challengetimertime.timelimit) then
         challengetimertime:settenthstimer(challengetimertime.timelimit)
         challengetimeleft = challengetimertime.timelimit
-        local changecolor = function()
+        local start = game:gettime()
+        local changecolor = function(coloronly)
             if (ismissionover) then
                 challengetimerlistener:clear()
                 return
             end
 
+            if (not coloronly) then
+                challengetimeleft = challengetimeleft - 1
+            end
+
             if (challengetimeleft <= 0) then
-                missionover(false)
+                missionover(false, nil, true)
+                player:playlocalsound("arcademode_kill_streak_lost")
                 challengetimerlistener:clear()
                 return
             end
 
-            challengetimeleft = challengetimeleft - 1
-
             if (challengetimeleft <= nudgetime and challengetimeleft > hurrytime) then
                 challengetimer:setyellow()
                 challengetimertime:setyellow()
+
+                if (not challengetimesilent and not playednudge) then
+                    playednudge = true
+                    dialogueplay("so_tf_1_time_generic")
+                end
             end
 
             if (challengetimeleft <= hurrytime) then
                 challengetimer:setred()
                 challengetimertime:setred()
+                player:playlocalsound("countdown_beep")
+
+                if (not challengetimesilent and not playedhurry) then
+                    playedhurry = true
+                    dialogueplay("so_tf_1_time_hurry")
+                end
             end
         end
 
-        changecolor()
+        changecolor(true)
         challengetimerlistener = game:oninterval(changecolor, 1000)
     else
         challengetimertime:settenthstimerup(0)
@@ -694,6 +709,8 @@ function missionover(success, timeoverride, outoftime)
             else
                 dialogueplay("so_tf_1_fail_generic_jerk", 0.5, true)
             end
+        else
+            dialogueplay("so_tf_1_fail_time")
         end
     end
 
@@ -1318,4 +1335,94 @@ end
 
 function defined(value)
     return game:isdefined(value) == 1
+end
+
+function dialoguekillingcivilians()
+    if (not civilianwarningtime) then
+        civilianwarningtime = game:gettime()
+
+        if (not civilianwarningthrottle) then
+            civilianwarningthrottle = 5000
+        end
+    else
+        if ((game:gettime() - civilianwarningtime) < civilianwarningthrottle) then
+            return
+        end
+    end
+
+    local waittime = 0.5
+    civilianwarningtime = game:gettime() + (waittime * 1000)
+    dialogueplay("so_tf_1_civ_kill_warning", 0.5)
+end
+
+function dialoguecounterupdate(current, goal, divide)
+    if (not counterdialoguetime) then
+        counterdialoguetime = 0
+    end
+
+    if (game:gettime() < counterdialoguetime) then
+        return
+    end
+
+    if (not current) then
+        return
+    end
+
+    divide = divide or 1
+    local adjustedcount = math.floor(current / divide)
+
+    if (adjustedcount > 5) then
+        if (not challengeprogressmanualupdate) then
+            dialogueprogressupdate(current, goal)
+            counterdialoguetime = game:gettime() + 800
+        end
+        return
+    end
+
+    dialogueplay("so_tf_1_progress_" .. adjustedcount .. "more")
+    counterdialoguetime = game:gettime() + 800
+end
+
+function dialogueprogressupdate(current, goal)
+    if (not current or not goal) then
+        return
+    end
+
+    if (not progressgoalstatus) then
+        progressgoalstatus = "none"
+    end
+
+    local statuses = {
+        ["none"] = 0.75,
+        ["3quarter"] = 0.5,
+        ["half"] = 0.25,
+    }
+
+    local timefrac = statuses[progressgoalstatus]
+    if (not timefrac) then
+        return
+    end
+
+    local testgoal = goal * timefrac
+    if (current > testgoal) then
+        return
+    end
+
+    local timedialogue = nil
+    switch(progressgoalstatus, {
+        ["none"] = function()
+            progressgoalstatus = "3quarter"
+            timedialogue = "so_tf_1_progress_3quarter"
+        end,
+        ["3quarter"] = function()
+            progressgoalstatus = "half"
+            timedialogue = "so_tf_1_progress_half"
+        end,
+        ["half"] = function()
+            progressgoalstatus = "quarter"
+            timedialogue = "so_tf_1_progress_quarter"
+        end
+    })
+
+    dialogueplay(timedialogue, 0.5)
 end

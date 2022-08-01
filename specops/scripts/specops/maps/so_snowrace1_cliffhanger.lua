@@ -120,7 +120,7 @@ function entity:givevehicleboost(boostspeed)
 end
 
 map.addtimer = function()
-    addchallengetimer()
+    addchallengetimer(nil, true)
     addchallengestars()
 end
 

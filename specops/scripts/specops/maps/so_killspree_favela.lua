@@ -65,8 +65,6 @@ function setupveteran()
 end
 
 function favelainit()
-    pointtarget = pointscounter
-
     game:scriptcall("maps/_utility", "_ID1801", "vision_shanty", "script_noteworthy")
 
     local sentries = game:getentarray("misc_turret", "classname")
@@ -88,6 +86,8 @@ function favelainit()
     else
         setupveteran()
     end
+    
+    pointtarget = pointscounter
 
     game:objective_add(1, "current", objective)
 
@@ -392,9 +392,11 @@ function killspree()
 
         pointscounter = pointscounter - 1
         if (pointscounter <= 0) then
-            enemieshitvalue:setvalue(0)
+            enemieshitvalue:setvalue("&SPECIAL_OPS_DASHDASH")
             missionover(true)
             return
+        else
+            dialoguecounterupdate(pointscounter, pointtarget)
         end
 
         if (pointscounter <= 5) then
@@ -417,6 +419,11 @@ function killspree()
         civvieshitvalue:setvalue(civviedeaths)
 
         local remaining = civiliankillfail - civviedeaths
+
+        if (remaining >= 1) then
+            dialoguekillingcivilians()
+        end
+
         if (remaining <= 1) then
             civvieshitvalue:setred()
             civilianstext:setred()
