@@ -13,9 +13,14 @@ map.objective = "&SO_SNOWRACE1_CLIFFHANGER_OBJ_FINISHLINE_GATES"
 
 local gateshit = 0
 map.preover = function(success)
+	local timestringoverride = nil
+	if (not success) then
+		timestringoverride = "@SO_SNOWRACE1_CLIFFHANGER_DNF"
+	end
+
     game:sharedset("eog_extra_data", json.encode({
         hidekills = true,
-		timestringoverride = success and nil or "@SO_SNOWRACE1_CLIFFHANGER_DNF",
+		timestringoverride = timestringoverride,
         stats = {
             {
                 name = "@SO_SNOWRACE1_CLIFFHANGER_GATES",
