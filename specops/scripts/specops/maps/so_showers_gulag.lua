@@ -30,6 +30,14 @@ function challengeonly()
     end
 end
 
+function gulagshowermusic()
+    level:onnotifyonce("slowmo_breach_ending", function()
+        game:ontimeout(function()
+            musicloop("mus_so_showers_gulag_music")
+        end, 2000)
+    end)
+end
+
 map.premain = function()
     game:setdvar("r_fog", 0)
     addlockercollision()
@@ -57,6 +65,7 @@ map.premain = function()
     intro()
     enablefailonescape()
     enableescapewarning()
+    gulagshowermusic()
 
     -- change objective
     game:detour("maps/gulag", "_ID43460", function()
@@ -76,14 +85,16 @@ map.premain = function()
     end
 
     addchallengetimer(timelimit)
-    level:onnotify("breaching", function()
+    level:onnotifyonce("breaching", function()
         game:ontimeout(function()
             startchallengetimer()
             starttime = game:gettime()
         end, 2000)
     end)
 
-    level:onnotify("player_exited_bathroom", function()
+    game:detour("maps/gulag", "_ID53095", function() end)
+
+    level:onnotifyonce("player_exited_bathroom", function()
         missionover(true)
     end)
 end
