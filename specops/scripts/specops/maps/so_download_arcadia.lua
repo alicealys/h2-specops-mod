@@ -389,6 +389,7 @@ function laserdesignatetarget()
     end
 
     player:onnotifyonce("fired_laser", function()
+        flagset("used_laser")
         local trace = player:scriptcall("maps/arcadia_code", "_ID15795")
         local pos = trace["position"]
         local ent = trace["entity"]
@@ -458,10 +459,9 @@ function strykerlaserreminderdialogue(stryker)
     player:laserinput()
 
     level:onnotifyonce("intro_dialogue_done", function()
-        print("here")
         strykerlaserreminderdialogprethink(stryker)
 
-        radiodialogue("so_dwnld_stk_explicitauth")
+        radiodialoguewrap("so_dwnld_stk_explicitauth")
         laserhintprint()
         stryker:scriptcall("maps/arcadia_code", "_ID49697")
 
@@ -470,15 +470,32 @@ function strykerlaserreminderdialogue(stryker)
         end
 
         local timeout = game:ontimeout(function()
+            if (flag("used_laser")) then
+                return
+            end
+
             local f1 = function()
-                -- radiodialogue("so_dwnld_stk_designated")
+                if (flag("used_laser")) then
+                    return
+                end
+
+                radiodialoguewrap("so_dwnld_stk_designated")
                 local f2 = function()
-                    --radiodialogue("so_dwnld_stk_cantfire")
+                    if (flag("used_laser")) then
+                        return
+                    end    
+
+                    radiodialoguewrap("so_dwnld_stk_cantfire")
                 end
 
                 local timeout = game:ontimeout(function()
                     local interval = nil
                     interval = game:oninterval(function()
+                        if (flag("used_laser")) then
+                            interval:clear()
+                            return
+                        end
+        
                         if (not flag("no_living_enemies")) then
                             f2()
                             interval:clear()
@@ -492,6 +509,11 @@ function strykerlaserreminderdialogue(stryker)
 
             local interval = nil
             interval = game:oninterval(function()
+                if (flag("used_laser")) then
+                    interval:clear()
+                    return
+                end
+
                 if (not flag("no_living_enemies")) then
                     f1()
                     interval:clear()
@@ -509,8 +531,8 @@ end
 
 function sodownloadarcadiaintrodialogue()
     game:ontimeout(function()
-        radiodialogue("so_dwnld_hqr_laptops")
-        radiodialogue("so_dwnld_hqr_downloaddata")
+        radiodialoguewrap("so_dwnld_hqr_laptops")
+        radiodialoguewrap("so_dwnld_hqr_downloaddata")
 
         game:ontimeout(function()
             flagset("intro_dialogue_done")
@@ -615,11 +637,11 @@ function downloadenemiesattackdialogue(download)
     })
 
     if (alias ~= nil) then
-       -- radiodialogue(alias)
+        radiodialoguewrap(alias)
     end
 
     local playalias2 = function()
-        --radiodialogue(alias2)
+        radiodialoguewrap(alias2)
     end
 
     if (waittime ~= nil and alias2 ~= nil) then
@@ -769,7 +791,7 @@ function downloadfiles(download, callback)
     if (not flag("first_download_started")) then
         flagset("first_download_started")
 
-        -- radiodialogue("so_dwnld_hqr_wirelesslydisrupt")
+        radiodialoguewrap("so_dwnld_hqr_wirelesslydisrupt")
     end
 
     download.downloading = true
@@ -860,7 +882,26 @@ function aineardownload(download, guy)
 end
 
 function downloadinterruptdialogue()
+    game:ontimeout(function()
+        local lines = {}
+        table.insert(lines, "so_dwnld_hqr_restartmanually")
+        table.insert(lines, "so_dwnld_hqr_getbackrestart")
 
+        interruptlineindex = interruptlineindex or 1
+        if (interruptlineindex > #lines) then
+            interruptlineindex = 1
+        end
+
+        radiodialoguewrap(lines[interruptlineindex])
+        interruptlineindex = interruptlineindex + 1
+    end, 1000)
+end
+
+function radiodialoguewrap(...)
+    if (not flag("special_op_terminated")) then
+        print(...)
+        radiodialogue(...)
+    end
 end
 
 function downloadfileshudcountdownabort(download)
@@ -1070,7 +1111,32 @@ function downloadfileshudcountdown(download, timeleft, callback)
 end
 
 function downloadobjdialogue()
+    local downloadsleft = #downloads - downloadscomplete
+    if (downloadsleft == 2) then
+        radiodialoguewrap("so_dwnld_hqr_gofindthem")
+    elseif (downloadsleft == 1) then
+        radiodialoguewrap("so_dwnld_hqr_onelaptop")
+    elseif (downloadsleft == 0) then
+        radiodialoguewrap("so_dwnld_hqr_pullingyouout")
 
+        local bugwaittime = 30
+        local aliases = {}
+        table.insert(aliases, "so_dwnld_hqr_extraction")
+        table.insert(aliases, "so_dwnld_hqr_completemission")
+
+        local interval = nil
+        local index = 1
+        interval = game:oninterval(function()
+            if (index > #aliases) then
+                index = 1
+            end
+
+            radiodialoguewrap(aliases[index])
+            index = index + 1
+        end, ms(bugwaittime))
+
+        interval:endon(level, "stryker_extraction_done")
+    end
 end
 
 function downloadobjthink(download)

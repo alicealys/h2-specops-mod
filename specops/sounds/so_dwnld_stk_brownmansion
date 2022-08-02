@@ -1,22 +1,22 @@
 {
-    "aliasName": "so_dwnld_hqr_downloaddata",
+    "aliasName": "so_dwnld_stk_brownmansion",
     "count": 1,
     "head": [
         {
-            "aliasName": "so_dwnld_hqr_2_2_r",
+            "aliasName": "so_dwnld_str_3_2_r",
             "secondaryAliasName": null,
             "chainAliasName": null,
-            "subtitle": "SUBTITLE_SO_DWNLD_HQR_DOWNLOADDATA22",
+            "subtitle": "SUBTITLE_SO_DWNLD_STK_BROWNMANSION32",
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 4992,
+                "totalMsec": 3281,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
                 "raw": {
                     "dir": "voiceovers/so_dwnld",
-                    "name": "so_dwnld_hqr_2_2_r"
+                    "name": "so_dwnld_str_3_2_r"
                 }
             },
             "flags": 2097562,

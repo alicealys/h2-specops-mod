@@ -10,7 +10,7 @@
             "mixerGroup": null,
             "soundfile": {
                 "type": 2,
-                "totalMsec": 4433,
+                "totalMsec": 4434,
                 "isLocalized": true,
                 "isStreamed": true,
                 "fileIndex": 0,
@@ -237,7 +237,9 @@
                         0,
                         0,
                         0,
-                        0,
+                        0
+                    ],
+                    [
                         0,
                         0,
                         0,
