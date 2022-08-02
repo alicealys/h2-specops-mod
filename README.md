@@ -36,7 +36,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 | Map  | Playable | Planned |
 |-------------|-----|-----|
 | The Pit  | ✔️ | ✔️ |
-| Sniper Fi | ❌ | ✔️ |
+| Sniper Fi | ✔️ | ✔️ |
 | O Cristo Redendor | ✔️ | ✔️ |
 | Evasion | ✔️ | ✔️ |
 | Suspension | ❌ | ❌ |
