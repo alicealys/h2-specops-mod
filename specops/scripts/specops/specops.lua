@@ -69,3 +69,18 @@ switch(mapname, {
         campaign = "arctic"
     end,
 })
+
+function mapfunction(name, file, id)
+    _G[name] = function(...)
+        return game:scriptcall(file, id, ...)
+    end
+end
+
+function mapmethod(name, file, id)
+    entity[name] = function(ent, ...)
+        return ent:scriptcall(file, id, ...)
+    end
+end
+
+mapfunction("getclosest", "common_scripts/utility", "_ID16182")
+mapmethod("displayhint", "maps/_utility", "_ID11085")

@@ -126,7 +126,7 @@ end
 
 local challengetimerlistener = nil
 challengetimeleft = 0
-function startchallengetimer(nudgetime, hurrytime)
+function startchallengetimer(nudgetime, hurrytime, silent)
     nudgetime = nudgetime or 30
     hurrytime = hurrytime or 10
 
@@ -142,7 +142,9 @@ function startchallengetimer(nudgetime, hurrytime)
     challengetimer.label = timerlabel
     challengetimer:setwhite()
 
-    player:playsound("arcademode_zerodeaths")
+    if (not silent) then
+        player:playsound("arcademode_zerodeaths")
+    end
 
     challengetimertime.label = ""
 
@@ -196,11 +198,11 @@ function startchallengetimer(nudgetime, hurrytime)
     end
 end
 
-function enablechallengetimer(notifystart, notifyend, timelimit)
+function enablechallengetimer(notifystart, notifyend, timelimit, silent)
     addchallengetimer(timelimit)
     level:onnotifyonce(notifystart, function()
         starttime = game:gettime()
-        startchallengetimer()
+        startchallengetimer(nil, nil, silent)
     end)
 
     level:onnotifyonce(notifyend, function()
@@ -219,7 +221,10 @@ function enablecountdowntimer(timewait, setstarttime, message, timerdrawdelay)
 
     game:ontimeout(function()
         player:playsound("arcademode_zerodeaths")
-        starttime = game:gettime()
+
+        if (setstarttime) then
+            starttime = game:gettime()
+        end
 
         game:ontimeout(function()
             hudelem:destroy()
@@ -568,7 +573,7 @@ function missionover(success, timeoverride, outoftime)
         return
     end
 
-    level:notify("special_op_terminated")
+    flagset("special_op_terminated")
 
     if (map.preover) then
         map.preover(success)
@@ -1321,18 +1326,6 @@ function setcompassdist(dist)
     game:setsaveddvar("compassmaxrange", value)
 end
 
-function mapfunction(name, file, id)
-    _G[name] = function(...)
-        game:scriptcall(file, id, ...)
-    end
-end
-
-function mapmethod(name, file, id)
-    entity[name] = function(ent, ...)
-        ent:scriptcall(file, id, ...)
-    end
-end
-
 function defined(value)
     return game:isdefined(value) == 1
 end
@@ -1426,3 +1419,34 @@ function dialogueprogressupdate(current, goal)
 
     dialogueplay(timedialogue, 0.5)
 end
+
+function flagwait(flagname, callback)
+    local listener = nil
+
+    listener = level:onnotify(flagname, function()
+        if (not flag(flagname)) then
+            return
+        end
+
+        listener:clear()
+        callback()
+    end)
+
+    return listener
+end
+
+function flagwaitopen(flagname, callback)
+    local listener = nil
+
+    listener = level:onnotify(flagname, function()
+        if (flag(flagname)) then
+            return
+        end
+
+        listener:clear()
+        callback()
+    end)
+
+    return listener
+end
+
