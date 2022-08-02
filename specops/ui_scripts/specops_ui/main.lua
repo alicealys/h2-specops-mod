@@ -19,7 +19,7 @@ function frontend()
         end
     
         if (args[1] == "@MENU_SP_CAMPAIGN") then
-            return Engine.Localize("@MENU_SP_SPECIAL_OPS_CAPS")
+            return localize("@MENU_SP_SPECIAL_OPS_CAPS")
         end
     
         return localize(unpack(args))
