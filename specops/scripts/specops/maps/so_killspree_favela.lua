@@ -10,7 +10,12 @@ map.premain = function()
     game:getent("favela_soccerball_1", "targetname"):delete()
     game:getent("favela_soccerball_2", "targetname"):delete()
 
+
+    game:visionsetnaked("vision_shanty", 0)
+
     setfailonmissionover(false)
+
+    setloadout("tavor_eotech", "ranger", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
 end
 
 function setupregular()
@@ -351,17 +356,6 @@ function killspree()
 
     setplayerpos()
 
-    player:takeweapon("m1014")
-    player:takeweapon("masada_grenadier_acog")
-
-    player:giveweapon("ranger")
-    player:giveweapon("ak47_acog")
-
-    player:switchtoweapon("ak47_acog")
-
-    player:givemaxammo("ranger")
-    player:givemaxammo("ak47_acog")
-
     intro()
     enableescapewarning()
     enablefailonescape()
@@ -498,6 +492,8 @@ map.main = function()
 	flaginit("start_so_killspree_favela")
 
     musicloop("mus_favela_tension")
+
+    game:precacherumble("damage_heavy")
 
     killspree()
 end

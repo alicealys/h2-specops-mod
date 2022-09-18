@@ -1,6 +1,10 @@
 local map = {}
 
+game:precacheitem("p90_reflex")
+
 map.premain = function()
+    setloadout("m21_scoped_arctic_silenced", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
+
     -- dont delete stuff
     game:detour("_ID43797", "init", function() end)
 

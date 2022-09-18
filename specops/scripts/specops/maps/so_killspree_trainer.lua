@@ -325,6 +325,7 @@ function inittriggers()
     local currentarea = 1
 
     level:onnotifyonce("player_course_jumped_down", function()
+        print("jumped down")
         jumpeddown = true
         if (not areas[6].cleared) then
             missionover(false)
@@ -336,7 +337,7 @@ function inittriggers()
     end
 
     level:onnotifyonce("so_player_course_end", function()
-        if (not jumpeddown or totalhitenemies < 24) then
+        if (not jumpeddown and totalhitenemies < 24) then
             return
         end
 
@@ -454,6 +455,8 @@ function dialogueciviliankilled()
 end
 
 map.premain = function()
+    setloadout("m4_grunt", "usp", "none", "none", "viewmodel_base_viewhands", "american")
+
     game:setdvar("ui_so_show_difficulty", 0)
 
     game:detour("maps/trainer", "_ID52784", function()

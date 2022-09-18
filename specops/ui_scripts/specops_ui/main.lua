@@ -49,6 +49,7 @@ function ingame()
     require("popups/eog_summary")
     require("popups/new_stars")
     require("popups/new_record")
+    require("hud/main")
 
     LUI.sp_hud.PauseMenu.canChangeDifficulty = function() return false end
     LUI.sp_hud.PauseMenu.canLowerDifficulty = function() return false end

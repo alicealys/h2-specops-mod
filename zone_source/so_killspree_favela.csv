@@ -1,0 +1,4 @@
+addon_map_ents,maps/so_killspree_favela.mapents
+stringtable,soundtables/so_killspree_favela.csv
+stringtable,maps/createart/so_killspree_favela_lightsets_hdr.csv
+weapon,tavor_eotech

@@ -1,0 +1,367 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 263.4 0"
+"origin" "-1822 -685 672"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 282.3 0"
+"origin" "-1881 -683 672"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "2"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2089.1 -1380.8 672.6"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "1"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2116.6 -973.5 674"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "3"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2679.5 -1472.4 671.5"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "4"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3037.3 -1530.6 668"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "5"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3254.9 -1561.9 668"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "6"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3396.9 -1229.3 673.7"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "7"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3385.8 -1010.9 675.5"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "8"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3076.2 -862.6 674.3"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "9"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2766.4 -904 670.9"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "10"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2552.5 -1081 667.9"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "11"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3634 -1023.2 674"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "12"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3670.4 -1415.8 664.2"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "13"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3979.3 -1371.1 669.4"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "14"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3991.1 -1078.9 667.9"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "15"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-4004.4 -798.2 665.9"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "16"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3923.8 -320.1 672.5"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "17"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3598.7 -360.7 675.3"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "18"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3369.5 -93.8 675.3"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "19"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3733.9 57.1 671.6"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "20"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3921.3 292.3 677.7"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "21"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3223.7 167.9 678"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "22"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-3012.1 -77.4 674"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "23"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2987.9 -499.8 672"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "24"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2794.1 61.4 676.3"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "25"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2645 134.9 672.5"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "26"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2459.8 -221.5 672"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_favela_AR"
+"model" "body_militia_assault_aa_blk"
+"export" "27"
+"spawnflags" "7"
+"script_specialops" "1"
+"targetname" "pmc_spawner"
+"origin" "-2604 -537 672"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_arab"
+"model" "body_complete_sp_juggernaut"
+"export" "29"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-4023.8 946.1 670.4"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_arab"
+"model" "body_complete_sp_juggernaut"
+"export" "30"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-4119.8 946.1 674"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_arab"
+"model" "body_complete_sp_juggernaut"
+"export" "31"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-4071.8 994.1 674.9"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_arab"
+"model" "body_complete_sp_juggernaut"
+"export" "32"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-4023.8 1042.1 673.8"
+"script_nodrop" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_arab"
+"model" "body_complete_sp_juggernaut"
+"export" "33"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-4119.8 1042.1 674.6"
+"script_nodrop" "1"
+}
+{
+"model" "?0"
+"origin" "-1784 -840 768"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "mission_start"
+"script_specialops" "1"
+}
+{
+"model" "?1"
+"origin" "-4644 1689 824"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "player_has_escaped"
+"script_specialops" "1"
+}
+{
+"model" "?2"
+"origin" "-4430 1409 776"
+"classname" "trigger_multiple"
+"script_noteworthy" "player_trying_to_escape"
+"script_specialops" "1"
+}

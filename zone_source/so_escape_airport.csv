@@ -1,0 +1,11 @@
+addon_map_ents,maps/so_escape_airport.mapents
+stringtable,maps/createart/so_escape_airport_lightsets_hdr.csv
+stringtable,soundtables/so_escape_airport.csv
+weapon,masada_eotech
+weapon,rpg
+weapon,deserteagle
+weapon,uzi_akimbo
+weapon,m240_heartbeat_reflex
+weapon,m14ebr_thermal
+xmodel,viewhands_tf141
+rawfile,vision/so_escape_airport.vision

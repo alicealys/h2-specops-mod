@@ -1,0 +1,3 @@
+addon_map_ents,maps/so_forest_contingency.mapents
+stringtable,soundtables/so_forest_contingency.csv
+stringtable,maps/createart/so_forest_contingency_lightsets_hdr.csv

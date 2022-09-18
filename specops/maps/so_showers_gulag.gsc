@@ -1,0 +1,4 @@
+main()
+{
+    maps\gulag::main();
+}

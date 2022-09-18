@@ -1,6 +1,9 @@
 local map = {}
 
 map.premain = function()
+    game:visionsetnaked("favela_escape", 0)
+
+    setloadout("m1014", "glock", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
     -- introscreen
     game:detour("_ID42318", "main", function() end)
 end
@@ -112,12 +115,12 @@ function defuselocationhandler(briefcase)
     local bombarray = game:getentarray(briefcase.target, "targetname")
     bombarray:foreach(function(bomb)
         -- no c4 model :(
-        if (bomb.model ~= "food_snacks_gumbox01") then
+        if (bomb.model ~= "h2_weapon_c4") then
             return
         end
 
         game:ontimeout(function()
-            local fxent = game:playloopedfx(bombfx, 1, bomb.origin)
+            local fxent = game:playloopedfx(bombfx, 1, bomb:gettagorigin("tag_fx"))
             briefcase:onnotifyonce("briefcase_bomb_defused", function()
                 fxent:delete()
             end)
@@ -418,6 +421,8 @@ map.main = function()
     game:scriptcall("_ID51773", "main")
     game:scriptcall("maps/favela_escape_anim", "main")
     game:scriptcall("maps/favela_escape_lighting", "main")
+
+    game:precachemodel("h2_weapon_c4")
 
     game:scriptcall("maps/_load", "main")
     game:scriptcall("maps/_compass", "setupminimap", "compass_map_favela_escape")

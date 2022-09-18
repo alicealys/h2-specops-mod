@@ -13,15 +13,7 @@ local function startmap(somapname, mapname)
     Engine.SetDvarFromString("addon_mapname", somapname)
     Engine.SetDvarBool("cl_disableMapMovies", true)
     Engine.SetDvarBool("cl_enableCustomLoadscreen", true)
-
-    local basepath = game:getloadedmod()
-    local loadscreenimage = "loadscreen_" .. somapname .. ".stbi_img"
-
-    if (io.fileexists(basepath .. "/materials/" .. loadscreenimage)) then
-        Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
-    else
-        Engine.SetDvarString("cl_loadscreenImage", "")
-    end
+    Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
 
     local objmaps = {
         ["so_ac130_co_hunted"] = true,
@@ -31,12 +23,12 @@ local function startmap(somapname, mapname)
         ["so_rooftop_contingency"] = true,
     }
 
-    Engine.SetDvarString("cl_loadscreenTitle", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname))))
-    Engine.SetDvarString("cl_loadscreenDesc", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_DESC")))
+    Engine.SetDvarString("cl_loadscreenTitle", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname)))
+    Engine.SetDvarString("cl_loadscreenDesc", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_DESC"))
     Engine.SetDvarString("cl_loadscreenObjIcon", "star")
 
     if (objmaps[somapname] ~= nil) then
-        Engine.SetDvarString("cl_loadscreenObj", cleanstr(Engine.Localize("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_OBJ_DESC")))
+        Engine.SetDvarString("cl_loadscreenObj", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_OBJ_DESC"))
     else
         Engine.SetDvarString("cl_loadscreenObj", "")
     end
@@ -212,7 +204,7 @@ local function levelselect(act)
 
                 menu.infoBox.bottomLeftElements.difficultyText:setText("")
 
-                PersistentBackground.ChangeBackground(nil, "mission_select_bg_" .. act.missions[i].mapname)
+                PersistentBackground.ChangeBackground(nil, act.missions[i].video)
                 black:animateInSequence( {
                     {
                         "BlackScreen",

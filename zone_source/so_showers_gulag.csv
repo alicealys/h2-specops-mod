@@ -1,0 +1,4 @@
+addon_map_ents,maps/so_showers_gulag.mapents
+stringtable,soundtables/so_showers_gulag.csv
+stringtable,maps/createart/so_showers_gulag_lightsets_hdr.csv
+sound,mus_so_showers_gulag_music

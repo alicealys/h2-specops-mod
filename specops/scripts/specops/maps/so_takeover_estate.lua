@@ -1,0 +1,20 @@
+local map = {}
+
+map.premain = function()
+
+end
+
+map.main = function()
+    game:scriptcall("maps/_compass", "setupminimap", "compass_map_estate")
+    setloadout("m4m203_eotech", "barrett", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
+
+    mainhook.invoke(level)
+
+    setcompassdist("far")
+    setplayerpos()
+    enableallportalgroups()
+    intro()
+    musicloop("mus_so_takeover_estate")
+end
+
+return map

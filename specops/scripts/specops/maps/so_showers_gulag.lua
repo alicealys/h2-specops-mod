@@ -42,6 +42,13 @@ map.premain = function()
     game:setdvar("r_fog", 0)
     addlockercollision()
     challengeonly()
+    game:visionsetnaked("gulag", 0)
+
+    setcompassdist("close")
+
+    game:getent("car_blows_up", "script_noteworthy"):delete()
+
+    setloadout("m203_m4_reflex_arctic", "m1014", "fraggrenade", "flash_grenade", "viewhands_udt", "american")
 
     local weapons = game:getentarray("so_weapons", "targetname")
     for i = 1, #weapons do
@@ -104,9 +111,8 @@ map.main = function()
     mainhook.invoke(level)
 
     game:ontimeout(function()
+        player:takeweapon("claymore")
         player:takeweapon("m14_scoped_arctic")
-        player:giveweapon("m1014")
-        player:givemaxammo("m1014")
 
         local spawners = game:getspawnerteamarray("allies")
         for i = 1, #spawners do

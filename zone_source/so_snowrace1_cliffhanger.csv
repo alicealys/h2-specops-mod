@@ -1,0 +1,3 @@
+addon_map_ents,maps/so_snowrace1_cliffhanger.mapents
+stringtable,soundtables/so_snowrace1_cliffhanger.csv
+stringtable,maps/createart/so_snowrace1_cliffhanger_lightsets_hdr.csv

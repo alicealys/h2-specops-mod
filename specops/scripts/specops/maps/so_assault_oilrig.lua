@@ -1,7 +1,9 @@
 local map = {}
 
 map.premain = function()
-
+    game:visionsetnaked("oilrig", 0)
+    setloadout("m4m203_reflex", "m1014", "fraggrenade", "flash_grenade", "viewhands_udt", "american")
+    setloadoutequipment("claymore")
 end
 
 function alarm()
@@ -218,9 +220,7 @@ function startmap()
     game:enablepg("portal_secondfloorbreach", 1)
     game:enablepg("portal_secondbreach", 1)
 
-    player:takeweapon("scar_h_thermal_silencer")
-    player:giveweapon("m1014")
-    player:givemaxammo("m1014")
+    player:givemaxammo("claymore")
 
     -- random script_model
     game:getentbyref(2044, 0):hide()
@@ -253,10 +253,25 @@ function startmap()
     game:scriptcall("maps/oilrig", "_ID50414")
 end
 
+local slowmobreachinit = nil
+slowmobreachinit = game:detour("maps/_slowmo_breach", "slowmo_breach_init", function(ent)
+    level.script = "oilrig"
+    slowmobreachinit.invoke(level)
+end)
+
 map.main = function()
+    game:precacherumble("grenade_rumble")
+
     local removetriggers = game:getentarray("redshirt_trigger", "targetname")
     for i = 1, #removetriggers do
         removetriggers[i]:delete()
+    end
+
+    local ents = game:getentarray()
+    for i = 1, #ents do
+        if (ents[i].model == "h2_oilr_door_breaching_undamaged") then
+            print("h2_oilr_door_breaching_undamaged", ents[i].origin)
+        end
     end
     
     game:scriptcall("maps/_utility", "_ID1951", "start_map", startmap)

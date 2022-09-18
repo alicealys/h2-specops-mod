@@ -1,0 +1,5 @@
+addon_map_ents,maps/so_sabotage_cliffhanger.mapents
+stringtable,soundtables/so_sabotage_cliffhanger.csv
+stringtable,maps/createart/so_sabotage_cliffhanger_lightsets_hdr.csv
+weapon,m21_scoped_arctic_silenced
+weapon,mp5_silencer_reflex

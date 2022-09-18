@@ -1,0 +1,1599 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "1"
+"origin" "-5810 -2438 28.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 90 0"
+"origin" "-4704 -5616 -5.1"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 90 0"
+"origin" "-4784 -5632 -8"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "2"
+"origin" "-5749.3 -2413.4 37.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "3"
+"origin" "-5759.1 -2486.4 23.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "4"
+"origin" "-5799.1 -1807.8 2.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "5"
+"origin" "-5655.5 -1797.5 10.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "6"
+"origin" "-5144 -2002.1 10.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "7"
+"origin" "-4841.7 -1843 -13"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "8"
+"origin" "-4087.9 -1594.8 3.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "9"
+"origin" "-4106.6 -1502.2 2.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "10"
+"origin" "-4106.8 -1427.9 2.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "11"
+"origin" "-4330.4 -1540.6 2.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "12"
+"origin" "-4395.4 -1615.5 2.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "13"
+"origin" "-3406.3 -2553.2 4.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "14"
+"origin" "-3528.7 -2468 10"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "15"
+"origin" "-3313.2 -2410.4 3.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "16"
+"origin" "-3719.3 -2190.8 15.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "17"
+"origin" "-3451.5 -2068.5 7.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "18"
+"origin" "-3250.7 -1145.4 0.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "19"
+"origin" "-3167.4 -957.9 15"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "20"
+"origin" "-2808.1 -1005.7 4.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "21"
+"origin" "-2651.1 -1279.9 6.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "22"
+"origin" "-2448.1 -721.6 -10.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "23"
+"origin" "-2294.7 -786 5.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "24"
+"origin" "-2007.3 -693 19.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "25"
+"origin" "-1796.3 -707.9 20.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "26"
+"origin" "-1940.4 -1041.2 3.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "27"
+"origin" "-2169.5 -1110.6 24.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "28"
+"origin" "-2250.9 -1274.3 13.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "29"
+"origin" "-2048.8 -1435.6 -4.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "30"
+"origin" "-2177.5 -1776.6 10.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "31"
+"origin" "-3110.1 -1874.8 -1.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "32"
+"origin" "-2690.3 -1642.6 24.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "33"
+"origin" "-2802.3 -2317.8 10.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "34"
+"origin" "-2990.1 -2708.6 19.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "35"
+"origin" "-2483.4 -2759.4 28"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "36"
+"origin" "-2332.6 -2488.6 15.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "37"
+"origin" "-1994.8 -2735.1 6.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "38"
+"origin" "-2211 -2378.7 25.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "39"
+"origin" "-2595.1 -2101.3 4.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "40"
+"origin" "-1695.5 -2742.7 12.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "41"
+"origin" "-1611.9 -2508.9 17.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "42"
+"origin" "-1600.9 -2412.2 21.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "43"
+"origin" "-1563.1 -2321.2 10.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "44"
+"origin" "-1628.4 -2104.7 13.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "45"
+"origin" "-1564.8 -1894.9 24.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "46"
+"origin" "-1468.7 -2513.7 18.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "47"
+"origin" "-1978.7 -1424 4.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "48"
+"origin" "-1859.6 -1297.8 18.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "49"
+"origin" "-1376.2 -1435.3 2.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "50"
+"origin" "-1371.1 -1096.1 25.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "51"
+"origin" "-1380 -783 7.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "52"
+"origin" "-1070.9 -1037.5 14.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "53"
+"origin" "-962.6 -938.3 19.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "54"
+"origin" "-880 -1234.4 13.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "55"
+"origin" "-444.5 -871.6 18.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "56"
+"origin" "-417.2 -1009.9 15.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "57"
+"origin" "-409.2 -1228.6 12.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "58"
+"origin" "-436.4 -1395.9 7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "59"
+"origin" "-419.5 -1716.1 10.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "60"
+"origin" "-399.9 -1869.1 3.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "61"
+"origin" "-453.2 -2013.8 0.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "62"
+"origin" "-819.8 -2545.5 19.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "63"
+"origin" "-336.4 -2488 10.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "64"
+"origin" "-474.8 -2628.3 19.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "65"
+"origin" "-445.9 -2354.7 10.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "66"
+"origin" "-471.3 -2158.4 1.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "67"
+"origin" "-41.2 -718.9 -25.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "68"
+"origin" "723.9 -952.4 -3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "69"
+"origin" "691.3 -1094.8 1.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "70"
+"origin" "988.8 -1211.8 16.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "71"
+"origin" "1031.4 -1135.2 8.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "72"
+"origin" "1215.8 -1104.4 -5.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "73"
+"origin" "1307.3 -1203.1 0"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "74"
+"origin" "1157.7 -1343.6 6.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "75"
+"origin" "1464.4 -1283.3 -4.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "76"
+"origin" "1174.3 -789.7 7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "77"
+"origin" "1033.2 -712.4 -6.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "78"
+"origin" "671.7 -679.2 -3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "79"
+"origin" "302.3 -798.4 -2.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "80"
+"origin" "440.1 -1217.6 6.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "81"
+"origin" "763.6 -1289.8 10.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "82"
+"origin" "882.6 -1455.1 9.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "83"
+"origin" "1319 -1631.3 -4.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "84"
+"origin" "1173.2 -1775.4 -16"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "85"
+"origin" "259 -1332.7 -11"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "86"
+"origin" "449.9 -1611.3 -7.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "87"
+"origin" "510.9 -1787.3 -7.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "88"
+"origin" "269.3 -1937.5 -20.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "89"
+"origin" "652.8 -1782 -9.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "90"
+"origin" "846.9 -1923.5 -6.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "91"
+"origin" "907.9 -2093.1 -7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "92"
+"origin" "806.5 -2270.5 -2.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "93"
+"origin" "696.8 -2473.1 6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "94"
+"origin" "548.6 -2520.1 -0.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "95"
+"origin" "835.8 -2761.2 18.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "96"
+"origin" "1121.1 -2821.6 0.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "97"
+"origin" "1366.2 -2731.8 9.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "98"
+"origin" "1551.5 -2799.1 10.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "99"
+"origin" "1593.8 -2440.9 22.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "100"
+"origin" "1613.4 -2308 3.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "101"
+"origin" "1339.8 -2452.2 -4.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "102"
+"origin" "1085.8 -2382 -11.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "103"
+"origin" "280.4 -2603.7 -10.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "104"
+"origin" "-178.8 -2495.4 -6.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "105"
+"origin" "-326.1 -2375.6 5.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "script_model"
+"model" "com_laptop_2_open"
+"angles" "358.205 135.058 4.50217"
+"origin" "1291.4 -1386.2 10.6"
+"spawnflags" "4"
+"targetname" "pmc_objective"
+"target" "me0_auto4"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "106"
+"origin" "2471 -2364.5 -160.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "15.2343 0 0.165485"
+"script_specialops" "1"
+}
+{
+"model" "?0"
+"origin" "1292 -1385 19"
+"classname" "trigger_use"
+"script_specialops" "1"
+"targetname" "me0_auto4"
+}
+{
+"targetname" "pmc_objective"
+"spawnflags" "4"
+"origin" "940.4 -2289.1 6.1"
+"angles" "359.2 193.158 1.80009"
+"model" "com_laptop_2_open"
+"classname" "script_model"
+"target" "me0_auto5"
+}
+{
+"model" "?1"
+"origin" "-5056 -5152 16"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "mission_start"
+"script_specialops" "1"
+}
+{
+"model" "?2"
+"origin" "940 -2288 14"
+"classname" "trigger_use"
+"script_specialops" "1"
+"targetname" "me0_auto5"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "107"
+"origin" "2238.9 -1767.4 -114.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "11.1438 359 13.8372"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "108"
+"origin" "2254.6 -1032.9 -117.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "28.4982 356.35 -8.66191"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "109"
+"origin" "2975.3 -930.9 -221.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "3.58176 353.382 6.16363"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "110"
+"origin" "3167.7 -897.5 -218.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.586 353.133 3.56639"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "111"
+"origin" "3613.2 -949.6 -228.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "354.793 352.998 1.60927"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "112"
+"origin" "3847.4 -1260.7 -235.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "2.02481 352.992 0"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "113"
+"origin" "3927.2 -1668.2 -227.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.378 353.079 -1.87354"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "114"
+"origin" "3839.7 -1931.6 -230.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.214949 353.105 1.77696"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "115"
+"origin" "3259 -1909 -229.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "357.666 352.914 4.28822"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "116"
+"origin" "2670.7 -1762.2 -213.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "16.0947 353.482 1.79321"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "117"
+"origin" "2767.5 -1395.3 -227.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "1.00386 354.448 -3.56"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "118"
+"origin" "2836.3 -2776.9 -211.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "5.36772 354.818 4.85358"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "119"
+"origin" "3015.3 -2791.8 -232.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "357.122 355.632 -5.63457"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "120"
+"origin" "3788.6 -2691 -221.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "3.73618 355.437 -1.69155"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "121"
+"origin" "3456.1 -2377.9 -225.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "355.811 355.14 2.14695"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "122"
+"origin" "3213.5 -2368.9 -215.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.647972 355.287 1.7425"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "123"
+"origin" "4414.1 -1786.1 -245.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "353.146 355.275 0.0930828"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "124"
+"origin" "4402 -1458.6 -249.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "352.555 355.273 0.23801"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "125"
+"origin" "4484 -1144.4 -244.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.122 355.282 0.0813249"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "126"
+"origin" "4042.2 -1120.5 -228.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.577045 355.286 0.152025"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "127"
+"origin" "3993.3 -2495.7 -219.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "2.96476 355.057 -5.48987"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "128"
+"origin" "5573.5 -1437.7 -14.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.181466 354.781 5.65777"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "129"
+"origin" "6158 -954.8 -4.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0 354.786 -1.51734"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "130"
+"origin" "6587.4 -1193 -2.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.522 354.784 0.25502"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "131"
+"origin" "7732.4 -852.3 2.1"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "1.49009 354.816 0.878216"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "132"
+"origin" "6786.2 -1514 -3.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.514 354.787 1.04908"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "133"
+"origin" "6738.8 -1957.5 2.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.201882 354.755 -2.6347"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "134"
+"origin" "6326.2 -2132.1 11.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "358.305 354.8 -1.35929"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "135"
+"origin" "6264.3 -2442 11.7"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "1.21446 354.943 2.81115"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "136"
+"origin" "6078.7 -1490 -9.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.57 354.921 0.752553"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "137"
+"origin" "6298.6 -2716.6 3.3"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.744608 354.886 -1.72292"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "138"
+"origin" "5968.4 -2700.5 7.2"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.828412 354.885 -0.919039"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "139"
+"origin" "5652 -2650.4 6.8"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.749 354.94 -2.91638"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "140"
+"origin" "5600.8 -2381.2 -9.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "354.424 355.128 -2.0219"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "141"
+"origin" "5415.2 -2095.7 -0.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.813 355.422 3.11316"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_AR"
+"model" "body_us_army_assault_a"
+"export" "142"
+"origin" "5751.4 -1700.9 -8.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0.859259 355.405 -0.936895"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "143"
+"origin" "6909.1 -2329 24"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.967 355.459 -3.44898"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "144"
+"origin" "7143.6 -2173.3 12.9"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.946 355.46 -3.71249"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "145"
+"origin" "7458.6 -1879.3 0"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "0 355.46 0"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "146"
+"origin" "7118.8 -1340.9 3.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.191 355.453 0.507293"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "147"
+"origin" "7244.3 -881.4 3.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "358.787 355.458 -0.667197"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SHGN"
+"model" "body_us_army_shotgun"
+"export" "148"
+"origin" "7639.9 -1459.8 -0.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "4.00545 354.752 -1.45669"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_SMG"
+"model" "body_us_army_assault_a"
+"export" "149"
+"origin" "7705.3 -1829.5 -2.4"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "1.22272 354.822 -1.44688"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "150"
+"origin" "7240.8 -2732.4 6.5"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.039 354.868 -1.20527"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_desert_elite_LMG"
+"model" "body_us_army_assault_a"
+"export" "151"
+"origin" "6928.2 -2539.6 6.6"
+"spawnflags" "15"
+"targetname" "pmc_spawner"
+"angles" "359.548 354.906 4.29925"
+"script_specialops" "1"
+}
+{
+"model" "?3"
+"origin" "8966 -2059 75"
+"classname" "trigger_multiple"
+"targetname" "me0_auto3"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "152"
+"targetname" "juggernaut_spawner"
+"spawnflags" "15"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "8465.4 -1428.6 -85.8"
+}
+{
+"classname" "script_origin"
+"targetname" "extraction"
+"target" "me0_auto3"
+"origin" "8528.3 -2060 -96"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "153"
+"targetname" "juggernaut_spawner"
+"spawnflags" "15"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "8511.9 -1428.1 -80"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "154"
+"targetname" "juggernaut_spawner"
+"spawnflags" "15"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "8560.4 -1427.6 -80"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "155"
+"targetname" "juggernaut_spawner"
+"spawnflags" "15"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "8534.9 -1381.6 -81.1"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "156"
+"targetname" "juggernaut_spawner"
+"spawnflags" "15"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "8480.9 -1379.6 -85.2"
+}
+{
+"model" "?4"
+"origin" "8536 -2960 -8"
+"classname" "trigger_multiple"
+"script_noteworthy" "player_trying_to_escape"
+"targetname" "testing"
+"script_specialops" "1"
+}
+{
+"model" "?5"
+"origin" "8536 -3392 -8"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "player_has_escaped"
+"script_specialops" "1"
+}
+{
+"model" "?6"
+"origin" "8512 -752 -40"
+"classname" "trigger_multiple"
+"script_noteworthy" "player_trying_to_escape"
+"script_specialops" "1"
+}
+{
+"model" "?7"
+"origin" "8512 -272 -40"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "player_has_escaped"
+"script_specialops" "1"
+}
+{
+"classname" "weapon_scar_h_thermal"
+"model" "weapon_scar_h"
+"angles" "0 70 90"
+"origin" "-4852 -5436 28"
+"script_ammo_max" "1"
+}
+{
+"classname" "weapon_scar_h_thermal"
+"model" "weapon_scar_h"
+"angles" "0 330 90"
+"origin" "-4776 -5404 28"
+"script_ammo_max" "1"
+}
+{
+"classname" "weapon_m240_reflex"
+"model" "weapon_m240"
+"angles" "345 140 3.73577e-006"
+"origin" "-4726 -5350 32"
+"script_ammo_max" "1"
+}
+{
+"classname" "weapon_m240_reflex"
+"model" "weapon_m240"
+"angles" "345 335 0"
+"origin" "-4818 -5350 32"
+"script_ammo_max" "1"
+}
+{
+"classname" "weapon_m1014_reflex"
+"model" "weapon_benelli_super_90"
+"angles" "0 210 90"
+"origin" "-4752 -5288 30"
+"script_ammo_max" "1"
+}
+{
+"classname" "weapon_m1014_reflex"
+"model" "weapon_benelli_super_90"
+"angles" "0 35 90"
+"origin" "-4712 -5440 30"
+"script_ammo_max" "1"
+} 

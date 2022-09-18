@@ -84,3 +84,35 @@ end
 
 mapfunction("getclosest", "common_scripts/utility", "_ID16182")
 mapmethod("displayhint", "maps/_utility", "_ID11085")
+
+game:detour("_ID42476", "_ID27337", function() end)
+
+game:setdvar("scr_disableSaveGame", 1)
+
+loadout = nil
+loadoutequipment = nil
+
+function setloadout(...)
+    loadout = {...}
+end
+
+function setloadoutequipment(...)
+    loadoutequipment = {...}
+end
+
+game:detour("maps/_loadout_code", "_id_C9FB", function()
+    local mapname = game:getdvar("mapname")
+
+    if (loadout) then
+        level.has_loadout = true
+        game:scriptcall("maps/_loadout_code", "loadout", mapname, table.unpack(loadout))
+    end
+
+    if (loadoutequipment) then
+        game:scriptcall("maps/_loadout_code", "loadoutequipment", mapname, table.unpack(loadoutequipment))
+    end
+end)
+
+level:onnotify("juggernaut_attacking", function()
+    player:playlocalsound("_juggernaut_attack")
+end)

@@ -7,7 +7,8 @@ acts = {
             {
                 nodifficulty = true,
                 somapname = "so_killspree_trainer",
-                mapname = "trainer",
+                mapname = "so_killspree_trainer",
+                video = "mission_select_bg_trainer",
                 blip = {
                     x = 98,
                     y = 52,
@@ -21,8 +22,9 @@ acts = {
                 locked = false
             },
             {
-                mapname = "contingency",
                 somapname = "so_rooftop_contingency",
+                mapname = "so_rooftop_contingency",
+                video = "mission_select_bg_contingency",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
                     type = "@MENU_SP_TYPE_WAVE_DEFENSE",
@@ -31,8 +33,9 @@ acts = {
                 }
             },
             {
-                mapname = "favela",
                 somapname = "so_killspree_favela",
+                mapname = "so_killspree_favela",
+                video = "mission_select_bg_favela",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
                     type = "@MENU_SP_TYPE_KILLSPREE",
@@ -41,8 +44,9 @@ acts = {
                 }
             },
             {
-                mapname = "contingency",
                 somapname = "so_forest_contingency",
+                mapname = "so_forest_contingency",
+                video = "mission_select_bg_contingency",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
                     type = "@MENU_SP_TYPE_STEALTH",
@@ -53,6 +57,7 @@ acts = {
             {
                 somapname = "so_crossing_so_bridge",
                 mapname = "ending",
+                video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -70,6 +75,7 @@ acts = {
             {
                 somapname = "so_ac130_co_hunted",
                 mapname = "ending",
+                video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
                     type = "@MENU_SP_TYPE_TIMED_ESCORT",
@@ -80,6 +86,7 @@ acts = {
             {
                 somapname = "so_killspree_invasion",
                 mapname = "invasion",
+                video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_KILLSPREE",
@@ -89,7 +96,8 @@ acts = {
             },
             {
                 somapname = "so_defuse_favela_escape",
-                mapname = "favela_escape",
+                mapname = "so_defuse_favela_escape",
+                video = "mission_select_bg_favela_escape",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_TIME_ASSAULT",
@@ -100,7 +108,8 @@ acts = {
             {
                 nodifficulty = true,
                 somapname = "so_snowrace1_cliffhanger",
-                mapname = "cliffhanger",
+                mapname = "so_snowrace1_cliffhanger",
+                video = "mission_select_bg_cliffhanger",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_1",
                     type = "@MENU_SP_TYPE_DRIVING",
@@ -111,6 +120,7 @@ acts = {
             {
                 somapname = "so_chopper_invasion",
                 mapname = "invasion",
+                video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_TIMED_ESCORT",
@@ -128,6 +138,7 @@ acts = {
             {
                 somapname = "so_hidden_so_ghillies",
                 mapname = "ending",
+                video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_STEALTH",
@@ -137,7 +148,8 @@ acts = {
             },
             {
                 somapname = "so_showers_gulag",
-                mapname = "gulag",
+                mapname = "so_showers_gulag",
+                video = "mission_select_bg_gulag",
                 blip = {
                     x = 131,
                     y = 41,
@@ -151,7 +163,8 @@ acts = {
             },
             {
                 somapname = "so_snowrace2_cliffhanger",
-                mapname = "cliffhanger",
+                mapname = "so_snowrace2_cliffhanger",
+                video = "mission_select_bg_cliffhanger",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
                     type = "@MENU_SP_TYPE_TIMED_DRIVING",
@@ -162,6 +175,7 @@ acts = {
             {
                 somapname = "so_defense_invasion",
                 mapname = "invasion",
+                video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_4",
                     type = "@MENU_SP_TYPE_WAVE_DEFENSE",
@@ -171,7 +185,8 @@ acts = {
             },
             {
                 somapname = "so_intel_boneyard",
-                mapname = "boneyard",
+                mapname = "so_intel_boneyard",
+                video = "mission_select_bg_boneyard",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -188,7 +203,8 @@ acts = {
         missions = {
             {
                 somapname = "so_download_arcadia",
-                mapname = "arcadia",
+                mapname = "so_download_arcadia",
+                video = "mission_select_bg_arcadia",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_4",
                     type = "@MENU_SP_TYPE_ASSAULT_DEFEND",
@@ -199,6 +215,7 @@ acts = {
             {
                 somapname = "so_demo_so_bridge",
                 mapname = "ending",
+                video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_VEHICLE_KILLSPREE",
@@ -208,7 +225,8 @@ acts = {
             },
             {
                 somapname = "so_sabotage_cliffhanger",
-                mapname = "cliffhanger",
+                mapname = "so_sabotage_cliffhanger",
+                video = "mission_select_bg_cliffhanger",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_STEALTH",
@@ -218,7 +236,8 @@ acts = {
             },
             {
                 somapname = "so_escape_airport",
-                mapname = "airport",
+                mapname = "so_escape_airport",
+                video = "mission_select_bg_airport",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_4",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -228,7 +247,8 @@ acts = {
             },
             {
                 somapname = "so_takeover_estate",
-                mapname = "estate",
+                mapname = "so_takeover_estate",
+                video = "mission_select_bg_estate",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_KILLSPREE",
@@ -245,7 +265,8 @@ acts = {
         missions = {
             {
                 somapname = "so_assault_oilrig",
-                mapname = "oilrig",
+                mapname = "so_assault_oilrig",
+                video = "mission_select_bg_oilrig",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_5",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -255,7 +276,8 @@ acts = {
             },
             {
                 somapname = "so_juggernauts_favela",
-                mapname = "favela",
+                mapname = "so_juggernauts_favela",
+                video = "mission_select_bg_favela",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_5",
                     type = "@MENU_SP_TYPE_KILLSPREE",
@@ -265,7 +287,8 @@ acts = {
             },
             {
                 somapname = "so_takeover_oilrig",
-                mapname = "oilrig",
+                mapname = "so_takeover_oilrig",
+                video = "mission_select_bg_oilrig",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_5",
                     type = "@MENU_SP_TYPE_ASSAULT",

@@ -1,7 +1,7 @@
 local map = {}
 
 map.premain = function()
-
+    setloadout("barrett", "deserteagle", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
 end
 
 function transformvehiclebytargetname(veh, vehiclename, targetnamestring, targetstring)
@@ -968,14 +968,7 @@ function startsorooftop()
         radiodialogue("so_roof_cont_def_pos")
     end, 1000)
 
-    local primaries = player:getweaponslistprimaries()
-    player:takeweapon(primaries[1])
-    player:takeweapon(primaries[2])
-    player:giveweapon("beretta")
-    player:giveweapon("dragunov_arctic")
-    player:givemaxammo("beretta")
-    player:givemaxammo("dragunov_arctic")
-    player:switchtoweapon("dragunov_arctic")
+    game:visionsetnaked("contingency", 0)
 
     setplayerpos()
 
@@ -1215,18 +1208,6 @@ map.main = function()
     local vehicles = game:getentarray("destructible_vehicle", "targetname")
     vehicles:foreach(function(vehicle)
         destructibledamagemonitor(vehicle)
-    end)
-
-    game:onentitydamage(function(_self, inflictor, attacker, damage, mod, weapon, dir, hitloc)
-        if (attacker == player or attacker == game:getentbynum(1)) then
-            if (weapon:match("dragunov")) then
-                damage = damage * 5
-            elseif (weapon:match("beretta")) then
-                damage = math.floor(damage * (50 / 37))
-            end
-        end
-
-        return damage
     end)
 end
 

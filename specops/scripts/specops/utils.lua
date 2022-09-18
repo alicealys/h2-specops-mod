@@ -522,8 +522,26 @@ function enableescapefailure()
     enablefailonescape()
 end
 
+function pickpmcspawnpoint(classname)
+    local points = game:getentarray(classname, "classname")
+    if (#points == 0) then
+        return
+    end
+    
+    return points[game:randomintrange(0, #points) + 1]
+end
+
 function setplayerpos()
-    local start = game:getent("info_player_start_so", "classname")
+    local start = nil
+    print(level.pmc_gametype)
+    if (level.pmc_gametype == "mode_defend") then
+        start = pickpmcspawnpoint("info_player_start_pmcDefend")
+    elseif (level.pmc_gametype ~= nil) then
+        start = pickpmcspawnpoint("info_player_start_pmc")
+    else
+        start = game:getent("info_player_start_so", "classname")
+    end
+
     if (start) then
         player:setorigin(start.origin)
         player:setplayerangles(start.angles)

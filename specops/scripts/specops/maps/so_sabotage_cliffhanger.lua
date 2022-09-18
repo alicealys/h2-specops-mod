@@ -1,7 +1,7 @@
 local map = {}
 
 map.premain = function()
-    
+    setloadout("masada_silencer_mt_camo_on_h2", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
 end
 
 function startmap()
@@ -646,12 +646,6 @@ map.main = function()
             end
         end)
     end
-
-    player:giveweapon("usp_silencer")
-    player:givemaxammo("usp_silencer")
-    player:giveweapon("masada_silencer_mt_dust_on")
-    player:givemaxammo("masada_silencer_mt_dust_on")
-    player:switchtoweapon("masada_silencer_mt_dust_on")
 end
 
 return map

@@ -565,16 +565,16 @@ end
 
 function downloadobjsetup(download)
 	local computer = game:spawn("script_model", download.origin)
-	computer:setmodel("com_laptop_open")
+	computer:setmodel("com_laptop_rugged_open")
 	computer.angles = download.angles
 	
 	local dsmspot = getstruct(download.target, "targetname")
 	local dsm = game:spawn("script_model", dsmspot.origin)
-	dsm:setmodel("com_metal_briefcase_opened")
+	dsm:setmodel("mil_wireless_dsm")
 	dsm.angles = dsmspot.angles
 	
 	local dsmobj = game:spawn("script_model", dsm.origin)
-	dsmobj:setmodel("com_metal_briefcase_opened_obj")
+	dsmobj:setmodel("mil_wireless_dsm_obj")
 	dsmobj.angles = dsm.angles
 	
 	dsm:hide()
@@ -1341,6 +1341,8 @@ map.main = function()
 
     defaultstart(startsodownloadarcadia)
     addstart("so_escape", startsodownloadarcadia)
+
+    setloadout("scar_h_reflex", "beretta", "fraggrenade", "flash_grenade", "viewmodel_base_viewhands", "american")
 
     game:scriptcall("maps/_load", "set_player_viewhand_model", "viewhands_player_us_army")
     game:scriptcall("maps/_load", "main")

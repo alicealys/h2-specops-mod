@@ -1,0 +1,244 @@
+{
+"gndLt" "20201f0000"
+"ltOrigin" "-690.042 -740.496 574.891"
+"origin" "-682.632 -751.013 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 145 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2222220000"
+"ltOrigin" "-669.761 -754.662 575.67"
+"origin" "-662.973 -764.779 538"
+"model" "com_locker_open"
+"classname" "script_model"
+"angles" "8.0001 145 -2.37521e-006"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "1f201f0000"
+"ltOrigin" "-706.622 -722.331 573.905"
+"origin" "-702.292 -737.247 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 145 8.00004"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2021200000"
+"ltOrigin" "-723.937 -716.435 574.891"
+"origin" "-721.952 -723.481 536"
+"model" "com_locker_open"
+"classname" "script_model"
+"angles" "0 145 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2122210000"
+"ltOrigin" "-739.191 -706.081 574.891"
+"origin" "-731.781 -716.598 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 145 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2525250000"
+"ltOrigin" "-650.723 -768.028 574.891"
+"origin" "-643.313 -778.545 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 145 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2121200000"
+"ltOrigin" "-747.217 -714.985 574.891"
+"origin" "-751.441 -702.833 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 309 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "1e1e1d0000"
+"ltOrigin" "-729.796 -723.644 574.891"
+"origin" "-731.781 -716.598 536"
+"model" "com_locker_open"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "1d1d1d0000"
+"ltOrigin" "-714.542 -733.998 574.891"
+"origin" "-721.952 -723.481 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "1e1e1e0000"
+"ltOrigin" "-694.882 -747.764 574.891"
+"origin" "-702.292 -737.247 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "1f1f1f0000"
+"ltOrigin" "-680.647 -758.059 574.891"
+"origin" "-682.632 -751.013 536"
+"model" "com_locker_open"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2122210000"
+"ltOrigin" "-670.817 -764.942 574.891"
+"origin" "-672.802 -757.896 536"
+"model" "com_locker_open"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"gndLt" "2425250000"
+"ltOrigin" "-655.563 -775.296 574.891"
+"origin" "-662.973 -764.779 536"
+"model" "com_locker_double"
+"classname" "script_model"
+"angles" "0 325 0"
+"targetname" "challenge_only_"
+}
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"origin" "-1428.7 -2011.9 576"
+"angles" "0 130 0"
+"classname" "info_player_start_so"
+}
+{
+"model" "?0"
+"origin" "-2352 -1968 720"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_trying_to_escape"
+"script_noteworthy" "player_trying_to_escape"
+}
+{
+"model" "?1"
+"origin" "-2528 -2224 720"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_has_escaped"
+}
+{
+"classname" "weapon_ak47_acog"
+"model" "weapon_ak47_tactical"
+"angles" "320.895 241.463 0.910643"
+"origin" "-1744.6 -1901.6 596.5"
+"spawnflags" "1"
+"count" "330"
+"targetname" "so_weapons"
+}
+{
+"classname" "weapon_ak47_acog"
+"model" "weapon_ak47_tactical"
+"angles" "286.895 35.7082 -179.18"
+"origin" "-1691.9 -1767.4 598"
+"spawnflags" "1"
+"count" "330"
+"targetname" "so_weapons"
+}
+{
+"spawnflags" "1"
+"origin" "-1760.8 -1891.8 593.8"
+"angles" "313.4 239.5 -80"
+"model" "weapon_aa12"
+"classname" "weapon_aa12"
+"count" "78"
+"targetname" "so_weapons"
+}
+{
+"classname" "weapon_kriss"
+"model" "weapon_kriss"
+"angles" "0 299.6 99.1"
+"origin" "-1741.3 -1868.3 579.125"
+"spawnflags" "0"
+"count" "450"
+"targetname" "so_weapons"
+}
+{
+"classname" "script_model"
+"model" "mil_ammo_case_2"
+"angles" "0 283.8 0"
+"origin" "-1771.1 -1858 576.5"
+}
+{
+"classname" "weapon_glock"
+"model" "weapon_glock_green"
+"angles" "0 284.5 89.9997"
+"origin" "-1718.8 -1885.6 581.5"
+"spawnflags" "0"
+"count" "352"
+"targetname" "so_weapons"
+}
+{
+"classname" "weapon_aa12"
+"model" "weapon_aa12"
+"angles" "289.2 72.5 -180"
+"origin" "-1685.1 -1770.2 598.3"
+"spawnflags" "1"
+"count" "78"
+"targetname" "so_weapons"
+}
+{
+"spawnflags" "0"
+"angles" "2.07648 356.931 -89.4899"
+"origin" "-1761.4 -1763.9 579"
+"model" "weapon_m14ebr_arctic"
+"classname" "weapon_m14_scoped_arctic"
+"count" "77"
+"targetname" "so_weapons"
+}
+{
+"origin" "-1778.8 -1742.8 580"
+"angles" "271.1 352.5 0"
+"model" "mil_ammo_case_2"
+"classname" "script_model"
+}
+{
+"classname" "script_model"
+"model" "mil_ammo_case_2"
+"angles" "0 145.9 0"
+"origin" "-1770 -1741 576"
+}
+{
+"classname" "weapon_glock"
+"model" "weapon_glock_green"
+"angles" "0 100 90.0004"
+"origin" "-1753.7 -1744.5 579"
+"spawnflags" "0"
+"count" "352"
+}
+{
+"spawnflags" "0"
+"origin" "-1727.3 -1774.5 581.3"
+"classname" "weapon_striker"
+"model" "weapon_striker"
+"angles" "0 90 60"
+"count" "72"
+"targetname" "so_weapons"
+}

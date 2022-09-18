@@ -1,7 +1,11 @@
 local map = {}
 
 map.premain = function()
+    game:visionsetnaked("airport", 0)
+
     -- introscreen
+    setloadout("striker", "m240", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
+
     game:detour("_ID42318", "main", function() end)
 
     local weapontarp = game:getentbyref(2349, 0)
