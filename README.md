@@ -57,7 +57,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 | Breach & Clear | ✔️ | ✔️ |
 | Time Trial | ✔️ | ✔️ |
 | Homeland Security | ❌ | ✔️ |
-| Snatch & Grab | ❌ | ❌ |
+| Snatch & Grab | ❌ | ✔️ |
 
 ## Delta
 | Map  | Playable | Planned |
@@ -66,11 +66,11 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 | Wreckage | ❌ | ❌ |
 | Acceptable losses | ✔️ | ✔️ |
 | Terminal | ✔️ | ✔️ |
-| Estate Takedown | ❌ | ❌ |
+| Estate Takedown | ❌ | ✔️ |
 
 ## Echo
 | Map  | Playable | Planned |
 |-------------|-----|-----|
 | Wetwork  | ✔️ | ✔️ |
-| High Explosive | ❌ | ❌ |
-| Armor Piercing | ❌ | ❌ |
+| High Explosive | ❌ | ✔️ |
+| Armor Piercing | ❌ | ✔️ |
