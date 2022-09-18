@@ -9,3 +9,5 @@ sound,mus_so_intel_boneyard
 stringtable,maps/createart/so_intel_boneyard_lightsets.csv
 stringtable,maps/createart/so_intel_boneyard_lightsets_hdr.csv
 stringtable,soundtables/so_intel_boneyard.csv
+xmodel,com_laptop_open
+sound,pmc_exfiltrate_area

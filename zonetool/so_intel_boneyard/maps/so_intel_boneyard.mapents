@@ -966,7 +966,7 @@
 }
 {
 "classname" "script_model"
-"model" "com_laptop_2_open"
+"model" "com_laptop_open"
 "angles" "358.205 135.058 4.50217"
 "origin" "1291.4 -1386.2 10.6"
 "spawnflags" "4"
@@ -995,7 +995,7 @@
 "spawnflags" "4"
 "origin" "940.4 -2289.1 6.1"
 "angles" "359.2 193.158 1.80009"
-"model" "com_laptop_2_open"
+"model" "com_laptop_open"
 "classname" "script_model"
 "target" "me0_auto5"
 }

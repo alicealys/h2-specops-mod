@@ -8,6 +8,12 @@ map.main = function()
     game:scriptcall("maps/_compass", "setupminimap", "compass_map_estate")
     setloadout("m4m203_eotech", "barrett", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
 
+    deletenonspecialops({
+        isspawner,
+        isspawntrigger,
+        istrigger
+    })
+
     mainhook.invoke(level)
 
     setcompassdist("far")

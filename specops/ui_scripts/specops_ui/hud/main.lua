@@ -17,7 +17,18 @@ local oncreate = function(menu)
         return createstate(...)
     end
 
-    LUI.sp_hud.ObjectivesFrame.AddMiniMap(menu)
+    local refresh = LUI.sp_hud.ObjectivesFrame.RefreshMinimapObjectives
+    LUI.sp_hud.ObjectivesFrame.RefreshMinimapObjectives = function(a1, a2)
+        local count = Engine.GetPlayerObjectivePositions(0, 0)
+        if (count and menu.miniMapContainer and menu.miniMapContainer.miniMapIcons and #count < menu.miniMapContainer.miniMapIcons.objectiveCount) then
+            menu.miniMapContainer.miniMapIcons.mapBlipPulse:clearAll()
+            menu.miniMapContainer.miniMapIcons.objectiveCount = 0
+        end
+
+        refresh(a1, a2)
+    end
+
+    LUI.sp_hud.ObjectivesFrame.AddMiniMap(menu, true)
     local minimap = menu.miniMapContainer:getFirstChild()
 
     minimap:registerAnimationState("hud_off", {

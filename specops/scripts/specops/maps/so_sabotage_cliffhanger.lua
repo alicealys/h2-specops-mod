@@ -188,6 +188,7 @@ function oncomplete()
             return
         end
 
+        game:objective_state(2, "done")
         listener:clear()
         missionover(true)
     end)
@@ -425,9 +426,11 @@ function stealthmusic()
             game:musicstop(3)
             game:ontimeout(function()
                 stealthmusic()
-            end, 3250)
+            end, 3250):endon(level, "special_op_terminated")
         end)
-    end)
+
+        listener:endon(level, "special_op_terminated")
+    end):endon(level, "special_op_terminated")
 end
 
 local planttargets = {}

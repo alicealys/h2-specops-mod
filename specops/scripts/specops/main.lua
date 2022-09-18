@@ -49,6 +49,7 @@ level._ID9544 = function()
     game:scriptcall("_ID42298", "_ID34935")
 end
 game:ontimeout(function()
+    game:scriptcall("_ID42298", "_ID32787", true)
     player:setactionslot(1, "")
 end, 0)
 

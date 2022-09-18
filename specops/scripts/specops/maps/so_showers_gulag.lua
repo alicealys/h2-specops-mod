@@ -101,7 +101,14 @@ map.premain = function()
 
     game:detour("maps/gulag", "_ID53095", function() end)
 
+    level:onnotifyonce("player_enters_bathroom", function()
+        local objectivemarker = game:getent("player_rappels_from_bathroom", "script_noteworthy")
+        game:objective_position(1, objectivemarker.origin)
+        game:objective_setpointertextoverride(1, "")
+    end)
+
     level:onnotifyonce("player_exited_bathroom", function()
+        game:objective_state(1, "done")
         missionover(true)
     end)
 end

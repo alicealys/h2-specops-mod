@@ -5,6 +5,8 @@ techets_favela
 favela
 techsets_estate
 estate
+techsets_dc_burning
+dc_burning
 
 -- loaded
 techsets_common

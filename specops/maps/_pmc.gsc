@@ -37,7 +37,7 @@ preLoad()
 	level.pmc_match = true;
 	level.teambased = false;	
 	maps\_juggernaut::main();
-	level._effect[ "extraction_smoke" ]						 = loadfx( "smoke/signal_smoke_green" );
+	level._effect["extraction_smoke"] = loadfx("smoke/green_flare_smoke_distant");
 }
 
 main()
@@ -112,7 +112,7 @@ initialize_gametype()
 	// Retrieving Intel...
 	precacheString( &"PMC_HQ_RECOVERING_INTEL" );
 	
-	precacheModel( "com_laptop_2_open_obj" );
+	precacheModel( "com_laptop_open" );
 	
 	precacheShader( "waypoint_ammo" );
 	precacheShader( "waypoint_target" );
@@ -202,8 +202,6 @@ initialize_gametype()
 
 start_pmc_gametype()
 {
-	print("start pmc gametype");
-
 	set_gametype_vars();
 	
 	thread maps\_specialops::fade_challenge_in();
@@ -1034,7 +1032,7 @@ setup_objective_entities()
 		
 		level.pmc.objective.laptop_obj = spawn( "script_model", level.pmc.objective.laptop.origin );
 		level.pmc.objective.laptop_obj.angles = level.pmc.objective.laptop.angles;
-		level.pmc.objective.laptop_obj setModel( "com_laptop_2_open_obj" );
+		level.pmc.objective.laptop_obj setModel( "com_laptop_open" );
 
 		objectiveLocations = common_scripts\utility::array_remove( objectiveLocations, objectiveLocations[ randomLocation ] );
 	}
@@ -1306,9 +1304,13 @@ player_use_objective_think()
 		player thread freeze_controls_while_using_laptop();
 		
 		self.objective_bar = self maps\_hud_util::createClientProgressBar( self, 60 );
-		self.objective_bar_text = self maps\_hud_util::createClientFontString( "default", 1.2 );
+		self.objective_bar_text = self maps\_hud_util::createClientFontString( "objective", 1.2 );
 		self.objective_bar_text maps\_hud_util::setPoint( "CENTER", undefined, 0, 45 );
 		self.objective_bar_text settext( &"PMC_HQ_RECOVERING_INTEL" );	// Retrieving Intel...
+		self.objective_bar_text.glowcolor = (0, 0, 0);
+		self.objective_bar_text.color = (1, 1, 1);
+		self.objective_bar_text.glowalpha = 0.1;
+
 
 		while ( ( self useButtonPressed() ) && ( !common_scripts\utility::flag( "objective_complete" ) ) )
 		{
@@ -1552,13 +1554,13 @@ mission_complete()
 	common_scripts\utility::flag_set( "mission_complete" );
 }
 
-debug_print( string )
+debug_print(string)
 {
-	print(string);
-	if ( getdvar( "pmc_debug" ) == "1" )
+	if (getdvar( "pmc_debug" ) == "1")
 	{
-		assert( isdefined( string ) );
-		iprintln( string );
+		print(string);
+		assert(isdefined(string));
+		iprintln(string);
 	}
 }
 
