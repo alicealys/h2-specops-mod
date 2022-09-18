@@ -65,3 +65,13 @@ fade_challenge_out(name)
 {
 
 }
+
+so_delete_breach_ents()
+{
+	breach_solids = getentarray("breach_solid", "targetname");
+	foreach (ent in breach_solids)
+	{
+		ent connectpaths();
+		ent delete();
+	}
+}
