@@ -2,6 +2,7 @@ main()
 {
     replacefunc(maps\_utility::musiclength, ::music_length);
     replacefunc(maps\_gameskill::should_show_cover_warning, ::ret_false);
+    level.custom_gameskill_func = maps\_gameskill::solo_player_in_special_ops;
 }
 
 ret_false()

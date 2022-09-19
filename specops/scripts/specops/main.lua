@@ -1,4 +1,4 @@
-local mapfile = io.open(scriptdir() .. "/maps/" .. game:getdvar("so_mapname") .. ".lua", "r")
+local mapfile = io.open(scriptdir() .. "/maps/" .. game:getdvar("mapname") .. ".lua", "r")
 if (not mapfile) then
     print("[SPEC OPS] Map not found")
     return
@@ -23,8 +23,7 @@ game:setdvar("limited_mode", 0)
 
 game:sharedset("eog_extra_data", "")
 
-local levelmapname = game:getdvar("mapname")
-mapname = game:getdvar("so_mapname")
+mapname = game:getdvar("mapname")
 
 require("specops")
 require("gsc")
@@ -44,12 +43,7 @@ black.y = 0
 black:fadeovertime(1)
 black.alpha = 0
 
--- set_custom_gameskill_func
-level._ID9544 = function()
-    game:scriptcall("_ID42298", "_ID34935")
-end
 game:ontimeout(function()
-    game:scriptcall("_ID42298", "_ID32787", true)
     player:setactionslot(1, "")
 end, 0)
 
@@ -59,6 +53,6 @@ player:setweaponhudiconoverride("actionslot1", "h1_hud_dpad_blur")
 gameskill = game:getdvarint("g_gameskill")
 
 map.premain()
-mainhook = game:detour(string.format("maps/%s", game:getdvar("mapname")), "main", function()
+mainhook = game:detour(string.format("maps/%s", mapname), "main", function()
     map.main()
 end)

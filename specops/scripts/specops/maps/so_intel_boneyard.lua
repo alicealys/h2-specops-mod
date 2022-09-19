@@ -1,7 +1,7 @@
 local map = {}
 
 map.premain = function()
-
+    setloadout("m4m203_reflex", "cheytac", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
 end
 
 map.main = function()
@@ -12,7 +12,6 @@ map.main = function()
     })
 
     game:scriptcall("maps/_compass", "setupminimap", "compass_map_boneyard")
-    setloadout("m4m203_reflex", "cheytac", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
 
     mainhook.invoke(level)
 
