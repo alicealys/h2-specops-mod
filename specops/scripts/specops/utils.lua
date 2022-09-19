@@ -533,7 +533,6 @@ end
 
 function setplayerpos()
     local start = nil
-    print(level.pmc_gametype)
     if (level.pmc_gametype == "mode_defend") then
         start = pickpmcspawnpoint("info_player_start_pmcDefend")
     elseif (level.pmc_gametype ~= nil) then

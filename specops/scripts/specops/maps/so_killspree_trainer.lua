@@ -325,7 +325,6 @@ function inittriggers()
     local currentarea = 1
 
     level:onnotifyonce("player_course_jumped_down", function()
-        print("jumped down")
         jumpeddown = true
         if (not areas[6].cleared) then
             missionover(false)

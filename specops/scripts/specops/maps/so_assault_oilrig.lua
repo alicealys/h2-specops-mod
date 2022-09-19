@@ -267,13 +267,6 @@ map.main = function()
         removetriggers[i]:delete()
     end
 
-    local ents = game:getentarray()
-    for i = 1, #ents do
-        if (ents[i].model == "h2_oilr_door_breaching_undamaged") then
-            print("h2_oilr_door_breaching_undamaged", ents[i].origin)
-        end
-    end
-    
     game:scriptcall("maps/_utility", "_ID1951", "start_map", startmap)
     mainhook.invoke(level)
     game:scriptcall("maps/_utility", "_ID10126", startmap)
