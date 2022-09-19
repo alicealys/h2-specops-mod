@@ -1,7 +1,7 @@
 sostats = {}
 
-local basepath = game:getloadedmod()
-local statsfilename = basepath .. "/stats.json"
+local basepath = "players2/default/"
+local statsfilename = basepath .. "/specops_stats.json"
 
 local defaultstats = {
     maps = {
