@@ -1,0 +1,6 @@
+addon_map_ents,maps/so_killspree_invasion.mapents
+stringtable,maps/createart/so_killspree_invasion_lightsets_hdr.csv
+stringtable,soundtables/so_killspree_invasion.csv
+sound,mus_so_killspree_invasion
+weapon,aa12_reflex
+weapon,m1014_eotech

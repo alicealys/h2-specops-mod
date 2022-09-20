@@ -12,5 +12,6 @@ end
 level.lua["so_create_hud_item"] = createfunction(createhuditem)
 level.lua["so_dialog_counter_update"] = createfunction(dialoguecounterupdate)
 level.lua["enable_challenge_timer"] = createfunction(enablechallengetimer)
+level.lua["set_hud_yellow"] = entity.setyellow
 level.lua["so_hud_pulse_success"] = entity.setgreen
 level.lua["so_hud_pulse_close"] = entity.setgreen

@@ -75,3 +75,22 @@ so_delete_breach_ents()
 		ent delete();
 	}
 }
+
+set_hud_yellow()
+{
+    if (isdefined(level.lua["set_hud_yellow"]))
+    {
+        func = level.lua["set_hud_yellow"];
+        self [[ func ]]();
+    }  
+}
+
+so_hud_pulse_default()
+{
+    fontscale = self.fontscale;
+    self changefontscaleovertime(0.1);
+    self.fontscale = 1.8;
+    wait 0.1;
+    self changefontscaleovertime(0.1);
+    self.fontscale = fontscale;
+}

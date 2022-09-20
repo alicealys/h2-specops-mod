@@ -85,7 +85,7 @@ acts = {
             },
             {
                 somapname = "so_killspree_invasion",
-                mapname = "invasion",
+                mapname = "so_killspree_invasion",
                 video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
@@ -119,7 +119,7 @@ acts = {
             },
             {
                 somapname = "so_chopper_invasion",
-                mapname = "invasion",
+                mapname = "so_chopper_invasion",
                 video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
@@ -174,7 +174,7 @@ acts = {
             },
             {
                 somapname = "so_defense_invasion",
-                mapname = "invasion",
+                mapname = "so_defense_invasion",
                 video = "mission_select_bg_invasion",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_4",
