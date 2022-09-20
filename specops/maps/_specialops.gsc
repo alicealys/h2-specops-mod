@@ -7,6 +7,26 @@ enable_challenge_timer(start, end)
     }
 }
 
+enable_escape_warning()
+{
+    if (isdefined(level.lua["enable_escape_warning"]))
+    {
+        func = level.lua["enable_escape_warning"];
+        [[ func ]]();
+    }
+}
+
+
+enable_escape_failure(start, end)
+{
+    if (isdefined(level.lua["enable_escape_failure"]))
+    {
+        func = level.lua["enable_escape_failure"];
+        [[ func ]]();
+    }
+}
+
+
 so_dialog_counter_update(current, goal, divide)
 {
     if (isdefined(level.lua["so_dialog_counter_update"]))
@@ -26,6 +46,15 @@ so_create_hud_item(line, xoffset, message, alwaysdraw)
     }
 
     return newhudelem();
+}
+
+enable_countdown_timer(timewait, setstarttime, message, timerdrawdelay)
+{
+    if (isdefined(level.lua["enable_countdown_timer"]))
+    {
+        func = level.lua["enable_countdown_timer"];
+        [[ func ]](timewait, setstarttime, message, timerdrawdelay);
+    }   
 }
 
 so_hud_ypos()
@@ -82,6 +111,15 @@ set_hud_yellow()
     {
         func = level.lua["set_hud_yellow"];
         self [[ func ]]();
+    }
+}
+
+set_hud_red()
+{
+    if (isdefined(level.lua["set_hud_red"]))
+    {
+        func = level.lua["set_hud_red"];
+        self [[ func ]]();
     }  
 }
 
@@ -93,4 +131,14 @@ so_hud_pulse_default()
     wait 0.1;
     self changefontscaleovertime(0.1);
     self.fontscale = fontscale;
+}
+
+is_coop()
+{
+    return false;
+}
+
+so_standard_wait()
+{
+	return 4;
 }

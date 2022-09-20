@@ -20,28 +20,28 @@ main()
 	precacheitem("zippy_rockets");
 	precacheitem("stinger_speedy");
 
-	precachestring(&"so_killspree_invasion_obj_regular");
-	precachestring(&"so_killspree_invasion_obj_hardened");
-	precachestring(&"so_killspree_invasion_obj_veteran");
-	precachestring(&"so_killspree_invasion_score_assist");
-	precachestring(&"so_killspree_invasion_score_kill");
-	precachestring(&"so_killspree_invasion_score_btr80");
-	precachestring(&"so_killspree_invasion_splash_combo");
-	precachestring(&"so_killspree_invasion_splash_bonus");
-	precachestring(&"so_killspree_invasion_hud_remaining");
-	precachestring(&"so_killspree_invasion_score_brutal");
-	precachestring(&"so_killspree_invasion_score_downed");
-	precachestring(&"so_killspree_invasion_score_finished");
-	precachestring(&"so_killspree_invasion_deadquote_hint1");
-	precachestring(&"so_killspree_invasion_deadquote_hint2");
-	precachestring(&"so_killspree_invasion_deadquote_hint3");
-	precachestring(&"so_killspree_invasion_deadquote_hint4");
-	precachestring(&"so_killspree_invasion_deadquote_hint5");
-	precachestring(&"so_killspree_invasion_eog_solid");
-	precachestring(&"so_killspree_invasion_eog_heartless");
-	precachestring(&"so_killspree_invasion_eog_combos");
-	precachestring(&"so_killspree_invasion_eog_score");
-	precachestring(&"so_killspree_invasion_eog_combos_x");
+	precachestring(&"SO_KILLSPREE_INVASION_OBJ_REGULAR");
+	precachestring(&"SO_KILLSPREE_INVASION_OBJ_HARDENED");
+	precachestring(&"SO_KILLSPREE_INVASION_OBJ_VETERAN");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_ASSIST");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_KILL");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_BTR80");
+	precachestring(&"SO_KILLSPREE_INVASION_SPLASH_COMBO");
+	precachestring(&"SO_KILLSPREE_INVASION_SPLASH_BONUS");
+	precachestring(&"SO_KILLSPREE_INVASION_HUD_REMAINING");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_BRUTAL");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_DOWNED");
+	precachestring(&"SO_KILLSPREE_INVASION_SCORE_FINISHED");
+	precachestring(&"SO_KILLSPREE_INVASION_DEADQUOTE_HINT1");
+	precachestring(&"SO_KILLSPREE_INVASION_DEADQUOTE_HINT2");
+	precachestring(&"SO_KILLSPREE_INVASION_DEADQUOTE_HINT3");
+	precachestring(&"SO_KILLSPREE_INVASION_DEADQUOTE_HINT4");
+	precachestring(&"SO_KILLSPREE_INVASION_DEADQUOTE_HINT5");
+	precachestring(&"SO_KILLSPREE_INVASION_EOG_SOLID");
+	precachestring(&"SO_KILLSPREE_INVASION_EOG_HEARTLESS");
+	precachestring(&"SO_KILLSPREE_INVASION_EOG_COMBOS");
+	precachestring(&"SO_KILLSPREE_INVASION_EOG_SCORE");
+	precachestring(&"SO_KILLSPREE_INVASION_EOG_COMBOS_X");
 	
 	maps\_utility::add_start("so_killspree", ::start_so_killspree);
     maps\_load::main();
@@ -75,7 +75,7 @@ so_killspree_init()
 
 	so_killspree_setup_radio_dialog();
 	
-	switch(level.gameskill)
+	switch (level.gameskill)
 	{
 		case 0:	// easy
 		case 1:	so_killspree_setup_regular();	break;	// regular
@@ -195,19 +195,19 @@ scale_value(value)
 so_killspree_setup_regular()
 {
 	level.points_goal = 300;
-	level.challenge_objective = &"so_killspree_invasion_obj_regular";
+	level.challenge_objective = &"SO_KILLSPREE_INVASION_OBJ_REGULAR";
 }
 
 so_killspree_setup_hardened()
 {
 	level.points_goal = 300;
-	level.challenge_objective = &"so_killspree_invasion_obj_hardened";
+	level.challenge_objective = &"SO_KILLSPREE_INVASION_OBJ_HARDENED";
 }
 
 so_killspree_setup_veteran()
 {
 	level.points_goal = 300;
-	level.challenge_objective = &"so_killspree_invasion_obj_veteran";
+	level.challenge_objective = &"SO_KILLSPREE_INVASION_OBJ_VETERAN";
 }
 
 so_killspree_setup_radio_dialog()
