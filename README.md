@@ -56,7 +56,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 | Hidden  | ❌ | ❌ |
 | Breach & Clear | ✔️ | ✔️ |
 | Time Trial | ✔️ | ✔️ |
-| Homeland Security | ❌ | ✔️ |
+| Homeland Security | ✔️ | ✔️ |
 | Snatch & Grab | ✔️ | ✔️ |
 
 ## Delta
