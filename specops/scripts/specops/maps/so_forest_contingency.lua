@@ -5,27 +5,26 @@ game:precacheitem("p90_reflex")
 map.premain = function()
     setloadout("m21_scoped_arctic_silenced", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
 
-    -- dont delete stuff
-    game:detour("_ID43797", "init", function() end)
-
     game:ontimeout(function()
         -- set fog
-        player:scriptcall("_ID42407", "_ID40561", "contingency_forest", 0)
+        player:scriptcall("maps/_utility", "_ID40561", "contingency_forest", 0)
     end, 0)
 
     setplayerpos()
     intro()
-    enablefailonescape()
+    enableescapefailure()
     enableescapewarning()
-    
+
     local escaped = game:getent("escaped_trigger", "script_noteworthy")
     escaped:onnotifyonce("trigger", function()
-        missionover(true)
+        flagset("forest_success")
     end)
+    
+    enablechallengetimer("so_forest_contingency_start", "forest_success")
 
     game:musicplay("mus_contingency_stealth")
     game:detour("maps/contingency_beautiful_corner", "_ID45560", function() end)
-    game:scriptcall("_ID42272", "_ID33575", "compass_map_contingency")
+    game:scriptcall("maps/_compass", "setupminimap", "compass_map_contingency")
 
     local endbrush = game:getentbyref(2083, 0)
     endbrush.origin = vector:new(-19547.058594, -5072.545898, 758.208191)
@@ -35,13 +34,6 @@ map.premain = function()
     for i = 1, #triggerhurts do
         triggerhurts[i]:delete()
     end
-
-    addchallengetimer()
-
-    level:onnotifyonce("so_forest_contingency_start", function()
-        starttime = game:gettime()
-        startchallengetimer()
-    end, 0)
 end
 
 function stealthmusic()
@@ -51,7 +43,7 @@ function stealthmusic()
         game:musicstop(0.2)
         game:ontimeout(function()
             musicloop("mus_contingency_stealth_busted")
-        end, 500)
+        end, 500):endon(level, "special_op_terminated")
 
         local listener = nil
         listener = level:onnotify("_stealth_spotted", function()
@@ -64,9 +56,11 @@ function stealthmusic()
             game:musicstop(3)
             game:ontimeout(function()
                 stealthmusic()
-            end, 3250)
+            end, 3250):endon(level, "special_op_terminated")
         end)
-    end)
+
+        listener:endon(level, "special_op_terminated")
+    end):endon(level, "special_op_terminated")
 end
 
 function removedeadtrees()
@@ -167,7 +161,10 @@ function soforestinit()
         level.newenemyaccuracy = 1.75
     end
 
-    game:objective_add(1, "current", "&SO_FOREST_CONTINGENCY_OBJ_REGULAR", vector:new(-19720, -5152, 714))
+    local escapetrig = game:getent("escaped_trigger", "script_noteworthy")
+    local escapeobjorigin = game:getent(escapetrig.target, "targetname").origin
+    game:objective_add(1, "current", "&SO_FOREST_CONTINGENCY_OBJ_REGULAR", escapeobjorigin)
+    game:playfx(extractionsmoke, escapeobjorigin)
 end
 
 function soforest()
@@ -181,8 +178,9 @@ function soforest()
 end
 
 map.main = function()
-    game:setdvar("beautiful_corner", 1)
     mainhook.invoke(level)
+
+    extractionsmoke = game:loadfx("fx/smoke/green_flare_smoke_distant")
 
     game:setsaveddvar("sm_sunShadowScale", 0.5)
 	game:setsaveddvar("r_lightGridEnableTweaks", 1)
@@ -199,10 +197,6 @@ map.main = function()
 	flaginit("so_forest_contingency_start")
 	flaginit("enemy_killed")
 
-    -- init stuff
-    game:scriptcall("_ID52608", "main")
-    game:scriptcall("_ID49419", "main")
-
     game:scriptcall("_ID42323", "_ID32417", "viewhands_player_arctic_wind")
 
     -- idle_*
@@ -217,7 +211,6 @@ map.main = function()
     game:scriptcall("animscripts/dog/dog_init", "_ID19886")
     game:scriptcall("_ID42339", "main")
 
-    game:scriptcall("_ID42323", "main") -- maps/_load::main
     game:scriptcall("_ID42373", "main") -- maps/_stealth::main
     game:scriptcall("maps/contingency", "_ID46260") -- stealth_settings
 
@@ -233,14 +226,12 @@ map.main = function()
     player:scriptcall("_ID42407", "_ID27997") -- maps/_utils::playerSnowFootsteps
 
     soforest()
+    enableallportalgroups()
 
     game:ontimeout(function()
-
         player:allowcrouch(true)
         player:allowprone(true)
         player:allowstand(true)
-
-        game:setdvar("beautiful_corner", 0)
     end, 0)
 end
 

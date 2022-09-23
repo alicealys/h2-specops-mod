@@ -1138,11 +1138,24 @@ function array:foreach(func)
     end
 end
 
-function enableallportalgroups(enable)
-    enable = enable ~= nil and enable or 1
+function getallportalgroups()
+    local res = array:new()
+    local found = {}
     local portals = game:getentarray("portal_group", "classname")
     portals:foreach(function(portal)
-        game:enablepg(portal.targetname, enable)
+        if (not found[portal.targetname]) then
+            res:push(portal.targetname)
+            found[portal.targetname] = true
+        end
+    end)
+    return res
+end
+
+function enableallportalgroups(enable)
+    enable = enable ~= nil and enable or 1
+    local portals = getallportalgroups()
+    portals:foreach(function(portal)
+        game:enablepg(portal, enable)
     end)
 end
 
