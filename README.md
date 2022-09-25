@@ -5,7 +5,8 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 
 * Install the latest [**DEVELOP BUILD** of H2-Mod](https://github.com/fedddddd/h2-mod#installation)
 * If it doesn't exist create a `mods` folder in your **Call of Duty Modern Warfare 2 Campaign Remastered** folder
-* Extract and copy the `specops` folder from [here](https://github.com/fedddddd/h2-specops-mod/releases) into the `mods` folder
+* Extract and copy the `specops` folder from [here](https://github.com/fedddddd/h2-specops-mod/releases) into the `mods` folder  
+  __**Do NOT download the repository as ZIP, that won't work, make sure you download the LATEST RELEASE**__
 * Launch the game and press on the **MODS** button and load `SPECIAL OPS`, enjoy
 
 # Preview
