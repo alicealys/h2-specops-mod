@@ -25,34 +25,41 @@ colors = {
     }
 }
 
+hudfont = "bankshadow"
+
 function entity:setblue()
     self.color = colors.blue.color
     self.glowcolor = colors.blue.glowcolor
     self.glowalpha = 0.1
+    self.font = hudfont
 end
 
 function entity:setred()
     self.color = colors.red.color
     self.glowcolor = colors.red.glowcolor
     self.glowalpha = 0.1
+    self.font = hudfont
 end
 
 function entity:setyellow()
     self.color = colors.yellow.color
     self.glowcolor = colors.yellow.glowcolor
     self.glowalpha = 0.1
+    self.font = hudfont
 end
 
 function entity:setgreen()
     self.color = colors.green.color
     self.glowcolor = colors.green.glowcolor
     self.glowalpha = 0.1
+    self.font = hudfont
 end
 
 function entity:setwhite()
     self.color = colors.white.color
     self.glowcolor = colors.white.glowcolor
-    self.glowalpha = 0.1
+    self.glowalpha = 0
+    self.font = hudfont
 end
 
 local huditems = {}
@@ -65,7 +72,6 @@ function createhuditem(line, xoffset, message, alwaysdraw)
 	hudelem.horzalign = "right"
 	hudelem.vertalign = "middle"
 	hudelem.x = xoffset
-    hudelem.font = "bank"
 	hudelem.y = -92 + (15 * line)
 	hudelem.foreground = 1
 	hudelem.fontscale = 1.3
@@ -375,10 +381,10 @@ local function splashinternal(text, color, value)
         splashtext.horzalign = "center"
         splashtext.alignx = "center"
         splashtext.y = 180
-        splashtext.font = "bank"
         splashtext.fontscale = 2
         splashtext.hidewhendead = true
         splashtext.hidewheninmenu = true
+        splashtext:setwhite()
     end
 
     splashtext:fadeovertime(0)
@@ -462,7 +468,6 @@ function pingescapewarning()
         escapewarningsplash.alignx = "center"
         escapewarningsplash.horzalign = "center"
         escapewarningsplash.y = 220
-        escapewarningsplash.font = "bank"
         escapewarningsplash.fontscale = 1.5
         escapewarningsplash.faded = 1
         escapewarningsplash.hidewheninmenu = true
@@ -632,25 +637,18 @@ function missionover(success, timeoverride, outoftime)
     player:enableinvulnerability()
 
     game:ontimeout(function()
-        local text = game:newhudelem()
-        text.font = "bank"
-        text.glowalpha = 0.3
-
+        local text = nil
         if (success) then
-            text.color = vector:new(0.8, 0.8, 1)
-            text.glowcolor = vector:new(0.301961, 0.301961, 0.6)
-            text:settext("&SPECIAL_OPS_CHALLENGE_SUCCESS")
+            text = createhuditem(3, 0, "&SPECIAL_OPS_CHALLENGE_SUCCESS")
+            text:setblue()
         else
-            text.hidwhendead = false
-            text.color = vector:new(1, 0.4, 0.4)
-            text.glowcolor = vector:new(0.7, 0.2, 0.2)
-            text:settext("&SPECIAL_OPS_CHALLENGE_FAILURE")
+            text = createhuditem(3, 0, "&SPECIAL_OPS_CHALLENGE_FAILURE")
+            text:setred()
         end
 
+        text.hidewhendead = false
         text.horzalign = "center"
         text.alignx = "center"
-        text.fontscale = 1.2
-        text.y = 220
         text:setpulsefx(60, 2500, 500)
     end, 0)
 

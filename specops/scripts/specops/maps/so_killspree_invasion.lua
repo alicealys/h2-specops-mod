@@ -3,6 +3,9 @@ local map = {}
 map.premain = function()
     game:visionsetnaked("invasion", 0)
     game:getent("back_door_col", "targetname"):delete()
+    local tarp = game:getentbyref(3096, 0)
+    tarp.angles = tarp.angles + vector:new(0, -45, 0)
+    tarp.origin = tarp.origin + vector:new(0, 20, 0)
 end
 
 map.preover = function()

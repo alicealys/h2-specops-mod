@@ -35,7 +35,6 @@ map.main = function()
     setplayerpos()
     enableallportalgroups()
     intro()
-    --musicloop("mus_so_killspree_invasion")
 end
 
 return map

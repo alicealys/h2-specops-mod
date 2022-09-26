@@ -3,18 +3,7 @@ local map = {}
 map.premain = function()
     game:visionsetnaked("airport", 0)
 
-    -- introscreen
     setloadout("striker", "m240", "fraggrenade", "flash_grenade", "viewhands_tf141", "american")
-
-    game:detour("_ID42318", "main", function() end)
-
-    local weapontarp = game:getentbyref(2349, 0)
-    local newweapontarp = game:spawn("script_model", weapontarp.origin)
-    newweapontarp:clonebrushmodeltoscriptmodel(weapontarp)
-
-    local weapontarp2 = game:getentbyref(2353, 0)
-    local newweapontarp2 = game:spawn("script_model", weapontarp2.origin)
-    newweapontarp2:clonebrushmodeltoscriptmodel(weapontarp2)
 end
 
 function spawnsmoke(smoketag, smoketrigger, smokepause)
@@ -281,8 +270,6 @@ function airport()
     setplayerpos()
 
     player:freezecontrols(false)
-    player:takeweapon("m4_grenadier_airport")
-    player:giveweapon("striker")
 
     musicloop("mus_airport_escape")
 
