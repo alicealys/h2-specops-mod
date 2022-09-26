@@ -33,12 +33,10 @@ function frontend()
         buttonlist:removeElement(buttonlist:getFirstChild():getNextSibling())
     end)
     
-    game:addlocalizedstring("LUA_SP_SPECIAL_OPS_DESC", "Play Special Ops.")
-    
     LUI.addmenubutton("main_campaign", {
         index = 1,
         text = "@MENU_MISSION_SELECT_CAPS",
-        description = Engine.Localize("@LUA_SP_SPECIAL_OPS_DESC"),
+        description = Engine.Localize("@MENU_SP_SPECIAL_OPS_DESC"),
         callback = function()
             LUI.FlowManager.RequestAddMenu(nil, firstmenu)
         end
@@ -70,17 +68,6 @@ function ingame()
         end
 
         return getdvarbool(...)
-    end
-
-    
-    local getdvarstring = Engine.GetDvarString
-    Engine.GetDvarString = function(...)
-        local args = {...}
-        if (args[1] == "mapname") then
-            return getdvarstring("so_mapname")
-        end
-
-        return getdvarstring(...)
     end
 
     isNoRussian = function()

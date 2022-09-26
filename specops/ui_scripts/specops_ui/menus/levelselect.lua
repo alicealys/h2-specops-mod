@@ -8,6 +8,28 @@ local function cleanstr(str)
     return str:sub(2, #str - 1)
 end
 
+LUI.MenuBuilder.registerPopupType("specops_stars_missing", function(element, data)
+	return LUI.MenuBuilder.BuildRegisteredType( "generic_confirmation_popup", {
+		cancel_will_close = true,
+		popup_title = Engine.Localize("@MENU_NOTICE"),
+		message_text = Engine.Localize("@SPECIAL_OPS_SO_UNLOCK_MORE_DESC", data.stars),
+		button_text = Engine.Localize("@MENU_OK"),
+	})
+end)
+
+local function addlocationinfowindow(menu)
+	local infoBox = LUI.MenuBuilder.BuildRegisteredType("InfoBox", {
+		skipAnim = true,
+        noRightPane = true
+	})
+
+    LUI.sp_menus.LevelSelectMenu.SetupInfoBoxRightForMissionSelect(infoBox)
+    
+	infoBox:drawCornerLines()
+	menu:addElement(infoBox)
+	menu.infoBox = infoBox
+end
+
 local function startmap(somapname, mapname)
     Engine.SetDvarFromString("so_mapname", somapname)
     Engine.SetDvarFromString("addon_mapname", somapname)
@@ -34,6 +56,69 @@ local function startmap(somapname, mapname)
     end
 
     Engine.Exec("map " .. mapname)
+end
+
+local function addbuttonstars(button, earned)
+    local num = 0
+    local createstar = function()
+        local star = LUI.UIImage.new({
+            topAnchor = true,
+            rightAnchor = true,
+            top = 4,
+            height = 22,
+            width = 22,
+            right = (22 * num + 5 * num) * -1 - 10,
+            material = RegisterMaterial("star"),
+            alpha = 0.7
+        })
+
+        star:registerAnimationState("unlocked", {
+            color = Colors.h2.yellow,
+        })
+
+        star:registerAnimationState("locked", {
+            color = Colors.h2.grey,
+        })
+
+        star:registerAnimationState("focus", {
+            alpha = 1,
+        })
+
+        
+        star:registerAnimationState("unfocus", {
+            alpha = 0.7,
+        })
+
+        num = num + 1
+
+        return star
+    end
+
+    local stars = {}
+    for i = 3, 1, -1 do
+        local star = createstar()
+        star:animateToState("locked")
+        star:registerEventHandler("gain_focus", MBh.AnimateToState("focus"))
+        star:registerEventHandler("lose_focus", MBh.AnimateToState("unfocus"))
+
+        stars[i] = star
+        button:addElement(star)
+    end
+
+    local timer = LUI.UITimer.new(150, "update_stars")
+    button:addElement(timer)
+    local starindex = 0
+    button:registerEventHandler("update_stars", function()
+        starindex = starindex + 1
+
+        if (starindex <= earned) then
+            stars[starindex]:animateToState("unlocked")
+        end
+
+        if (starindex >= 3) then
+            timer:close()
+        end
+    end)
 end
 
 local function addstars(infobox)
@@ -71,7 +156,6 @@ local function addstars(infobox)
 
     function infobox:setstars(count)
         for i = 1, #infobox.stars do
-
             if (i < count) then
                 infobox.stars[i]:animateToState("unlocked")
             else
@@ -85,10 +169,31 @@ local function addstars(infobox)
     end
 end
 
+
+local h1menutab = package.loaded["LUI.H1MenuTab"]
+local createbarelement = h1menutab.CreateBarElement
+h1menutab.CreateBarElement = function(a1, index, ...)
+    local button = createbarelement(a1, index, ...)
+    if (not button) then
+        return button
+    end
+
+    button.properties = {
+        allowDisabledAction = true
+    }
+
+    button:registerEventHandler("button_action_disable", function()
+        LUI.FlowManager.RequestAddMenu(nil, "specops_stars_missing", nil, nil, nil, {
+            stars = acts[index].requiredstars - sostats.gettotalstars()
+        })
+    end)
+
+    return button
+end
+
 local function levelselect(act)
     return function(root)
         local width = GenericMenuDims.menu_right_standard + 150 - GenericMenuDims.menu_left
-        
         local menu = LUI.MenuTemplate.new(root, {
             menu_title = Engine.Localize("@MENU_MISSION_SELECT_CAPS"),
             uppercase_title = true,
@@ -120,7 +225,7 @@ local function levelselect(act)
 
         menu:addElement(black)
 
-        menu:addElement(LUI.H1MenuTab.new({
+        local menutab = LUI.H1MenuTab.new({
             title = function (index)
                 return Engine.Localize(acts[index].name)
             end,
@@ -135,15 +240,17 @@ local function levelselect(act)
             underTabTextFunc = function (index)
                 return Engine.Localize(acts[index].name)
             end,
-            isTabLockedfunc = function ()
-                return false
+            isTabLockedfunc = function(index)
+                return sostats.gettotalstars() < acts[index].requiredstars
             end,
             previousDisabled = false,
             nextDisabled = false,
             enableRightLeftNavigation = true,
             skipChangeTab = true,
             exclusiveController = menu.exclusiveController
-        }))
+        })
+
+        menu:addElement(menutab)
 
         for i = 1, #act.missions do
             local name = "@SPECIAL_OPS_" .. Engine.ToUpperCase(act.missions[i].somapname)
@@ -170,14 +277,19 @@ local function levelselect(act)
                 disableSound = CoD.SFX.DenySelect
             })
 
+            local stats = sostats.getmapstats(act.missions[i].somapname)
+            if (not islocked) then
+                addbuttonstars(button, (stats.stars or 0))
+            end
+
             local gainfocus = button.m_eventHandlers["gain_focus"]
             button:registerEventHandler("gain_focus", function(element, event)
                 gainfocus(element, event)
                 if (not menu.infoBox) then
-                    LUI.LevelSelect.AddLocationInfoWindow(menu, {
-                        skipAnim = true
+                    addlocationinfowindow(menu, {
+                        skipAnim = true,
+                        noRightPane = true
                     })
-                    addstars(menu.infoBox)
                 end
 
                 menu.infoBox.title:setText(Engine.Localize(name))
@@ -186,14 +298,9 @@ local function levelselect(act)
 
                 local stats = sostats.getmapstats(act.missions[i].somapname)
                 local time = stats.besttime and Engine.Localize("@MENU_SO_BEST_TIME", formattime(stats.besttime)) or Engine.Localize("@LUA_MENU_NOT_COMPLETED")
-                menu.infoBox:setstars((stats.stars or 0) + 1)
 
                 menu:processEvent({
                     name = "update_levelInfo",
-                    blipPosX = act.missions[i].blip and act.missions[i].blip.x or 60,
-                    blipPosY = act.missions[i].blip and act.missions[i].blip.y or 60,
-                    map_name = "invasion",
-                    location_image = "h2_minimap_worldmap_mission_select",
                     level_number = 1,
                     title_text = Engine.Localize(name),
                     location_text = "",
@@ -201,8 +308,6 @@ local function levelselect(act)
                     level_controller = nil,
                     narative_level = 1,
                 })
-
-                menu.infoBox.bottomLeftElements.difficultyText:setText("")
 
                 PersistentBackground.ChangeBackground(nil, act.missions[i].video)
                 black:animateInSequence( {

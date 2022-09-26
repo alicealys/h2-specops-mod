@@ -2,6 +2,7 @@ acts = {
     {
         id = "act1",
         index = 1,
+        requiredstars = 0,
         name = "@SPECIAL_OPS_SO_BUTTON_ALPHA_CAPS",
         missions = {
             {
@@ -9,10 +10,6 @@ acts = {
                 somapname = "so_killspree_trainer",
                 mapname = "so_killspree_trainer",
                 video = "mission_select_bg_trainer",
-                blip = {
-                    x = 98,
-                    y = 52,
-                },
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_0",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -70,6 +67,7 @@ acts = {
     {
         id = "act2",
         index = 2,
+        requiredstars = 4,
         name = "@SPECIAL_OPS_SO_BUTTON_BETA_CAPS",
         missions = {
             {
@@ -133,6 +131,7 @@ acts = {
     {
         id = "act3",
         index = 3,
+        requiredstars = 8,
         name = "@SPECIAL_OPS_SO_BUTTON_CHARLIE_CAPS",
         missions = {
             {
@@ -150,10 +149,6 @@ acts = {
                 somapname = "so_showers_gulag",
                 mapname = "so_showers_gulag",
                 video = "mission_select_bg_gulag",
-                blip = {
-                    x = 131,
-                    y = 41,
-                },
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_4",
                     type = "@MENU_SP_TYPE_ASSAULT",
@@ -199,6 +194,7 @@ acts = {
     {
         id = "act4",
         index = 4,
+        requiredstars = 15,
         name = "@SPECIAL_OPS_SO_BUTTON_DELTA_CAPS",
         missions = {
             {
@@ -261,6 +257,7 @@ acts = {
     {
         id = "act5",
         index = 5,
+        requiredstars = 35,
         name = "@SPECIAL_OPS_SO_BUTTON_ECHO_CAPS",
         missions = {
             {
