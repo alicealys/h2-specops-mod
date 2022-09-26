@@ -241,7 +241,7 @@ local function levelselect(act)
                 return Engine.Localize(acts[index].name)
             end,
             isTabLockedfunc = function(index)
-                return sostats.gettotalstars() < acts[index].requiredstars
+                return (not Engine.GetDvarBool("mis_cheat")) and sostats.gettotalstars() < acts[index].requiredstars
             end,
             previousDisabled = false,
             nextDisabled = false,

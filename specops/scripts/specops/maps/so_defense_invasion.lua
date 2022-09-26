@@ -2,6 +2,7 @@ local map = {}
 
 map.premain = function()
     game:visionsetnaked("invasion", 0)
+    game:getent("back_door_col", "targetname"):delete()
 end
 
 map.preover = function()
