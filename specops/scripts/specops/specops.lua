@@ -116,13 +116,3 @@ end)
 level:onnotify("juggernaut_attacking", function()
     player:playlocalsound("_juggernaut_attack")
 end)
-
-do
-    local ents = game:getentarray("script_brushmodel", "classname")
-    for i = 1, #ents do
-        -- prevent com_blue_tarp from being deleted (idk how it gets deleted)
-        if (ents[i].script_specialopsname == game:getdvar("mapname")) then
-            ents[i].script_specialopsname = nil
-        end
-    end
-end

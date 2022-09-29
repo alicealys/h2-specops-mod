@@ -98,7 +98,7 @@ so_defense_init()
 	sentries = getentarray("misc_turret", "classname");
 	foreach (sentry in sentries)
 		sentry delete();
-	_id_d2a4::main();
+	_id_D2A4::main();
 
 	// attacker accuracy modifiers for sentry turrets.
 	level.aamod_sentry_kill	= 2.0;

@@ -1,6 +1,10 @@
 {
     "MENU_SO_BEST_TIME": "Best Time: &&1",
     "MENU_SP_SPECIAL_OPS_DESC": "Play Special Ops.",
+    "MENU_SP_TOTAL_STARS": "&&1 / &&2",
+    "MENU_SP_NEXT_UNLOCK_VALUE": "NEXT UNLOCK: &&1",
+    "SPECIAL_OPS_SO_UNLOCK_MORE_DESC": "Earn &&1 more stars to unlock.",
+    "SPECIAL_OPS_SO_UNLOCK_SINGLE_DESC": "Earn 1 more star to unlock.",
 
     "MENU_SP_TWO_PLAYER_SPLIT_SCREEN": "Two Player Split Screen",
     "MENU_SP_TWO_PLAYER_SPLIT_SCREEN_CAPS": "TWO PLAYER SPLIT SCREEN",
@@ -126,7 +130,6 @@
     "SPECIAL_OPS_SO_CHARLIE_DESC": "Time trials, explosive breaches, boneyards and enemies in Ghillie Suits.  Things are getting a bit tougher.",
     "SPECIAL_OPS_SO_DELTA_DESC": "Blizzards, airports, estates and bridges.  Five challenging Ops.",
     "SPECIAL_OPS_SO_ECHO_DESC": "An oil rig and a favela full of Juggernauts.  These Ops are fast and brutal.",
-    "SPECIAL_OPS_SO_UNLOCK_MORE_DESC": "Earn &&1 more stars to unlock.",
     "SPECIAL_OPS_SO_BETA_UNLOCK_DESC": "Earn 4 stars to unlock.",
     "SPECIAL_OPS_SO_CHARLIE_UNLOCK_DESC": "Earn 8 stars to unlock.",
     "SPECIAL_OPS_SO_DELTA_UNLOCK_DESC": "Earn 20 stars to unlock.",

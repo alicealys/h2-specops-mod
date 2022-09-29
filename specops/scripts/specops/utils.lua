@@ -25,7 +25,7 @@ colors = {
     }
 }
 
-hudfont = "bankshadow"
+hudfont = "bankshadowmore"
 
 function entity:setblue()
     self.color = colors.blue.color
