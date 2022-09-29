@@ -199,6 +199,7 @@ function defuseusebar(filltime, briefcase, callback)
     bar:updatebar(0)
     local text = createfontstring("objective", 1.2)
     text:setwhite()
+    text.font = "objective"
     text:setpoint("CENTER", nil, 0, 45)
     text:settext("&SO_DEFUSE_FAVELA_ESCAPE_DEFUSING")
     
