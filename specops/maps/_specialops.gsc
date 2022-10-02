@@ -1,9 +1,9 @@
-enable_challenge_timer(start, end)
+enable_challenge_timer(start, end, time_limit, silent)
 {
     if (isdefined(level.lua["enable_challenge_timer"]))
     {
         func = level.lua["enable_challenge_timer"];
-        [[ func ]](start, end);
+        [[ func ]](start, end, time_limit, silent);
     }
 }
 
@@ -16,7 +16,6 @@ enable_escape_warning()
     }
 }
 
-
 enable_escape_failure(start, end)
 {
     if (isdefined(level.lua["enable_escape_failure"]))
@@ -26,6 +25,32 @@ enable_escape_failure(start, end)
     }
 }
 
+enable_triggered_start(challenge_id, challenge_id_complete)
+{
+    if (isdefined(level.lua["enable_triggered_start"]))
+    {
+        func = level.lua["enable_triggered_start"];
+        [[ func ]](challenge_id, challenge_id_complete);
+    }
+}
+
+enable_triggered_complete(challenge_id, challenge_id_complete)
+{
+    if (isdefined(level.lua["enable_triggered_complete"]))
+    {
+        func = level.lua["enable_triggered_complete"];
+        [[ func ]](challenge_id, challenge_id_complete);
+    }
+}
+
+add_challenge_timer(time_limit)
+{
+    if (isdefined(level.lua["add_challenge_timer"]))
+    {
+        func = level.lua["add_challenge_timer"];
+        [[ func ]](time_limit);
+    }
+}
 
 so_dialog_counter_update(current, goal, divide)
 {

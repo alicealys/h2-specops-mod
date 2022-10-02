@@ -198,11 +198,12 @@ function defuseusebar(filltime, briefcase, callback)
     local bar = createprogressbar(player, 57)
     bar:updatebar(0)
     local text = createfontstring("objective", 1.2)
-    text:setwhite()
-    text.font = "objective"
+    text.objectivefont = true
     text:setpoint("CENTER", nil, 0, 45)
     text:settext("&SO_DEFUSE_FAVELA_ESCAPE_DEFUSING")
-    
+    text.fontscale = 0.6
+    text:setwhite()
+
     local interval = nil
     interval = game:oninterval(function()
         if (not useactive()) then

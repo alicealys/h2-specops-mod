@@ -26,40 +26,62 @@ colors = {
 }
 
 hudfont = "bankshadowmore"
+objectivefont = "timer"
+objectivefontscale = 0.5
 
-function entity:setblue()
+function entity:setblue(useobjectivefont)
     self.color = colors.blue.color
     self.glowcolor = colors.blue.glowcolor
     self.glowalpha = 0.1
-    self.font = hudfont
+    if (useobjectivefont or self.objectivefont == 1) then
+        self.font = objectivefont
+    else
+        self.font = hudfont
+    end
 end
 
-function entity:setred()
+function entity:setred(useobjectivefont)
     self.color = colors.red.color
     self.glowcolor = colors.red.glowcolor
     self.glowalpha = 0.1
-    self.font = hudfont
+    if (useobjectivefont or self.objectivefont == 1) then
+        self.font = objectivefont
+    else
+        self.font = hudfont
+    end
 end
 
-function entity:setyellow()
+function entity:setyellow(useobjectivefont)
     self.color = colors.yellow.color
     self.glowcolor = colors.yellow.glowcolor
     self.glowalpha = 0.1
-    self.font = hudfont
+    if (useobjectivefont or self.objectivefont == 1) then
+        self.font = objectivefont
+    else
+        self.font = hudfont
+    end
 end
 
-function entity:setgreen()
+function entity:setgreen(useobjectivefont)
     self.color = colors.green.color
     self.glowcolor = colors.green.glowcolor
     self.glowalpha = 0.1
-    self.font = hudfont
+    if (useobjectivefont or self.objectivefont == 1) then
+        self.font = objectivefont
+    else
+        self.font = hudfont
+    end
 end
 
-function entity:setwhite()
+function entity:setwhite(useobjectivefont)
     self.color = colors.white.color
     self.glowcolor = colors.white.glowcolor
-    self.glowalpha = 0
-    self.font = hudfont
+    self.glowalpha = 0.1
+    if (useobjectivefont or self.objectivefont == 1) then
+        self.font = objectivefont
+    else
+        self.font = hudfont
+    end
 end
 
 local huditems = {}
@@ -202,6 +224,20 @@ function startchallengetimer(nudgetime, hurrytime, silent)
     else
         challengetimertime:settenthstimerup(0)
     end
+end
+
+function enabletriggeredstart(challengeid, notifycomplete)
+    local trigger = game:getent(challengeid, "script_noteworthy")
+    trigger:onnotifyonce("trigger", function()
+        flagset(notifycomplete)
+    end):endon(level, "challenge_timer_expired")
+end
+
+function enabletriggeredcomplete(challengeid, notifycomplete)
+    local trigger = game:getent(challengeid, "script_noteworthy")
+    trigger:onnotifyonce("trigger", function()
+        flagset(notifycomplete)
+    end):endon(level, "challenge_timer_expired")
 end
 
 function enablechallengetimer(notifystart, notifyend, timelimit, silent)

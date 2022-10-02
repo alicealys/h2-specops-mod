@@ -50,13 +50,13 @@ function entity:startraceboost()
             text.hidewheninmenu = true
             text.alignx = "center"
             text.horzalign = "center"
-            text.fontscale = 2
-            text.font = "objective"
+            text.fontscale = 1
             text.y = 180
             text.alpha = 0
             text:fadeovertime(0.1)
             text.alpha = 1
-            text:setwhite()
+            text.objectivefont = true
+            text:setwhite(true)
             text:settext("&SO_SNOWRACE1_CLIFFHANGER_PERFECT_TIMING")
     
             game:ontimeout(function()
@@ -208,6 +208,8 @@ map.premain = function()
         end
 
         starttimer:settext("&SO_SNOWRACE1_CLIFFHANGER_RACE_READY")
+        starttimer.objectivefont = true
+        starttimer.fontscale = 1
         starttimer:setwhite()
         player:freezecontrols(true)
 
