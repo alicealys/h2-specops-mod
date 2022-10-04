@@ -240,10 +240,10 @@
 "origin" "-1854.5 -1168.8 681"
 "angles" "0.417942 15.147 88.4022"
 "model" "weapon_aa12"
-"classname" "weapon_aa12_hb"
+"classname" "weapon_aa12"
 }
 {
-"classname" "weapon_aa12_hb"
+"classname" "weapon_aa12"
 "model" "weapon_aa12"
 "angles" "0.417942 37.447 88.4022"
 "origin" "-2290.5 -1766.8 673"

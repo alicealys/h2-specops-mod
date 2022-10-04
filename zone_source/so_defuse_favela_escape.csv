@@ -4,3 +4,15 @@ stringtable,maps/createart/so_defuse_favela_escape_lightsets_hdr.csv
 xmodel,h2_weapon_c4
 xmodel,prop_suitcase_bomb
 xmodel,mil_semtex_brick
+reference,true
+xmodel,h2_viewmodel_glock
+xmodel,h2_weapon_glock
+xmodel,h2_weapon_glock_clip
+xmodel,h2_weapon_glock_base
+xmodel,h2_viewmodel_knife
+xmodel,weapon_parabolic_knife
+xmodel,h2_viewmodel_glock_base
+xmodel,h2_viewmodel_glock
+xmodel,wpn_h1_shell_9mm_npc
+reference,false
+weapon,glock_akimbo
