@@ -1,6 +1,7 @@
 local map = {}
 
 map.premain = function()
+    game:visionsetnaked("cliffhanger", 0)
     setloadout("masada_silencer_mt_camo_on_h2", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
 end
 
@@ -183,6 +184,7 @@ local extracting = false
 function oncomplete()
     local trigger = game:getent("player_outside_compound", "script_noteworthy")
     local listener = nil
+
     listener = trigger:onnotify("trigger", function()
         if (not extracting) then
             return
@@ -413,7 +415,7 @@ function stealthmusic()
             end
 
             musicloop("mus_cliffhanger_stealth_busted")
-        end, 500)
+        end, 500):endon(level, "special_op_terminated")
 
         local listener = nil
         listener = level:onnotify("_stealth_spotted", function()
@@ -539,9 +541,11 @@ function explosivesplantedmonitor()
             game:objective_state(1, "done")
 
             local outsideobj = getstruct("obj_outside_compound", "script_noteworthy")
-            game:objective_add(2, "current", "Get clear of the compound for extraction.", outsideobj.origin)
+            game:objective_add(2, "current", "&SO_SABOTAGE_CLIFFHANGER_OBJ_ESCAPE", outsideobj.origin)
 
             extracting = true
+            game:playfx(extractionsmoke, vector:new(-2720, -24736, 1042))
+
             game:scriptcall("_ID42237", "_ID38865", "player_outside_compound", "script_noteworthy")
         end)
     end)
@@ -582,6 +586,8 @@ function setflags()
 end
 
 map.main = function()
+    extractionsmoke = game:loadfx("fx/smoke/green_flare_smoke_distant")
+
     game:precacheshader("overlay_frozen")
     game:precacheitem("c4")
 

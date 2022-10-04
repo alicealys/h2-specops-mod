@@ -3,7 +3,7 @@ local map = {}
 map.premain = function()
     game:visionsetnaked("favela_escape", 0)
 
-    setloadout("m1014", "glock", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
+    setloadout("m1014", "glock_akimbo", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
     -- introscreen
     game:detour("_ID42318", "main", function() end)
 end
@@ -24,8 +24,6 @@ function defusesetup()
     setplayerpos()
 
     enableallportalgroups()
-
-    -- 
 
     airlinerdelete()
     cleanupsetup()

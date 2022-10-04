@@ -104,6 +104,17 @@ game:detour("maps/_loadout_code", "_id_C9FB", function()
     local mapname = game:getdvar("mapname")
 
     if (loadout) then
+        local akimboweapon = function(index)
+            local weap = loadout[index]
+            if (weap:match("akimbo")) then
+                player:giveweapon(weap, 0, true)
+                loadout[index] = nil
+            end
+        end
+
+        akimboweapon(1)
+        akimboweapon(2)
+
         level.has_loadout = true
         game:scriptcall("maps/_loadout_code", "loadout", mapname, table.unpack(loadout))
     end
