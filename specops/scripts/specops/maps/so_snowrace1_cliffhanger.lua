@@ -150,6 +150,8 @@ function objective()
 end
 
 map.premain = function()
+    game:executecommand("0x4E5D8AE8 3")
+
     settimetrial(true)
 
     game:setdvar("ui_so_show_difficulty", 0)
