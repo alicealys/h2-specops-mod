@@ -126,7 +126,6 @@ acts = {
                 somapname = "so_chopper_invasion",
                 mapname = "so_chopper_invasion",
                 video = "mission_select_bg_invasion",
-                playable = true,
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_TIMED_ESCORT",

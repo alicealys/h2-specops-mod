@@ -1,7 +1,7 @@
 local map = {}
 
 map.premain = function()
-
+    game:getentarray("window_clip", "targetname"):foreach(entity.delete)
 end
 
 map.main = function()
