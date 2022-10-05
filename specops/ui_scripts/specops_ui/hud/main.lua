@@ -1,9 +1,3 @@
-local actionslotdef = LUI.MenuBuilder.m_definitions["actionSlotDef"]
-LUI.MenuBuilder.m_definitions["actionSlotDef"] = function()
-	local actionslot = actionslotdef()
-    actionslot.states.default.left = 720
-    return actionslot
-end
 
 local oncreate = function(menu)
     local createstate = CoD.CreateState
@@ -68,12 +62,9 @@ LUI.MenuBuilder.m_definitions["CompassHudDef"] = function()
         topAnchor = true,
         leftAnchor = true,
         rightAnchor = true,
-        bottomAnchor = true
+        bottomAnchor = true,
+        bottom = compass.states.default.bottom,
     }
-    
-    for i = 1, #compass.children do
-        compass.children[i].states.default = {alpha = 0}
-    end
 
     table.insert(compass.children, {
         type = "UIElement",
