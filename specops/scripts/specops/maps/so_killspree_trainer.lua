@@ -477,21 +477,21 @@ map.premain = function()
         player:switchtoweapon("m4_grunt")
 
         -- open the gate
-        local door = level.struct[53991]
+        local door = level._ID53991
         door:scriptcall("maps/trainer", "_ID11599")
         door:playsound("door_gate_chainlink_slow_open")
 
-        local cases = level.struct[49518]
+        local cases = level._ID49518
         for i = 1, #cases do
-            local animation = level.struct[30895]["training_case_01"]["open_case_soldier"]
+            local animation = level._ID30895["training_case_01"]["open_case_soldier"]
             cases[i]:setanimknob(animation, 1, 0)
             cases[i]:setanimtime(animation, 1)
             cases[i].origin = cases[i].origin + vector:new(0, 2, 8)
             cases[i].angles = vector:new(0, 90, 0)
         end
 
-        level.struct[47197]:delete() -- pitguy
-        level.struct[53623]:delete() -- pitguygun
+        level._ID47197:delete() -- pitguy
+        level._ID53623:delete() -- pitguygun
 
         local function showweapons(name)
             local weapons = game:getentarray(name, "script_noteworthy")
