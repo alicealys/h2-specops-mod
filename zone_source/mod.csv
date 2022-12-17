@@ -1,3 +1,4 @@
+techset,,2d
 material,loadscreen_so_killspree_trainer
 material,loadscreen_so_rooftop_contingency
 material,loadscreen_so_killspree_favela
@@ -8,6 +9,7 @@ material,loadscreen_so_killspree_invasion
 material,loadscreen_so_defuse_favela_escape
 material,loadscreen_so_snowrace1_cliffhanger
 material,loadscreen_so_chopper_invasion
+material,loadscreen_so_hidden_scoutsniper
 material,loadscreen_so_hidden_so_ghillies
 material,loadscreen_so_showers_gulag
 material,loadscreen_so_snowrace2_cliffhanger

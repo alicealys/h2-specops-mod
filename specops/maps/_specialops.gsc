@@ -148,6 +148,15 @@ set_hud_red()
     }  
 }
 
+set_hud_green()
+{
+    if (isdefined(level.lua["set_hud_green"]))
+    {
+        func = level.lua["set_hud_green"];
+        self [[ func ]]();
+    }  
+}
+
 so_hud_pulse_default()
 {
     fontscale = self.fontscale;

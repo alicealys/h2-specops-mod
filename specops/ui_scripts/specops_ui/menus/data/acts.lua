@@ -142,9 +142,10 @@ acts = {
         name = "@SPECIAL_OPS_SO_BUTTON_CHARLIE_CAPS",
         missions = {
             {
-                somapname = "so_hidden_so_ghillies",
-                mapname = "ending",
-                video = "mission_select_bg_ending",
+                somapname = "so_hidden_scoutsniper",
+                mapname = "so_hidden_scoutsniper",
+                video = "mission_select_bg_scoutsniper",
+                playable = true,
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
                     type = "@MENU_SP_TYPE_STEALTH",

@@ -60,8 +60,6 @@ local function addlocationinfowindow(menu)
 end
 
 local function startmap(somapname, mapname)
-    Engine.SetDvarFromString("so_mapname", somapname)
-    Engine.SetDvarFromString("addon_mapname", somapname)
     Engine.SetDvarBool("cl_disableMapMovies", true)
     Engine.SetDvarBool("cl_enableCustomLoadscreen", true)
     Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
@@ -387,7 +385,7 @@ local function levelselect(act)
 
         for i = 1, #act.missions do
             local name = "@SPECIAL_OPS_" .. Engine.ToUpperCase(act.missions[i].somapname)
-            local islocked = not (io.fileexists(game:getloadedmod() .. "/scripts/specops/maps/" .. act.missions[i].somapname .. ".lua"))
+            local islocked = not (game:fastfileexists(act.missions[i].somapname))
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
                     Engine.SetDvarString("ui_loadMenuName", "so_levelselect_act" .. act.index)

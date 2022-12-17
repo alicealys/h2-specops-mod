@@ -56,8 +56,8 @@
 }
 {
 "script_specialops" "1"
-"model" "h2_weapon_masada_silencer_motion_tracker_arctic"
-"classname" "weapon_masada_silencer_mt_dust_on"
+"model" "h2_weapon_ak47_silencer"
+"classname" "weapon_ak47_silencer"
 "angles" "0 113 90"
 "origin" "-9288.1 -25364 906"
 "script_ammo_max" "1"

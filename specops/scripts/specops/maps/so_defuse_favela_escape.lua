@@ -3,7 +3,7 @@ local map = {}
 map.premain = function()
     game:visionsetnaked("favela_escape", 0)
 
-    setloadout("m1014", "glock_akimbo", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
+    setloadout("m1014_eotech", "glock_akimbo", "fraggrenade", "flash_grenade", "viewhands_tf141_favela", "american")
     -- introscreen
     game:detour("_ID42318", "main", function() end)
 end
@@ -16,11 +16,7 @@ function airlinerdelete()
 end
 
 function defusesetup()
-    player:takeweapon("ump45_acog")
-    player:giveweapon("m1014")
-    player:givemaxammo("m1014")
-    player:switchtoweapon("m1014")
-
+    player:switchtoweapon("glock_akimbo")
     setplayerpos()
 
     enableallportalgroups()
@@ -161,7 +157,14 @@ function briefcasedefuse(briefcase, callback)
     player:playerlinkto(briefcase)
     player:playerlinkedoffsetenable(briefcase)
 
-    player:disableweapons()
+    --player:disableweapons()
+    local lastweapon = player:getcurrentweapon()
+	player:giveweapon("briefcase_bomb_mp")
+	player:allowfire(false)
+	player:switchtoweapon("briefcase_bomb_mp")
+	player:disableweaponswitch()
+	player:disableoffhandweapons()
+
     briefcase:hide()
 
     game:ontimeout(function()
@@ -174,15 +177,25 @@ function briefcasedefuse(briefcase, callback)
             
             game:ontimeout(function()
                 briefcase:show()
+
+                local primaryweapons = player:getweaponslistprimaries()
+                if (game:scriptcall("maps/_utility", "is_in_array", primaryweapons, lastweapon) == 0) then
+                    lastweapon = primaryweapons[1]
+                end
+
+                player:switchtoweapon(lastweapon)
                 player:unlink()
-        
-                game:ontimeout(function()
-                    player:enableweapons()
-    
+
+                player:onnotifyonce("weapon_change", function()
                     game:ontimeout(function()
+	                    player:allowfire(true)
+                        player:allowmelee(true)
+                        player:enableoffhandweapons(true)
+                        player:enableweaponswitch(true)
+
                         callback(result)
                     end, 500)
-                end, 800)
+                end)
             end, 500)
         end)
     end, 1200)
@@ -413,6 +426,9 @@ map.main = function()
         isspawntrigger,
         isspawner
     })
+
+    game:precacheitem("briefcase_bomb_defuse_mp")
+    game:precacheitem("briefcase_bomb_mp")
 
     game:scriptcall("maps/favela_escape", "_ID19719")
     game:scriptcall("_ID51196", "main")

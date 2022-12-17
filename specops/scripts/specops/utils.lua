@@ -581,7 +581,7 @@ function setplayerpos()
     else
         start = game:getent("info_player_start_so", "classname")
     end
-
+    
     if (start) then
         player:setorigin(start.origin)
         player:setplayerangles(start.angles)
@@ -719,7 +719,7 @@ function missionover(success, timeoverride, outoftime)
     local firsttime = false
 
     if (success and finaltime >= 0) then
-        local mapname = game:getdvar("so_mapname")
+        local mapname = game:getdvar("mapname")
         local stats = sostats.getmapstats(mapname)
         firsttime = stats.besttime == nil or type(stats.besttime) ~= "number"
         if (firsttime or stats.besttime > finaltime) then

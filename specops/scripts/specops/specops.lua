@@ -5,6 +5,9 @@ switch(mapname, {
     ["so_hidden_so_ghillies"] = function()
         campaign = "ghillie"
     end,
+    ["so_hidden_scoutsniper"] = function()
+        campaign = "ghillie"
+    end,
     ["so_killspree_invasion"] = function()
         campaign = "ranger"
     end,

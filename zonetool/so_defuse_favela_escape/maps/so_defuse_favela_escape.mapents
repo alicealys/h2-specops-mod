@@ -65,9 +65,9 @@
 {
 "script_specialops" "1"
 "classname" "script_model"
-"model" "prop_suitcase_bomb"
+"model" "wpn_h1_briefcase_bomb_npc"
 "origin" "2188 -1108 714.1"
-"angles" "0 0 0"
+"angles" "0 -90 0"
 "targetname" "defuse_briefcase"
 "target" "me1_auto3"
 "script_index" "2"
@@ -207,9 +207,9 @@
 {
 "script_specialops" "1"
 "classname" "script_model"
-"model" "prop_suitcase_bomb"
+"model" "wpn_h1_briefcase_bomb_npc"
 "origin" "-549.5 -751.5 978"
-"angles" "0 90 0"
+"angles" "0 0 0"
 "targetname" "defuse_briefcase"
 "target" "me1_auto2"
 "script_index" "1"
@@ -337,9 +337,9 @@
 {
 "script_specialops" "1"
 "classname" "script_model"
-"model" "prop_suitcase_bomb"
+"model" "wpn_h1_briefcase_bomb_npc"
 "origin" "-2197 -479.5 1072"
-"angles" "2.41848 180.042 1.41624"
+"angles" "2.41848 90.042 1.41624"
 "targetname" "defuse_briefcase"
 "target" "me1_auto1"
 "script_index" "0"
@@ -1004,8 +1004,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_m1014"
-"model" "h2_weapon_m1014"
+"classname" "weapon_aa12_hb"
+"model" "weapon_aa12"
 "spawnflags" "1"
 "origin" "-652.5 1961 1118.5"
 "angles" "280.2 226.6 91.499"
@@ -1050,8 +1050,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_ump45_reflex"
-"model" "h2_weapon_ump45_reflex"
+"classname" "weapon_p90_reflex"
+"model" "weapon_p90"
 "spawnflags" "1"
 "origin" "-697.5 1936 1140"
 "angles" "0 76 90"
@@ -1269,8 +1269,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_m1014"
-"model" "h2_weapon_m1014"
+"classname" "weapon_aa12_hb"
+"model" "weapon_aa12"
 "spawnflags" "1"
 "origin" "-941 1918 1118.5"
 "angles" "280.2 180 91.499"
@@ -1278,8 +1278,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_ump45_reflex"
-"model" "h2_weapon_ump45_reflex"
+"classname" "weapon_p90_reflex"
+"model" "weapon_p90"
 "spawnflags" "1"
 "origin" "-941 1884 1118.5"
 "angles" "280.2 180 91.499"
@@ -1357,8 +1357,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_rpd_acog"
-"model" "h2_weapon_rpd_acog"
+"classname" "weapon_m240"
+"model" "weapon_m240"
 "spawnflags" "1"
 "origin" "-941 1850 1117.5"
 "angles" "280.2 180 91.499"
@@ -1366,8 +1366,8 @@
 }
 {
 "script_specialops" "1"
-"classname" "weapon_rpd_acog"
-"model" "h2_weapon_rpd_acog"
+"classname" "weapon_m240"
+"model" "weapon_m240"
 "spawnflags" "1"
 "origin" "-687.5 1855 1115"
 "angles" "290.5 0 91.499"

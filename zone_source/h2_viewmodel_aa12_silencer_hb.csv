@@ -1,0 +1,4 @@
+name,h2_viewmodel_aa12_silencer_hb
+base,h2_viewmodel_aa12_base
+attachment,attach_h2_silencer_03_vm
+attachment,attach_h2_heartbeat_vm

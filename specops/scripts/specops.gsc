@@ -1,9 +1,84 @@
+#include animscripts\battlechatter;
+
 main()
 {
     replacefunc(maps\_utility::musiclength, ::music_length);
     replacefunc(maps\_gameskill::should_show_cover_warning, ::ret_false);
     replacefunc(maps\_load::_id_B3AD, ::_id_B3AD);
+    replacefunc(animscripts\battlechatter::playbattlechatter, ::playbattlechatter);
     level.custom_gameskill_func = maps\_gameskill::solo_player_in_special_ops;
+    level.test_fx_ = loadfx("fx/misc/scope_glint");
+    common_scripts\utility::array_thread(getentarray("intelligence_item", "targetname"), ::delete_intel);
+}
+
+delete_intel()
+{
+    getent(self.target, "targetname") delete();
+    self delete();
+}
+
+playbattlechatter()
+{
+    if ( !isalive( self ) )
+        return;
+
+    if ( !bcsenabled() )
+        return;
+
+    //if ( _func_1FB() )
+        //return;
+
+    if ( self._animactive > 0 )
+        return;
+
+    if ( isdefined( self.isspeaking ) && self.isspeaking )
+        return;
+
+    if ( self.team == "allies" && isdefined( anim.scripteddialoguestarttime ) )
+    {
+        if ( anim.scripteddialoguestarttime + anim.scripteddialoguebuffertime > gettime() )
+            return;
+    }
+
+    if ( friendlyfire_warning() )
+        return;
+
+    if ( !isdefined( self.battlechatter ) || !self.battlechatter )
+        return;
+
+    if ( self.team == "allies" && getdvarint( "bcs_forceEnglish", 0 ) )
+        return;
+
+    if ( anim.isteamspeaking[self.team] )
+        return;
+
+    self endon( "death" );
+    var_0 = gethighestpriorityevent();
+
+    if ( !isdefined( var_0 ) )
+        return;
+
+    switch ( var_0 )
+    {
+        case "custom":
+            thread playcustomevent();
+            break;
+        case "response":
+            thread playresponseevent();
+            break;
+        case "order":
+            thread playorderevent();
+            break;
+        case "threat":
+            thread playthreatevent();
+            break;
+        case "reaction":
+            thread playreactionevent();
+            break;
+        case "inform":
+            thread playinformevent();
+            break;
+    }
 }
 
 _id_B3AD()

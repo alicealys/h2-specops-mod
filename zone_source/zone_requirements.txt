@@ -7,9 +7,17 @@ techsets_estate
 estate
 techsets_dc_whitehouse
 dc_whitehouse
+techsets_cliffhanger
+cliffhanger
+techsets_contingency
+contingency
 
 -- loaded
 techsets_common
 common
 techsets_ending
 ending
+
+-- dump with Joelrau/h1-zonetool@h2
+techsets_scoutsniper
+scoutsniper
