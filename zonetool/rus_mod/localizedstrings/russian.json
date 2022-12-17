@@ -78,6 +78,8 @@
     "SPECIAL_OPS_SO_BUTTON_ECHO_CAPS": "ЭХО",
     "SPECIAL_OPS_SO_HIDDEN_SO_GHILLIES": "Прятки",
     "SPECIAL_OPS_SO_HIDDEN_SO_GHILLIES_DESC": "Минуйте вражеские патрули и снайперов под Чернобылем, оставшись незамеченным.",
+    "SPECIAL_OPS_SO_HIDDEN_SCOUTSNIPER": "Прятки",
+    "SPECIAL_OPS_SO_HIDDEN_SCOUTSNIPER_DESC": "Минуйте вражеские патрули и снайперов под Чернобылем, оставшись незамеченным.",
     "SPECIAL_OPS_SO_AC130_CO_HUNTED": "Наблюдатель",
     "SPECIAL_OPS_SO_AC130_CO_HUNTED_DESC": "Используя ваш AC-130, сейте смерть с неба и защитите своего напарника.",
     "SPECIAL_OPS_SO_AC130_CO_HUNTED_OBJ_DESC": "Доберитесь до подвала фермы.\nДоберитесь до западной границы мастерских. \nДоберитесь до сарая возле парников.",
