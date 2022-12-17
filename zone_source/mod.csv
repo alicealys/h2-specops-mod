@@ -26,3 +26,5 @@ material,loadscreen_so_takeover_oilrig
 material,star
 sound,mus_so_main_menu
 localize,english
+localize,russian
+localize,russian_partial
