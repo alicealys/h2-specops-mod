@@ -54,7 +54,7 @@ This mods adds some of the original MW2 special ops missions to MW2CR.
 ## Charlie
 | Map  | Playable | Planned |
 |-------------|-----|-----|
-| Hidden  | ❌ | ✔️ |
+| Hidden  | ✔️ | ✔️ |
 | Breach & Clear | ✔️ | ✔️ |
 | Time Trial | ✔️ | ✔️ |
 | Homeland Security | ✔️ | ✔️ |
