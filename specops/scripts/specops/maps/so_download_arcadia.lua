@@ -909,11 +909,11 @@ function downloadfileshudcountdownabort(download)
 	local hudelem = getcountdownhud(x, download.hudelemy, nil, nil, HUD_TEXT_SCALE)
 	hudelem.alignx = "right"
 	hudelem.label = "&SO_DOWNLOAD_ARCADIA_DSM_FRAME"
-	hudelem:setred()
+	hudelem:setred(true)
 
 	local hudelemstatus = getcountdownhud(x, download.hudelemy, nil, nil, HUD_TEXT_SCALE)
 	hudelemstatus.label = "&SO_DOWNLOAD_ARCADIA_DOWNLOAD_INTERRUPTED"
-	hudelemstatus:setred()
+	hudelemstatus:setred(true)
 
 	hudelem:hudblink()
 	hudelemstatus:hudblink()
@@ -950,11 +950,11 @@ function downloadfileshudfinish(download)
 	local hudelem = getcountdownhud(x, download.hudelemy, nil, nil, HUD_TEXT_SCALE)
 	hudelem.alignx = "right"
 	hudelem.label = "&SO_DOWNLOAD_ARCADIA_DSM_FRAME"
-	hudelem:setblue()
+	hudelem:setblue(true)
 
 	local hudelemstatus = getcountdownhud(x, download.hudelemy, nil, nil, HUD_TEXT_SCALE)
 	hudelemstatus.label = "&SO_DOWNLOAD_ARCADIA_DOWNLOAD_COMPLETE"
-	hudelemstatus:setblue()
+	hudelemstatus:setblue(true)
 
 	hudelem:hudblink()
 	hudelemstatus:hudblink()
