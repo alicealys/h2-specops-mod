@@ -779,7 +779,7 @@ blizzard_control()
 	//maps\_utility::fog_set_changes("cliffhanger_blizzard_med", 0);
 	//maps\_utility::_id_7F03("cliffhanger_blizzard_med", 0);
 	//maps\cliffhanger_code::_id_C0D2(0);
-	_id_C0CF::_id_D5AE(0);
+	_id_C0CF::_id_BC13(0);
 	thread maps\_utility::set_ambient("snow_base");	
 }
 

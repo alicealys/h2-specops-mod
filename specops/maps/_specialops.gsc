@@ -154,7 +154,16 @@ set_hud_green()
     {
         func = level.lua["set_hud_green"];
         self [[ func ]]();
-    }  
+    }
+}
+
+so_include_deadquote_array(arr)
+{
+    if (isdefined(level.lua["so_include_deadquote_array"]))
+    {
+        func = level.lua["so_include_deadquote_array"];
+        self [[ func ]](arr);
+    }
 }
 
 so_hud_pulse_default()
@@ -167,6 +176,11 @@ so_hud_pulse_default()
     self.fontscale = fontscale;
 }
 
+issplitscreen()
+{
+    return false;
+}
+
 is_coop()
 {
     return false;
@@ -175,4 +189,14 @@ is_coop()
 so_standard_wait()
 {
 	return 4;
+}
+
+vector_multiply(vec, scale)
+{
+    return vec * scale;
+}
+
+setneargoalnotifydist(dist)
+{
+    self neargoalnotifydist(dist);
 }

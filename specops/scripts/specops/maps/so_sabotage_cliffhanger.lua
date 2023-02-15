@@ -4,6 +4,12 @@ map.premain = function()
     game:visionsetnaked("cliffhanger", 0)
 end
 
+function isspecialspawner(ent)
+    local specialcase = not (game:isdefined(ent.script_noteworthy) and ent.script_noteworthy == "high_threat_spawner")
+	local originalcase = isspawner(ent)
+	return specialcase and originalcase
+end
+
 map.main = function()
     game:scriptcall("maps/_compass", "setupminimap", "compass_map_cliffhanger")
     setloadout("aa12_silencer_hb", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_arctic", "american")
