@@ -1,7 +1,7 @@
 local map = {}
 
 map.premain = function()
-    
+    game:setdvar("ui_hideminimap", 1)
 end
 
 map.preover = function(success)

@@ -37,15 +37,19 @@ local oncreate = function(menu)
     minimap.hud_off = false
     minimap.showing_message = false
 
-    minimap:addElement(LUI.UITimer.new(100, "_update"))
-    minimap:registerEventHandler("_update", function()
-        minimap.showing_message = Game.IsShowingGameMessages(0)
+    local updatevisibility = function()
+        minimap.showing_message = Engine.GetDvarBool("ui_hideMinimap") or Game.IsShowingGameMessages(0)
         if (not minimap.showing_message and not minimap.hud_off) then
             minimap:animateToState("hud_on")
         else
             minimap:animateToState("hud_off")
         end
-    end)
+    end
+
+    updatevisibility()
+
+    minimap:addElement(LUI.UITimer.new(100, "_update"))
+    minimap:registerEventHandler("_update", updatevisibility)
 
     minimap:registerEventHandler("game_message", function()
         if (Game.IsShowingGameMessages(0)) then

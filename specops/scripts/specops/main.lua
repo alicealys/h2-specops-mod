@@ -21,6 +21,8 @@ game:setdvar("specialops", 0)
 game:setdvar("arcademode", 0)
 game:setdvar("limited_mode", 0)
 
+game:setdvar("ui_hideminimap", 0)
+
 game:sharedset("eog_extra_data", "")
 
 mapname = game:getdvar("mapname")
