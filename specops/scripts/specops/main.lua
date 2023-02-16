@@ -1,10 +1,7 @@
-local mapfile = io.open(scriptdir() .. "/maps/" .. game:getdvar("mapname") .. ".lua", "r")
-if (not mapfile) then
+if (not io.fileexists(scriptdir() .. "/maps/" .. game:getdvar("mapname") .. ".lua", "r")) then
     print("[SPEC OPS] Map not found")
     return
 end
-
-mapfile:close()
 
 game:setdvar("ui_so_besttime", 0)
 game:setdvar("ui_so_new_star", 0)
