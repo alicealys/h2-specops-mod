@@ -306,7 +306,7 @@ map.premain = function()
         end
     end, 0)
 
-    if (game:getdvar("so_mapname") == "so_snowrace1_cliffhanger") then
+    if (game:getdvar("mapname") == "so_snowrace1_cliffhanger") then
         player.ignorerandombulletdamage = true
 
         game:scriptcall("maps/cliffhanger_code", "_ID12882")

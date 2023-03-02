@@ -1,5 +1,5 @@
 function newrecord()
-    local mapname = Engine.GetDvarString("so_mapname")
+    local mapname = Engine.GetDvarString("mapname")
     local stats = sostats.getmapstats(mapname)
     local newbest = stats.besttime or 0
 
