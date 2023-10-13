@@ -36,7 +36,7 @@
         "MELEE_MISS": "",
         "MELEE_VICTIM_CROUCHING_HIT": "",
         "MELEE_VICTIM_CROUCHING_FATAL": "",
-        "VICTIM_CROUCHING_MISS": "",
+        "MELEE_VICTIM_CROUCHING_MISS": "",
         "MELEE_ALT_STANDING": "",
         "MELEE_ALT_CROUCHING": "",
         "MELEE_ALT_PRONE": "",
@@ -240,7 +240,7 @@
         "MELEE_MISS": "",
         "MELEE_VICTIM_CROUCHING_HIT": "",
         "MELEE_VICTIM_CROUCHING_FATAL": "",
-        "VICTIM_CROUCHING_MISS": "",
+        "MELEE_VICTIM_CROUCHING_MISS": "",
         "MELEE_ALT_STANDING": "",
         "MELEE_ALT_CROUCHING": "",
         "MELEE_ALT_PRONE": "",
@@ -444,7 +444,7 @@
         "MELEE_MISS": "",
         "MELEE_VICTIM_CROUCHING_HIT": "",
         "MELEE_VICTIM_CROUCHING_FATAL": "h2_wpn_knife_melee_stab",
-        "VICTIM_CROUCHING_MISS": "",
+        "MELEE_VICTIM_CROUCHING_MISS": "",
         "MELEE_ALT_STANDING": "",
         "MELEE_ALT_CROUCHING": "",
         "MELEE_ALT_PRONE": "",
@@ -1018,8 +1018,8 @@
         1.0,
         3.0,
         3.0,
-        1.0,
-        1.0,
+        2.0,
+        2.0,
         1.0,
         1.0,
         1.0,
@@ -1210,26 +1210,58 @@
     "accuracy_graph": {
         "accuracyGraphKnots": [
             [
-                0.0,
-                1.0
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.30000001192092896,
+                    0.699999988079071
+                ],
+                [
+                    1.0,
+                    0.0
+                ]
             ],
             [
-                0.0,
-                0.699999988079071
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ]
             ]
         ],
         "accuracyGraphName": [
-            "smg.accu",
-            "smg.accu"
+            "default.accu",
+            "default.accu"
         ],
         "originalAccuracyGraphKnots": [
             [
-                0.0,
-                1.0
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.30000001192092896,
+                    0.699999988079071
+                ],
+                [
+                    1.0,
+                    0.0
+                ]
             ],
             [
-                0.0,
-                0.699999988079071
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.30000001192092896,
+                    0.699999988079071
+                ]
             ]
         ]
     },
@@ -1746,7 +1778,7 @@
     "dualMagReloadSupported": false,
     "reloadStopsAlt": false,
     "alwaysShatterGlassOnImpact": false,
-    "oldWeapon": false,
+    "oldWeapon": true,
     "hasCounterSilencer": false,
     "disableVariableAutosimRate": false,
     "cloakedWeapon": false,
