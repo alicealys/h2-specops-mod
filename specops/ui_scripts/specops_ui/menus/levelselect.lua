@@ -60,28 +60,6 @@ local function addlocationinfowindow(menu)
 end
 
 local function startmap(somapname, mapname)
-    Engine.SetDvarBool("cl_disableMapMovies", true)
-    Engine.SetDvarBool("cl_enableCustomLoadscreen", true)
-    Engine.SetDvarString("cl_loadscreenImage", "loadscreen_" .. somapname)
-
-    local objmaps = {
-        ["so_ac130_co_hunted"] = true,
-        ["so_snowrace1_cliffhanger"] = true,
-        ["so_killspree_trainer"] = true,
-        ["so_killspree_favela"] = true,
-        ["so_rooftop_contingency"] = true,
-    }
-
-    Engine.SetDvarString("cl_loadscreenTitle", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname)))
-    Engine.SetDvarString("cl_loadscreenDesc", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_DESC"))
-    Engine.SetDvarString("cl_loadscreenObjIcon", "star")
-
-    if (objmaps[somapname] ~= nil) then
-        Engine.SetDvarString("cl_loadscreenObj", Engine.LocalizeLong("@SPECIAL_OPS_" .. Engine.ToUpperCase(somapname) .. "_OBJ_DESC"))
-    else
-        Engine.SetDvarString("cl_loadscreenObj", "")
-    end
-
     Engine.Exec("map " .. mapname)
 end
 
@@ -385,7 +363,8 @@ local function levelselect(act)
 
         for i = 1, #act.missions do
             local name = "@SPECIAL_OPS_" .. Engine.ToUpperCase(act.missions[i].somapname)
-            local islocked = not (game:fastfileexists(act.missions[i].somapname))
+            local islocked = not (game:fastfileexists(act.missions[i].mapname))
+            
             local button = menu:AddButton(name, function()
                 if (act.missions[i].nodifficulty) then
                     Engine.SetDvarString("ui_loadMenuName", "so_levelselect_act" .. act.index)

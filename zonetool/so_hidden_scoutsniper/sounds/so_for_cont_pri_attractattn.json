@@ -28,33 +28,37 @@
             "priority": 18,
             "dspBus": "voices_critical",
             "volMod": "voices_dialog_radio",
-            "volMin": 1,
-            "volMax": 1,
-            "pitchMin": 1,
-            "pitchMax": 1,
-            "distMin": 120,
-            "distMax": 600,
-            "velocityMin": 0,
-            "probability": 1,
+            "volMin": 1.0,
+            "volMax": 1.0,
+            "pitchMin": 1.0,
+            "pitchMax": 1.0,
+            "distMin": 120.0,
+            "distMax": 600.0,
+            "velocityMin": 0.0,
+            "probability": 1.0,
             "sequence": 1,
             "startDelay": 0,
             "masterPriority": 100,
             "masterPercentage": 0.30000001192092896,
-            "slavePercentage": 1,
+            "slavePercentage": 1.0,
             "playbackPercentage": 100,
-            "lfePercentage": 0,
-            "centerPercentage": 0,
+            "lfePercentage": 0.0,
+            "centerPercentage": 0.0,
             "poly": 1,
             "polyGlobal": 174,
             "polyEntityType": 0,
             "polyGlobalType": 0,
-            "reverbWetMixOverride": 0,
-            "smartPanDistance2d": 0,
-            "smartPanDistance3d": 0,
-            "smartPanAttenuation3d": 1,
+            "envelopMin": 0.0,
+            "envelopMax": 0.0,
+            "envelopPercentage": 0.0,
+            "reverbWetMixOverride": 0.0,
+            "reverbMultiplier": 0.0,
+            "smartPanDistance2d": 0.0,
+            "smartPanDistance3d": 0.0,
+            "smartPanAttenuation3d": 1.0,
             "stereo3dAngle": 0,
-            "stereo3dStart": 0,
-            "stereo3dEnd": 0,
+            "stereo3dStart": 0.0,
+            "stereo3dEnd": 0.0,
             "sndContext": null,
             "sndCurve": "$default",
             "lpfCurve": "$default",
@@ -66,14 +70,14 @@
                         "speakerCount": 2,
                         "speakers": [
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 1
                             }
@@ -83,38 +87,38 @@
                         "speakerCount": 6,
                         "speakers": [
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 1
                             },
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 2
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 3
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 4
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 5
                             }
@@ -124,14 +128,14 @@
                         "speakerCount": 2,
                         "speakers": [
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 1,
+                                "levels0": 0.0,
+                                "levels1": 1.0,
                                 "numLevels": 2,
                                 "speaker": 1
                             }
@@ -141,14 +145,14 @@
                         "speakerCount": 6,
                         "speakers": [
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 1
                             },
@@ -159,20 +163,20 @@
                                 "speaker": 2
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 3
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 4
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 5
                             }
@@ -187,32 +191,13 @@
             "unknown": {
                 "pad": [
                     {
-                        "bytes": [
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0
-                        ],
+                        "bytes": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         "subtype": null
-                    },
-                    null,
-                    null
+                    }
                 ],
                 "u1": 4,
                 "u2": 0.0010000000474974513
-            },
-            "envelopMin": 0,
-            "envelopMax": 0,
-            "envelopPercentage": 0,
-            "reverbMultiplier": 0
+            }
         }
     ]
 }

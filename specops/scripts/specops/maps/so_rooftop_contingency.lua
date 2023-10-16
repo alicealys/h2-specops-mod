@@ -1177,7 +1177,7 @@ map.main = function()
     game:scriptcall("_ID49419", "main")
 
     game:scriptcall("_ID42411", "_ID52468", "script_vehicle_uaz_winter_physics", functionptr:new("_ID51074", "_ID32550"), functionptr:new("maps/contingency", "_ID44501"))
-
+    
     game:scriptcall("maps/_load", "main")
 
     game:scriptcall("_ID42323", "_ID32417", "viewhands_player_arctic_wind")

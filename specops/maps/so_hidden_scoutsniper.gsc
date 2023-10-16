@@ -23,6 +23,7 @@ main()
 	setsaveddvar( "sm_sunShadowScale", "0.7" ); // optimization
 	setsaveddvar( "ui_hidemap", "1" );
 	
+    precachemodel( "hat_opforce_merc_b" );
 	precachemodel("vehicle_small_wagon_blue_destructible");
 	//maps\so_hidden_so_ghillies_anim::main();
 	//maps\so_ghillies_precache::main();
@@ -32,6 +33,9 @@ main()
 	maps\scoutsniper::main();
 
 	//thread maps\so_ghillies_amb::main();
+
+	common_scripts\utility::array_call( getentarray("trigger_multiple_visionset", "classname"), ::delete );
+	common_scripts\utility::array_call( getentarray("trigger_multiple_visionset_touch", "classname"), ::delete );
 
 	patch();
 }
@@ -148,7 +152,12 @@ patrol( var_0, var_1, var_2 )
         for (;;)
         {
             while ( isdefined( var_16.patrol_claimed ) )
-                wait 0.05; 
+                wait 0.05;
+
+			if (!isdefined(var_12))
+			{
+				return;
+			}
 
             var_12.patrol_claimed = undefined;
             var_12 = var_16;
@@ -175,6 +184,7 @@ patrol( var_0, var_1, var_2 )
                 common_scripts\utility::flag_clear( var_12.script_flag_clear );
 
             var_17 = var_12 [[ var_6[var_13][var_8] ]]();
+			var_16 = undefined;
 
             if ( !isdefined( var_17 ) || !var_17.size )
             {
@@ -184,8 +194,10 @@ patrol( var_0, var_1, var_2 )
                 if ( isalive( self.patrol_pet ) )
                     self.patrol_pet notify( "master_reached_patrol_end" );
             }
-
-            var_16 = common_scripts\utility::random( var_17 );
+			else
+			{
+            	var_16 = common_scripts\utility::random( var_17 );
+			}
 
             if ( level.script == "trainer" )
             {

@@ -232,7 +232,7 @@ function startmap()
     breachflags()
     objmain()
 
-    player._ID28001 = nil
+    level.playerspeed = nil
     player:setmovespeedscale(1)
 
     battlechatteron("axis")

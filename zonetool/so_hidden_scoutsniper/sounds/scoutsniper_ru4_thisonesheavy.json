@@ -1,5 +1,5 @@
 {
-    "aliasName": "scoutsniper_ru4_thisonesh",
+    "aliasName": "scoutsniper_ru4_thisonesheavy",
     "count": 1,
     "head": [
         {
@@ -15,6 +15,10 @@
                 "isLocalized": false,
                 "isStreamed": true,
                 "fileIndex": 0,
+                "packed": {
+                    "offset": 0,
+                    "length": 0
+                },
                 "raw": {
                     "dir": "voiceovers/cliffhanger",
                     "name": "cliff_ru4_w4_4"
@@ -26,35 +30,35 @@
             "volMod": "voices_enemy",
             "volMin": 0.25,
             "volMax": 0.25,
-            "pitchMin": 1,
-            "pitchMax": 1,
-            "distMin": 1,
-            "distMax": 2000,
-            "velocityMin": 0,
-            "probability": 1,
+            "pitchMin": 1.0,
+            "pitchMax": 1.0,
+            "distMin": 1.0,
+            "distMax": 2000.0,
+            "velocityMin": 0.0,
+            "probability": 1.0,
             "sequence": 1,
             "startDelay": 0,
             "masterPriority": 50,
-            "masterPercentage": 0,
-            "slavePercentage": 1,
+            "masterPercentage": 0.0,
+            "slavePercentage": 1.0,
             "playbackPercentage": 100,
-            "lfePercentage": 0,
-            "centerPercentage": 0,
+            "lfePercentage": 0.0,
+            "centerPercentage": 0.0,
             "poly": 1,
             "polyGlobal": 174,
             "polyEntityType": 0,
             "polyGlobalType": 0,
-            "envelopMin": 0,
-            "envelopMax": 0,
-            "envelopPercentage": 0,
-            "reverbWetMixOverride": 0,
-            "reverbMultiplier": 1,
-            "smartPanDistance2d": 0,
-            "smartPanDistance3d": 0,
-            "smartPanAttenuation3d": 1,
+            "envelopMin": 0.0,
+            "envelopMax": 0.0,
+            "envelopPercentage": 0.0,
+            "reverbWetMixOverride": 0.0,
+            "reverbMultiplier": 1.0,
+            "smartPanDistance2d": 0.0,
+            "smartPanDistance3d": 0.0,
+            "smartPanAttenuation3d": 1.0,
             "stereo3dAngle": 0,
-            "stereo3dStart": 0,
-            "stereo3dEnd": 0,
+            "stereo3dStart": 0.0,
+            "stereo3dEnd": 0.0,
             "sndContext": null,
             "sndCurve": "h2_vo_critical",
             "lpfCurve": "h2_vo_critical",
@@ -67,13 +71,13 @@
                         "speakers": [
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 0
                             },
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 1
                             }
@@ -84,37 +88,37 @@
                         "speakers": [
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 0
                             },
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 1
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 2
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 3
                             },
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 4
                             },
                             {
                                 "levels0": 0.5,
-                                "levels1": 0,
+                                "levels1": 0.0,
                                 "numLevels": 1,
                                 "speaker": 5
                             }
@@ -124,14 +128,14 @@
                         "speakerCount": 2,
                         "speakers": [
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 1,
+                                "levels0": 0.0,
+                                "levels1": 1.0,
                                 "numLevels": 2,
                                 "speaker": 1
                             }
@@ -141,38 +145,38 @@
                         "speakerCount": 6,
                         "speakers": [
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 0
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 1,
+                                "levels0": 0.0,
+                                "levels1": 1.0,
                                 "numLevels": 2,
                                 "speaker": 1
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 2
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 0,
+                                "levels0": 0.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 3
                             },
                             {
-                                "levels0": 1,
-                                "levels1": 0,
+                                "levels0": 1.0,
+                                "levels1": 0.0,
                                 "numLevels": 2,
                                 "speaker": 4
                             },
                             {
-                                "levels0": 0,
-                                "levels1": 1,
+                                "levels0": 0.0,
+                                "levels1": 1.0,
                                 "numLevels": 2,
                                 "speaker": 5
                             }
@@ -187,20 +191,7 @@
             "unknown": {
                 "pad": [
                     {
-                        "bytes": [
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0,
-                            0
-                        ],
+                        "bytes": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                         "subtype": null
                     }
                 ],

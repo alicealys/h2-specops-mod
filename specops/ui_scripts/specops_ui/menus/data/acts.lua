@@ -57,7 +57,7 @@ acts = {
             },
             {
                 somapname = "so_crossing_so_bridge",
-                mapname = "ending",
+                mapname = "so_crossing_so_bridge",
                 video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",
@@ -76,7 +76,7 @@ acts = {
         missions = {
             {
                 somapname = "so_ac130_co_hunted",
-                mapname = "ending",
+                mapname = "so_ac130_co_hunted",
                 video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_2",
@@ -223,7 +223,7 @@ acts = {
             },
             {
                 somapname = "so_demo_so_bridge",
-                mapname = "ending",
+                mapname = "so_demo_so_bridge",
                 video = "mission_select_bg_ending",
                 info = {
                     rank = "@MENU_SP_DIFF_RANKING_3",

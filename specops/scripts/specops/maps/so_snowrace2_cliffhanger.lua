@@ -48,7 +48,10 @@ map.premain = function()
 	end)
 
 	-- causes lag
-	game:getentbynum(2033):delete()
+	local splinetriggers = game:getentarray("trigger_vehicle_spline_spawn", "targetname")
+	for i = 1, #splinetriggers do
+		splinetriggers[i]:delete()
+	end
 
 	local spawners = game:vehicle_getspawnerarray()
 	for i = 1, #spawners do

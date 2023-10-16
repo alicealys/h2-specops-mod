@@ -2,10 +2,18 @@ local map = {}
 
 map.premain = function()
     game:visionsetnaked("invasion", 0)
-    game:getent("back_door_col", "targetname"):delete()
+
     local tarp = game:getentbyref(3096, 0)
     tarp.angles = tarp.angles + vector:new(0, -45, 0)
     tarp.origin = tarp.origin + vector:new(0, 20, 0)
+
+    local backdoor = game:getent("diner_back_door", "targetname")
+    local doorcol = game:getent("back_door_col", "targetname")
+    doorcol:linkto(backdoor)
+    doorcol:connectpaths()
+    local doorcoldup = game:spawn("script_model", vector:new(-454.452, -1018.58, 2358.8))
+    doorcoldup.angles = vector:new(0, -2, 0)
+    doorcoldup:clonebrushmodeltoscriptmodel(doorcol)
 end
 
 map.preover = function()

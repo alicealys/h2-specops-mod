@@ -4,10 +4,9 @@ main()
 {
     replacefunc(maps\_utility::musiclength, ::music_length);
     replacefunc(maps\_gameskill::should_show_cover_warning, ::ret_false);
-    replacefunc(maps\_load::_id_B3AD, ::_id_B3AD);
     replacefunc(animscripts\battlechatter::playbattlechatter, ::playbattlechatter);
+    replacefunc(maps\_load::_id_B3AD, ::_id_B3AD);
     level.custom_gameskill_func = maps\_gameskill::solo_player_in_special_ops;
-    level.test_fx_ = loadfx("fx/misc/scope_glint");
     common_scripts\utility::array_thread(getentarray("intelligence_item", "targetname"), ::delete_intel);
 }
 

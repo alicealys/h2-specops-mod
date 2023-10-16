@@ -1,3 +1,6 @@
+require,common
+addpath,zonetool_paths_h2
+
 addon_map_ents,maps/so_sabotage_cliffhanger.mapents
 stringtable,soundtables/so_sabotage_cliffhanger.csv
 stringtable,maps/createart/so_sabotage_cliffhanger_lightsets_hdr.csv

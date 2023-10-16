@@ -466,7 +466,6 @@ map.main = function()
     game:scriptcall("_ID45443", "main")
 
     game:scriptcall("_ID52157", "main")
-    game:scriptcall("maps/favela_anim", "main")
     game:scriptcall("_ID51411", "main")
     game:scriptcall("_ID51362", "main")
 
@@ -482,8 +481,9 @@ map.main = function()
     game:scriptcall("_ID42323", "_ID32417", "viewhands_player_tf141_favela")
     game:scriptcall("_ID42272", "_ID33575", "compass_map_favela")
 
-    game:scriptcall("_ID42323", "main") -- maps/_load::main
-    game:scriptcall("animscripts/dog/dog_init", "_ID19886")
+    game:scriptcall("maps/_load", "main") -- maps/_load::main
+    game:scriptcall("animscripts/dog/dog_init", "initdoganimations")
+    game:scriptcall("maps/favela_anim", "main")
 
 	flaginit("challenge_success")
 	flaginit("favela_enemies_spawned")

@@ -35,7 +35,7 @@ end
 
 map.main = function()
     game:scriptcall("maps/_compass", "setupminimap", "compass_map_scoutsniper")
-    setloadout("cheytac_silencer", "usp_silencer", "fraggrenade", "flash_grenade", "viewhands_marine_sniper", "american")
+    setloadout("cheytac_silencer", "usp_silencer", "fraggrenade", "none", "viewhands_marine_sniper", "american")
     setloadoutequipment("c4", "claymore")
 
     game:getent("church_door_model", "targetname"):delete()

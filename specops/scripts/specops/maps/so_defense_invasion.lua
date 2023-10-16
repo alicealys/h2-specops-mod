@@ -2,7 +2,13 @@ local map = {}
 
 map.premain = function()
     game:visionsetnaked("invasion", 0)
-    game:getent("back_door_col", "targetname"):delete()
+    local backdoor = game:getent("diner_back_door", "targetname")
+    local doorcol = game:getent("back_door_col", "targetname")
+    doorcol:linkto(backdoor)
+    doorcol:connectpaths()
+    local doorcoldup = game:spawn("script_model", vector:new(-454.452, -1018.58, 2358.8))
+    doorcoldup.angles = vector:new(0, -2, 0)
+    doorcoldup:clonebrushmodeltoscriptmodel(doorcol)
 end
 
 map.preover = function()
