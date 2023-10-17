@@ -963,12 +963,13 @@ end
 
 function startsorooftop()
     sorooftopinit()
-
+    
     game:ontimeout(function()
         radiodialogue("so_roof_cont_def_pos")
     end, 1000)
 
     game:visionsetnaked("contingency", 0)
+    player:lightset("contingency")
 
     setplayerpos()
 

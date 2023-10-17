@@ -170,6 +170,8 @@ end
 function soforest()
     soforestinit()
 
+    player:lightset("contingency")
+
     game:scriptcall("maps/contingency", "_ID43573")
     game:scriptcall("maps/contingency", "_ID53148")
 
