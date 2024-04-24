@@ -9,10 +9,11 @@ local defaultstats = {
     }
 }
 
-local function getstatsinternal()
+local mapkeys = {"stars", "besttime"}
+
+local function parseoldstats()
     if (not io.fileexists(statsfilename)) then
-        io.writefile(statsfilename, json.encode(defaultstats), false)
-        return defaultstats
+        return
     end
 
     local stats = nil
@@ -28,31 +29,44 @@ local function getstatsinternal()
         stats.maps = {}
     end
 
-    return stats
+    for k, v in pairs(stats.maps) do
+        game:statsset("maps", k, "stars", v.stars)
+        game:statsset("maps", k, "besttime", v.besttime)
+    end
+
+    io.removefile(statsfilename)
 end
 
+parseoldstats()
+
 local function getstats()
-    local stats = getstatsinternal() or {}
-    if (type(stats.maps) ~= "table") then
+    local stats = game:statsget()
+    if (stats.maps == nil) then
         stats.maps = {}
     end
     return stats
 end
 
-local function writestats(stats)
-    io.writefile(statsfilename, json.encode(stats), false)
-end
-
 sostats.getmapstats = function(mapname)
-    local stats = getstats()
-    local mapstats = stats.maps[mapname] or {}
-    return mapstats
+    local stats = {}
+
+    local has = game:statshas("maps", mapname)
+    if (not game:statshas("maps", mapname) or has == 0) then
+        return {}
+    end
+
+    for k, v in pairs(mapkeys) do
+        local value = game:statsget("maps", mapname, v)
+        stats[v] = value
+    end
+
+    return stats
 end
 
 sostats.setmapstats = function(mapname, value)
-    local stats = getstats()
-    stats.maps[mapname] = value
-    writestats(stats)
+    for k, v in pairs(value) do
+        game:statsset("maps", mapname, k, v)
+    end
 end
 
 sostats.gettotalstars = function()

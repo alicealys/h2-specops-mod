@@ -4,6 +4,10 @@ map.premain = function()
 
 end
 
+map.calculatestars = function()
+    return level.star_count
+end
+
 map.preover = function()
     local finished = level._id_CEFF >= 24
     local timeentry = {}
