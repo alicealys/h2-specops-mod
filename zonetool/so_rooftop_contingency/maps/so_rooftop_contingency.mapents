@@ -1,0 +1,1915 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"model" "?0"
+"script_specialops" "1"
+"origin" "-13536 1152 768"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_trying_to_escape"
+"script_noteworthy" "player_trying_to_escape"
+}
+{
+"script_specialops" "1"
+"classname" "info_player_start_so"
+"angles" "0 339 0"
+"origin" "-16514 1024 944"
+}
+{
+"script_specialops" "1"
+"classname" "info_player_start_soPlayer2"
+"angles" "0 341 0"
+"origin" "-16486 930 944"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "3"
+"spawnflags" "9"
+"origin" "-11830.4 3390.7 624"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.000000 0.000000"
+"classname" "info_vehicle_node_rotate"
+"origin" "-7798 -6040 5959"
+"targetname" "me1_auto3052"
+"target" "uav_detour"
+"angles" "0 195 45"
+}
+{
+"script_specialops" "1"
+"target" "me1_auto3053"
+"origin" "-4308.3 8704.9 5959"
+"classname" "info_vehicle_node_rotate"
+"spawnflags" "1"
+"speed" "40"
+"lookahead" "5"
+"targetname" "uav_path"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "0 270 0"
+}
+{
+"model" "?1"
+"script_specialops" "1"
+"origin" "-13504 1344 768"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_has_escaped"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16310.8 692.9 986.5"
+"angles" "270 88.6 6.82815e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"angles" "0 180 5.99999"
+"script_vehicledetour" "999"
+"classname" "info_vehicle_node_rotate"
+"origin" "-13449.7 -6064.9 5959"
+"targetname" "uav_detour"
+"script_noteworthy" "uav_sound"
+"_color" "1.000000 0.000000 0.000000"
+"target" "me1_auto3326"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3055"
+"origin" "-20734.1 -5735.6 5936.1"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "358.05 136.903 59.6753"
+"target" "me1_auto3327"
+}
+{
+"script_specialops" "1"
+"targetname" "uav_path_end"
+"origin" "-10583 -5964 5959"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"script_vehicledetour" "999"
+"angles" "0 192 34"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3059"
+"origin" "-20592 6990.5 5959"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "0 22 36"
+"target" "me1_auto3328"
+}
+{
+"script_specialops" "1"
+"angles" "0 330 52"
+"_color" "1.000000 0.000000 0.000000"
+"classname" "info_vehicle_node_rotate"
+"origin" "-6146.5 7778.8 5959"
+"targetname" "me1_auto3058"
+"target" "me1_auto3060"
+}
+{
+"script_specialops" "1"
+"angles" "0 70 72"
+"_color" "1.000000 0.000000 0.000000"
+"classname" "info_vehicle_node_rotate"
+"origin" "-25007.5 3426.3 5959"
+"targetname" "me1_auto3056"
+"target" "me1_auto3059"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.000000 0.000000"
+"targetname" "me1_auto3053"
+"spawnflags" "0"
+"classname" "info_vehicle_node_rotate"
+"origin" "-3338.6 -924.1 5951"
+"target" "me1_auto3052"
+"angles" "0 247.5 45"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.000000 0.000000"
+"classname" "info_vehicle_node_rotate"
+"origin" "-5187.2 -5846.6 5959"
+"targetname" "me1_auto3061"
+"target" "uav_path_end"
+"angles" "0 196 61.9999"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "1"
+"spawnflags" "9"
+"origin" "-12518.7 -150.4 664"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "4"
+"spawnflags" "9"
+"origin" "-12454.7 -150.4 648"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "5"
+"spawnflags" "9"
+"origin" "-11830.4 3326.7 624"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "800"
+"script_noteworthy" "attack_line_far"
+"origin" "-13320 1104 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "800"
+"script_noteworthy" "attack_line_far"
+"origin" "-13184 320 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-14336 272 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "400"
+"script_noteworthy" "attack_line_med"
+"origin" "-15104 1104 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "700"
+"script_noteworthy" "attack_line_med"
+"origin" "-14192 1264 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_close"
+"origin" "-16040 1704 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "400"
+"script_noteworthy" "attack_line_close"
+"origin" "-15584 1120 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"targetname" "attack_line"
+"origin" "-15712 1488 704"
+"script_noteworthy" "attack_line_close"
+"radius" "500"
+"classname" "script_origin"
+}
+{
+"model" "?2"
+"script_specialops" "1"
+"origin" "-16240 5 816"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_trying_to_escape"
+"script_noteworthy" "player_trying_to_escape"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "7"
+"spawnflags" "1"
+"origin" "-12461 3388.5 643.5"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SHOTGUN"
+"model" "body_opforce_arctic_shotgun"
+"export" "8"
+"spawnflags" "1"
+"origin" "-12461 3436.5 642.2"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "9"
+"spawnflags" "1"
+"origin" "-12461 3340.5 644.8"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "10"
+"spawnflags" "1"
+"origin" "-12509 3436.5 640"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "11"
+"spawnflags" "1"
+"origin" "-12509 3388.5 641.3"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "12"
+"spawnflags" "1"
+"origin" "-12509 3340.5 642.4"
+"script_forcespawn" "1"
+"targetname" "truck_1_guys"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3286"
+"origin" "-12609.1 2718.7 670.1"
+"target" "me1_auto3285"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"speed" "25"
+"lookahead" ".5"
+"spawnflags" "1"
+"targetname" "truck_1_guys"
+"origin" "-12485.5 3287 669.5"
+"target" "me1_auto3286"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "truck_1_guys_end"
+"origin" "-15383.8 446.2 690.4"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 1.00179e-005 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3293"
+"origin" "-12698.9 1177 648.3"
+"target" "me1_auto3287"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 300 0"
+"speed" "15"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12000.4 -197.1 722.9"
+"spawnflags" "1"
+"targetname" "jeep_1_guys"
+"target" "me1_auto3073"
+"lookahead" "0.5"
+"speed" "15"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"targetname" "jeep_1_guys_end"
+"origin" "-15688.4 976.6 679.9"
+"classname" "info_vehicle_node"
+"speed" "10"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "14"
+"origin" "-12379.7 -138.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "15"
+"origin" "-12376.7 -83.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "16"
+"origin" "-12328.7 -59.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "17"
+"origin" "-12326.7 -124.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12319.3 401.1 671.5"
+"targetname" "me1_auto3073"
+"target" "me1_auto3078"
+"angles" "0 270 0"
+"speed" "20"
+}
+{
+"model" "?3"
+"script_specialops" "1"
+"origin" "-16240 -186 816"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_has_escaped"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "400"
+"script_noteworthy" "attack_line_med"
+"origin" "-14480 1456 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "19"
+"spawnflags" "1"
+"origin" "-12171 -246.5 631"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"model" "?4"
+"script_specialops" "1"
+"origin" "-16342 942 1016"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_on_roof"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SHOTGUN"
+"model" "body_opforce_arctic_shotgun"
+"export" "20"
+"spawnflags" "1"
+"origin" "-12171 -294.5 630.4"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "21"
+"spawnflags" "1"
+"origin" "-12171 -198.5 632.9"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "22"
+"spawnflags" "1"
+"origin" "-12123 -294.5 632"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "23"
+"spawnflags" "1"
+"origin" "-12123 -246.5 633.3"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "24"
+"spawnflags" "1"
+"origin" "-12123 -198.5 634.3"
+"script_forcespawn" "1"
+"targetname" "truck_2_guys"
+"_color" "1.000000 0.501961 0.501961"
+"script_noteworthy" "vehicle_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3170"
+"origin" "-12218.9 327.3 654.1"
+"target" "me1_auto3282"
+"_color" "1.000000 0.501961 0.501961"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"speed" "20"
+"lookahead" ".5"
+"spawnflags" "1"
+"targetname" "truck_2_guys"
+"origin" "-12114.5 -129 669.5"
+"target" "me1_auto3170"
+"_color" "1.000000 0.501961 0.501961"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3336"
+"origin" "-15713.6 1298.1 690.4"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 210 0"
+"speed" "5"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"target" "me1_auto3296"
+"origin" "-13840.1 1429.1 680.3"
+"targetname" "me1_auto3300"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-15673.1 1268.1 681.7"
+"targetname" "me1_auto3315"
+"angles" "0 270 0"
+"target" "jeep_1_guys_end"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3313"
+"origin" "-15011.8 600.1 653.3"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 1.00179e-005 0"
+"target" "truck_1_guys_end"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3285"
+"origin" "-12734 1923.8 659.2"
+"target" "me1_auto3293"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"speed" "25"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3287"
+"origin" "-12870.8 1125.6 661.7"
+"target" "me1_auto3299"
+"_color" "1.000000 0.501961 0.501961"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3299"
+"origin" "-13347.4 1173.3 663"
+"target" "me1_auto3300"
+"_color" "1.000000 0.501961 0.501961"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"targetname" "me1_auto3078"
+"origin" "-12681.2 540.6 668.8"
+"classname" "info_vehicle_node"
+"target" "me1_auto3330"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"origin" "-12861.5 654.2 659.2"
+"_color" "1.000000 0.501961 0.501961"
+"targetname" "me1_auto3282"
+"target" "me1_auto3354"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"origin" "-14581.4 1443.4 685.4"
+"targetname" "me1_auto3296"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "20"
+"target" "me1_auto3352"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-11912.4 2898.9 722.9"
+"spawnflags" "1"
+"targetname" "jeep_1_guys_alt"
+"lookahead" "0.5"
+"speed" "20"
+"angles" "0 270 0"
+"target" "me1_auto3331"
+}
+{
+"script_specialops" "1"
+"angles" "0 90 0"
+"targetname" "me1_auto3320"
+"origin" "-15666.4 693.1 695.9"
+"classname" "info_vehicle_node"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3338"
+"origin" "-12585.1 2694.7 670.1"
+"target" "me1_auto3337"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-13410.3 312.1 684.8"
+"targetname" "me1_auto3325"
+"target" "me1_auto3308"
+"angles" "0 270 0"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"origin" "-12716.2 869.6 668.8"
+"classname" "info_vehicle_node"
+"targetname" "me1_auto3330"
+"target" "me1_auto3323"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12240.4 2882.9 722.9"
+"spawnflags" "0"
+"lookahead" "0.5"
+"angles" "0 270 0"
+"targetname" "me1_auto3331"
+"target" "me1_auto3332"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "25"
+"spawnflags" "9"
+"origin" "-11766.4 2082.7 580"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "26"
+"spawnflags" "9"
+"origin" "-11766.4 2018.7 580"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "27"
+"spawnflags" "9"
+"origin" "-12365.1 1396.3 628"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "28"
+"spawnflags" "9"
+"origin" "-12371.8 1332.7 628"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "29"
+"spawnflags" "9"
+"origin" "-12917.1 1388.3 635.2"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "30"
+"spawnflags" "9"
+"origin" "-12923.8 1324.7 635"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "31"
+"spawnflags" "9"
+"origin" "-12973.1 3164.3 643.2"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "32"
+"spawnflags" "9"
+"origin" "-12979.8 3100.7 643"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "33"
+"spawnflags" "9"
+"origin" "-12534.7 33.6 688"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "34"
+"spawnflags" "9"
+"origin" "-13931 57.5 658.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "35"
+"spawnflags" "9"
+"origin" "-13835 1625.5 642.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "36"
+"spawnflags" "9"
+"origin" "-14075 985.5 642.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "37"
+"spawnflags" "9"
+"origin" "-11222.7 1353.6 592"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-13431.2 1160.3 664.8"
+"targetname" "me1_auto3316"
+"target" "me1_auto3324"
+"angles" "0 270 0"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3311"
+"origin" "-14171.5 600.3 652"
+"target" "me1_auto3312"
+"_color" "1.000000 0.501961 0.501961"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3312"
+"origin" "-14603.6 600.2 652.6"
+"target" "me1_auto3313"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 300 0"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3060"
+"origin" "-1453.3 2320.1 5959"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "0 270 96"
+"target" "me1_auto3329"
+}
+{
+"script_specialops" "1"
+"classname" "script_model"
+"model" "h2_weapon_uav_control_unit"
+"angles" "0 45 0"
+"origin" "-16223 1004 985"
+"targetname" "uav_controller"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-14647.4 1423.8 680.5"
+"targetname" "me1_auto3317"
+"target" "me1_auto3315"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"target" "me1_auto3316"
+"targetname" "me1_auto3323"
+"origin" "-12748 1154.1 666.2"
+"classname" "info_vehicle_node"
+"speed" "15"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-13658.4 1390.6 663.5"
+"targetname" "me1_auto3324"
+"target" "me1_auto3317"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-14528 816 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "800"
+"script_noteworthy" "attack_line_far"
+"origin" "-13304 1712 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "500"
+"script_noteworthy" "attack_line_close"
+"origin" "-15584 976 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"targetname" "attack_line"
+"origin" "-15840 720 704"
+"script_noteworthy" "attack_line_close"
+"radius" "500"
+"classname" "script_origin"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "400"
+"script_noteworthy" "attack_line_med"
+"origin" "-14928 1280 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "400"
+"script_noteworthy" "attack_line_med"
+"origin" "-15232 1280 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"angles" "290.044 216.365 -78.9823"
+"model" "weapon_rpg7"
+"classname" "weapon_rpg_player"
+"origin" "-16445.5 778.1 976.2"
+"script_ammo_clip" "1"
+"script_ammo_extra" "1"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"angles" "0 270 0"
+"target" "me1_auto3320"
+"targetname" "me1_auto3322"
+"origin" "-15481 587.3 670"
+"classname" "info_vehicle_node"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"angles" "0 326.1 -75.9"
+"model" "weapon_rpg7"
+"classname" "weapon_rpg_player"
+"origin" "-16221 515.9 738.2"
+"script_ammo_clip" "1"
+"script_ammo_extra" "1"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_p90_reflex"
+"model" "weapon_p90_arctic"
+"angles" "0 187.6 90"
+"origin" "-16394 751.5 967"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_m240_heartbeat_reflex_arctic"
+"model" "weapon_m240_arctic"
+"angles" "347.1 348.188 -0.597294"
+"origin" "-16376.5 736 973.7"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_m240_heartbeat_reflex_arctic"
+"model" "weapon_m240_arctic"
+"angles" "293.493 331.648 -6.62658"
+"origin" "-16404.9 767.9 959.2"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_ak47_grenadier"
+"model" "weapon_ak47_tactical"
+"origin" "-16640 848 740.1"
+"spawnflags" "1"
+"script_ammo_max" "1"
+"angles" "287.78 11.5465 -57.2849"
+}
+{
+"script_specialops" "1"
+"origin" "-16216 543.5 737.6"
+"angles" "0 155.6 90"
+"model" "weapon_ak47_tactical"
+"classname" "weapon_ak47_grenadier"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"model" "?5"
+"script_specialops" "1"
+"origin" "-13664 72 816"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_trying_to_escape"
+"script_noteworthy" "player_trying_to_escape"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16310.8 692.9 985"
+"angles" "270 77.3 6.66309e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16299.8 693.1 988"
+"angles" "270 107.5 7.54101e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"classname" "weapon_m1014"
+"model" "weapon_benelli_super_90"
+"angles" "0 304.2 90"
+"origin" "-16246.5 502.5 737"
+"spawnflags" "1"
+"script_ammo_max" "1"
+}
+{
+"script_specialops" "1"
+"angles" "291 146.3 1.41479e-005"
+"script_ammo_max" "1"
+"spawnflags" "1"
+"origin" "-16586.5 848 733.5"
+"model" "weapon_benelli_super_90"
+"classname" "weapon_m1014"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-13700.9 567.2 665.4"
+"targetname" "me1_auto3308"
+"angles" "0 270 0"
+"target" "me1_auto3351"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-15303 537.3 667.7"
+"targetname" "me1_auto3321"
+"target" "me1_auto3322"
+"angles" "0 270 0"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12848.5 345.1 666.2"
+"targetname" "me1_auto3335"
+"target" "me1_auto3325"
+"angles" "0 270 0"
+"lookahead" "0.5"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12664.4 2730.9 722.9"
+"spawnflags" "0"
+"lookahead" "0.5"
+"angles" "0 270 0"
+"targetname" "me1_auto3332"
+"target" "me1_auto3333"
+}
+{
+"script_specialops" "1"
+"origin" "-17543 -5965 5959"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"targetname" "me1_auto3326"
+"target" "me1_auto3055"
+"angles" "0 178 48"
+}
+{
+"script_specialops" "1"
+"origin" "-23579.9 -1310.4 5981.9"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "0 118 40"
+"targetname" "me1_auto3327"
+"target" "me1_auto3056"
+}
+{
+"script_specialops" "1"
+"origin" "-10988 8492.5 5959"
+"classname" "info_vehicle_node_rotate"
+"_color" "1.000000 0.000000 0.000000"
+"angles" "0 0 20"
+"targetname" "me1_auto3328"
+"target" "me1_auto3058"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.000000 0.000000"
+"classname" "info_vehicle_node_rotate"
+"origin" "-2367.2 -2258.6 5959"
+"angles" "0 254 40"
+"targetname" "me1_auto3329"
+"target" "me1_auto3061"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12792.4 2066.9 722.9"
+"spawnflags" "0"
+"lookahead" "1"
+"targetname" "me1_auto3333"
+"target" "me1_auto3334"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-12680.4 1170.9 658.9"
+"spawnflags" "0"
+"lookahead" "0.5"
+"angles" "0 270 0"
+"targetname" "me1_auto3334"
+"target" "me1_auto3335"
+"speed" "25"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_close"
+"origin" "-16576 128 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"speed" "25"
+"lookahead" ".5"
+"spawnflags" "1"
+"targetname" "jeep_1_guys_alt2"
+"origin" "-12461.5 3263 669.5"
+"target" "me1_auto3338"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 180 0"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3341"
+"origin" "-12674.9 1153 648.3"
+"target" "me1_auto3340"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 300 0"
+"speed" "15"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"origin" "-14825.6 1482.1 690.4"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 210 0"
+"speed" "5"
+"targetname" "me1_auto3347"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"target" "me1_auto3343"
+"origin" "-13816.1 1405.1 680.3"
+"targetname" "me1_auto3344"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3337"
+"origin" "-12710 1899.8 659.2"
+"target" "me1_auto3341"
+"_color" "1.000000 0.501961 0.501961"
+"angles" "0 270 0"
+"speed" "25"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3340"
+"origin" "-12846.8 1101.6 661.7"
+"target" "me1_auto3345"
+"_color" "1.000000 0.501961 0.501961"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"targetname" "me1_auto3345"
+"origin" "-13323.4 1149.3 663"
+"target" "me1_auto3344"
+"_color" "1.000000 0.501961 0.501961"
+"speed" "20"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"origin" "-14293.4 1427.4 685.4"
+"targetname" "me1_auto3343"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "15"
+"target" "me1_auto3346"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"origin" "-14701.4 1371.4 685.4"
+"targetname" "me1_auto3346"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "15"
+"target" "me1_auto3347"
+}
+{
+"script_specialops" "1"
+"lookahead" "0.5"
+"target" "me1_auto3349"
+"angles" "0 270 0"
+"targetname" "me1_auto3348"
+"origin" "-14228.9 231.2 665.4"
+"classname" "info_vehicle_node"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-14700.9 271.2 665.4"
+"targetname" "me1_auto3349"
+"angles" "0 270 0"
+"target" "me1_auto3350"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-14852.9 671.2 665.4"
+"targetname" "me1_auto3350"
+"angles" "0 270 0"
+"target" "me1_auto3321"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"origin" "-14036.9 551.2 665.4"
+"targetname" "me1_auto3351"
+"angles" "0 270 0"
+"target" "me1_auto3348"
+"lookahead" "0.5"
+}
+{
+"script_specialops" "1"
+"_color" "1.000000 0.501961 0.501961"
+"origin" "-15541.4 1307.4 685.4"
+"targetname" "me1_auto3352"
+"spawnflags" "0"
+"classname" "info_vehicle_node"
+"speed" "15"
+"target" "me1_auto3336"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"origin" "-13901.5 406.2 659.2"
+"_color" "1.000000 0.501961 0.501961"
+"targetname" "me1_auto3353"
+"target" "me1_auto3311"
+}
+{
+"script_specialops" "1"
+"classname" "info_vehicle_node"
+"spawnflags" "0"
+"origin" "-13269.5 406.2 659.2"
+"_color" "1.000000 0.501961 0.501961"
+"targetname" "me1_auto3354"
+"target" "me1_auto3353"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_close"
+"origin" "-15968 440 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-14880 288 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "800"
+"script_noteworthy" "attack_line_far"
+"origin" "-13936 464 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "800"
+"script_noteworthy" "attack_line_far"
+"origin" "-13984 1472 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-15536 96 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-15152 1440 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-15024 816 704"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "38"
+"origin" "-11979.7 2637.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys_alt"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "39"
+"origin" "-11976.7 2700.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys_alt"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "40"
+"origin" "-11928.7 2724.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys_alt"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "41"
+"origin" "-11926.7 2659.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 90 0"
+"targetname" "jeep_1_guys_alt"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "42"
+"origin" "-12315.7 3037.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 270 0"
+"targetname" "jeep_1_guys_alt2"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_SMG"
+"model" "body_opforce_arctic_smg"
+"export" "43"
+"origin" "-12312.7 3100.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 270 0"
+"targetname" "jeep_1_guys_alt2"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "44"
+"origin" "-12264.7 3124.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 270 0"
+"targetname" "jeep_1_guys_alt2"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "45"
+"origin" "-12262.7 3059.5 628.5"
+"spawnflags" "9"
+"script_forcespawn" "1"
+"angles" "0 270 0"
+"targetname" "jeep_1_guys_alt2"
+"script_noteworthy" "vehicle_guys"
+}
+{
+"script_specialops" "1"
+"classname" "script_origin"
+"radius" "600"
+"script_noteworthy" "attack_line_med"
+"origin" "-15080 1968 880"
+"targetname" "attack_line"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "46"
+"spawnflags" "9"
+"origin" "-12363 1457.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "47"
+"spawnflags" "9"
+"origin" "-12235 2097.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "48"
+"spawnflags" "9"
+"origin" "-12123 2561.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "49"
+"spawnflags" "9"
+"origin" "-11819 3265.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "50"
+"spawnflags" "9"
+"origin" "-12971 3241.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "51"
+"spawnflags" "9"
+"origin" "-12691 3417.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "52"
+"spawnflags" "9"
+"origin" "-12235 2033.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "53"
+"spawnflags" "9"
+"origin" "-12235 1969.5 642.5"
+"angles" "0 270 0"
+"script_forcespawn" "1"
+"targetname" "failsafe_spawners"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "54"
+"spawnflags" "9"
+"origin" "-12979.8 3036.7 643"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_LMG"
+"model" "body_opforce_arctic_lmg"
+"export" "55"
+"spawnflags" "9"
+"origin" "-12899.8 3052.7 643"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "56"
+"spawnflags" "9"
+"origin" "-11830.4 3454.7 624"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "57"
+"spawnflags" "9"
+"origin" "-11638.4 3438.7 624"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "58"
+"spawnflags" "9"
+"origin" "-11638.4 3374.7 624"
+"angles" "0 270 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "59"
+"spawnflags" "9"
+"origin" "-12518.7 -70.4 664"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "60"
+"spawnflags" "9"
+"origin" "-12454.7 -70.4 648"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "61"
+"spawnflags" "9"
+"origin" "-12470.7 25.6 664"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "62"
+"spawnflags" "9"
+"origin" "-12406.7 25.6 648"
+"angles" "0 90 0"
+"script_noteworthy" "wave_guys"
+"script_forcespawn" "1"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "63"
+"spawnflags" "9"
+"origin" "-13931 -6.5 658.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "64"
+"spawnflags" "9"
+"origin" "-13915 -70.5 658.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 90 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "65"
+"spawnflags" "9"
+"origin" "-14075 905.5 642.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "66"
+"spawnflags" "9"
+"origin" "-14011 969.5 642.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "actor_enemy_arctic_AR"
+"model" "body_opforce_arctic_assault_a"
+"export" "67"
+"spawnflags" "9"
+"origin" "-13835 1689.5 642.5"
+"script_noteworthy" "wave_guys"
+"angles" "0 270 0"
+}
+{
+"script_specialops" "1"
+"classname" "script_struct"
+"targetname" "so_roof_point"
+"origin" "-16340 880 960"
+"radius" "2000"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16299.8 693.1 986.5"
+"angles" "270 98.3 6.75865e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16310.9 692.9 988"
+"angles" "270 85.3 6.80722e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"classname" "script_model_pickup_claymore"
+"model" "weapon_claymore"
+"angles" "270 96.4 6.78762e-006"
+"origin" "-16305.5 692.4 991.5"
+"targetname" "me1_auto3358"
+"spawnflags" "4"
+"target" "me1_auto3357"
+"script_ammo_clip" "10"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16299.8 693.1 985"
+"angles" "270 104.5 0"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16299.9 693.2 989.5"
+"angles" "270 99.1 0"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16312.2 692.2 989.5"
+"angles" "270 96.4 6.78762e-006"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3357"
+"origin" "-16308.5 697.5 985.5"
+"angles" "89.1952 67.214 29.2536"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16449.7 594.3 721.5"
+"angles" "270 149.7 0"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16449.7 594.3 720"
+"angles" "270 138.4 1.21961e-005"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16444.5 604 723"
+"angles" "270 168.6 0"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16444.5 604 721.5"
+"angles" "270 159.4 1.23901e-005"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16449.7 594.2 723"
+"angles" "270 146.4 0"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"classname" "script_model_pickup_claymore"
+"model" "weapon_claymore"
+"angles" "270 237.9 0"
+"origin" "-16441.7 597.2 726.2"
+"targetname" "me1_auto3360"
+"spawnflags" "4"
+"target" "me1_auto3359"
+"script_ammo_clip" "10"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16444.5 604 720"
+"angles" "270 165.6 1.32536e-005"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16444.7 604 724.5"
+"angles" "270 160.2 1.51664e-005"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"targetname" "me1_auto3359"
+"origin" "-16449.7 592.7 724.5"
+"angles" "270 157.5 1.52343e-005"
+"model" "weapon_claymore"
+"classname" "script_model"
+}
+{
+"script_specialops" "1"
+"classname" "script_model"
+"model" "weapon_claymore"
+"angles" "347.706 259.514 -82.5292"
+"origin" "-16451.1 586 724.5"
+"targetname" "me1_auto3359"
+}
+{
+"model" "?6"
+"script_specialops" "1"
+"origin" "-13664 -72 816"
+"classname" "trigger_multiple_flag_set_touching"
+"script_flag" "player_has_escaped"
+} 

@@ -1,0 +1,4 @@
+main()
+{
+    maps\contingency::main();
+}

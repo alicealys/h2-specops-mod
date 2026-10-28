@@ -1,0 +1,1468 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 308 0"
+"origin" "-276 -2614 -146"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 130 0"
+"origin" "-82 -2946 -146"
+}
+{
+"model" "?0"
+"origin" "-174 -2774 -136"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "mission_start"
+"script_specialops" "1"
+}
+{
+"origin" "615.3 522.4 196"
+"spawnflags" "7"
+"export" "1"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "969.6 408.9 196"
+"spawnflags" "7"
+"export" "2"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "903.5 170 196"
+"spawnflags" "7"
+"export" "3"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "794.5 297.4 184"
+"spawnflags" "7"
+"export" "4"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "613.9 357.9 184"
+"spawnflags" "7"
+"export" "5"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "706.1 -30.4 184"
+"spawnflags" "7"
+"export" "6"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "541.1 -153.3 184"
+"spawnflags" "7"
+"export" "7"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "457.3 -7 184"
+"spawnflags" "7"
+"export" "8"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "523.5 316.6 184"
+"spawnflags" "7"
+"export" "9"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "337.2 555.8 184"
+"spawnflags" "7"
+"export" "10"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "434.5 469.8 184"
+"spawnflags" "7"
+"export" "11"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "142.9 406.9 184"
+"spawnflags" "7"
+"export" "12"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-31.5 449.1 184"
+"spawnflags" "7"
+"export" "13"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-256.2 412 184"
+"spawnflags" "7"
+"export" "14"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-274.4 296.2 184"
+"spawnflags" "7"
+"export" "15"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-228.8 179.3 184"
+"spawnflags" "7"
+"export" "16"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-101.1 133.9 184"
+"spawnflags" "7"
+"export" "17"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-41.6 240.7 184"
+"spawnflags" "7"
+"export" "18"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "176 597.9 184"
+"spawnflags" "7"
+"export" "19"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "131.1 741.3 184"
+"spawnflags" "7"
+"export" "20"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "35.5 685.8 184"
+"spawnflags" "7"
+"export" "21"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "226.6 196.7 184"
+"spawnflags" "7"
+"export" "22"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "198.7 -91.8 184"
+"spawnflags" "7"
+"export" "23"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "143.2 -225.4 184"
+"spawnflags" "7"
+"export" "24"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1616.8 2626.3 -195.9"
+"spawnflags" "7"
+"export" "25"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "430.7 -224.8 184"
+"spawnflags" "7"
+"export" "26"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "310.5 -43.3 312"
+"spawnflags" "7"
+"export" "27"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "232 97.9 312"
+"spawnflags" "7"
+"export" "28"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "230.6 218.8 312"
+"spawnflags" "7"
+"export" "29"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "165.8 -44.4 312"
+"spawnflags" "7"
+"export" "30"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "381.3 -89 312"
+"spawnflags" "7"
+"export" "31"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "471.6 22.5 312"
+"spawnflags" "7"
+"export" "32"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "526.1 144.4 312"
+"spawnflags" "7"
+"export" "33"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "672.2 145.8 312"
+"spawnflags" "7"
+"export" "34"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "839 33.9 312"
+"spawnflags" "7"
+"export" "35"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "492.3 -117.9 312"
+"spawnflags" "7"
+"export" "36"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "682.3 -153.6 312"
+"spawnflags" "7"
+"export" "37"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "702.6 -72.2 312"
+"spawnflags" "7"
+"export" "38"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "752.5 336.4 32"
+"spawnflags" "7"
+"export" "39"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "731.4 248.5 32"
+"spawnflags" "7"
+"export" "40"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "722.9 158.6 32"
+"spawnflags" "7"
+"export" "41"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "700.3 62.4 32"
+"spawnflags" "7"
+"export" "42"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "631 -38.4 32"
+"spawnflags" "7"
+"export" "43"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "664.8 -167.9 32"
+"spawnflags" "7"
+"export" "44"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "789.5 -231 48"
+"spawnflags" "7"
+"export" "45"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "866.5 21.5 160"
+"spawnflags" "7"
+"export" "46"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-150.6 -616 -22.5"
+"spawnflags" "7"
+"export" "47"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "339 -939.7 -99.8"
+"spawnflags" "7"
+"export" "48"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "658.7 -778.1 -11.6"
+"spawnflags" "7"
+"export" "49"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1298.7 -619.6 5.6"
+"spawnflags" "7"
+"export" "50"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1685.5 -325.4 -35.9"
+"spawnflags" "7"
+"export" "51"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1801.3 2620.2 -12.8"
+"spawnflags" "7"
+"export" "52"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1525.1 296.8 10.1"
+"spawnflags" "7"
+"export" "53"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1956.3 569.8 -51.2"
+"spawnflags" "7"
+"export" "54"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1848.5 -13.6 -70.5"
+"spawnflags" "7"
+"export" "55"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1098.6 469.1 24"
+"spawnflags" "7"
+"export" "56"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1427.3 794.7 15.1"
+"spawnflags" "7"
+"export" "57"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "936.2 952.4 61"
+"spawnflags" "7"
+"export" "58"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1893.8 1306.7 -51"
+"spawnflags" "7"
+"export" "59"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2240.8 1325.7 -121"
+"spawnflags" "7"
+"export" "60"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2379.4 1328.2 -138.8"
+"spawnflags" "7"
+"export" "61"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2654 1042.3 -154.5"
+"spawnflags" "7"
+"export" "62"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3243.2 2583.1 -135"
+"spawnflags" "7"
+"export" "63"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3058.4 2232.8 -107.2"
+"spawnflags" "7"
+"export" "64"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3068.8 1883.8 -133.8"
+"spawnflags" "7"
+"export" "65"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3387 1884 -127.7"
+"spawnflags" "7"
+"export" "66"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3543 1921.2 -128.4"
+"spawnflags" "7"
+"export" "67"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3873.7 1893.8 -134.2"
+"spawnflags" "7"
+"export" "68"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2098.8 2247.7 -52.1"
+"spawnflags" "7"
+"export" "69"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2162.1 2527.9 -17.4"
+"spawnflags" "7"
+"export" "70"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2552.1 2138.6 -111.3"
+"spawnflags" "7"
+"export" "71"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2552 1938 -142.8"
+"spawnflags" "7"
+"export" "72"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2165.2 1935.2 -103.7"
+"spawnflags" "7"
+"export" "73"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3700.4 2612 -140.2"
+"spawnflags" "7"
+"export" "74"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "3862.7 2910 -121.8"
+"spawnflags" "7"
+"export" "75"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4245.2 2909.7 -162.3"
+"spawnflags" "7"
+"export" "76"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4381.6 2932.1 -175.2"
+"spawnflags" "7"
+"export" "77"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4664.1 2894.6 -164.9"
+"spawnflags" "7"
+"export" "78"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4027.6 3113.4 -136.2"
+"spawnflags" "7"
+"export" "79"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4579.3 3251.4 -150.5"
+"spawnflags" "7"
+"export" "80"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4898.2 3357.2 -149.7"
+"spawnflags" "7"
+"export" "81"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "5070.2 2932.9 -156"
+"spawnflags" "7"
+"export" "82"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4975.9 3031.8 -152.7"
+"spawnflags" "7"
+"export" "83"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "5644.2 2122.9 -144.9"
+"spawnflags" "7"
+"export" "84"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "5446.5 1780.3 -124.6"
+"spawnflags" "7"
+"export" "85"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "5141.7 1526 -138.3"
+"spawnflags" "7"
+"export" "86"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4645.3 1422.8 -146.1"
+"spawnflags" "7"
+"export" "87"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4919.8 1795.4 -127.4"
+"spawnflags" "7"
+"export" "88"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "5067.1 1789.9 -118.7"
+"spawnflags" "7"
+"export" "89"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4186.4 1494 -142"
+"spawnflags" "7"
+"export" "90"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4229.6 1779.5 -113.3"
+"spawnflags" "7"
+"export" "91"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4311.9 1108.9 -136.8"
+"spawnflags" "7"
+"export" "92"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4244.3 1067.4 -133.5"
+"spawnflags" "7"
+"export" "93"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4320.6 826 -106.1"
+"spawnflags" "7"
+"export" "94"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4453.2 531.4 -109.9"
+"spawnflags" "7"
+"export" "95"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4211.1 54.1 -103.7"
+"spawnflags" "7"
+"export" "96"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4348.7 137.7 -104.2"
+"spawnflags" "7"
+"export" "97"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "4065.5 597.2 -104.2"
+"spawnflags" "7"
+"export" "98"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2773.4 -422.8 -101.5"
+"spawnflags" "7"
+"export" "99"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2472.3 -379.7 -85.8"
+"spawnflags" "7"
+"export" "100"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "2549.2 -213.9 -69.1"
+"spawnflags" "7"
+"export" "101"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "722.9 1707.3 147.6"
+"spawnflags" "7"
+"export" "102"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "303.9 940.6 168.1"
+"spawnflags" "7"
+"export" "103"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "466.9 951.7 167.8"
+"spawnflags" "7"
+"export" "104"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "300.6 1434.5 138.9"
+"spawnflags" "7"
+"export" "105"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "128.4 1442.1 166.7"
+"spawnflags" "7"
+"export" "106"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-11.3 1435.6 161.1"
+"spawnflags" "7"
+"export" "107"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-10.7 2235.1 -1.9"
+"spawnflags" "7"
+"export" "108"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1137.8 2069 -164.2"
+"spawnflags" "7"
+"export" "109"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-984.8 2234.8 -147.7"
+"spawnflags" "7"
+"export" "110"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1643.6 2394.6 -206"
+"spawnflags" "7"
+"export" "111"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1734.8 2418.6 -202.7"
+"spawnflags" "7"
+"export" "112"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1995 2529.9 -248"
+"spawnflags" "7"
+"export" "113"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1905 2350.5 -209"
+"spawnflags" "7"
+"export" "114"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2167.4 2348.3 -258.3"
+"spawnflags" "7"
+"export" "115"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2156.8 2604.3 -265.7"
+"spawnflags" "7"
+"export" "116"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2009.2 2694.9 -244.8"
+"spawnflags" "7"
+"export" "117"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1938.6 2708.1 -242.8"
+"spawnflags" "7"
+"export" "118"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1855.3 2790 -235.9"
+"spawnflags" "7"
+"export" "119"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1616.9 2715.8 -199.1"
+"spawnflags" "7"
+"export" "120"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1611.4 2886.6 -175"
+"spawnflags" "7"
+"export" "121"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2277.4 3352.7 -373.2"
+"spawnflags" "7"
+"export" "122"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2275.8 3831.8 -206.7"
+"spawnflags" "7"
+"export" "123"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2096.2 3833.8 -212.9"
+"spawnflags" "7"
+"export" "124"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2270.8 4163.1 -157.1"
+"spawnflags" "7"
+"export" "125"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1603 3989.5 -224.9"
+"spawnflags" "7"
+"export" "126"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1285.3 4002.1 -200.9"
+"spawnflags" "7"
+"export" "127"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1622 4477.2 -260.8"
+"spawnflags" "7"
+"export" "128"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1734.7 4705 -254"
+"spawnflags" "7"
+"export" "129"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1943.9 4965.8 -225.8"
+"spawnflags" "7"
+"export" "130"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-2259.4 4792.3 -153.5"
+"spawnflags" "7"
+"export" "131"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-922.1 4597.1 -235.9"
+"spawnflags" "7"
+"export" "132"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_LMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-974.1 4308.8 -194.7"
+"spawnflags" "7"
+"export" "133"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-806.3 4311.4 -242.9"
+"spawnflags" "7"
+"export" "134"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-744.4 4134.9 -258.7"
+"spawnflags" "7"
+"export" "135"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-807.6 3984.2 -234.3"
+"spawnflags" "7"
+"export" "136"
+"model" "body_airborne_smg"
+"classname" "actor_enemy_merc_SMG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1070.3 3986.1 -213"
+"spawnflags" "7"
+"export" "137"
+"model" "body_airborne_shotgun"
+"classname" "actor_enemy_merc_SHOTGUNAUTO"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1135.7 4156 -176.8"
+"spawnflags" "7"
+"export" "138"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1136.3 4455.7 -232.9"
+"spawnflags" "7"
+"export" "139"
+"model" "body_airborne_assault_a"
+"classname" "actor_enemy_merc_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1322.5 4630.3 -263.3"
+"spawnflags" "7"
+"export" "140"
+"model" "body_airborne_lmg"
+"classname" "actor_enemy_merc_RPG"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-1452.3 4696.4 -259.7"
+"spawnflags" "7"
+"export" "141"
+"model" "body_opforce_sniper"
+"classname" "actor_enemy_merc_SNPR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "143"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-144.7 309 184"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "142"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-160.7 240.1 184"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "144"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "-125.5 374.8 184"
+} 

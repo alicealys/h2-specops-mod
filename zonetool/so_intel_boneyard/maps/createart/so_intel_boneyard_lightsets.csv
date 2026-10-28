@@ -1,0 +1,9 @@
+name,boneyard
+sunenable,1
+sunshadowscale,1
+sunshadowscale_time,0
+spotlimit,4
+qualityspotshadow,1
+usedsuncascadecount,2
+sunsamplesizenear,0.25
+sunsamplesizenear_time,0

@@ -1,0 +1,4 @@
+main()
+{
+    maps\cliffhanger::main();
+}

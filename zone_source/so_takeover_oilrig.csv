@@ -1,0 +1,9 @@
+include,pmc
+addon_map_ents,maps/so_takeover_oilrig.mapents
+stringtable,soundtables/so_takeover_oilrig.csv
+stringtable,maps/createart/so_takeover_oilrig_lightsets_hdr.csv
+weapon,m79
+weapon,striker_reflex
+weapon,barrett
+weapon,aug_scope
+sound,mus_so_takeover_oilrig

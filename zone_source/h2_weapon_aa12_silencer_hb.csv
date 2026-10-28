@@ -1,0 +1,4 @@
+name,h2_weapon_aa12_silencer_hb
+base,h2_weapon_aa12_base
+attachment,attach_h2_silencer_03_npc
+attachment,attach_h2_heartbeat_npc

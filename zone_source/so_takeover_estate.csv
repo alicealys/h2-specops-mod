@@ -1,0 +1,5 @@
+include,pmc
+addon_map_ents,maps/so_takeover_estate.mapents
+stringtable,maps/createart/so_takeover_estate_lightsets_hdr.csv
+stringtable,soundtables/so_takeover_estate.csv
+sound,mus_so_takeover_estate

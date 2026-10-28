@@ -1,0 +1,5 @@
+sound,emt_airhorn_area_clear
+sound,mus_so_killspree_trainer_music
+addon_map_ents,maps/so_killspree_trainer.mapents
+stringtable,soundtables/so_killspree_trainer.csv
+stringtable,maps/createart/so_killspree_trainer_lightsets_hdr.csv

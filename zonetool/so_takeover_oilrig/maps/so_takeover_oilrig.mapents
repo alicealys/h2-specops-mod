@@ -1,0 +1,496 @@
+{
+"origin" "0 0 0"
+"sunlight" "0.74"
+"suncolor" "0.88 0.93 1"
+"sundirection" "-70 72 0"
+"classname" "worldspawn"
+"ambient" ".116"
+"_color" "0.5 0.5 .62 1"
+"skylight" "0.56"
+"skycolor" "0.87 0.94 1"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 296 0"
+"origin" "1216 764 -1948"
+}
+{
+"classname" "info_player_start_pmc"
+"angles" "0 248 0"
+"origin" "1324 800 -1948"
+}
+{
+"origin" "556.5 -37.4 -272"
+"spawnflags" "7"
+"export" "1"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "2"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "542.9 28.8 -272"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "3"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "602.9 30.8 -272"
+}
+{
+"classname" "actor_enemy_juggernaut_russian"
+"model" "body_complete_sp_juggernaut"
+"export" "4"
+"targetname" "juggernaut_spawner"
+"spawnflags" "7"
+"script_specialops" "1"
+"angles" "0 270 0"
+"origin" "574.9 78.8 -272"
+}
+{
+"origin" "-64.5 -7.3 -272"
+"spawnflags" "7"
+"export" "5"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "302.8 311.7 -271"
+"spawnflags" "7"
+"export" "6"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "607.5 443.1 -272"
+"spawnflags" "7"
+"export" "7"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "713.4 716.4 -272"
+"spawnflags" "7"
+"export" "8"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "399.3 886 -268.3"
+"spawnflags" "7"
+"export" "9"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-126.1 1041.4 -271.8"
+"spawnflags" "7"
+"export" "10"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-380 968.3 -271.8"
+"spawnflags" "7"
+"export" "11"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-385.1 723.8 -271.8"
+"spawnflags" "7"
+"export" "12"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-713 731.6 -271.8"
+"spawnflags" "7"
+"export" "13"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-637.9 107.9 -271.8"
+"spawnflags" "7"
+"export" "14"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-783.5 1297 -271.8"
+"spawnflags" "7"
+"export" "15"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "296.2 1154.9 -263.8"
+"spawnflags" "7"
+"export" "16"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "387.1 1469.3 -263.8"
+"spawnflags" "7"
+"export" "17"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "714.5 1206.6 -262.8"
+"spawnflags" "7"
+"export" "18"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1009.9 1580 -271.8"
+"spawnflags" "7"
+"export" "19"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1641.9 1624.7 -271.8"
+"spawnflags" "7"
+"export" "20"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-668.5 1278.3 -655.8"
+"spawnflags" "7"
+"export" "21"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-517.8 1489.4 -655.8"
+"spawnflags" "7"
+"export" "22"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-82.4 1367.9 -655.8"
+"spawnflags" "7"
+"export" "23"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "420 1444.8 -655.8"
+"spawnflags" "7"
+"export" "24"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1059.6 1444.8 -655.8"
+"spawnflags" "7"
+"export" "25"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1618.4 1510.6 -655.8"
+"spawnflags" "7"
+"export" "26"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1483.4 790.4 -655.8"
+"spawnflags" "7"
+"export" "27"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1572.7 282.2 -655.8"
+"spawnflags" "7"
+"export" "28"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1438.2 -44.9 -655.8"
+"spawnflags" "7"
+"export" "29"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "915.3 210.4 -655.8"
+"spawnflags" "7"
+"export" "30"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "686.4 116.7 -488.3"
+"spawnflags" "7"
+"export" "31"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "78.5 26.1 -655.8"
+"spawnflags" "7"
+"export" "32"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-184.9 -22.3 -1039.8"
+"spawnflags" "7"
+"export" "33"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "421.8 15.8 -1039.8"
+"spawnflags" "7"
+"export" "34"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "912 25.8 -1039.8"
+"spawnflags" "7"
+"export" "35"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "1192 -114.6 -1039.8"
+"spawnflags" "7"
+"export" "36"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"spawnflags" "1"
+"angles" "0 75.275 -90"
+"model" "weapon_m82"
+"classname" "weapon_barrett"
+"origin" "941.2 370.4 -1925.8"
+"script_ammo_extra" "999"
+"script_ammo_clip" "999"
+}
+{
+"classname" "script_model"
+"targetname" "ammo_cache"
+"origin" "-194.7 812.7 -1019.3"
+"model" "tag_origin"
+}
+{
+"spawnflags" "1"
+"angles" "0 75.275 -90"
+"model" "weapon_steyr"
+"classname" "weapon_aug_scope"
+"origin" "920.5 403.4 -1925.8"
+"script_ammo_extra" "999"
+"script_ammo_clip" "999"
+}
+{
+"origin" "531.6 265.4 -1031.8"
+"spawnflags" "7"
+"export" "40"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-122.8 618.9 -1039.8"
+"spawnflags" "7"
+"export" "41"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"origin" "-463.7 941.3 -1039.8"
+"spawnflags" "7"
+"export" "42"
+"model" "body_opforce_arctic_assault_a"
+"classname" "actor_enemy_arctic_AR"
+"angles" "0 94.8 0"
+"targetname" "pmc_spawner"
+"script_specialops" "1"
+}
+{
+"classname" "weapon_striker_reflex"
+"model" "weapon_striker"
+"angles" "0 259.025 91.875"
+"spawnflags" "0"
+"origin" "965.3 343.4 -1924.1"
+"script_ammo_extra" "999"
+"script_ammo_clip" "999"
+}
+{
+"classname" "script_model"
+"model" "mil_ammo_case_brown_1"
+"origin" "913.9 433.7 -1927.5"
+"angles" "0 3.7 0"
+}
+{
+"classname" "script_model"
+"model" "mil_ammo_case_brown_1_open"
+"origin" "978.8 315.5 -1927.5"
+"angles" "0 252.5 0"
+}
+{
+"model" "?0"
+"origin" "1064 420 -1868"
+"classname" "trigger_multiple_flag_set"
+"script_flag" "mission_start"
+"script_specialops" "1"
+}
+{
+"classname" "weapon_at4"
+"model" "weapon_at4"
+"origin" "960 411 -1923.5"
+"angles" "0 105.5 0"
+}
+{
+"classname" "script_model"
+"targetname" "ammo_cache"
+"origin" "1664.3 -113.3 -1022.3"
+"model" "tag_origin"
+}
+{
+"spawnflags" "1"
+"angles" "0 111.175 -90"
+"model" "weapon_cheytac"
+"classname" "weapon_cheytac_thermal"
+"origin" "925.2 338.9 -1925.8"
+"script_ammo_extra" "999"
+"script_ammo_clip" "999"
+}
+{
+"classname" "script_model"
+"targetname" "ammo_cache"
+"origin" "728.5 168.7 -631.8"
+"model" "tag_origin"
+}
+{
+"classname" "script_model"
+"targetname" "ammo_cache"
+"origin" "160.9 659.9 -253.8"
+"model" "tag_origin"
+}

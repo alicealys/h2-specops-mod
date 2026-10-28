@@ -1,0 +1,9 @@
+include,pmc
+addon_map_ents,maps/so_juggernauts_favela.mapents
+weapon,c4
+weapon,m79
+weapon,claymore
+sound,mus_so_juggernauts_favela
+stringtable,maps/createart/so_juggernauts_favela_lightsets_hdr.csv
+stringtable,soundtables/so_juggernauts_favela.csv
+scriptfile,maps/so_juggernauts_favela
